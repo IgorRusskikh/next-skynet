@@ -1,0 +1,41 @@
+.navbar {
+  @apply w-full xl:py-[14px];
+}
+
+.container {
+  @apply flex items-center justify-between;
+  @apply xl:max-w-[1220px] xl:mx-auto;
+}
+
+.logo {
+  @apply flex items-center;
+  @apply xl:gap-[13.31px];
+}
+
+.dots {
+  @apply flex;
+  @apply xl:gap-[5.35px]
+}
+
+.dots div {
+  @apply rounded-full bg-black;
+  @apply xl:w-[10.85px] xl:h-[11.5px];
+}
+
+.redDot {
+  @apply !bg-primary-red;
+}
+
+.logo h1 {
+  @apply font-tt-norms;
+  @apply xl:text-2xl xl:font-semibold;
+}
+
+.container nav ul {
+  @apply flex items-center font-tt-norms;
+  @apply xl:gap-6 xl:text-[10px] xl:leading-[10px] xl:font-medium;
+}
+
+.telegram {
+  @apply xl:w-[101px];
+}

@@ -1,0 +1,85 @@
+.verification {
+  @apply font-tt-norms;
+  @apply xl:pt-[160px];
+}
+
+.verificationInner {
+  @apply mx-auto flex justify-between;
+  @apply xl:max-w-[1200px];
+}
+
+.verificationTitle {
+  @apply text-[#898C98] uppercase;
+  @apply xl:text-[10px] xl:leading-[10px];
+}
+
+.verificationContent {
+  @apply xl:max-w-[915px];
+}
+
+.verificationDescription {
+  @apply xl:text-[38px] xl:leading-[41.8px] xl:max-w-[915px];
+}
+
+.verificationSteps {
+  @apply xl:mt-[80px];
+}
+
+.cardsWrapper {
+  @apply flex;
+  @apply xl:gap-5 xl:mt-[80px];
+}
+
+.cardsCol {
+  @apply flex flex-col w-1/2;
+  @apply xl:gap-5;
+}
+
+.card {
+  @apply w-full bg-white rounded-[20px] relative overflow-clip;
+  @apply xl:px-6 xl:py-8;
+}
+
+.redDot {
+  @apply rounded-full bg-red-500 w-[10px] h-[10px];
+}
+
+.cardTitle {
+  @apply xl:text-2xl xl:leading-[26.4px] font-medium;
+}
+
+.cardContent {
+  @apply md:mt-[60px];
+}
+
+.cardContent p {
+  @apply text-[#898C98];
+  @apply xl:text-sm xl:leading-[14px] xl:max-w-[232px] xl:mt-6;
+}
+
+.cardImageWrapper {
+  @apply absolute -right-5 bottom-0;
+}
+
+.cardImage {
+  @apply relative w-[142px] h-[103px] rotate-y-180;
+}
+
+.redCard {
+  @apply bg-primary-red font-medium flex flex-col justify-between flex-1;
+}
+
+.redCard p {
+  @apply text-white !mt-0;
+  @apply xl:text-[18px] xl:leading-[19.8px];
+}
+
+.redCardContent {
+  @apply !mt-0;
+  @apply xl:max-w-[364px];
+}
+
+.cardLink {
+  @apply uppercase;
+  @apply xl:mt-[32px];
+}

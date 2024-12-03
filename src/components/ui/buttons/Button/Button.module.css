@@ -1,0 +1,17 @@
+.button {
+  @apply flex items-center rounded-[100px];
+  @apply xl:gap-[6.67px] xl:py-[18px] xl:px-6;
+}
+
+.buttonBlack {
+  @apply bg-black text-white;
+}
+
+.buttonRed {
+  @apply bg-primary-red text-white;
+}
+
+.button p {
+  @apply font-tt-norms uppercase;
+  @apply xl:text-[10px] xl:leading-[10px] xl:font-medium;
+}

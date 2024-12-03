@@ -1,0 +1,51 @@
+.howToUse {
+  @apply font-tt-norms;
+  @apply xl:pt-[160px];
+}
+
+.howToUseInner {
+  @apply xl:max-w-[1200px] xl:mx-auto;
+}
+
+.sectionHeader {
+  @apply flex;
+  @apply xl:gap-[188px];
+}
+
+.howToUseTitle {
+  @apply text-[#898C98] uppercase;
+  @apply xl:text-[10px] xl:leading-[10px];
+}
+
+.howToUseDescription {
+  @apply text-[#898C98];
+  @apply xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px] font-medium xl:tracking-[-0.2px];
+}
+
+.howToUseContent {
+  @apply xl:mt-[80px];
+}
+
+.banner {
+  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-contain bg-no-repeat bg-left overflow-hidden mx-auto flex flex-col justify-between;
+  @apply xl:w-[1000px] xl:h-[549px];
+}
+
+.bannerTitle {
+  @apply text-white font-medium;
+  @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[390px] xl:tracking-[-0.5px];
+}
+
+.bannerStep {
+  @apply flex justify-between items-center translate-y-[85px];
+}
+
+.bannerStepNumber {
+  @apply font-[450] text-white opacity-30;
+  @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[60px];
+}
+
+.bannerStepDescription {
+  @apply text-[#F3F3F3];
+  @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
+}
