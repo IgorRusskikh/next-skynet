@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import styles from "./Services.module.css";
-import TopArrow from "@/svg/right-top-arrow.svg";
 import { useState } from "react";
 import CustomLink from "@/components/ui/Link";
 

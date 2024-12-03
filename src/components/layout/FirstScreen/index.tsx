@@ -3,7 +3,9 @@ import styles from "./FirstScreen.module.css";
 import Image from "next/image";
 import Button from "@/components/ui/buttons/Button";
 
-interface IAdvantage extends HTMLAttributes<HTMLDivElement> {}
+interface IAdvantage extends HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
 
 export default function FirstScreen() {
   return (

@@ -18,6 +18,7 @@ export default function CustomLink({
     <a
       href={href}
       className={`${styles.link} ${light && styles.lightLink} ${className}`}
+      {...props}
       suppressHydrationWarning
     >
       {children}
