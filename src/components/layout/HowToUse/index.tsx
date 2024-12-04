@@ -135,7 +135,7 @@ export default function HowToUse() {
       scrollTrigger: {
         trigger: startAnimRef.current,
         start: "top+=900",
-        end: "top+=1750",
+        end: "top+=1800",
         scrub: true,
       },
     });
