@@ -4,7 +4,7 @@ import { HTMLAttributes } from "react";
 import CustomLink from "@/components/ui/Link";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
   description: string;
   image?: boolean;
   red?: boolean;
@@ -29,26 +29,25 @@ export default function Verification() {
                 title="Доставка курьером"
                 description="Доставка средств в удобное место по всему миру"
                 image
-                className="xl:h-[258px]"
+                className="lg:h-[258px] xl:h-[258px]"
               />
               <Card
                 title="Персональный менеджер"
                 description="Индивидуальное сопровождение от эксперта по криптовалюте и международным переводам"
-                className="xl:h-[258px]"
-                descriptionClassName="xl:!max-w-[261px]"
+                className="lg:h-[258px] xl:h-[258px]"
+                descriptionClassName="lg:!max-w-[387px] xl:!max-w-[261px]"
               />
             </div>
             <div className={`${styles.cardsCol}`}>
               <Card
                 title="Фиксированный курс"
                 description="Закрепляем курс валюты на время от заявки до сделки, чтобы защитить ваши средства от колебаний рынка"
-                className="xl:h-[336px]"
+                className="lg:h-[336px] xl:h-[336px]"
               />
               <Card
-                title="Доставка курьером"
                 description="Обсудите условия верификации с менеджером, чтобы получить доступ к премиальным функциям"
                 red
-                descriptionClassName="xl:!max-w-[364px]"
+                descriptionClassName="lg:!max-w-[364px] xl:!max-w-[364px]"
               />
             </div>
           </div>

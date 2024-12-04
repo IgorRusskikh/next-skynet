@@ -1,19 +1,23 @@
 .services {
   @apply font-tt-norms;
+  @apply lg:pt-[140px];
   @apply xl:pt-[160px];
 }
 
 .servicesContainer {
   @apply mx-auto flex justify-between;
+  @apply lg:max-w-[964px];
   @apply xl:max-w-[1200px];
 }
 
 .servicesTitle {
-  @apply text-[#898C98] uppercase;
+  @apply text-[#898C98] uppercase font-[450];
+  @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px] xl:font-normal;
 }
 
 .servicesContent {
+  @apply lg:max-w-[794px];
   @apply xl:max-w-[915px];
 }
 
@@ -22,49 +26,76 @@
 }
 
 .servicesContentText h3 {
+  @apply lg:text-[32px] lg:leading-[35.2px];
   @apply xl:text-[38px] xl:leading-[41.8px];
 }
 
 .servicesContentText p {
   @apply text-[#898C98];
+  @apply lg:mt-6 lg:text-base lg:leading-[17.6px] lg:max-w-[443px] lg:tracking-[-0.3px];
   @apply xl:mt-8 xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:tracking-[-0.3px];
 }
 
 .servicesList {
   @apply flex justify-between items-center;
+  @apply lg:mt-[60px] lg:gap-[86px];
   @apply xl:mt-[80px] xl:gap-[90px];
 }
 
 .servicesListItems {
   @apply font-medium;
+  @apply lg:text-xl lg:leading-[22px];
   @apply xl:text-2xl xl:leading-[26.4px];
 }
 
 .servicesListItems ul {
-  @apply flex flex-col;
+  @apply flex flex-col text-[#898C98];
+  @apply lg:gap-3;
   @apply xl:gap-4;
+}
+
+.servicesListItem {
+  @apply transition-colors duration-300;
 }
 
 .servicesCard {
   @apply bg-white rounded-[30px] flex flex-col justify-between relative;
-  @apply xl:min-h-80 xl:px-10 xl:py-8 xl:max-w-[520px];
+  @apply lg:min-h-80 lg:px-[40px] lg:py-8 lg:min-w-[482px];
+  @apply xl:min-h-80 xl:px-10 xl:py-8 xl:min-w-[520px];
 }
 
 .servicesCardCount {
-  @apply xl:text-[10px] xl:leading-[10px] font-normal;
+  @apply font-normal;
+  @apply lg:text-[10px] lg:leading-[10px] lg:w-14;
+  @apply xl:text-[10px] xl:leading-[10px] xl:w-[60px] flex justify-between;
 }
 
 .servicesCardCountSeparator {
+  @apply lg:mx-[10px];
   @apply xl:mx-[10px];
 }
 
 .servicesCardContent {
   @apply flex flex-col justify-between;
+  @apply lg:min-h-[96px];
   @apply xl:min-h-[96px];
 }
 
 .servicesCardDescription {
-  @apply xl:text-sm xl:leading-[14px] xl:max-w-[399px] font-normal;
+  @apply lg:text-sm lg:leading-[14px] lg:max-w-[402px] font-normal relative lg:tracking-[-0.5px];
+  @apply xl:text-sm xl:leading-[14px] xl:max-w-[399px] font-normal relative;
+}
+
+.servicesCardDescription span {
+  @apply absolute top-0 left-0 transition-opacity duration-700;
+}
+
+.servicesCardLink {
+  @apply relative;
+}
+
+.servicesCardLink span {
+  @apply absolute top-0 left-0;
 }
 
 .serviceImage {
@@ -81,20 +112,23 @@
 
 .firstServiceImageInner {
   @apply relative;
+  @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[298px] xl:h-[279.23px];
 }
 
 .secondServiceImageInner {
   @apply relative;
+  @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[294px] xl:h-[269px];
 }
 
 .thirdServiceImageInner {
   @apply relative;
+  @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[345px] xl:h-[280px];
 }
 
-.fourthServiceImageInner {
+/* .fourthServiceImageInner {
   @apply relative;
   @apply xl:w-[323px] xl:h-[283px];
-}
+} */

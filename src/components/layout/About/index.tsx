@@ -31,7 +31,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className={`${styles.clients}`}>
+      {/* <div className={`${styles.clients}`}>
         <div className={`${styles.clientsContent}`}>
           <p className={`${styles.clientsTitle}`}>Нам доверяют лучшие</p>
 
@@ -54,7 +54,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -1,38 +1,47 @@
 .howToUse {
   @apply font-tt-norms;
+  @apply lg:pt-[100px];
   @apply xl:pt-[160px];
 }
 
 .howToUseInner {
-  @apply xl:max-w-[1200px] xl:mx-auto;
+  @apply mx-auto;
+  @apply lg:max-w-[964px];
+  @apply xl:max-w-[1200px];
 }
 
 .sectionHeader {
   @apply flex;
+  @apply lg:gap-[53px];
   @apply xl:gap-[188px];
 }
 
 .howToUseTitle {
   @apply text-[#898C98] uppercase;
+  @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px];
 }
 
 .howToUseDescription {
   @apply text-[#898C98];
+  @apply lg:max-w-[480px] lg:text-base lg:leading-[17.6px] font-medium lg:tracking-[-0.2px];
   @apply xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px] font-medium xl:tracking-[-0.2px];
 }
 
 .howToUseContent {
-  @apply xl:mt-[80px] h-[4000px];
+  @apply lg:mt-[60px] lg:h-[4000px];
+  @apply xl:mt-[80px] xl:h-[4000px];
 }
 
 .banner {
   @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-contain bg-no-repeat bg-left overflow-clip mx-auto flex flex-col justify-between relative;
+  @apply lg:w-[964px] lg:h-[530px];
   @apply xl:w-[1000px] xl:h-[549px];
 }
 
 .bannerTitle {
   @apply text-white font-medium relative w-full h-fit;
+  @apply lg:pl-[48.62px] lg:pt-[57.92px] lg:text-[32px] lg:leading-[35.2px] lg:max-w-[361px];
   @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[400px] xl:tracking-[-0.5px];
 }
 
@@ -47,15 +56,19 @@
 
 .bannerStepNumber {
   @apply font-[450] text-white opacity-30 relative w-fit h-fit;
+  @apply lg:text-[270px] lg:leading-[270px] lg:-translate-x-[60px] lg:tracking-[-1px];
   @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[80px] xl:tracking-[-1px];
 }
 
 .bannerStepNumber span {
- @apply absolute top-14;
+ @apply absolute;
+ @apply lg:top-14;
+ @apply xl:top-14;
 }
 
 .bannerStepDescription {
   @apply text-[#F3F3F3] relative w-fit h-fit;
+  @apply lg:text-[13.52px] lg:leading-[13.52px] lg:max-w-[222px] lg:mr-[38px];
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
 }
 
@@ -65,7 +78,8 @@
 
 .bottomPhoneImageWrapper {
   @apply absolute top-0;
-  @apply xl:left-[50px] translate-y-[450px];
+  @apply lg:left-[40px] lg:translate-y-[450px];
+  @apply xl:left-[50px] xl:translate-y-[450px];
 }
 
 .bottomPhoneImage {

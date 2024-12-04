@@ -1,28 +1,33 @@
 .about {
+  @apply lg:pt-[140px];
   @apply xl:pt-[160px] font-tt-norms;
 }
 
 .aboutContent {
-  @apply mx-auto;
-  @apply xl:pl-[355px] xl:max-w-[1200px];
+  @apply lg:pl-[200px] lg:max-w-[964px] w-full;
+  @apply xl:max-w-[1220px] lg:pl-[335px];
 }
 
 .aboutTitle {
+  @apply lg:max-w-[483px] lg:text-[32px] lg:leading-[35.2px];
   @apply xl:max-w-[610px] xl:text-[38px] xl:leading-[41.8px] font-medium;
 }
 
 .advantages {
   @apply flex justify-between items-end;
+  @apply lg:mt-[74px];
   @apply xl:mt-[70px];
 }
 
 .advantagesText {
   @apply font-normal;
+  @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px];
   @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
 }
 
 .advantageItem {
   @apply flex items-end relative;
+  @apply lg:gap-1;
   @apply xl:gap-[15px];
 }
 
@@ -35,19 +40,24 @@
 }
 
 .advantageNumber {
+  @apply lg:text-[120px] lg:leading-[88px] lg:tracking-[-10px];
   @apply xl:text-[160px] xl:leading-[114px] xl:tracking-[-12px];
 }
 
 .advantagePlus {
+  @apply lg:text-[60px] lg:leading-[66px] lg:ml-2;
   @apply xl:text-[80px] xl:leading-[88px] xl:ml-2;
 }
 
 .advantageText {
   @apply inline-block;
+  @apply lg:mb-[10px];
   @apply xl:mb-[10px];
 }
 
-.clients {
+/* USELESS */
+
+/* .clients {
   @apply xl:pt-[160px];
 }
 
@@ -82,4 +92,4 @@
 
 .clientDescriptionHidden {
   @apply opacity-0 -translate-y-2 scale-90 origin-top;
-}
+} */

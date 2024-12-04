@@ -1,5 +1,9 @@
-import { HTMLAttributes, FC } from "react";
+'use client';
+
+import { HTMLAttributes, FC, useEffect, useRef } from "react";
 import styles from "./Offices.module.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   image: string;
@@ -8,6 +12,26 @@ interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function Offices(): JSX.Element {
+  const officesBlockRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(officesBlockRef.current, {
+      x: -300,
+      scrollTrigger: {
+        trigger: officesBlockRef.current,
+        start: "top-=600",
+        end: "bottom+=100",
+        scrub: true,
+      },
+    });
+
+    return () => {
+      gsap.killTweensOf(officesBlockRef.current);
+    };
+  }, []);
+
   return (
     <section id="offices" className={`${styles.offices}`}>
       <div className={`${styles.officesInner}`}>
@@ -29,7 +53,7 @@ export default function Offices(): JSX.Element {
 
         <div className={`${styles.officesContent}`}>
           <div className={`${styles.officesList}`}>
-            <div className={`${styles.officesListWrapper}`}>
+            <div className={`${styles.officesListWrapper}`} ref={officesBlockRef}>
               {images.map((image, index) => (
                 <OfficeCard
                   key={index}

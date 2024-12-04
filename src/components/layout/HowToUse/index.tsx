@@ -135,7 +135,7 @@ export default function HowToUse() {
       scrollTrigger: {
         trigger: startAnimRef.current,
         start: "top+=900",
-        end: "top+=1800",
+        end: "top+=1700",
         scrub: true,
       },
     });
@@ -155,7 +155,7 @@ export default function HowToUse() {
         trigger: startAnimRef.current,
         start: `top+=${900 * inx}`,
         end: `top+=${900 * (inx + 1)}`,
-        scrub: 1,
+        scrub: true,
       },
     };
   };
