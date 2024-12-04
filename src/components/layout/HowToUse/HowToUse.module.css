@@ -23,29 +23,71 @@
 }
 
 .howToUseContent {
-  @apply xl:mt-[80px];
+  @apply xl:mt-[80px] h-[4000px];
 }
 
 .banner {
-  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-contain bg-no-repeat bg-left overflow-hidden mx-auto flex flex-col justify-between;
+  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-contain bg-no-repeat bg-left overflow-clip mx-auto flex flex-col justify-between relative;
   @apply xl:w-[1000px] xl:h-[549px];
 }
 
 .bannerTitle {
-  @apply text-white font-medium;
-  @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[390px] xl:tracking-[-0.5px];
+  @apply text-white font-medium relative w-full h-fit;
+  @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[400px] xl:tracking-[-0.5px];
+}
+
+.bannerTitle span {
+  @apply absolute;
+  opacity: 0;
 }
 
 .bannerStep {
-  @apply flex justify-between items-center translate-y-[85px];
+  @apply flex justify-between items-center -translate-y-[60px];
 }
 
 .bannerStepNumber {
-  @apply font-[450] text-white opacity-30;
-  @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[60px];
+  @apply font-[450] text-white opacity-30 relative w-fit h-fit;
+  @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[80px] xl:tracking-[-1px];
+}
+
+.bannerStepNumber span {
+ @apply absolute top-14;
 }
 
 .bannerStepDescription {
-  @apply text-[#F3F3F3];
+  @apply text-[#F3F3F3] relative w-fit h-fit;
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
+}
+
+.bannerStepDescription span {
+  @apply absolute left-0 top-0 w-full opacity-0;
+}
+
+.bottomPhoneImageWrapper {
+  @apply absolute top-0;
+  @apply xl:left-[50px] translate-y-[450px];
+}
+
+.bottomPhoneImage {
+  @apply scale-[1.1];
+  @apply relative w-[900px] h-[450px];
+}
+
+.topCallImageWrapper {
+  @apply absolute top-0;
+  @apply xl:left-[285px] -translate-y-[80px];
+}
+
+.topCallImage {
+  @apply relative;
+  @apply xl:w-[458px] xl:h-[77px];
+}
+
+.bottomTransactionImageWrapper {
+  @apply absolute top-0;
+  @apply xl:left-[350px] translate-y-[550px];
+}
+
+.bottomTransactionImage {
+  @apply relative w-[303px] h-[280px];
 }

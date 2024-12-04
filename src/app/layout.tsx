@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ttNorms } from "@/utils/fonts";
 import Header from "@/components/Header";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${ttNorms.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

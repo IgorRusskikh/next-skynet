@@ -1,6 +1,5 @@
 .verification {
   @apply font-tt-norms;
-  @apply xl:pt-[160px];
 }
 
 .verificationInner {

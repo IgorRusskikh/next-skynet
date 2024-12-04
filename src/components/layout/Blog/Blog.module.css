@@ -1,0 +1,78 @@
+.blog {
+  @apply font-tt-norms;
+  @apply xl:pt-[160px];
+}
+
+.blogContainer {
+  @apply xl:max-w-[1200px] xl:mx-auto;
+}
+
+.blogTitleWrapper {
+  @apply flex justify-between;
+}
+
+.blogTitle {
+  @apply uppercase text-[#898C98];
+  @apply xl:text-[10px] xl:leading-[10px];
+}
+
+.blogText {
+  @apply flex justify-between items-end;
+  @apply xl:max-w-[915px] flex-1;
+}
+
+.blogTextTitle {
+  @apply font-medium text-[#898C98];
+  @apply xl:max-w-[578px] xl:text-[18px] xl:leading-[19.8px] xl:tracking-[-0.5px];
+}
+
+.blogContent {
+  @apply flex justify-between items-end;
+  @apply xl:mt-[80px];
+}
+
+.controls {
+  @apply flex gap-[10px];
+}
+
+.controls button {
+  @apply flex justify-center items-center bg-transparent border-[1.6px] border-[#E0E2E9] text-[#898C98] transition-colors duration-300;
+  @apply w-[40px] h-[40px] rounded-full;
+}
+
+.controls button:hover {
+  @apply bg-black text-white border-black;
+}
+
+.controlsActive {
+  @apply !bg-black !text-white !border-black;
+}
+
+.postList {
+  @apply flex xl:max-w-[915px];
+  @apply xl:gap-5;
+}
+
+.post {
+  @apply bg-white rounded-[20px] overflow-clip;
+  @apply xl:w-1/2;
+}
+
+.postImage {
+  @apply relative w-full;
+  @apply xl:h-[210px];
+}
+
+.postContent {
+  @apply flex flex-col justify-between;
+  @apply xl:py-8 px-6 xl:min-h-[234px];
+}
+
+.postContent h3 {
+  @apply font-medium;
+  @apply xl:text-2xl xl:leading-[26.4px];
+}
+
+.postLink {
+  @apply uppercase text-[#898C98] border-[#898C98];
+}

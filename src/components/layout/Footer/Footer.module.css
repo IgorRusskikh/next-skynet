@@ -1,0 +1,82 @@
+.footer {
+  @apply font-tt-norms;
+  @apply xl:pt-[160px];
+}
+
+.footerContent {
+  @apply xl:max-w-[1220px] xl:mx-auto;
+}
+
+.footerTop {
+  @apply flex;
+  @apply xl:gap-[52px];
+}
+
+.footerMascot {
+  @apply relative;
+  @apply xl:w-[269px] xl:h-[479px];
+}
+
+.footerLinks {
+  @apply flex-1 flex flex-col justify-between;
+}
+
+.goToTelegram {
+  @apply font-medium;
+  @apply xl:text-[24px] xl:leading-[26.4px] xl:max-w-[502px];
+}
+
+.goToTelegram button {
+  @apply xl:mt-8;
+}
+
+.footerLinksGrid {
+  @apply grid grid-cols-3;
+}
+
+.footerLinksGridItem {
+  @apply flex flex-col;
+  @apply xl:gap-8;
+}
+
+.footerLinksGridItem h5 {
+  @apply border-b border-[#E0E2E9];
+  @apply xl:text-xs xl:leading-3 xl:pb-2;
+}
+
+.footerLinksGridItem a {
+  @apply font-medium uppercase;
+  @apply xl:text-xs xl:leading-3;
+}
+
+.footerContactsList {
+  @apply flex flex-col;
+  @apply xl:gap-2;
+}
+
+.footerContactsList a {
+  @apply !normal-case;
+}
+
+.footerLinksGridItem button {
+  @apply w-full flex justify-center;
+}
+
+.footerBottom {
+  @apply xl:mt-[100px];
+}
+
+.footerBottomLogo {
+  @apply font-extrabold;
+  @apply xl:text-[220px] xl:leading-[126px] xl:tracking-[20px];
+}
+
+.bottomLinks {
+  @apply flex justify-between border-t border-[#E0E2E9];
+  @apply xl:mt-[26px] xl:pt-4 xl:text-xs xl:leading-3;
+}
+
+.bottomLinksItem {
+  @apply flex;
+  @apply xl:gap-[102px];
+}
