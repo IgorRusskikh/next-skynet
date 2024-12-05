@@ -12,6 +12,7 @@
 .firstScreenContentTopWrapper {
   @apply flex;
   @apply justify-between items-end;
+  @apply xl:tracking-[-0.5px];
 }
 
 .firstScreenContentTop {
@@ -29,6 +30,10 @@
   @apply font-tt-norms font-[400];
   @apply lg:max-w-[294px] lg:text-[14px] lg:leading-[14px] lg:tracking-[-0.5px] lg:mb-[6px];
   @apply xl:max-w-[298px] xl:text-sm xl:leading-[14px] xl:tracking-[-0.5px] xl:mb-[7px];
+}
+
+.bannerWrapper {
+  @apply relative;
 }
 
 .banner {
@@ -79,4 +84,16 @@
   @apply relative;
   @apply lg:w-[123px] lg:h-[88px];
   @apply xl:w-[149px] xl:h-[115px];
+}
+
+.mascotContainer {
+  @apply absolute bottom-0 right-0;
+  @apply lg:-bottom-[60px] lg:right-[271px];
+  @apply xl:-bottom-[43px] xl:right-[275px];
+}
+
+.mascot {
+  @apply relative;
+  @apply lg:w-[248px] lg:h-[551px];
+  @apply xl:w-[280px] xl:h-[622px];
 }

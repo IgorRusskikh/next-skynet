@@ -1,32 +1,41 @@
 .footer {
   @apply font-tt-norms;
+  @apply lg:pt-[140px];
   @apply xl:pt-[160px];
 }
 
 .footerContent {
-  @apply xl:max-w-[1220px] xl:mx-auto;
+  @apply mx-auto;
+  @apply lg:max-w-[964px];
+  @apply xl:max-w-[1220px];
 }
 
 .footerTop {
   @apply flex;
+  @apply lg:gap-6;
   @apply xl:gap-[52px];
 }
 
 .footerMascot {
   @apply relative;
-  @apply xl:w-[269px] xl:h-[479px];
+  @apply lg:w-[221px] lg:h-[491px];
+  @apply xl:w-[224px] xl:h-[496px];
 }
 
 .footerLinks {
-  @apply flex-1 flex flex-col justify-between;
+  @apply flex-1 flex flex-col;
+  @apply lg:pt-[41px] lg:gap-[60px];
+  @apply xl:pt-[62px] xl:justify-between;
 }
 
 .goToTelegram {
   @apply font-medium;
+  @apply lg:text-xl lg:leading-[22px] lg:max-w-[398px];
   @apply xl:text-[24px] xl:leading-[26.4px] xl:max-w-[502px];
 }
 
 .goToTelegram button {
+  @apply lg:mt-6;
   @apply xl:mt-8;
 }
 
@@ -36,21 +45,25 @@
 
 .footerLinksGridItem {
   @apply flex flex-col;
+  @apply lg:gap-[58px];
   @apply xl:gap-8;
 }
 
 .footerLinksGridItem h5 {
   @apply border-b border-[#E0E2E9];
+  @apply lg:text-xs lg:leading-3 lg:pb-2;
   @apply xl:text-xs xl:leading-3 xl:pb-2;
 }
 
 .footerLinksGridItem a {
   @apply font-medium uppercase;
+  @apply lg:text-xs lg:leading-3;
   @apply xl:text-xs xl:leading-3;
 }
 
 .footerContactsList {
   @apply flex flex-col;
+  @apply lg:gap-2;
   @apply xl:gap-2;
 }
 
@@ -63,20 +76,24 @@
 }
 
 .footerBottom {
+  @apply lg:mt-[35px];
   @apply xl:mt-[100px];
 }
 
 .footerBottomLogo {
   @apply font-extrabold;
+  @apply lg:text-[190px] lg:leading-[99.54px] lg:tracking-[10px];
   @apply xl:text-[220px] xl:leading-[126px] xl:tracking-[20px];
 }
 
 .bottomLinks {
   @apply flex justify-between border-t border-[#E0E2E9];
+  @apply lg:mt-6 lg:pt-4 lg:text-xs lg:leading-3;
   @apply xl:mt-[26px] xl:pt-4 xl:text-xs xl:leading-3;
 }
 
 .bottomLinksItem {
   @apply flex;
+  @apply lg:gap-[102px];
   @apply xl:gap-[102px];
 }

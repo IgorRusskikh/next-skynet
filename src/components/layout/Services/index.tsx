@@ -57,9 +57,9 @@ export default function Services() {
                     key={title}
                     className={`${styles.servicesListItem} ${
                       currentService === inx ? "text-black" : ""
-                    }`}
+                    } !cursor-pointer`}
                   >
-                    <button onClick={() => setCurrentService(inx)}>
+                    <button className="" onClick={() => setCurrentService(inx)}>
                       {title}
                     </button>
                   </li>

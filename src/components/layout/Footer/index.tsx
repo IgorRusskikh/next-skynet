@@ -1,13 +1,16 @@
 import Button from "@/components/ui/buttons/Button";
 import styles from "./Footer.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className={`${styles.footer}`}>
       <div className={`${styles.footerContent}`}>
         <div className={`${styles.footerTop}`}>
-          <div className={`${styles.footerMascot}`}></div>
+          <div className={`${styles.footerMascot}`}>
+            <Image src="/images/mascot.png" fill alt="mascot" />
+          </div>
 
           <div className={`${styles.footerLinks}`}>
             <div className={`${styles.goToTelegram}`}>

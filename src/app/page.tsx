@@ -15,7 +15,7 @@ export default function Home() {
       <HowToUse />
       <Verification />
       <Offices />
-      <Blog />
+      {/* <Blog /> */}
     </main>
   );
 }

@@ -21,9 +21,9 @@ export default function Offices(): JSX.Element {
       x: -300,
       scrollTrigger: {
         trigger: officesBlockRef.current,
-        start: "top-=600",
+        start: "top-=200%",
         end: "bottom+=100",
-        scrub: true,
+        scrub: 0.8,
       },
     });
 

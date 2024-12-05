@@ -26,34 +26,42 @@ export default function FirstScreen() {
           </p>
         </div>
 
-        <div className={`${styles.banner}`}>
-          <div className={`${styles.bannerContent}`}>
-            <div className={`${styles.advantages}`}>
-              {Array.from({ length: 4 }).map((_, index) => (
-                <Advantage key={index}>Обмен криптовалют</Advantage>
-              ))}
+        <div className={`${styles.bannerWrapper}`}>
+          <div className={`${styles.banner}`}>
+            <div className={`${styles.bannerContent}`}>
+              <div className={`${styles.advantages}`}>
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <Advantage key={index}>Обмен криптовалют</Advantage>
+                ))}
+              </div>
+
+              <Button theme="red">Получить консультацию</Button>
             </div>
 
-            <Button theme="red">Получить консультацию</Button>
-          </div>
+            <div className={`${styles.bigGradientGlassWrapper}`}>
+              <div className={`${styles.bigGradientGlass}`}>
+                <Image
+                  src="/images/big-gradient-glass.png"
+                  fill
+                  alt="big-gradient-glass"
+                />
+              </div>
+            </div>
 
-          <div className={`${styles.bigGradientGlassWrapper}`}>
-            <div className={`${styles.bigGradientGlass}`}>
-              <Image
-                src="/images/big-gradient-glass.png"
-                fill
-                alt="big-gradient-glass"
-              />
+            <div className={`${styles.smallGradientGlassWrapper}`}>
+              <div className={`${styles.smallGradientGlass}`}>
+                <Image
+                  src="/images/small-gradient-glass.png"
+                  fill
+                  alt="small-gradient-glass"
+                />
+              </div>
             </div>
           </div>
 
-          <div className={`${styles.smallGradientGlassWrapper}`}>
-            <div className={`${styles.smallGradientGlass}`}>
-              <Image
-                src="/images/small-gradient-glass.png"
-                fill
-                alt="small-gradient-glass"
-              />
+          <div className={`${styles.mascotContainer}`}>
+            <div className={`${styles.mascot}`}>
+              <Image src="/images/mascot.png" fill alt="mascot" />
             </div>
           </div>
         </div>

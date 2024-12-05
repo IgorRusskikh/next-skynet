@@ -1,4 +1,5 @@
 .navbar {
+  @apply lg:py-[14px];
   @apply w-full xl:py-[14px];
 }
 

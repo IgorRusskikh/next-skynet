@@ -1,5 +1,6 @@
 .button {
   @apply flex items-center rounded-[100px];
+  @apply lg:gap-1 lg:py-[14px] lg:px-6;
   @apply xl:gap-[6.67px] xl:py-[18px] xl:px-6;
 }
 
@@ -12,6 +13,7 @@
 }
 
 .button p {
-  @apply font-tt-norms uppercase;
-  @apply xl:text-[10px] xl:leading-[10px] xl:font-medium;
+  @apply font-tt-norms uppercase font-medium;
+  @apply lg:text-xs lg:leading-3;
+  @apply xl:text-[10px] xl:leading-[10px];
 }
