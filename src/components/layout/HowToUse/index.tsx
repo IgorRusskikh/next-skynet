@@ -5,6 +5,7 @@ import styles from "./HowToUse.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { BREAKPOINTS } from "@/constants";
 
 export default function HowToUse() {
   const startAnimRef = useRef<HTMLDivElement>(null);
@@ -14,6 +15,8 @@ export default function HowToUse() {
   const stepsDescriptionRefs = useRef<HTMLSpanElement[]>([]);
   const imagesRefs = useRef<HTMLDivElement[]>([]);
 
+  const mm = gsap.matchMedia();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -21,8 +24,8 @@ export default function HowToUse() {
     showTitlesAnim();
     showStepsCountAnim();
     showStepsDescriptionAnim();
-    showAndHideWelcomePhoneAnim();
-    showAndHideTopCallImageAnim()
+    showAndHidePhoneAnim();
+    showAndHideTopCallImageAnim();
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => {
@@ -67,7 +70,7 @@ export default function HowToUse() {
         scrollTrigger: {
           trigger: startAnimRef.current,
           start: `top+=${900 * inx}`,
-          end: `top+=${900 * (inx + 0.9)}`,
+          end: `top+=${900 * (inx + 1)}`,
           scrub: true,
         },
       });
@@ -82,63 +85,95 @@ export default function HowToUse() {
     });
   };
 
-  const showAndHideWelcomePhoneAnim = () => {
-    gsap.to(imagesRefs.current[0], {
-      keyframes: [
-        { y: 99, duration: 1, scale: 1 },
-        { y: 99, duration: 1 },
-        { y: 450, duration: 1 },
-      ],
-      scrollTrigger: {
-        trigger: startAnimRef.current,
-        start: "top+=50",
-        end: "top+=900",
-        scrub: true,
+  const showAndHidePhoneAnim = () => {
+    mm.add(
+      {
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+          BREAKPOINTS.laptop - 1
+        }px)`,
       },
-    });
+      (context) => {
+        const { isLaptop, isTablet } = context.conditions as any;
 
-    gsap.to(imagesRefs.current[2], {
-      keyframes: [
-        { y: 99, duration: 1, scale: 1 },
-        { y: 99, duration: 1 },
-        { y: 450, duration: 1 },
-      ],
-      scrollTrigger: {
-        trigger: startAnimRef.current,
-        start: "top+=1900",
-        end: "top+=2700",
-        scrub: true,
-      },
-    });
+        gsap.to(imagesRefs.current[0], {
+          keyframes: [
+            { y: isLaptop ? 99 : 60, duration: 1, scale: 1 },
+            { y: isLaptop ? 99 : 60, duration: 1 },
+            { y: isLaptop ? 450 : 900, duration: 1 },
+          ],
+          scrollTrigger: {
+            trigger: startAnimRef.current,
+            start: "top+=50",
+            end: "top+=900",
+            scrub: true,
+          },
+        });
 
-    gsap.to(imagesRefs.current[3], {
-      keyframes: [
-        { y: 270, duration: 1, scale: 1 },
-        { y: 270, duration: 1 },
-      ],
-      scrollTrigger: {
-        trigger: startAnimRef.current,
-        start: "top+=2800",
-        end: "top+=3500",
-        scrub: true,
-      },
-    });
+        gsap.to(imagesRefs.current[2], {
+          keyframes: [
+            { y: isLaptop ? 99 : isTablet ? 58 : 0, duration: 1, scale: 1 },
+            { y: isLaptop ? 99 : isTablet ? 58 : 0, duration: 1 },
+            { y: 450, duration: 1 },
+          ],
+          scrollTrigger: {
+            trigger: startAnimRef.current,
+            start: "top+=1900",
+            end: "top+=2700",
+            scrub: true,
+          },
+        });
+
+        gsap.to(imagesRefs.current[3], {
+          keyframes: [
+            { y: isLaptop ? 270 : isTablet ? 250 : 0, duration: 1, scale: 1 },
+            { y: isLaptop ? 270 : isTablet ? 250 : 0, duration: 1 },
+          ],
+          scrollTrigger: {
+            trigger: startAnimRef.current,
+            start: "top+=2800",
+            end: "top+=3500",
+            scrub: true,
+          },
+        });
+      }
+    );
   };
 
   const showAndHideTopCallImageAnim = () => {
-    gsap.to(imagesRefs.current[1], {
-      keyframes: [
-        { y: 230, duration: 1 },
-        { y: 230, duration: 1, opacity: 0.9 },
-        { y: -230, duration: 1, opacity: 0 },
-      ],
-      scrollTrigger: {
-        trigger: startAnimRef.current,
-        start: "top+=900",
-        end: "top+=1700",
-        scrub: true,
+    mm.add(
+      {
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+          BREAKPOINTS.laptop - 1
+        }px)`,
       },
-    });
+      (context) => {
+        const { isLaptop, isTablet } = context.conditions as any;
+
+        gsap.to(imagesRefs.current[1], {
+          keyframes: [
+            { y: isLaptop ? 230 : isTablet ? 200 : 0, duration: 1 },
+            {
+              y: isLaptop ? 230 : isTablet ? 200 : 0,
+              duration: 1,
+              opacity: 0.9,
+            },
+            { y: -230, duration: 1, opacity: 0 },
+          ],
+          scrollTrigger: {
+            trigger: startAnimRef.current,
+            start: "top+=1100",
+            end: "top+=1900",
+            scrub: true,
+          },
+        });
+      }
+    );
   };
 
   const getHideAnimOptions = (inx: number) => {
@@ -195,7 +230,7 @@ export default function HowToUse() {
           </p>
         </div>
 
-        <div ref={startAnimRef}>
+        <div ref={startAnimRef} className="h-fit overflow-clip">
           <div className={`${styles.howToUseContent}`} ref={parentRef}>
             <div className={`${styles.banner}`}>
               <div

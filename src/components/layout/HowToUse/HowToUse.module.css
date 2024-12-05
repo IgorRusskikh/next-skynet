@@ -89,17 +89,20 @@
 
 .topCallImageWrapper {
   @apply absolute top-0;
-  @apply xl:left-[285px] -translate-y-[80px];
+  @apply lg:left-[261px] lg:-translate-y-[80px];
+  @apply xl:left-[285px] xl:-translate-y-[80px];
 }
 
 .topCallImage {
   @apply relative;
+  @apply lg:w-[442px] lg:h-[74px];
   @apply xl:w-[458px] xl:h-[77px];
 }
 
 .bottomTransactionImageWrapper {
   @apply absolute top-0;
-  @apply xl:left-[350px] translate-y-[550px];
+  @apply lg:left-[337px] lg:translate-y-[550px];
+  @apply xl:left-[350px] xl:translate-y-[550px];
 }
 
 .bottomTransactionImage {
