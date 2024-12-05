@@ -1,28 +1,33 @@
 .navbar {
+  @apply md:py-[14px];
   @apply lg:py-[14px];
   @apply w-full xl:py-[14px];
 }
 
 .container {
   @apply flex items-center justify-between mx-auto;
+  @apply md:max-w-[728px];
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1220px];
 }
 
 .logo {
   @apply flex items-center;
+  @apply md:gap-[13.31px];
   @apply lg:gap-[13.31px];
   @apply xl:gap-[13.31px];
 }
 
 .dots {
   @apply flex;
+  @apply md:gap-[4.34px];
   @apply lg:gap-[5.35px];
   @apply xl:gap-[5.35px];
 }
 
 .dots div {
   @apply rounded-full bg-black;
+  @apply md:w-[8.8px] md:h-[9.32px];
   @apply lg:w-[10.85px] lg:h-[11.5px];
   @apply xl:w-[10.85px] xl:h-[11.5px];
 }
@@ -44,6 +49,7 @@
 }
 
 .telegram {
+  @apply md:w-[101px];
   @apply lg:w-[101px];
   @apply xl:w-[101px];
 }

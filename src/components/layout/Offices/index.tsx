@@ -18,7 +18,7 @@ export default function Offices(): JSX.Element {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(officesBlockRef.current, {
-      x: -300,
+      x: -200,
       scrollTrigger: {
         trigger: officesBlockRef.current,
         start: "top-=200%",

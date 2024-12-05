@@ -35,10 +35,23 @@ export default function Services() {
   return (
     <section id="services" className={`${styles.services}`}>
       <div className={`${styles.servicesContainer}`}>
-        <h2 className={`${styles.servicesTitle}`}>Услуги</h2>
+        <div className={`${styles.servicesTitleWrapper}`}>
+          <h2 className={`${styles.servicesTitle}`}>Услуги</h2>
+
+          <div className={`${styles.servicesContentText} lg:hidden`}>
+            <h3 className={`${styles.servicesContentTitle}`}>
+              Обменивайте криптовалюту, оплачивайте счета и получайте наличные
+              по всему миру с помощью Skynet
+            </h3>
+            <p className={`${styles.servicesContentDescription}`}>
+              Мы создаем удобные маршруты для перевода крупных сумм, обмена
+              криптовалюты на наличные и расчетов с зарубежными поставщиками
+            </p>
+          </div>
+        </div>
 
         <div className={`${styles.servicesContent}`}>
-          <div className={`${styles.servicesContentText}`}>
+          <div className={`${styles.servicesContentText} hidden lg:block`}>
             <h3 className={`${styles.servicesContentTitle}`}>
               Обменивайте криптовалюту, оплачивайте счета и получайте наличные
               по всему миру с помощью Skynet
@@ -50,107 +63,210 @@ export default function Services() {
           </div>
 
           <div className={`${styles.servicesList}`}>
-            <div className={`${styles.servicesListItems}`}>
-              <ul>
+            {/* FOR SCREEN >= 1024PX */}
+            <>
+              <div className={`${styles.servicesListItems} !hidden lg:!block`}>
+                <ul>
+                  {services.map(({ title }, inx) => (
+                    <li
+                      key={title}
+                      className={`${styles.servicesListItem} ${
+                        currentService === inx
+                          ? "text-black"
+                          : ""
+                      } !cursor-pointer`}
+                    >
+                      <button
+                        className=""
+                        onClick={() => setCurrentService(inx)}
+                      >
+                        {title}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={`${styles.servicesCard} !hidden lg:!flex`}>
+                <div className={`${styles.servicesCardCount}`}>
+                  <span className="w-[20px]">{`0${currentService + 1}`} </span>
+                  <span className={`${styles.servicesCardCountSeparator}`}>
+                    -
+                  </span>{" "}
+                  {`0${services.length}`}
+                </div>
+
+                <div className={`${styles.servicesCardContent}`}>
+                  <p className={`${styles.servicesCardDescription}`}>
+                    {services.map(({ description }, inx) => (
+                      <span
+                        key={inx}
+                        className={`${
+                          currentService === inx
+                            ? "opacity-100 visible"
+                            : "opacity-0 invisible"
+                        }`}
+                      >
+                        {description}
+                      </span>
+                    ))}
+                  </p>
+
+                  <p className={`${styles.servicesCardLink}`}>
+                    {services.map(({ link }, inx) => (
+                      <CustomLink
+                        key={inx}
+                        href=""
+                        className={`${
+                          currentService === inx
+                            ? "opacity-100 visible"
+                            : "opacity-0 invisible"
+                        }`}
+                      >
+                        <span className={``}>{link}</span>
+                      </CustomLink>
+                    ))}
+                  </p>
+                </div>
+              </div>
+            </>
+
+            {/* FOR SCREEN < 1024PX */}
+            <div className={`${styles.servicesCard} lg:!hidden`}>
+              <div className={`${styles.servicesCardHeader}`}>
                 {services.map(({ title }, inx) => (
-                  <li
-                    key={title}
-                    className={`${styles.servicesListItem} ${
-                      currentService === inx ? "text-black" : ""
-                    } !cursor-pointer`}
+                  <button
+                    key={inx}
+                    onClick={() => setCurrentService(inx)}
+                    className={`${styles.servicesCardHeaderButton}`}
                   >
-                    <button className="" onClick={() => setCurrentService(inx)}>
-                      {title}
-                    </button>
-                  </li>
+                    {title}
+                  </button>
                 ))}
-              </ul>
+              </div>
+
+              <div className={`${styles.servicesCardDescriptionContainer}`}>
+                <p className={`${styles.servicesCardCount}`}>
+                  01
+                  <span className={`${styles.servicesCardCountSeparator}`}>
+                    -
+                  </span>
+                  {`0${services.length}`}
+                </p>
+
+                <div className={`${styles.serviceDescription}`}>
+                  <p className={`${styles.servicesCardDescription}`}>
+                    {services.map(({ description }, inx) => (
+                      <span
+                        key={inx}
+                        className={`${
+                          currentService === inx
+                            ? "opacity-100 visible"
+                            : "opacity-0 invisible"
+                        }`}
+                      >
+                        {description}
+                      </span>
+                    ))}
+                  </p>
+
+                  <p className={`${styles.servicesCardLink}`}>
+                    {services.map(({ link }, inx) => (
+                      <CustomLink
+                        key={inx}
+                        href=""
+                        className={`${
+                          currentService === inx
+                            ? "opacity-100 visible"
+                            : "opacity-0 invisible"
+                        }`}
+                      >
+                        <span className={``}>{link}</span>
+                      </CustomLink>
+                    ))}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className={`${styles.servicesCard}`}>
-              <div className={`${styles.servicesCardCount}`}>
-                <span className="w-[20px]">{`0${currentService + 1}`} </span>
-                <span className={`${styles.servicesCardCountSeparator}`}>
-                  -
-                </span>{" "}
-                {`0${services.length}`}
+            <div
+              className={`${styles.serviceImage} ${
+                currentService === 0
+                  ? styles.serviceImageVisible
+                  : styles.serviceImageHidden
+              }`}
+            >
+              <div className={`${styles.firstServiceImageInner}`}>
+                <Image
+                  src={"/images/first-service-image.png"}
+                  fill
+                  alt=""
+                  className="hidden lg:block"
+                />
+                <Image
+                  src={"/images/first-service-image-md.png"}
+                  fill
+                  alt=""
+                  className="block lg:hidden"
+                />
               </div>
+            </div>
 
-              <div className={`${styles.servicesCardContent}`}>
-                <p className={`${styles.servicesCardDescription}`}>
-                  {services.map(({ description }, inx) => (
-                    <span
-                      key={inx}
-                      className={`${
-                        currentService === inx ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      {description}
-                    </span>
-                  ))}
-                </p>
-
-                <p className={`${styles.servicesCardLink}`}>
-                  {services.map(({ link }, inx) => (
-                    <CustomLink
-                      key={inx}
-                      href=""
-                      className={`${
-                        currentService === inx ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <span className={``}>{link}</span>
-                    </CustomLink>
-                  ))}
-                </p>
+            <div
+              className={`${styles.serviceImage} ${
+                currentService === 1
+                  ? styles.serviceImageVisible
+                  : styles.serviceImageHidden
+              }`}
+            >
+              <div className={`${styles.secondServiceImageInner}`}>
+                <Image
+                  src={"/images/second-service-image.png"}
+                  fill
+                  alt=""
+                  className="hidden lg:block"
+                />
+                <Image
+                  src={"/images/second-service-image-md.png"}
+                  fill
+                  alt=""
+                  className="block lg:hidden"
+                />
               </div>
+            </div>
 
-              <div
-                className={`${styles.serviceImage} ${
-                  currentService === 0
-                    ? styles.serviceImageVisible
-                    : styles.serviceImageHidden
-                }`}
-              >
-                <div className={`${styles.firstServiceImageInner}`}>
-                  <Image src={"/images/first-service-image.png"} fill alt="" />
-                </div>
+            <div
+              className={`${styles.serviceImage} ${
+                currentService === 2
+                  ? styles.serviceImageVisible
+                  : styles.serviceImageHidden
+              }`}
+            >
+              <div className={`${styles.thirdServiceImageInner}`}>
+                <Image
+                  src={"/images/third-service-image.png"}
+                  fill
+                  alt=""
+                  className="hidden lg:block"
+                />
+                <Image
+                  src={"/images/third-service-image-md.png"}
+                  fill
+                  alt=""
+                  className="block lg:hidden"
+                />
               </div>
+            </div>
 
-              <div
-                className={`${styles.serviceImage} ${
-                  currentService === 1
-                    ? styles.serviceImageVisible
-                    : styles.serviceImageHidden
-                }`}
-              >
-                <div className={`${styles.secondServiceImageInner}`}>
-                  <Image src={"/images/second-service-image.png"} fill alt="" />
-                </div>
-              </div>
-
-              <div
-                className={`${styles.serviceImage} ${
-                  currentService === 2
-                    ? styles.serviceImageVisible
-                    : styles.serviceImageHidden
-                }`}
-              >
-                <div className={`${styles.thirdServiceImageInner}`}>
-                  <Image src={"/images/third-service-image.png"} fill alt="" />
-                </div>
-              </div>
-
-              <div
-                className={`${styles.serviceImage} ${
-                  currentService === 3
-                    ? styles.serviceImageVisible
-                    : styles.serviceImageHidden
-                }`}
-              >
-                <div className={`${styles.fourthServiceImageInner}`}>
-                  <Image src={"/images/fourth-service-image.png"} fill alt="" />
-                </div>
+            <div
+              className={`${styles.serviceImage} ${
+                currentService === 3
+                  ? styles.serviceImageVisible
+                  : styles.serviceImageHidden
+              }`}
+            >
+              <div className={`${styles.fourthServiceImageInner}`}>
+                <Image src={"/images/fourth-service-image.png"} fill alt="" />
               </div>
             </div>
           </div>

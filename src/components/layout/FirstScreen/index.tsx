@@ -20,10 +20,19 @@ export default function FirstScreen() {
             <p>Переводы и обмен. по всему миру.</p>
           </div>
 
-          <p className={`${styles.firstScreenContentBottom}`}>
-            Обмениваем криптовалюту<br></br> и проводим крупные международные
-            платежи для бизнеса и физических лиц
-          </p>
+          <div>
+            <p className={`${styles.firstScreenContentBottom}`}>
+              Обмениваем криптовалюту<br></br> и проводим крупные международные
+              платежи для бизнеса и физических лиц
+            </p>
+
+            <Button
+              theme="red"
+              className={`${styles.firstScreenContentBottomButton}`}
+            >
+              Получить консультацию
+            </Button>
+          </div>
         </div>
 
         <div className={`${styles.bannerWrapper}`}>

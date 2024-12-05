@@ -1,46 +1,54 @@
 .howToUse {
   @apply font-tt-norms;
+  @apply md:mt-[120px];
   @apply lg:pt-[100px];
   @apply xl:pt-[160px];
 }
 
 .howToUseInner {
   @apply mx-auto;
+  @apply md:max-w-[728px];
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1200px];
 }
 
 .sectionHeader {
-  @apply flex;
-  @apply lg:gap-[53px];
+  @apply flex flex-col;
+  @apply md:max-w-[578px] ml-auto;
+  @apply lg:gap-[53px] lg:flex-row lg:max-w-none;
   @apply xl:gap-[188px];
 }
 
 .howToUseTitle {
   @apply text-[#898C98] uppercase;
+  @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px];
 }
 
 .howToUseDescription {
   @apply text-[#898C98];
+  @apply md:max-w-[454px] md:text-base md:leading-[17.6px] md:tracking-[-0.5px] md:mt-4;
   @apply lg:max-w-[480px] lg:text-base lg:leading-[17.6px] font-medium lg:tracking-[-0.2px];
   @apply xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px] font-medium xl:tracking-[-0.2px];
 }
 
 .howToUseContent {
+  @apply md:mt-[60px] md:h-[3000px];
   @apply lg:mt-[60px] lg:h-[4000px];
   @apply xl:mt-[80px] xl:h-[4000px];
 }
 
 .banner {
-  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-contain bg-no-repeat bg-left overflow-clip mx-auto flex flex-col justify-between relative;
-  @apply lg:w-[964px] lg:h-[530px];
+  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-left overflow-clip mx-auto flex flex-col justify-between relative bg-cover;
+  @apply md:w-full md:h-[592px];
+  @apply lg:w-[964px] lg:h-[530px] lg:bg-contain;
   @apply xl:w-[1000px] xl:h-[549px];
 }
 
 .bannerTitle {
   @apply text-white font-medium relative w-full h-fit;
+  @apply md:pl-8 md:pt-[40px] md:text-[26px] md:leading-[28.6px] md:max-w-[373px];
   @apply lg:pl-[48.62px] lg:pt-[57.92px] lg:text-[32px] lg:leading-[35.2px] lg:max-w-[361px];
   @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[400px] xl:tracking-[-0.5px];
 }
@@ -56,18 +64,21 @@
 
 .bannerStepNumber {
   @apply font-[450] text-white opacity-30 relative w-fit h-fit;
+  @apply md:text-[203px] md:leading-[203px] md:-translate-x-[60px];
   @apply lg:text-[270px] lg:leading-[270px] lg:-translate-x-[60px] lg:tracking-[-1px];
   @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[80px] xl:tracking-[-1px];
 }
 
 .bannerStepNumber span {
- @apply absolute;
- @apply lg:top-14;
- @apply xl:top-14;
+  @apply absolute;
+  @apply md:top-16;
+  @apply lg:top-14;
+  @apply xl:top-14;
 }
 
 .bannerStepDescription {
   @apply text-[#F3F3F3] relative w-fit h-fit;
+  @apply md:text-xs md:leading-3 md:max-w-[215px] md:mr-4;
   @apply lg:text-[13.52px] lg:leading-[13.52px] lg:max-w-[222px] lg:mr-[38px];
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
 }
@@ -78,13 +89,15 @@
 
 .bottomPhoneImageWrapper {
   @apply absolute top-0;
+  @apply md:left-[15px] md:translate-y-[550px];
   @apply lg:left-[40px] lg:translate-y-[450px];
   @apply xl:left-[50px] xl:translate-y-[450px];
 }
 
 .bottomPhoneImage {
   @apply scale-[1.1];
-  @apply relative w-[900px] h-[450px];
+  @apply md:w-[700px] md:h-[480px];
+  @apply relative lg:w-[900px] lg:h-[450px];
 }
 
 .topCallImageWrapper {
@@ -101,10 +114,13 @@
 
 .bottomTransactionImageWrapper {
   @apply absolute top-0;
+  @apply md:left-[256px] md:translate-y-[600px];
   @apply lg:left-[337px] lg:translate-y-[550px];
   @apply xl:left-[350px] xl:translate-y-[550px];
 }
 
 .bottomTransactionImage {
-  @apply relative w-[303px] h-[280px];
+  @apply relative;
+  @apply md:w-[218px] md:h-[294px];
+  @apply lg:w-[303px] lg:h-[280px];
 }

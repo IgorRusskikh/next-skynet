@@ -301,6 +301,13 @@ export default function HowToUse() {
                     src={"/images/how-to-use/phone.png"}
                     fill
                     alt="phone"
+                    className="hidden lg:block"
+                  />
+                  <Image
+                    src={"/images/how-to-use/phone-md.png"}
+                    fill
+                    alt="phone"
+                    className="block lg:hidden"
                   />
                 </div>
               </div>
@@ -316,6 +323,13 @@ export default function HowToUse() {
                     src={"/images/how-to-use/phone-success.png"}
                     fill
                     alt="phone"
+                    className="hidden lg:block"
+                  />
+                  <Image
+                    src={"/images/how-to-use/phone-success-md.png"}
+                    fill
+                    alt="phone"
+                    className="block lg:hidden"
                   />
                 </div>
               </div>
@@ -331,6 +345,13 @@ export default function HowToUse() {
                     src={"/images/how-to-use/transaction-success.png"}
                     fill
                     alt="transaction"
+                    className="hidden lg:block"
+                  />
+                  <Image
+                    src={"/images/how-to-use/transaction-success-md.png"}
+                    fill
+                    alt="transaction"
+                    className="block lg:hidden"
                   />
                 </div>
               </div>

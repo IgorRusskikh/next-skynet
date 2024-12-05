@@ -1,32 +1,38 @@
 .about {
+  @apply md:pt-[160px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px] font-tt-norms;
 }
 
 .aboutContent {
+  @apply md:pl-[150px] md:max-w-[728px];
   @apply lg:pl-[200px] lg:max-w-[964px] w-full;
   @apply xl:max-w-[1220px] lg:pl-[335px];
 }
 
 .aboutTitle {
+  @apply md:max-w-[422px] md:text-[26px] md:leading-[28.6px];
   @apply lg:max-w-[483px] lg:text-[32px] lg:leading-[35.2px];
   @apply xl:max-w-[610px] xl:text-[38px] xl:leading-[41.8px] font-medium;
 }
 
 .advantages {
-  @apply flex justify-between items-end;
-  @apply lg:mt-[74px];
+  @apply flex justify-between;
+  @apply md:mt-[66px] md:flex-col-reverse;
+  @apply lg:mt-[74px] lg:flex-row lg:items-end;
   @apply xl:mt-[70px];
 }
 
 .advantagesText {
   @apply font-normal;
-  @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px];
+  @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px];
+  @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px] lg:mt-0;
   @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
 }
 
 .advantageItem {
   @apply flex items-end relative;
+  @apply md:gap-[127px];
   @apply lg:gap-1;
   @apply xl:gap-[15px];
 }
@@ -40,17 +46,20 @@
 }
 
 .advantageNumber {
+  @apply md:text-[120px] md:leading-[88px] md:tracking-[-10px];
   @apply lg:text-[120px] lg:leading-[88px] lg:tracking-[-10px];
   @apply xl:text-[160px] xl:leading-[114px] xl:tracking-[-12px];
 }
 
 .advantagePlus {
+  @apply md:text-[50px] md:leading-[55px] md:ml-2;
   @apply lg:text-[60px] lg:leading-[66px] lg:ml-2;
   @apply xl:text-[80px] xl:leading-[88px] xl:ml-2;
 }
 
 .advantageText {
   @apply inline-block;
+  @apply md:mb-[10px];
   @apply lg:mb-[10px];
   @apply xl:mb-[10px];
 }

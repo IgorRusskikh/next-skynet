@@ -1,17 +1,25 @@
 .services {
   @apply font-tt-norms;
+  @apply md:pt-[120px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px];
 }
 
 .servicesContainer {
-  @apply mx-auto flex justify-between;
-  @apply lg:max-w-[964px];
+  @apply mx-auto flex flex-col justify-between;
+  @apply md:max-w-[728px];
+  @apply lg:max-w-[964px] lg:flex-row;
   @apply xl:max-w-[1200px];
+}
+
+.servicesTitleWrapper {
+  @apply flex justify-between w-full;
+  @apply lg:w-fit;
 }
 
 .servicesTitle {
   @apply text-[#898C98] uppercase font-[450];
+  @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px] xl:font-normal;
 }
@@ -23,21 +31,26 @@
 
 .servicesContentText {
   @apply font-medium;
+  @apply md:max-w-[600px];
+  @apply lg:max-w-none;
 }
 
 .servicesContentText h3 {
+  @apply md:text-[26px] md:leading-[28.6px];
   @apply lg:text-[32px] lg:leading-[35.2px];
   @apply xl:text-[38px] xl:leading-[41.8px];
 }
 
 .servicesContentText p {
   @apply text-[#898C98];
+  @apply md:mt-6 md:text-base md:leading-[17.6px] md:max-w-[444px] md:tracking-[-0.3px];
   @apply lg:mt-6 lg:text-base lg:leading-[17.6px] lg:max-w-[443px] lg:tracking-[-0.3px];
   @apply xl:mt-8 xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:tracking-[-0.3px];
 }
 
 .servicesList {
-  @apply flex justify-between items-center;
+  @apply flex justify-between items-center relative;
+  @apply md:mt-[60px];
   @apply lg:mt-[60px] lg:gap-[86px];
   @apply xl:mt-[80px] xl:gap-[90px];
 }
@@ -60,12 +73,14 @@
 
 .servicesCard {
   @apply bg-white rounded-[30px] flex flex-col justify-between relative;
-  @apply lg:min-h-80 lg:px-[40px] lg:py-8 lg:min-w-[482px];
+  @apply md:min-h-[369px] md:px-6 md:py-8 md:w-full;
+  @apply lg:min-h-80 lg:px-[40px] lg:py-8 lg:min-w-[482px] lg:w-auto;
   @apply xl:min-h-80 xl:px-10 xl:py-8 xl:min-w-[520px];
 }
 
 .servicesCardCount {
   @apply font-normal;
+  @apply md:text-[10px] md:leading-[10px] md:w-14;
   @apply lg:text-[10px] lg:leading-[10px] lg:w-14;
   @apply xl:text-[10px] xl:leading-[10px] xl:w-[60px] flex justify-between;
 }
@@ -82,24 +97,27 @@
 }
 
 .servicesCardDescription {
+  @apply md:text-xs md:leading-3 md:tracking-[0];
   @apply lg:text-sm lg:leading-[14px] lg:max-w-[402px] font-normal relative lg:tracking-[-0.5px];
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[399px] font-normal relative;
 }
 
 .servicesCardDescription span {
-  @apply absolute top-0 left-0 transition-opacity duration-700;
+  @apply absolute top-0 left-0 transition-all duration-700;
 }
 
 .servicesCardLink {
   @apply relative;
 }
 
-.servicesCardLink span {
-  @apply absolute top-0 left-0;
+.servicesCardLink a {
+  @apply absolute top-0 left-0 transition-all duration-700;
 }
 
 .serviceImage {
-  @apply absolute right-0 top-0 transition-all duration-700 origin-top-right;
+  @apply absolute right-0 transition-all duration-700 origin-bottom-right;
+  @apply md:bottom-0;
+  @apply lg:top-0 lg:bottom-auto lg:origin-top-right;
 }
 
 .serviceImageHidden {
@@ -112,18 +130,21 @@
 
 .firstServiceImageInner {
   @apply relative;
+  @apply md:w-[283px] md:h-[283px];
   @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[298px] xl:h-[279.23px];
 }
 
 .secondServiceImageInner {
   @apply relative;
+  @apply md:w-[346px] md:h-[321px];
   @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[294px] xl:h-[269px];
 }
 
 .thirdServiceImageInner {
   @apply relative;
+  @apply md:w-[332px] md:h-[338px];
   @apply lg:w-[232.64px] lg:h-[217.37px];
   @apply xl:w-[345px] xl:h-[280px];
 }
@@ -132,3 +153,25 @@
   @apply relative;
   @apply xl:w-[323px] xl:h-[283px];
 } */
+
+/* CARD FOR SCREEN < 1024PX */
+
+.servicesCardHeader {
+  @apply flex justify-between items-center border-b border-[#E0E2E9];
+  @apply md:pb-3;
+}
+
+.servicesCardHeader button {
+  @apply md:text-[#898C98] font-medium active:text-black transition-colors duration-300;
+  @apply md:text-sm md:leading-[15.4px];
+}
+
+.servicesCardDescriptionContainer {
+  @apply flex flex-col justify-between;
+  @apply md:mt-6 md:min-h-[254px] md:max-w-[297px];
+}
+
+.serviceDescription {
+  @apply flex flex-col justify-between;
+  @apply md:min-h-[104px];
+}
