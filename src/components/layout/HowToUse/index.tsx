@@ -35,16 +35,28 @@ export default function HowToUse() {
   }, []);
 
   const pinBannerAnim = () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: parentRef.current,
-        start: "top-=125",
-        end: "bottom bottom",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+        isVertical: `(min-width: ${BREAKPOINTS.verticalTablet})`,
       },
-    });
+      (context) => {
+        const { isMobile, isVertical } = context.conditions as any;
+        
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: parentRef.current,
+            start: `top-=${isMobile ? "1%" : 125}`,
+            end: "bottom bottom",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+          },
+        });
+      }
+    );
   };
 
   const showTitlesAnim = () => {
@@ -164,11 +176,27 @@ export default function HowToUse() {
               scale: 1,
             },
             {
-              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 60 : isMobile ? "45vw" : 80,
+              y: isDesktop
+                ? "-2vw"
+                : isLaptop
+                ? 99
+                : isTablet
+                ? 60
+                : isMobile
+                ? "45vw"
+                : 80,
               duration: 1,
             },
             {
-              y: isDesktop ? "30vw" : isLaptop ? 450 : isTablet ? 900 : isMobile ? "160vw" : 600,
+              y: isDesktop
+                ? "30vw"
+                : isLaptop
+                ? 450
+                : isTablet
+                ? 900
+                : isMobile
+                ? "160vw"
+                : 600,
               duration: 1,
             },
           ],
@@ -183,16 +211,40 @@ export default function HowToUse() {
         gsap.to(imagesRefs.current[2], {
           keyframes: [
             {
-              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 58 : isMobile ? "45vw" : 100,
+              y: isDesktop
+                ? "-2vw"
+                : isLaptop
+                ? 99
+                : isTablet
+                ? 58
+                : isMobile
+                ? "45vw"
+                : 100,
               duration: 1,
               scale: 1,
             },
             {
-              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 58 : isMobile ? "45vw" : 100,
+              y: isDesktop
+                ? "-2vw"
+                : isLaptop
+                ? 99
+                : isTablet
+                ? 58
+                : isMobile
+                ? "45vw"
+                : 100,
               duration: 1,
             },
             {
-              y: isDesktop ? "30vw" : isLaptop ? 450 : isTablet ? 450 : isMobile ? "160vw" : 600,
+              y: isDesktop
+                ? "30vw"
+                : isLaptop
+                ? 450
+                : isTablet
+                ? 450
+                : isMobile
+                ? "160vw"
+                : 600,
               duration: 1,
             },
           ],
@@ -207,12 +259,28 @@ export default function HowToUse() {
         gsap.to(imagesRefs.current[3], {
           keyframes: [
             {
-              y: isDesktop ? "15vw" : isLaptop ? 270 : isTablet ? 250 : isMobile ? "63vw" : 170,
+              y: isDesktop
+                ? "15vw"
+                : isLaptop
+                ? 270
+                : isTablet
+                ? 250
+                : isMobile
+                ? "63vw"
+                : 170,
               duration: 1,
               scale: 1,
             },
             {
-              y: isDesktop ? "15vw" : isLaptop ? 270 : isTablet ? 250 : isMobile ? "63vw" : 170,
+              y: isDesktop
+                ? "15vw"
+                : isLaptop
+                ? 270
+                : isTablet
+                ? 250
+                : isMobile
+                ? "63vw"
+                : 170,
               duration: 1,
             },
           ],
@@ -249,11 +317,27 @@ export default function HowToUse() {
         gsap.to(imagesRefs.current[1], {
           keyframes: [
             {
-              y: isDesktop ? "17vw" : isLaptop ? 230 : isTablet ? 200 : isMobile ? "80vw" : 280,
+              y: isDesktop
+                ? "17vw"
+                : isLaptop
+                ? 230
+                : isTablet
+                ? 200
+                : isMobile
+                ? "80vw"
+                : 280,
               duration: 1,
             },
             {
-              y: isDesktop ? "17vw" : isLaptop ? 230 : isTablet ? 200 : isMobile ? "80vw" : 280,
+              y: isDesktop
+                ? "17vw"
+                : isLaptop
+                ? 230
+                : isTablet
+                ? 200
+                : isMobile
+                ? "80vw"
+                : 280,
               duration: 1,
               opacity: 0.9,
             },
