@@ -1,73 +1,103 @@
 .offices {
+  @apply pt-[22.22vw];
+  @apply md:pt-[120px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px] font-tt-norms;
+  @apply 3xl:pt-[10.42vw];
 }
 
 .officesTitleWrapper {
-  @apply flex justify-between w-full mx-auto;
+  @apply flex flex-col justify-between w-full mx-auto max-w-[91.67vw];
+  @apply md:max-w-[728px] md:flex-row;
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1200px];
+  @apply 3xl:max-w-[84.38vw];
 }
 
 .officesTitle {
-  @apply uppercase text-[#898C98];
+  @apply uppercase text-[#898C98] text-[2.78vw] leading-[2.78vw];
+  @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px];
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }
 
 .officesText {
+  @apply max-w-[91.67vw] mt-[6.67vw];
+  @apply md:max-w-[618px] md:mt-0;
   @apply lg:max-w-[642px] flex-1;
   @apply xl:max-w-[915px] flex-1;
+  @apply 3xl:max-w-[63.1vw] flex-1;
 }
 
 .officesTextTitle {
-  @apply font-medium;
+  @apply font-medium max-w-[91.67vw] text-[5.56vw] leading-[6.11vw];
+  @apply md:max-w-[499px] md:text-[26px] md:leading-[28.6px];
   @apply lg:max-w-[642px] lg:text-[32px] lg:leading-[35.2px];
   @apply xl:max-w-[758px] xl:text-[38px] xl:leading-[41.8px];
+  @apply 3xl:max-w-[45.1vw] 3xl:text-[2.4vw] 3xl:leading-[2.64vw];
 }
 
 .officesTextDescription {
-  @apply text-[#898C98];
+  @apply text-[#898C98] mt-[4.44vw] max-w-[91.67vw] text-[3.89vw] leading-[4.28vw];
+  @apply md:mt-6 md:max-w-[471px] md:text-base md:leading-[17.6px];
   @apply lg:mt-6 lg:max-w-[471px] lg:text-base lg:leading-[17.6px];
   @apply xl:mt-8 xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px];
+  @apply 3xl:mt-[1.67vw] 3xl:max-w-[27.34vw] 3xl:text-[0.94vw] 3xl:leading-[1.03vw];
 }
 
 .officesContent {
+  @apply pt-[13.33vw];
+  @apply md:pt-[60px];
   @apply lg:pt-[80px];
   @apply xl:pt-[80px];
+  @apply 3xl:pt-[5.21vw];
 }
 
 .officesList {
-  @apply relative overflow-clip;
+  @apply relative overflow-clip min-h-[55.56vw];
+  @apply md:min-h-[36.458vw];
   @apply lg:min-h-[31.25vw];
-  @apply xl:min-h-[31.719vw]
+  @apply xl:min-h-[31.719vw];
+  @apply 3xl:min-h-[26.04vw];
 }
 
 .officesListWrapper {
-  @apply absolute inset-0 w-fit;
+  @apply absolute inset-0 w-fit gap-[2.22vw];
+  @apply md:gap-[10px];
   @apply lg:gap-[10px];
-  @apply flex gap-[10px];
+  @apply flex xl:gap-[10px];
+  @apply 3xl:gap-[1.25vw];
 }
 
 .officesListItem {
-  @apply rounded-[20px] bg-no-repeat xl:bg-contain flex flex-col justify-between w-full h-full text-white;
+  @apply rounded-[20px] bg-no-repeat bg-contain flex flex-col justify-between w-full h-full text-white px-[2.78vw] py-[2.78vw];
+  @apply md:px-[10px] md:pt-[10px] md:pb-6 md:size-[36.458vw] size-[55.56vw];
   @apply lg:px-[10px] lg:pt-[10px] lg:pb-6 lg:size-[31.25vw];
   @apply xl:px-[10px] xl:pt-[10px] xl:pb-6 xl:size-[31.719vw];
+  @apply 3xl:px-[1.04vw] 3xl:pt-[1.04vw] 3xl:pb-[20px] 3xl:size-[26.04vw];
 }
 
 .location {
-  @apply flex items-center bg-[#2B2B2B99] backdrop-opacity-70 backdrop-blur-[20px] w-fit rounded-[100px] uppercase;
+  @apply flex items-center bg-[#2B2B2B99] backdrop-opacity-70 backdrop-blur-[20px] w-fit rounded-[100px] uppercase gap-[1.67vw] px-[5vw] py-[2.5vw] text-[2.78vw] leading-[2.78vw];
+  @apply md:gap-[6px] md:px-[18px] md:py-[11px] md:text-[10px] md:leading-[10px];
   @apply lg:gap-[6px] lg:px-[22px] lg:py-3 lg:text-[10px] lg:leading-[10px];
   @apply xl:gap-2 xl:px-6 xl:py-[14px] xl:text-xs xl:leading-3;
+  @apply 3xl:gap-[0.42vw] 3xl:px-[1.04vw] 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }
 
-.dot {
-  @apply rounded-full bg-white;
-  @apply lg:size-1;
-  @apply xl:size-[6px];
+.locationFlag {
+  @apply text-[5vw];
+  @apply md:text-[14px];
+  @apply lg:text-[16px];
+  @apply xl:text-[22px];
+  @apply 3xl:text-[1.04vw];
 }
 
 .address {
+  @apply text-[2.78vw] leading-[2.78vw] hidden;
+  @apply md:text-[10px] md:leading-[10px] md:ml-[22px] md:block;
   @apply lg:text-xs lg:leading-3 lg:ml-[22px];
   @apply xl:text-xs xl:leading-3 xl:ml-6;
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:ml-[1.46vw];
 }

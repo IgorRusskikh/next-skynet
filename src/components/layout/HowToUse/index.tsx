@@ -57,23 +57,67 @@ export default function HowToUse() {
     const tl = gsap.timeline();
 
     stepsCountRefs.current.forEach((step, inx) => {
-      tl.to(stepsCountRefs.current[inx], {
-        keyframes: [
-          { y: 0, duration: 1 },
-          { y: -168, duration: 1 },
-          { y: -168, duration: 1 },
-          {
-            y: inx === stepsCountRefs.current.length - 1 ? -168 : 0,
-            duration: 1,
-          },
-        ],
-        scrollTrigger: {
-          trigger: startAnimRef.current,
-          start: `top+=${900 * inx}`,
-          end: `top+=${900 * (inx + 1)}`,
-          scrub: true,
+      mm.add(
+        {
+          isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+          isVerticalTablet: `(min-width: ${
+            BREAKPOINTS.verticalTablet
+          }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+          isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+            BREAKPOINTS.desktop - 1
+          }px)`,
+          isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
         },
-      });
+        (context) => {
+          const { isMobile, isVerticalTablet, isLaptop, isDesktop } =
+            context.conditions as any;
+
+          tl.to(stepsCountRefs.current[inx], {
+            keyframes: [
+              { y: 0, duration: 1 },
+              {
+                y: isMobile
+                  ? "-20.67vw"
+                  : isVerticalTablet
+                  ? -120
+                  : isDesktop
+                  ? "-11vw"
+                  : -168,
+                duration: 1,
+              },
+              {
+                y: isMobile
+                  ? "-20.67vw"
+                  : isVerticalTablet
+                  ? -120
+                  : isDesktop
+                  ? "-11vw"
+                  : -168,
+                duration: 1,
+              },
+              {
+                y:
+                  inx === stepsCountRefs.current.length - 1
+                    ? isMobile
+                      ? "-20.67vw"
+                      : isVerticalTablet
+                      ? -120
+                      : isDesktop
+                      ? "-11vw"
+                      : -168
+                    : 0,
+                duration: 1,
+              },
+            ],
+            scrollTrigger: {
+              trigger: startAnimRef.current,
+              start: `top+=${(95 / 4.5) * inx}%`,
+              end: `top+=${(95 / 4.5) * (inx + 1) - 2}%`,
+              scrub: true,
+            },
+          });
+        }
+      );
     });
   };
 
@@ -88,53 +132,94 @@ export default function HowToUse() {
   const showAndHidePhoneAnim = () => {
     mm.add(
       {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
         isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
           BREAKPOINTS.desktop - 1
         }px)`,
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
           BREAKPOINTS.laptop - 1
         }px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
       },
       (context) => {
-        const { isLaptop, isTablet } = context.conditions as any;
+        const { isDesktop, isLaptop, isTablet, isVerticalTablet, isMobile } =
+          context.conditions as any;
 
         gsap.to(imagesRefs.current[0], {
           keyframes: [
-            { y: isLaptop ? 99 : 60, duration: 1, scale: 1 },
-            { y: isLaptop ? 99 : 60, duration: 1 },
-            { y: isLaptop ? 450 : 900, duration: 1 },
+            {
+              y: isDesktop
+                ? "-2vw"
+                : isLaptop
+                ? 99
+                : isTablet
+                ? 60
+                : isMobile
+                ? "45vw"
+                : 80,
+              duration: 1,
+              scale: 1,
+            },
+            {
+              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 60 : isMobile ? "45vw" : 80,
+              duration: 1,
+            },
+            {
+              y: isDesktop ? "30vw" : isLaptop ? 450 : isTablet ? 900 : isMobile ? "160vw" : 600,
+              duration: 1,
+            },
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: "top+=50",
-            end: "top+=900",
+            start: `top+=${(95 / 4) * 0 + 4}%`,
+            end: `top+=${(95 / 4) * 1 - 4}%`,
             scrub: true,
           },
         });
 
         gsap.to(imagesRefs.current[2], {
           keyframes: [
-            { y: isLaptop ? 99 : isTablet ? 58 : 0, duration: 1, scale: 1 },
-            { y: isLaptop ? 99 : isTablet ? 58 : 0, duration: 1 },
-            { y: 450, duration: 1 },
+            {
+              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 58 : isMobile ? "45vw" : 100,
+              duration: 1,
+              scale: 1,
+            },
+            {
+              y: isDesktop ? "-2vw" : isLaptop ? 99 : isTablet ? 58 : isMobile ? "45vw" : 100,
+              duration: 1,
+            },
+            {
+              y: isDesktop ? "30vw" : isLaptop ? 450 : isTablet ? 450 : isMobile ? "160vw" : 600,
+              duration: 1,
+            },
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: "top+=1900",
-            end: "top+=2700",
+            start: `top+=${(95 / 4.5) * 2 + 4}%`,
+            end: `top+=${(95 / 4.5) * 3}%`,
             scrub: true,
           },
         });
 
         gsap.to(imagesRefs.current[3], {
           keyframes: [
-            { y: isLaptop ? 270 : isTablet ? 250 : 0, duration: 1, scale: 1 },
-            { y: isLaptop ? 270 : isTablet ? 250 : 0, duration: 1 },
+            {
+              y: isDesktop ? "15vw" : isLaptop ? 270 : isTablet ? 250 : isMobile ? "63vw" : 170,
+              duration: 1,
+              scale: 1,
+            },
+            {
+              y: isDesktop ? "15vw" : isLaptop ? 270 : isTablet ? 250 : isMobile ? "63vw" : 170,
+              duration: 1,
+            },
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: "top+=2800",
-            end: "top+=3500",
+            start: `top+=${(95 / 4.5) * 3 + 4}%`,
+            end: `top+=${(95 / 4.5) * 4 - (isDesktop ? 12 : 0)}%`,
             scrub: true,
           },
         });
@@ -145,30 +230,39 @@ export default function HowToUse() {
   const showAndHideTopCallImageAnim = () => {
     mm.add(
       {
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
         isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
           BREAKPOINTS.desktop - 1
         }px)`,
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
           BREAKPOINTS.laptop - 1
         }px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
       },
       (context) => {
-        const { isLaptop, isTablet } = context.conditions as any;
+        const { isDesktop, isLaptop, isTablet, isVerticalTablet, isMobile } =
+          context.conditions as any;
 
         gsap.to(imagesRefs.current[1], {
           keyframes: [
-            { y: isLaptop ? 230 : isTablet ? 200 : 0, duration: 1 },
             {
-              y: isLaptop ? 230 : isTablet ? 200 : 0,
+              y: isDesktop ? "17vw" : isLaptop ? 230 : isTablet ? 200 : isMobile ? "80vw" : 280,
+              duration: 1,
+            },
+            {
+              y: isDesktop ? "17vw" : isLaptop ? 230 : isTablet ? 200 : isMobile ? "80vw" : 280,
               duration: 1,
               opacity: 0.9,
             },
-            { y: -230, duration: 1, opacity: 0 },
+            { y: "-17vw", duration: 1, opacity: 0 },
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: "top+=1100",
-            end: "top+=1900",
+            start: `top+=${(95 / 4.5) * 1 + 4}%`,
+            end: `top+=${(95 / 4.5) * 2}%`,
             scrub: true,
           },
         });
@@ -188,8 +282,8 @@ export default function HowToUse() {
       ],
       scrollTrigger: {
         trigger: startAnimRef.current,
-        start: `top+=${900 * inx}`,
-        end: `top+=${900 * (inx + 1)}`,
+        start: `top+=${(95 / 4.5) * inx + 5}%`,
+        end: `top+=${(95 / 4.5) * (inx + 1)}%`,
         scrub: true,
       },
     };
@@ -221,9 +315,17 @@ export default function HowToUse() {
           <h2 className={`${styles.howToUseTitle}`}>Как это работает?</h2>
 
           <p className={`${styles.howToUseDescription}`}>
-            <span className="text-black">
+            <span className="text-black inline">
               Управляйте финансовыми операциями в одном Telegram-боте.
             </span>{" "}
+            <span className={"!hidden md:!inline"}>
+              Наш бот — это удобный инструмент для управления финансами, в
+              котором можно заказывать обмены криптовалюты, переводы, оплату
+              счета, обмен валюты и консультации менеджера
+            </span>
+          </p>
+
+          <p className={`${styles.howToUseDescriptionText} md:!hidden`}>
             Наш бот — это удобный инструмент для управления финансами, в котором
             можно заказывать обмены криптовалюты, переводы, оплату счета, обмен
             валюты и консультации менеджера
@@ -307,7 +409,13 @@ export default function HowToUse() {
                     src={"/images/how-to-use/phone-md.png"}
                     fill
                     alt="phone"
-                    className="block lg:hidden"
+                    className="hidden md:block lg:hidden"
+                  />
+                  <Image
+                    src={"/images/how-to-use/phone-xs.png"}
+                    fill
+                    alt="phone"
+                    className="block md:hidden"
                   />
                 </div>
               </div>
@@ -329,7 +437,13 @@ export default function HowToUse() {
                     src={"/images/how-to-use/phone-success-md.png"}
                     fill
                     alt="phone"
-                    className="block lg:hidden"
+                    className="hidden md:block lg:hidden"
+                  />
+                  <Image
+                    src={"/images/how-to-use/phone-success-xs.png"}
+                    fill
+                    alt="phone"
+                    className="block md:hidden"
                   />
                 </div>
               </div>

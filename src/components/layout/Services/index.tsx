@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./Services.module.css";
 import { useMemo, useState } from "react";
 import CustomLink from "@/components/ui/Link";
+import ServicesSlider from "@/components/ServicesSlider";
 
 export default function Services() {
   const [currentService, setCurrentService] = useState(0);
@@ -15,18 +16,21 @@ export default function Services() {
         description:
           "Обмениваем криптовалюту на наличные или безналичные средства и наоборот. Обновляем курсы валют и актуальную комиссию в Telegram-боте",
         link: "Подробнее о USDT – FIAT",
+        image: "/images/services/first-service-image-xs.png",
       },
       {
         title: "Cash2Cash",
         description:
           "Принимаем USDT/FIAT и выдаём денежные средства по всему миру: в наших офисах и в офисах партнёров  в 30+ странах",
-        link: "Подробнее о Cash2Cash",
+        link: "подробнее о cash2cash",
+        image: "/images/services/second-service-image-xs.png",
       },
       {
         title: "Платежи для ВЭД",
         description:
           "Оплачиваем счета зарубежных поставщиков через  сеть юридических лиц в 30+ странах. Документально оформляем все сделки и обходим банковские ограничения",
-        link: "Подробнее о Платежи для ВЭД",
+        link: "подробнее о ВЭД",
+        image: "/images/services/third-service-image-xs.png",
       },
     ],
     []
@@ -38,7 +42,9 @@ export default function Services() {
         <div className={`${styles.servicesTitleWrapper}`}>
           <h2 className={`${styles.servicesTitle}`}>Услуги</h2>
 
-          <div className={`${styles.servicesContentText} lg:hidden`}>
+          <div
+            className={`${styles.servicesContentText} hidden md:block lg:hidden`}
+          >
             <h3 className={`${styles.servicesContentTitle}`}>
               Обменивайте криптовалюту, оплачивайте счета и получайте наличные
               по всему миру с помощью Skynet
@@ -51,7 +57,7 @@ export default function Services() {
         </div>
 
         <div className={`${styles.servicesContent}`}>
-          <div className={`${styles.servicesContentText} hidden lg:block`}>
+          <div className={`${styles.servicesContentText} md:hidden lg:block`}>
             <h3 className={`${styles.servicesContentTitle}`}>
               Обменивайте криптовалюту, оплачивайте счета и получайте наличные
               по всему миру с помощью Skynet
@@ -71,9 +77,7 @@ export default function Services() {
                     <li
                       key={title}
                       className={`${styles.servicesListItem} ${
-                        currentService === inx
-                          ? "text-black"
-                          : ""
+                        currentService === inx ? "text-black" : ""
                       } !cursor-pointer`}
                     >
                       <button
@@ -132,13 +136,17 @@ export default function Services() {
             </>
 
             {/* FOR SCREEN < 1024PX */}
-            <div className={`${styles.servicesCard} lg:!hidden`}>
+            <div
+              className={`${styles.servicesCard} !hidden md:!flex lg:!hidden`}
+            >
               <div className={`${styles.servicesCardHeader}`}>
                 {services.map(({ title }, inx) => (
                   <button
                     key={inx}
                     onClick={() => setCurrentService(inx)}
-                    className={`${styles.servicesCardHeaderButton}`}
+                    className={`${styles.servicesCardHeaderButton} ${
+                      currentService === inx ? "!text-black" : ""
+                    }`}
                   >
                     {title}
                   </button>
@@ -272,6 +280,8 @@ export default function Services() {
           </div>
         </div>
       </div>
+
+      <ServicesSlider services={services} />
     </section>
   );
 }

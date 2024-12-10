@@ -1,67 +1,97 @@
 .about {
+  @apply pt-[22.22vw];
   @apply md:pt-[160px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px] font-tt-norms;
+  @apply 3xl:pt-[14.9vw];
 }
 
 .aboutContent {
-  @apply md:pl-[150px] md:max-w-[728px];
-  @apply lg:pl-[200px] lg:max-w-[964px] w-full;
-  @apply xl:max-w-[1220px] lg:pl-[335px];
+  @apply max-w-[91.67vw] mx-auto;
+  @apply md:max-w-[728px] md:ml-[150px];
+  @apply lg:max-w-[964px] w-full;
+  @apply xl:max-w-[915px] xl:ml-[26.172vw] xl:pl-0;
+  @apply 3xl:max-w-[63.281vw] 3xl:ml-[29vw];
 }
 
 .aboutTitle {
+  @apply text-[5.56vw] leading-[5.56vw] font-medium;
   @apply md:max-w-[422px] md:text-[26px] md:leading-[28.6px];
   @apply lg:max-w-[483px] lg:text-[32px] lg:leading-[35.2px];
-  @apply xl:max-w-[610px] xl:text-[38px] xl:leading-[41.8px] font-medium;
+  @apply xl:max-w-[610px] xl:text-[38px] xl:leading-[41.8px];
+  @apply 3xl:max-w-[36.2vw] 3xl:text-[2.4vw] 3xl:leading-[2.64vw];
 }
 
 .advantages {
-  @apply flex justify-between;
+  @apply flex flex-col justify-between mt-[6.67vw];
   @apply md:mt-[66px] md:flex-col-reverse;
   @apply lg:mt-[74px] lg:flex-row lg:items-end;
   @apply xl:mt-[70px];
+  @apply 3xl:mt-[63.94px];
 }
 
 .advantagesText {
-  @apply font-normal;
+  @apply font-normal max-w-[68.06vw] text-[3.33vw] leading-[3.33vw];
   @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px];
   @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px] lg:mt-0;
   @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
+  @apply 3xl:max-w-[17.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }
 
 .advantageItem {
-  @apply flex items-end relative;
-  @apply md:gap-[127px];
+  @apply flex items-end relative mt-[19.44vw] flex-col justify-end;
+  @apply md:gap-8 md:mt-0 md:flex-row;
   @apply lg:gap-1;
   @apply xl:gap-[15px];
+  @apply 3xl:gap-[0.73vw];
 }
 
 .advantageNumberWrapper {
-  @apply flex items-center font-bold;
+  @apply flex items-center font-bold relative w-full justify-end;
+  @apply md:w-auto md:justify-start;
 }
 
 .advantageItem::before {
-  @apply content-[''] absolute left-0 bottom-0 w-full border-t border-[#E0E2E9] bg-[#F3F3F3] h-[12px];
+  @apply content-[''] absolute left-0 bottom-[-150px] w-full border-t border-[#E0E2E9] bg-[#F3F3F3] z-10 hidden;
+  @apply md:block md:h-[160px];
+  @apply 3xl:h-[11vw] 3xl:bottom-[-10.5vw];
+}
+
+.advantageNumberWrapper::before {
+  @apply content-[''] absolute left-0 -bottom-[22vw] w-full border-t border-[#E0E2E9] bg-[#F3F3F3] h-[27.33vw] z-10;
+  @apply md:hidden;
 }
 
 .advantageNumber {
+  @apply text-[30.56vw] leading-[23.61vw] tracking-[-2.78vw] relative;
   @apply md:text-[120px] md:leading-[88px] md:tracking-[-10px];
   @apply lg:text-[120px] lg:leading-[88px] lg:tracking-[-10px];
-  @apply xl:text-[160px] xl:leading-[114px] xl:tracking-[-12px];
+  @apply xl:text-[140px] xl:leading-[84px] xl:tracking-[-12px];
+  @apply 3xl:text-[9.46vw] 3xl:leading-[5.81vw] 3xl:tracking-[-0.83vw];
 }
 
 .advantagePlus {
+  @apply text-[13.89vw] leading-[15.28vw] ml-[2.22vw];
   @apply md:text-[50px] md:leading-[55px] md:ml-2;
   @apply lg:text-[60px] lg:leading-[66px] lg:ml-2;
   @apply xl:text-[80px] xl:leading-[88px] xl:ml-2;
+  @apply 3xl:text-[5.21vw] 3xl:leading-[5.73vw] 3xl:ml-[0.42vw];
 }
 
 .advantageText {
-  @apply inline-block;
-  @apply md:mb-[10px];
-  @apply lg:mb-[10px];
-  @apply xl:mb-[10px];
+  @apply inline-block md:text-left relative text-[3.33vw] leading-[3.33vw] min-w-[34.72vw] text-center w-full z-20;
+  @apply md:mb-[10px] md:text-xs md:leading-3 md:min-w-[125px] md:w-auto;
+  @apply lg:mb-[10px] lg:text-xs lg:leading-3 lg:min-w-[125px];
+  @apply xl:mb-[10px] xl:text-xs xl:leading-3 xl:min-w-[125px];
+  @apply 3xl:mb-[0.63vw];
+}
+
+.advantageText span {
+  @apply absolute left-0 transition-all duration-700 w-full text-center;
+  @apply md:-top-4 md:w-auto md:text-left;
+  @apply lg:-top-4;
+  @apply xl:-top-4;
+
 }
 
 /* USELESS */

@@ -1,70 +1,109 @@
 .footer {
-  @apply font-tt-norms;
+  @apply font-tt-norms pt-[22.22vw];
+  @apply md:pt-[120px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px];
+  @apply 3xl:pt-[10.42vw] 3xl:pb-[1.25vw];
 }
 
 .footerContent {
-  @apply mx-auto;
+  @apply mx-auto max-w-[91.67vw];
+  @apply md:max-w-[730px];
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1220px];
+  @apply 3xl:max-w-[84.38vw];
 }
 
 .footerTop {
   @apply flex;
+  @apply md:gap-4;
   @apply lg:gap-6;
   @apply xl:gap-[52px];
+  @apply 3xl:gap-[2.24vw];
 }
 
 .footerMascot {
-  @apply relative;
+  @apply relative w-[47.78vw] h-[106.11vw];
+  @apply md:w-[224px] md:h-[496px];
   @apply lg:w-[221px] lg:h-[491px];
   @apply xl:w-[224px] xl:h-[496px];
+  @apply 3xl:w-[18.44vw] 3xl:h-[40.83vw];
 }
 
 .footerLinks {
   @apply flex-1 flex flex-col;
+  @apply md:pt-[101px] md:gap-[87px];
   @apply lg:pt-[41px] lg:gap-[60px];
   @apply xl:pt-[62px] xl:justify-between;
+  @apply 3xl:pt-[5.21vw] 3xl:justify-start 3xl:gap-[5.21vw];
 }
 
 .goToTelegram {
-  @apply font-medium;
-  @apply lg:text-xl lg:leading-[22px] lg:max-w-[398px];
+  @apply font-medium text-[4.44vw] leading-[4.89vw] max-w-[90.83vw] text-center;
+  @apply md:text-base md:leading-[17.6px] md:max-w-[398px] md:text-left;
+  @apply lg:text-xl lg:leading-[22px] lg:max-w-[398px] lg:text-left;
   @apply xl:text-[24px] xl:leading-[26.4px] xl:max-w-[502px];
+  @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:max-w-[30.57vw];
 }
 
 .goToTelegram button {
+  @apply mx-auto mt-[4.44vw];
+  @apply md:mt-6 md:mx-0;
   @apply lg:mt-6;
   @apply xl:mt-8;
+  @apply 3xl:mt-[2.08vw];
 }
 
 .footerLinksGrid {
-  @apply grid grid-cols-3;
+  @apply flex flex-col justify-center gap-[15.56vw];
+  @apply md:grid md:grid-cols-2 md:gap-0;
+  @apply lg:grid-cols-3;
+}
+
+.footerLinksGrid > *:nth-child(3) {
+  @apply hidden;
+  @apply md:col-span-2 md:mt-[60px] md:block;
+  @apply lg:col-span-1 lg:mt-0;
+}
+
+.footerSubscribe button {
+  @apply max-w-[91.67vw];
+  @apply md:max-w-[292px];
+  @apply lg:max-w-none;
+  @apply xl:mt-8;
+  @apply 3xl:mt-[1.667vw];
 }
 
 .footerLinksGridItem {
-  @apply flex flex-col;
+  @apply flex flex-col gap-[2.5vw];
+  @apply md:gap-6;
   @apply lg:gap-[58px];
   @apply xl:gap-8;
+  @apply 3xl:gap-[1.67vw];
 }
 
 .footerLinksGridItem h5 {
-  @apply border-b border-[#E0E2E9];
+  @apply border-b border-[#E0E2E9] text-[2.78vw] leading-[2.78vw] pb-[2.22vw];
+  @apply md:text-xs md:leading-3 md:pb-2;
   @apply lg:text-xs lg:leading-3 lg:pb-2;
   @apply xl:text-xs xl:leading-3 xl:pb-2;
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:pb-[0.83vw];
 }
 
 .footerLinksGridItem a {
-  @apply font-medium uppercase;
+  @apply font-medium uppercase text-[3.33vw] leading-[3.33vw];
+  @apply md:text-xs md:leading-3;
   @apply lg:text-xs lg:leading-3;
   @apply xl:text-xs xl:leading-3;
+  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw];
 }
 
 .footerContactsList {
-  @apply flex flex-col;
+  @apply flex flex-col gap-[1.67vw];
+  @apply md:gap-2;
   @apply lg:gap-2;
   @apply xl:gap-2;
+  @apply 3xl:gap-[0.42vw];
 }
 
 .footerContactsList a {
@@ -75,25 +114,46 @@
   @apply w-full flex justify-center;
 }
 
+.footerSubscribeMobile {
+  @apply mt-[5.78vw] text-center;
+  @apply md:hidden;
+}
+
 .footerBottom {
+  @apply mt-[13.33vw];
+  @apply md:mt-[80px];
   @apply lg:mt-[35px];
   @apply xl:mt-[100px];
+  @apply 3xl:mt-[3.33vw];
 }
 
 .footerBottomLogo {
   @apply font-extrabold;
+  @apply md:text-[140px] md:leading-[52.5px] md:tracking-[10px];
   @apply lg:text-[190px] lg:leading-[99.54px] lg:tracking-[10px];
   @apply xl:text-[220px] xl:leading-[126px] xl:tracking-[20px];
 }
 
 .bottomLinks {
-  @apply flex justify-between border-t border-[#E0E2E9];
+  @apply flex justify-between border-t border-[#E0E2E9] mt-[2.78vw] pt-[2.22vw] text-[2.78vw] leading-[2.78vw];
+  @apply md:mt-6 md:pt-4 md:text-xs md:leading-3;
   @apply lg:mt-6 lg:pt-4 lg:text-xs lg:leading-3;
   @apply xl:mt-[26px] xl:pt-4 xl:text-xs xl:leading-3;
+  @apply 3xl:mt-[2.08vw] 3xl:pt-[1.25vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }
 
 .bottomLinksItem {
-  @apply flex;
+  @apply flex flex-col gap-[1.94vw];
+  @apply md:gap-[120px] md:flex-row;
   @apply lg:gap-[102px];
   @apply xl:gap-[102px];
+  @apply 3xl:gap-[7.03vw];
+}
+
+.footerBottomLogo {
+  @apply w-[91.11vw] h-[9.44vw];
+  @apply md:w-[730px] md:h-[76px];
+  @apply lg:w-[964px] lg:h-[100px];
+  @apply xl:w-[1220px] xl:h-[126.67px];
+  @apply 3xl:w-[84.277vw] 3xl:h-[8.75vw];
 }

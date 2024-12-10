@@ -1,14 +1,16 @@
-'use client';
+"use client";
 
 import { HTMLAttributes, FC, useEffect, useRef } from "react";
 import styles from "./Offices.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BREAKPOINTS } from "@/constants";
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   image: string;
   location: string;
   address: string;
+  index: number;
 }
 
 export default function Offices(): JSX.Element {
@@ -16,18 +18,32 @@ export default function Offices(): JSX.Element {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
 
-    gsap.to(officesBlockRef.current, {
-      x: -200,
-      scrollTrigger: {
-        trigger: officesBlockRef.current,
-        start: "top-=200%",
-        end: "bottom+=100",
-        scrub: 0.8,
+    mm.add(
+      {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+        isVerticalTablet: `(min-width: ${BREAKPOINTS.verticalTablet}px) and (max-width: ${BREAKPOINTS.desktop - 1}px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
-    });
+      (context) => {
+        const { isMobile, isVerticalTablet, isDesktop } =
+          context.conditions as any;
+
+        gsap.to(officesBlockRef.current, {
+          x: -200,
+          scrollTrigger: {
+            trigger: officesBlockRef.current,
+            start: `top-=${isMobile ? 350 : 200}%`,
+            end: `bottom+=${isDesktop ? 600 : 30}%`,
+            scrub: 0.8,
+          },
+        });
+      }
+    );
 
     return () => {
+      mm.kill();
       gsap.killTweensOf(officesBlockRef.current);
     };
   }, []);
@@ -53,13 +69,17 @@ export default function Offices(): JSX.Element {
 
         <div className={`${styles.officesContent}`}>
           <div className={`${styles.officesList}`}>
-            <div className={`${styles.officesListWrapper}`} ref={officesBlockRef}>
+            <div
+              className={`${styles.officesListWrapper}`}
+              ref={officesBlockRef}
+            >
               {images.map((image, index) => (
                 <OfficeCard
                   key={index}
                   image={image}
                   location="Москва"
                   address="ул. улица, 18, офис 203"
+                  index={index}
                 />
               ))}
             </div>
@@ -70,13 +90,15 @@ export default function Offices(): JSX.Element {
   );
 }
 
-const images = ["moscow.png", "dubai.png", "ufa.png", "moscow.png"];
+const images = ["moscow.png", "dubai.png", "ufa.png", "usa.png"];
+const flags = ["🇷🇺", "🇦🇪", "🇷🇺", "🇺🇸"];
 
 function OfficeCard({
   image,
   location,
   address,
   className,
+  index,
   ...props
 }: IOfficeCard) {
   return (
@@ -86,7 +108,7 @@ function OfficeCard({
       {...props}
     >
       <div className={`${styles.location}`}>
-        <div className={`${styles.dot}`}></div>
+        <span className={`${styles.locationFlag}`}>{flags[index]}</span>
         {location}
       </div>
 

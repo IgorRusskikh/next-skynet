@@ -1,7 +1,9 @@
 .button {
   @apply flex items-center rounded-[100px];
+  @apply md:gap-[6.67px] md:py-[5.67px] md:px-[6px];
   @apply lg:gap-[6.67px];
-  @apply xl:gap-[6.67px] py-[5.67px] px-[5.67px];
+  @apply xl:gap-[6.67px] xl:py-[5.67px] xl:px-[6px];
+  @apply 3xl:gap-[0.57vw] 3xl:py-[0.42vw] 3xl:px-[0.42vw];
 }
 
 .buttonBlack {
@@ -10,6 +12,8 @@
 
 .button p {
   @apply font-tt-norms uppercase;
+  @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px] xl:font-medium;
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }

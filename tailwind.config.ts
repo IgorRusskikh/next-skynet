@@ -16,6 +16,9 @@ export default {
         "gray-light": "#E0E2E9",
         "primary-red": "#D02E27",
       },
+      screens: {
+        "3xl": "1800px",
+      }
     },
   },
   plugins: [tailwind3d({ legacy: true })],

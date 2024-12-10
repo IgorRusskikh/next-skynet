@@ -3,6 +3,8 @@ import "./globals.css";
 import { ttNorms } from "@/utils/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/layout/Footer";
+import Dropdown from "@/components/Dropdown";
+import DropdownProvider from "@/providers/DropdownProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ttNorms.variable} antialiased`}>
-        <Header />
+        <DropdownProvider>
+          <Dropdown />
+          <Header />
+        </DropdownProvider>
         {children}
         <Footer />
       </body>

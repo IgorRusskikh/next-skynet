@@ -1,22 +1,25 @@
 .howToUse {
-  @apply font-tt-norms;
-  @apply md:mt-[120px];
+  @apply font-tt-norms pt-[22.22vw];
+  @apply md:pt-[120px];
   @apply lg:pt-[100px];
   @apply xl:pt-[160px];
+  @apply 3xl:pt-[10.42vw];
 }
 
 .howToUseInner {
-  @apply mx-auto;
+  @apply mx-auto max-w-[91.67vw];
   @apply md:max-w-[728px];
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1200px];
+  @apply 3xl:max-w-[84.38vw];
 }
 
 .sectionHeader {
-  @apply flex flex-col;
+  @apply flex flex-col max-w-[91.11vw];
   @apply md:max-w-[578px] ml-auto;
   @apply lg:gap-[53px] lg:flex-row lg:max-w-none;
   @apply xl:gap-[188px];
+  @apply 3xl:gap-[12.55vw];
 }
 
 .howToUseTitle {
@@ -24,33 +27,43 @@
   @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px];
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }
 
 .howToUseDescription {
-  @apply text-[#898C98];
+  @apply text-[#898C98] max-w-[91.11vw] text-[5.56vw] leading-[5.56vw] tracking-[-0.08vw] mt-[6.67vw];
   @apply md:max-w-[454px] md:text-base md:leading-[17.6px] md:tracking-[-0.5px] md:mt-4;
   @apply lg:max-w-[480px] lg:text-base lg:leading-[17.6px] font-medium lg:tracking-[-0.2px];
   @apply xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px] font-medium xl:tracking-[-0.2px];
+  @apply 3xl:max-w-[33.39vw] 3xl:text-[1.15vw] 3xl:leading-[1.26vw] 3xl:tracking-[-0.02vw];
+}
+
+.howToUseDescriptionText {
+  @apply mt-[4.44vw] text-[3.89vw] leading-[4.28vw] text-[#898C98];
 }
 
 .howToUseContent {
-  @apply md:mt-[60px] md:h-[3000px];
+  @apply mt-[13.33vw] h-[850vw];
+  @apply md:mt-[60px] md:h-[4000px];
   @apply lg:mt-[60px] lg:h-[4000px];
   @apply xl:mt-[80px] xl:h-[4000px];
+  @apply 3xl:mt-[5.21vw] 3xl:h-[225vw];
 }
 
 .banner {
-  @apply rounded-[41.83px] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-left overflow-clip mx-auto flex flex-col justify-between relative bg-cover;
-  @apply md:w-full md:h-[592px];
+  @apply rounded-[11.62vw] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-left overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
+  @apply md:w-full md:h-[592px] md:justify-between;
   @apply lg:w-[964px] lg:h-[530px] lg:bg-contain;
   @apply xl:w-[1000px] xl:h-[549px];
+  @apply 3xl:w-[72.92vw] 3xl:h-[40.04vw] 3xl:rounded-[3.05vw];
 }
 
 .bannerTitle {
-  @apply text-white font-medium relative w-full h-fit;
+  @apply text-white font-medium relative w-full h-fit pl-[5.56vw] pt-[11.11vw] text-[5.56vw] leading-[6.11vw];
   @apply md:pl-8 md:pt-[40px] md:text-[26px] md:leading-[28.6px] md:max-w-[373px];
   @apply lg:pl-[48.62px] lg:pt-[57.92px] lg:text-[32px] lg:leading-[35.2px] lg:max-w-[361px];
   @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[400px] xl:tracking-[-0.5px];
+  @apply 3xl:pl-[3.13vw] 3xl:pt-[4.17vw] 3xl:text-[2.4vw] 3xl:leading-[2.64vw];
 }
 
 .bannerTitle span {
@@ -59,14 +72,17 @@
 }
 
 .bannerStep {
-  @apply flex justify-between items-center -translate-y-[60px];
+  @apply flex flex-col-reverse justify-between items-center -translate-y-[4.67vw] flex-1;
+  @apply md:-translate-y-[60px] md:flex-row md:flex-none;
+  @apply 3xl:translate-y-[-4.44vw];
 }
 
 .bannerStepNumber {
-  @apply font-[450] text-white opacity-30 relative w-fit h-fit;
+  @apply font-[450] text-white opacity-30 relative w-fit h-fit text-[50vw] leading-[50vw] translate-x-[-35vw];
   @apply md:text-[203px] md:leading-[203px] md:-translate-x-[60px];
   @apply lg:text-[270px] lg:leading-[270px] lg:-translate-x-[60px] lg:tracking-[-1px];
   @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[80px] xl:tracking-[-1px];
+  @apply 3xl:text-[18.75vw] 3xl:leading-[18.75vw] 3xl:-translate-x-[4.69vw] 3xl:tracking-[-0.06vw];
 }
 
 .bannerStepNumber span {
@@ -74,53 +90,64 @@
   @apply md:top-16;
   @apply lg:top-14;
   @apply xl:top-14;
+  @apply 3xl:top-[4.5vw];
 }
 
 .bannerStepDescription {
-  @apply text-[#F3F3F3] relative w-fit h-fit;
-  @apply md:text-xs md:leading-3 md:max-w-[215px] md:mr-4;
+  @apply text-[#F3F3F3] relative w-fit h-fit translate-y-[34vw] text-[3.33vw] leading-[3.33vw];
+  @apply md:text-xs md:leading-3 md:max-w-[215px] md:mr-4 md:translate-y-0;
   @apply lg:text-[13.52px] lg:leading-[13.52px] lg:max-w-[222px] lg:mr-[38px];
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:max-w-[19.06vw] 3xl:mr-[3.54vw];
 }
 
 .bannerStepDescription span {
-  @apply absolute left-0 top-0 w-full opacity-0;
+  @apply absolute left-0 top-0 w-full opacity-0 max-w-[250px] pl-[5.56vw];
+  @apply md:max-w-none;
 }
 
 .bottomPhoneImageWrapper {
-  @apply absolute top-0;
+  @apply absolute top-0 left-[10vw] translate-y-[160vw];
   @apply md:left-[15px] md:translate-y-[550px];
   @apply lg:left-[40px] lg:translate-y-[450px];
   @apply xl:left-[50px] xl:translate-y-[450px];
+  @apply 3xl:left-[2vw] 3xl:translate-y-[35.04vw];
 }
 
 .bottomPhoneImage {
-  @apply scale-[1.1];
+  @apply scale-[1.1] w-[70vw] h-[100vw];
   @apply md:w-[700px] md:h-[480px];
   @apply relative lg:w-[900px] lg:h-[450px];
+  @apply 3xl:w-[70vw] 3xl:h-[40.32vw];
 }
 
 .topCallImageWrapper {
-  @apply absolute top-0;
+  @apply absolute top-0 left-[6.67vw] -translate-y-[15vw];
+  @apply md:left-[197px] md:-translate-y-[60px];
   @apply lg:left-[261px] lg:-translate-y-[80px];
   @apply xl:left-[285px] xl:-translate-y-[80px];
+  @apply 3xl:left-[20.31vw] 3xl:-translate-y-[5.69vw];
 }
 
 .topCallImage {
-  @apply relative;
+  @apply relative w-[77.78vw] h-[13.06vw];
+  @apply md:w-[334px] md:h-[56px];
   @apply lg:w-[442px] lg:h-[74px];
   @apply xl:w-[458px] xl:h-[77px];
+  @apply 3xl:w-[32.29vw] 3xl:h-[5.43vw];
 }
 
 .bottomTransactionImageWrapper {
-  @apply absolute top-0;
+  @apply absolute top-0 left-[20.56vw] translate-y-[170vw];
   @apply md:left-[256px] md:translate-y-[600px];
   @apply lg:left-[337px] lg:translate-y-[550px];
   @apply xl:left-[350px] xl:translate-y-[550px];
+  @apply 3xl:left-[24.79vw] 3xl:translate-y-[40.04vw];
 }
 
 .bottomTransactionImage {
-  @apply relative;
+  @apply relative w-[50vw] h-[67.22vw];
   @apply md:w-[218px] md:h-[294px];
   @apply lg:w-[303px] lg:h-[280px];
+  @apply 3xl:w-[25.59vw] 3xl:h-[25.38vw];
 }

@@ -15,7 +15,7 @@ export default function IconButton({
 }: IconButtonProps) {
   return (
     <button {...props} className={`${styles.button} ${theme === "black" ? styles.buttonBlack : ""} ${className}`}>
-      <Icon width={27} height={27} />
+      <Icon className="size-[28px] 3xl:size-[1.67vw] object-cover" />
       <p>{children}</p>
     </button>
   );

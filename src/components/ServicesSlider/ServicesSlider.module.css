@@ -1,0 +1,31 @@
+.servicesSliderItem {
+  @apply w-[86.67vw] h-[99.72vw] bg-[#FFFFFF] px-[4.44vw] py-[6.67vw] rounded-[16px] pb-[3.33vw];
+}
+
+.servicesSliderItem h3 {
+  @apply pb-[3.33vw] border-b border-[#DFE2E9];
+}
+
+.servicesSlideContent {
+  @apply mt-[6.67vw];
+}
+
+.serviceSlideCount {
+  @apply text-[2.78vw] leading-[2.78vw] font-[450];
+}
+
+.serviceSlideCountDash {
+  @apply mx-[2.78vw];
+}
+
+.serviceSlideImage {
+  @apply mt-[6.67vw] w-[77.78vw] h-[37.22vw] relative;
+}
+
+.serviceSlideDescriptionWrapper {
+  @apply mt-[6.67vw] max-w-[66.39vw] text-[2.78vw] leading-[2.78vw] h-[18.89vw] flex flex-col justify-between;
+}
+
+.serviceSlideDescriptionWrapper a {
+  @apply uppercase;
+}

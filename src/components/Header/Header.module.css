@@ -1,55 +1,90 @@
 .navbar {
-  @apply md:py-[14px];
+  @apply relative py-[0.83vw] my-[3.89vw];
+  @apply md:py-[14px] md:my-0;
   @apply lg:py-[14px];
   @apply w-full xl:py-[14px];
+  @apply 3xl:py-[1.25vw];
 }
 
 .container {
-  @apply flex items-center justify-between mx-auto;
+  @apply flex items-center justify-between mx-auto max-w-[91.11vw];
   @apply md:max-w-[728px];
   @apply lg:max-w-[964px];
   @apply xl:max-w-[1220px];
+  @apply 3xl:max-w-[84.38vw];
 }
 
 .logo {
-  @apply flex items-center;
+  @apply flex items-center gap-[2.78vw];
   @apply md:gap-[13.31px];
   @apply lg:gap-[13.31px];
   @apply xl:gap-[13.31px];
+  @apply 3xl:gap-[1.04vw];
+}
+
+.logo h1 {
+  @apply flex items-center;
+}
+
+.char {
+  @apply w-fit;
 }
 
 .dots {
-  @apply flex;
+  @apply flex gap-[1.11vw];
   @apply md:gap-[4.34px];
   @apply lg:gap-[5.35px];
   @apply xl:gap-[5.35px];
+  @apply 3xl:gap-[0.42vw];
 }
 
 .dots div {
-  @apply rounded-full bg-black;
+  @apply rounded-full bg-black w-[2.44vw] h-[2.59vw];
   @apply md:w-[8.8px] md:h-[9.32px];
   @apply lg:w-[10.85px] lg:h-[11.5px];
   @apply xl:w-[10.85px] xl:h-[11.5px];
+  @apply 3xl:size-[0.83vw];
 }
 
 .redDot {
   @apply !bg-primary-red;
 }
 
-.logo h1 {
-  @apply font-tt-norms;
-  @apply lg:text-2xl;
-  @apply xl:text-2xl xl:font-semibold;
+.logo {
+  @apply w-[50vw] h-[4.51vw];
+  @apply md:w-[180px] md:h-[16.22px];
+  @apply lg:w-[222px] md:h-5;
+  @apply xl:w-[222px] xl:h-5;
+  @apply 3xl:w-[17.344vw] 3xl:h-[1.563vw];
 }
 
 .container nav ul {
   @apply items-center font-tt-norms;
   @apply hidden;
   @apply xl:gap-6 xl:text-[10px] xl:leading-[10px] xl:font-medium xl:flex;
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }
 
 .telegram {
-  @apply md:w-[101px];
+  @apply !hidden;
+  @apply md:w-[101px] md:!flex;
   @apply lg:w-[101px];
   @apply xl:w-[101px];
+  @apply 3xl:w-[7.03vw];
+}
+
+.actions {
+  @apply flex justify-between items-center;
+}
+
+.burger {
+  @apply flex flex-col items-center justify-center gap-[0.89vw] size-[8.89vw];
+  @apply md:gap-[3.2px] md:size-8 md:mr-[247px];
+  @apply lg:gap-1 lg:size-[40px] lg:mr-[351px];
+}
+
+.burger div {
+  @apply w-full bg-black delay-300 ease-in-out h-[0.44vw];
+  @apply md:h-[1.6px];
+  @apply lg:h-[2px];
 }

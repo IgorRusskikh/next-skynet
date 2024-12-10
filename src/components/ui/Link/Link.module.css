@@ -1,10 +1,12 @@
 .link {
-  @apply w-fit relative;
-  @apply xl:text-xs leading-3 border-b border-black;
+  @apply w-fit relative text-[2.78vw] leading-[2.78vw];
+  @apply md:text-xs md:leading-3;
+  @apply xl:text-xs xl:leading-3 border-b border-black;
 }
 
 .linkArrow {
-  @apply absolute -right-3 -top-[1px];
+  @apply absolute -right-[3.33vw] -top-[0.28vw];
+  @apply md:-right-3 md:-top-[1px];
 }
 
 .lightLink {
