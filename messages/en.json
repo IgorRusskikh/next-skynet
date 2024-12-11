@@ -64,8 +64,8 @@
     },
     "HowToUse": {
       "title": "How it works",
-      "subtitle": "<span class=\"text-black inline\">Manage financial operations in one Telegram bot.</span> <span class=\"!hidden md:!inline\">Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations</span>",
-      "mobile-subtitle": "Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations",
+      "subtitle": "<span>Manage your financial operations in one Telegram bot.</span> <hidden-text>Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchange, and manager consultations</hidden-text>",
+      "mobile-subtitle": "Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchange, and manager consultations",
       "steps": {
         "0": {
           "title": "Choose a service <br />in the TG bot",

@@ -15,7 +15,7 @@ export default function Header() {
   const t = useTranslations("Index.Header");
 
   const navLinks = useMemo(() => {
-    // @ts-expect-error
+    // @ts-expect-error: needs interface
     return Object.values(t.raw("nav-links")) as string[]
   }, [])
 

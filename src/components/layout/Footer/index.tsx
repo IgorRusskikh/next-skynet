@@ -12,7 +12,7 @@ export default function Footer() {
 
   const navLinks = useMemo(
     () =>
-      // @ts-expect-error
+// @ts-expect-error: need an interface
       Object.values(t.raw("links.nav.links-list")).map((name, inx) => ({
         title: name,
         link: Object.values(INNER_SITES)[inx].link,

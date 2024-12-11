@@ -85,7 +85,7 @@ export default function About() {
   }, []);
 
   const advantages = useMemo(
-    // @ts-expect-error
+    // @ts-expect-error: временно игнорируем ошибку, так как структура ключей не соответствует ожидаемым типам
     () => Object.values(t.raw("advantages")) as string[],
     []
   );

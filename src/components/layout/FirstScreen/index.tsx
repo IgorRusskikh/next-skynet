@@ -84,7 +84,7 @@ export default function FirstScreen() {
   }, []);
 
   const advantages = useMemo(
-    // @ts-expect-error
+    // @ts-expect-error: need an interface
     () => Object.values(t.raw("banner.advantages")) as string[],
     []
   );

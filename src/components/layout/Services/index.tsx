@@ -19,7 +19,7 @@ export default function Services() {
   const t = useTranslations("Index.Services");
 
   const services = useMemo(
-    // @ts-expect-error
+    // @ts-expect-error: need an interface
     () => Object.values(t.raw("services")) as service[],
     []
   );

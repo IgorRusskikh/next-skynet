@@ -62,7 +62,7 @@ export default function Offices(): JSX.Element {
     () =>
       Object.values(
         t.raw(
-          // @ts-expect-error
+          // @ts-expect-error: need an interface
           "offices-list"
         )
       ) as office[],

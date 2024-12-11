@@ -383,13 +383,13 @@ export default function HowToUse() {
 
   const bannerTitles = useMemo(
     () =>
-      // @ts-expect-error
+      // @ts-expect-error: need an interface
       (Object.values(t.raw("steps")) as step[]).map((step) => step.title),
     []
   );
   const bannerStepDescription = useMemo(
     () =>
-      // @ts-expect-error
+      // @ts-expect-error: need an interface
       (Object.values(t.raw("steps")) as step[]).map((step) => step.description),
     []
   );
@@ -400,10 +400,16 @@ export default function HowToUse() {
         <div className={`${styles.sectionHeader}`}>
           <h2 className={`${styles.howToUseTitle}`}>{t("title")}</h2>
 
-          <p
-            className={`${styles.howToUseDescription}`}
-            dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
-          ></p>
+          <p className={`${styles.howToUseDescription}`}>
+            {t.rich("subtitle", {
+              "hidden-text": (chunks) => (
+                <span className="!hidden md:!inline">{chunks}</span>
+              ),
+              span: (chunks) => (
+                <span className="text-black inline">{chunks}</span>
+              ),
+            })}
+          </p>
 
           <p className={`${styles.howToUseDescriptionText} md:!hidden`}>
             {t("mobile-subtitle")}
@@ -455,7 +461,8 @@ export default function HowToUse() {
                     className="!relative invisible opacity-0"
                     dangerouslySetInnerHTML={{
                       __html:
-                        t.raw("steps.0.description") + "_______________________",
+                        t.raw("steps.0.description") +
+                        "_______________________",
                     }}
                   ></span>
 
