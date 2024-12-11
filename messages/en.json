@@ -1,0 +1,164 @@
+{
+  "Index": {
+    "Header": {
+      "nav-links": {
+        "0": "USDT – FIAT",
+        "1": "cash2cash",
+        "2": "Payments for Foreign Economic Activity",
+        "3": "Blog"
+      },
+      "actions": {
+        "tg-bot": "TG-Bot"
+      }
+    },
+    "FirstScreen": {
+      "title": {
+        "top-line": {
+          "usdt": "USDT",
+          "fiat": "FIAT"
+        },
+        "bottom-line": "Transfers and exchanges around the world."
+      },
+      "description": "We exchange cryptocurrency</br> and conduct large international payments for businesses and individuals",
+      "banner": {
+        "advantages": {
+          "0": "Cryptocurrency Exchange",
+          "1": "Cash2Cash",
+          "2": "Transfers to 30+ countries",
+          "3": "Settlements for Foreign Economic Activity",
+          "4": "Financial management via TG-bot"
+        },
+        "consultation-button": "Get a consultation"
+      }
+    },
+    "AboutUs": {
+      "title": "Where big finance meets absolute reliability",
+      "description": "Every day we conduct cryptocurrency operations for individuals and large companies that trust us with their finances",
+      "advantages": {
+        "0": "billion rubles per year",
+        "1": "clients",
+        "2": "countries of operation"
+      }
+    },
+    "Services": {
+      "title": "Services",
+      "subtitle": "Exchange cryptocurrency, pay bills, and receive cash worldwide with Skynet",
+      "description": "We create convenient routes for transferring large sums, exchanging cryptocurrency for cash, and settling with foreign suppliers",
+      "services": {
+        "0": {
+          "title": "Exchange USDT ⇄ FIAT",
+          "description": "We exchange cryptocurrency for cash or non-cash funds and vice versa. We update currency rates and current commissions in the Telegram bot",
+          "link": "Learn more about USDT – FIAT"
+        },
+        "1": {
+          "title": "Cash2Cash",
+          "description": "We accept USDT/FIAT and issue cash worldwide: in our offices and in partner offices in 30+ countries",
+          "link": "Learn more about cash2cash"
+        },
+        "2": {
+          "title": "Payments for Foreign Economic Activity",
+          "description": "We pay invoices to foreign suppliers through a network of legal entities in 30+ countries. We document all transactions and bypass banking restrictions",
+          "link": "Learn more about Foreign Economic Activity"
+        }
+      }
+    },
+    "HowToUse": {
+      "title": "How it works",
+      "subtitle": "<span class=\"text-black inline\">Manage financial operations in one Telegram bot.</span> <span class=\"!hidden md:!inline\">Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations</span>",
+      "mobile-subtitle": "Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations",
+      "steps": {
+        "0": {
+          "title": "Choose a service <br />in the TG bot",
+          "description": "Specify your task, the required <br />amount and currency, or request <br />a manager consultation"
+        },
+        "1": {
+          "title": "Discuss details <br />with the manager",
+          "description": "We will contact you to clarify <br />the terms of the operation and deadlines"
+        },
+        "2": {
+          "title": "Confirm <br />the deal",
+          "description": "Provide data and <br />pay the commission to <br />start the operation"
+        },
+        "3": {
+          "title": "Receive funds or<br /> confirmation of payment",
+          "description": "Depending on the selected <br />service, receive cash or <br>get documentary<br /> confirmation of your transfer"
+        }
+      }
+    },
+    "Verification": {
+      "title": "Verification",
+      "subtitle": "Managing finances is even more convenient with premium options for verified clients",
+      "cards": {
+        "0": {
+          "title": "Courier delivery",
+          "description": "Delivery of funds to a convenient location worldwide"
+        },
+        "1": {
+          "title": "Personal manager",
+          "description": "Individual support from an expert in cryptocurrency and international transfers"
+        },
+        "2": {
+          "title": "Fixed rate",
+          "description": "We lock the currency rate from the time of application to the deal to protect your funds from market fluctuations"
+        }
+      },
+      "red-card": {
+        "description": "Discuss the verification conditions with the manager to gain access to premium features",
+        "get-consultation": "get a consultation"
+      }
+    },
+    "Offices": {
+      "title": "Offices",
+      "subtitle": "We work remotely worldwide, but we are always happy to see you in our offices",
+      "description": "Come to meet us in person, discuss tasks, and conduct a deal",
+      "offices-list": {
+        "0": {
+          "country": "Moscow",
+          "address": "Moscow, street street, 18, office 203"
+        },
+        "1": {
+          "country": "Dubai",
+          "address": ""
+        },
+        "2": {
+          "country": "Ufa",
+          "address": ""
+        },
+        "3": {
+          "country": "Moscow",
+          "address": ""
+        }
+      }
+    }
+  },
+  "Footer": {
+    "tg-block": {
+      "title": "Order payment, transfer, exchange, or consultation today in our Telegram bot",
+      "go-to-tg": "Go to telegram"
+    },
+    "links": {
+      "nav": {
+        "title": "Navigation",
+        "links-list": {
+          "0": "Home",
+          "1": "USDT – FIAT",
+          "2": "Cash2Cash",
+          "3": "Invoice payment"
+        }
+      },
+      "contacts": {
+        "title": "Contacts",
+        "links-list": {
+          "phone": "+7 999 999 99 99"
+        }
+      },
+      "subscribe": {
+        "title": "Subscribe to receive our articles",
+        "subscribe-button": "Subscribe"
+      }
+    },
+    "policy": "Privacy policy",
+    "rights": "All rights reserved",
+    "development": "Website development"
+  }
+}
