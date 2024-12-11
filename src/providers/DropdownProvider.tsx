@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
 interface DropdownContextType {
   isOpen: boolean;
@@ -20,11 +21,7 @@ export default function DropdownProvider({
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
   return (
