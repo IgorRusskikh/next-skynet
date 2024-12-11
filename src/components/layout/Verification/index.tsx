@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Verification.module.css";
 import { HTMLAttributes } from "react";
 import CustomLink from "@/components/ui/Link";
+import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -12,46 +13,46 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function Verification() {
+  const t = useTranslations("Index.Verification")
+
   return (
     <section id="verification" className={`${styles.verification}`}>
       <div className={`${styles.verificationInner}`}>
         <div className={`${styles.verificationTitleWrapper}`}>
-          <h2 className={`${styles.verificationTitle}`}>Верификация</h2>
+          <h2 className={`${styles.verificationTitle}`}>{t("title")}</h2>
 
           <h3 className={`${styles.verificationDescription} hidden md:block lg:hidden`}>
-            Управление финансами ещё удобнее с премиум-опциями
-            для верифицированных клиентов
+            {t("subtitle")}
           </h3>
         </div>
 
         <div className={`${styles.verificationContent}`}>
           <h3 className={`${styles.verificationDescription} md:hidden lg:block`}>
-            Управление финансами ещё удобнее с премиум-опциями
-            для верифицированных клиентов
+            {t("subtitle")}
           </h3>
 
           <div className={`${styles.cardsWrapper}`}>
             <div className={`${styles.cardsCol} ${styles.cardsColFirst}`}>
               <Card
-                title="Доставка курьером"
-                description="Доставка средств в удобное место по всему миру"
+                title={t("cards.0.title")}
+                description={t("cards.0.description")}
                 image
                 className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
               <Card
-                title="Персональный менеджер"
-                description="Индивидуальное сопровождение от эксперта по криптовалюте и международным переводам"
+                title={t("cards.1.title")}
+                description={t("cards.1.description")}
                 className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
             </div>
             <div className={`${styles.cardsCol} ${styles.cardsColSecond}`}>
               <Card
-                title="Фиксированный курс"
-                description="Закрепляем курс валюты на время от заявки до сделки, чтобы защитить ваши средства от колебаний рынка"
+                title={t("cards.2.title")}
+                description={t("cards.2.description")}
                 className="flex-1"
               />
               <Card
-                description="Обсудите условия верификации с менеджером, чтобы получить доступ к премиальным функциям"
+                description={t("red-card.description")}
                 red
                 descriptionClassName={styles.redCardDescription}
                 className="xl:max-h-[223px] 3xl:max-h-[11.61vw]"
@@ -73,6 +74,8 @@ const Card = ({
   descriptionClassName,
   ...props
 }: ICardProps) => {
+  const t = useTranslations("Index.Verification.red-card")
+
   return (
     <div
       className={`${styles.card} ${red ? styles.redCard : ""} ${className}`}
@@ -92,7 +95,7 @@ const Card = ({
         {red && (
           <div className={`${styles.cardLink}`}>
             <CustomLink href="" light>
-              Выбрать время консультации
+              {t("get-consultation")}
             </CustomLink>
           </div>
         )}

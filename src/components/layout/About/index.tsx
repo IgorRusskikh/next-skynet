@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import styles from "./About.module.css";
 import gsap from "gsap";
 import { BREAKPOINTS } from "@/constants";
+import { useTranslations } from "next-intl";
 
 export default function About() {
   const [isOpen, setIsOpen] = useState(0);
@@ -11,6 +12,8 @@ export default function About() {
 
   const numberRef = useRef<HTMLSpanElement>(null);
   const advantageTextRef = useRef<HTMLParagraphElement>(null);
+
+  const t = useTranslations("Index.AboutUs");
 
   useEffect(() => {
     if (step === 3) {
@@ -81,8 +84,9 @@ export default function About() {
     );
   }, []);
 
-  const numberDescription = useMemo(
-    () => ["млрд. рублей в год", "клиентов", "стран работы"],
+  const advantages = useMemo(
+    // @ts-expect-error
+    () => Object.values(t.raw("advantages")) as string[],
     []
   );
 
@@ -90,14 +94,13 @@ export default function About() {
     <section id="about" className={`${styles.about}`}>
       <div className={`${styles.aboutContent}`}>
         <p className={`${styles.aboutTitle}`}>
-          Там, где большие финансы встречаются с абсолютной надежностью
+          {t("title")}
           <span className="text-primary-red">.</span>
         </p>
 
         <div className={`${styles.advantages}`}>
           <p className={`${styles.advantagesText} relative z-20`}>
-            Каждый день мы осуществляем операции в криптовалюте для частных лиц
-            и крупных компаний, которые доверяют нам свои финансы {step}
+            {t("description")}
           </p>
 
           <div className={`md:max-w-[501px] lg:max-w-[65%] w-full text-right`}>
@@ -110,16 +113,16 @@ export default function About() {
               </div>
 
               <p className={`${styles.advantageText}`} ref={advantageTextRef}>
-                {numberDescription.map((item, inx) => (
+                {advantages.map((advantage, inx) => (
                   <span
-                    key={inx}
+                    key={advantage}
                     className={`${
                       step === inx
                         ? "opacity-100 visible translate-y-0"
                         : "opacity-0 invisible translate-y-4"
                     }`}
                   >
-                    {item}
+                    {advantage}
                   </span>
                 ))}
               </p>

@@ -59,7 +59,7 @@
 }
 
 .container nav ul {
-  @apply items-center font-tt-norms;
+  @apply items-center font-tt-norms uppercase;
   @apply hidden;
   @apply xl:gap-6 xl:text-[10px] xl:leading-[10px] xl:font-medium xl:flex;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];

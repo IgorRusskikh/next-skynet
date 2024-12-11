@@ -5,53 +5,45 @@ import styles from "./Services.module.css";
 import { useMemo, useState } from "react";
 import CustomLink from "@/components/ui/Link";
 import ServicesSlider from "@/components/ServicesSlider";
+import { useTranslations } from "next-intl";
+
+export type service = {
+  title: string;
+  description: string;
+  link: string;
+};
 
 export default function Services() {
   const [currentService, setCurrentService] = useState(0);
 
+  const t = useTranslations("Index.Services");
+
   const services = useMemo(
-    () => [
-      {
-        title: "Обмен USDT ⇄ FIAT",
-        description:
-          "Обмениваем криптовалюту на наличные или безналичные средства и наоборот. Обновляем курсы валют и актуальную комиссию в Telegram-боте",
-        link: "Подробнее о USDT – FIAT",
-        image: "/images/services/first-service-image-xs.png",
-      },
-      {
-        title: "Cash2Cash",
-        description:
-          "Принимаем USDT/FIAT и выдаём денежные средства по всему миру: в наших офисах и в офисах партнёров  в 30+ странах",
-        link: "подробнее о cash2cash",
-        image: "/images/services/second-service-image-xs.png",
-      },
-      {
-        title: "Платежи для ВЭД",
-        description:
-          "Оплачиваем счета зарубежных поставщиков через  сеть юридических лиц в 30+ странах. Документально оформляем все сделки и обходим банковские ограничения",
-        link: "подробнее о ВЭД",
-        image: "/images/services/third-service-image-xs.png",
-      },
-    ],
+    // @ts-expect-error
+    () => Object.values(t.raw("services")) as service[],
     []
   );
+
+  const servicesImage = [
+    "/images/services/first-service-image-xs.png",
+    "/images/services/second-service-image-xs.png",
+    "/images/services/third-service-image-xs.png",
+  ];
 
   return (
     <section id="services" className={`${styles.services}`}>
       <div className={`${styles.servicesContainer}`}>
         <div className={`${styles.servicesTitleWrapper}`}>
-          <h2 className={`${styles.servicesTitle}`}>Услуги</h2>
+          <h2 className={`${styles.servicesTitle}`}>{t("title")}</h2>
 
           <div
             className={`${styles.servicesContentText} hidden md:block lg:hidden`}
           >
             <h3 className={`${styles.servicesContentTitle}`}>
-              Обменивайте криптовалюту, оплачивайте счета и получайте наличные
-              по всему миру с помощью Skynet
+              {t("description")}
             </h3>
             <p className={`${styles.servicesContentDescription}`}>
-              Мы создаем удобные маршруты для перевода крупных сумм, обмена
-              криптовалюты на наличные и расчетов с зарубежными поставщиками
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -59,12 +51,10 @@ export default function Services() {
         <div className={`${styles.servicesContent}`}>
           <div className={`${styles.servicesContentText} md:hidden lg:block`}>
             <h3 className={`${styles.servicesContentTitle}`}>
-              Обменивайте криптовалюту, оплачивайте счета и получайте наличные
-              по всему миру с помощью Skynet
+              {t("description")}
             </h3>
             <p className={`${styles.servicesContentDescription}`}>
-              Мы создаем удобные маршруты для перевода крупных сумм, обмена
-              криптовалюты на наличные и расчетов с зарубежными поставщиками
+              {t("subtitle")}
             </p>
           </div>
 
@@ -281,7 +271,7 @@ export default function Services() {
         </div>
       </div>
 
-      <ServicesSlider services={services} />
+      <ServicesSlider services={services} images={servicesImage} />
     </section>
   );
 }

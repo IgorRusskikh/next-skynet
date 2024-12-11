@@ -133,7 +133,7 @@
 }
 
 .redCard p {
-  @apply text-white !mt-0 text-[3.89vw] leading-[4.28vw];
+  @apply text-white !mt-0 text-[3.89vw] leading-[4.28vw] !max-w-none;
   @apply md:text-sm md:leading-[15.4px];
   @apply lg:text-sm lg:leading-[14px];
   @apply xl:text-[18px] xl:leading-[19.8px];

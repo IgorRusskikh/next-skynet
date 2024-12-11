@@ -5,6 +5,8 @@ export enum BREAKPOINTS {
   verticalTablet = 768,
 }
 
+export const LOCALES = ["ru", "en"];
+
 export const INNER_SITES = {
   main: {
     link: "/",

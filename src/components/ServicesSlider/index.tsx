@@ -6,19 +6,19 @@ import Image from "next/image";
 import CustomLink from "../ui/Link";
 import "swiper/css";
 import { useMemo } from "react";
+import { service } from "../layout/Services";
 
 interface IServicesSliderProps {
   services: IService[];
+  images: string[];
 }
 
-interface IService {
-  title: string;
-  description: string;
-  link: string;
-  image: string;
-}
+interface IService extends service {}
 
-export default function ServicesSlider({ services }: IServicesSliderProps) {
+export default function ServicesSlider({
+  services,
+  images,
+}: IServicesSliderProps) {
   const swiperOptions = useMemo(() => {
     return {
       slidesPerView: 1.05,
@@ -41,12 +41,7 @@ export default function ServicesSlider({ services }: IServicesSliderProps) {
               </p>
 
               <div className={`${styles.serviceSlideImage}`}>
-                <Image
-                  src={service.image}
-                  fill
-                  alt=""
-                  className="object-cover"
-                />
+                <Image src={images[inx]} fill alt="" className="object-cover" />
               </div>
 
               <div className={`${styles.serviceSlideDescriptionWrapper}`}>

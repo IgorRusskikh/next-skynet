@@ -36,6 +36,15 @@
   @apply 3xl:text-[3.23vw] 3xl:leading-[3.55vw];
 }
 
+.firstScreenContentTopItem {
+  @apply flex;
+  @apply xl:gap-[26px];
+}
+
+.arrowsContainer {
+  @apply flex flex-col overflow-clip gap-[2px] translate-y-[6px];
+}
+
 .firstScreenContentBottomWrapper {
   @apply hidden;
   @apply md:block;
@@ -51,7 +60,7 @@
 
 .firstScreenContentBottomButton {
   @apply md:mt-6;
-  @apply lg:hidden;
+  @apply lg:!hidden;
 }
 
 .bannerWrapper {

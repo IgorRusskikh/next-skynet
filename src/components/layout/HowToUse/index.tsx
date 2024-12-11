@@ -6,6 +6,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { BREAKPOINTS } from "@/constants";
+import { useTranslations } from "next-intl";
+
+type step = {
+  title: string;
+  description: string;
+};
 
 export default function HowToUse() {
   const startAnimRef = useRef<HTMLDivElement>(null);
@@ -14,6 +20,8 @@ export default function HowToUse() {
   const stepsCountRefs = useRef<HTMLSpanElement[]>([]);
   const stepsDescriptionRefs = useRef<HTMLSpanElement[]>([]);
   const imagesRefs = useRef<HTMLDivElement[]>([]);
+
+  const t = useTranslations("Index.HowToUse");
 
   const mm = gsap.matchMedia();
 
@@ -40,11 +48,11 @@ export default function HowToUse() {
     mm.add(
       {
         isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
-        isVertical: `(min-width: ${BREAKPOINTS.verticalTablet})`,
+        isVertical: `(min-width: ${BREAKPOINTS.verticalTablet}px)`,
       },
       (context) => {
         const { isMobile, isVertical } = context.conditions as any;
-        
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: parentRef.current,
@@ -374,21 +382,15 @@ export default function HowToUse() {
   };
 
   const bannerTitles = useMemo(
-    () => [
-      "Выберите услугу в TG-боте",
-      "Обсудите детали с менеджером",
-      "Подтвердите сделку",
-      "Получите средства или подтверждение оплаты",
-    ],
+    () =>
+      // @ts-expect-error
+      (Object.values(t.raw("steps")) as step[]).map((step) => step.title),
     []
   );
   const bannerStepDescription = useMemo(
-    () => [
-      "Укажите вашу задачу, нужную сумму и валюту или закажите консультацию менеджера",
-      "Мы свяжемся для уточнения условий операции и сроков",
-      "Предоставьте данные и оплатите комиссию для начала операции",
-      "В зависимости от выбранной услуги примите наличные или получите документальное подтверждение вашего перевода ",
-    ],
+    () =>
+      // @ts-expect-error
+      (Object.values(t.raw("steps")) as step[]).map((step) => step.description),
     []
   );
 
@@ -396,23 +398,15 @@ export default function HowToUse() {
     <section id="how-to-use" className={`${styles.howToUse}`}>
       <div className={`${styles.howToUseInner}`}>
         <div className={`${styles.sectionHeader}`}>
-          <h2 className={`${styles.howToUseTitle}`}>Как это работает?</h2>
+          <h2 className={`${styles.howToUseTitle}`}>{t("title")}</h2>
 
-          <p className={`${styles.howToUseDescription}`}>
-            <span className="text-black inline">
-              Управляйте финансовыми операциями в одном Telegram-боте.
-            </span>{" "}
-            <span className={"!hidden md:!inline"}>
-              Наш бот — это удобный инструмент для управления финансами, в
-              котором можно заказывать обмены криптовалюты, переводы, оплату
-              счета, обмен валюты и консультации менеджера
-            </span>
-          </p>
+          <p
+            className={`${styles.howToUseDescription}`}
+            dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+          ></p>
 
           <p className={`${styles.howToUseDescriptionText} md:!hidden`}>
-            Наш бот — это удобный инструмент для управления финансами, в котором
-            можно заказывать обмены криптовалюты, переводы, оплату счета, обмен
-            валюты и консультации менеджера
+            {t("mobile-subtitle")}
           </p>
         </div>
 
@@ -437,9 +431,8 @@ export default function HowToUse() {
                     ref={(node) => {
                       titlesRefs.current[index] = node!;
                     }}
-                  >
-                    {title}
-                  </span>
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  ></span>
                 ))}
               </p>
 
@@ -458,10 +451,13 @@ export default function HowToUse() {
                 </p>
 
                 <p className={`${styles.bannerStepDescription}`}>
-                  <span className="!relative invisible opacity-0">
-                    Укажите вашу задачу, нужную сумму и валюту или закажите
-                    консультацию менеджера
-                  </span>
+                  <span
+                    className="!relative invisible opacity-0"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        t.raw("steps.0.description") + "_______________________",
+                    }}
+                  ></span>
 
                   {bannerStepDescription.map((description, index) => (
                     <span
@@ -469,9 +465,8 @@ export default function HowToUse() {
                       ref={(node) => {
                         stepsDescriptionRefs.current[index] = node!;
                       }}
-                    >
-                      {description}
-                    </span>
+                      dangerouslySetInnerHTML={{ __html: description }}
+                    ></span>
                   ))}
                 </p>
               </div>

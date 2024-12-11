@@ -1,5 +1,5 @@
 .button {
-  @apply flex items-center rounded-[100px] gap-[1.11vw] py-[3.89vw] px-[4.44vw];
+  @apply flex items-center rounded-[100px] gap-[1.11vw] py-[3.89vw] px-[4.44vw] transition-colors duration-300;
   @apply md:gap-1 md:py-[14px] md:px-6;
   @apply lg:gap-1 lg:py-[14px] lg:px-6;
   @apply xl:gap-[6.67px] xl:py-[18px] xl:px-6;
@@ -7,11 +7,11 @@
 }
 
 .buttonBlack {
-  @apply bg-black text-white;
+  @apply bg-black text-white hover:bg-primary-red;
 }
 
 .buttonRed {
-  @apply bg-primary-red text-white;
+  @apply bg-primary-red text-white hover:bg-black;
 }
 
 .button p {

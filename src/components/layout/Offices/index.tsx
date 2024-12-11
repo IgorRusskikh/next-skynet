@@ -1,10 +1,11 @@
 "use client";
 
-import { HTMLAttributes, FC, useEffect, useRef } from "react";
+import { HTMLAttributes, FC, useEffect, useRef, useMemo } from "react";
 import styles from "./Offices.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BREAKPOINTS } from "@/constants";
+import { useTranslations } from "next-intl";
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   image: string;
@@ -13,8 +14,15 @@ interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   index: number;
 }
 
+type office = {
+  country: string;
+  address: string;
+};
+
 export default function Offices(): JSX.Element {
   const officesBlockRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations("Index.Offices");
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +31,9 @@ export default function Offices(): JSX.Element {
     mm.add(
       {
         isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
-        isVerticalTablet: `(min-width: ${BREAKPOINTS.verticalTablet}px) and (max-width: ${BREAKPOINTS.desktop - 1}px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.desktop - 1}px)`,
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
@@ -48,21 +58,28 @@ export default function Offices(): JSX.Element {
     };
   }, []);
 
+  const countries = useMemo(
+    () =>
+      Object.values(
+        t.raw(
+          // @ts-expect-error
+          "offices-list"
+        )
+      ) as office[],
+    []
+  );
+
   return (
     <section id="offices" className={`${styles.offices}`}>
       <div className={`${styles.officesInner}`}>
         <div className={`${styles.officesTitleWrapper}`}>
-          <h2 className={`${styles.officesTitle}`}>Офисы</h2>
+          <h2 className={`${styles.officesTitle}`}>{t("title")}</h2>
 
           <div className={`${styles.officesText}`}>
-            <p className={`${styles.officesTextTitle}`}>
-              Работаем удалённо по всему миру, но всегда рады видеть вас в наших
-              офисах
-            </p>
+            <p className={`${styles.officesTextTitle}`}>{t("description")}</p>
 
             <p className={`${styles.officesTextDescription}`}>
-              Приезжайте, чтобы познакомиться с нами лично, обсудить задачи и
-              провести сделку
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -73,13 +90,13 @@ export default function Offices(): JSX.Element {
               className={`${styles.officesListWrapper}`}
               ref={officesBlockRef}
             >
-              {images.map((image, index) => (
+              {countries.map(({ country, address }, inx) => (
                 <OfficeCard
-                  key={index}
-                  image={image}
-                  location="Москва"
-                  address="ул. улица, 18, офис 203"
-                  index={index}
+                  key={inx}
+                  image={images[inx]}
+                  location={country}
+                  address={address}
+                  index={inx}
                 />
               ))}
             </div>

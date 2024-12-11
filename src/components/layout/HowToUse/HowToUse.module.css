@@ -52,7 +52,7 @@
 
 .banner {
   @apply rounded-[11.62vw] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-left overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
-  @apply md:w-full md:h-[592px] md:justify-between;
+  @apply md:w-full md:h-[592px] md:justify-between md:rounded-[42px];
   @apply lg:w-[964px] lg:h-[530px] lg:bg-contain;
   @apply xl:w-[1000px] xl:h-[549px];
   @apply 3xl:w-[72.92vw] 3xl:h-[40.04vw] 3xl:rounded-[3.05vw];
@@ -60,9 +60,9 @@
 
 .bannerTitle {
   @apply text-white font-medium relative w-full h-fit pl-[5.56vw] pt-[11.11vw] text-[5.56vw] leading-[6.11vw];
-  @apply md:pl-8 md:pt-[40px] md:text-[26px] md:leading-[28.6px] md:max-w-[373px];
-  @apply lg:pl-[48.62px] lg:pt-[57.92px] lg:text-[32px] lg:leading-[35.2px] lg:max-w-[361px];
-  @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:max-w-[400px] xl:tracking-[-0.5px];
+  @apply md:pl-8 md:pt-[40px] md:text-[26px] md:leading-[28.6px];
+  @apply lg:pl-[48.62px] lg:pt-[57.92px] lg:text-[32px] lg:leading-[35.2px];
+  @apply xl:pl-[40px] xl:pt-[60px] xl:text-[38px] xl:leading-[41.8px] xl:tracking-[-0.5px];
   @apply 3xl:pl-[3.13vw] 3xl:pt-[4.17vw] 3xl:text-[2.4vw] 3xl:leading-[2.64vw];
 }
 
@@ -95,9 +95,9 @@
 
 .bannerStepDescription {
   @apply text-[#F3F3F3] relative w-fit h-fit translate-y-[34vw] text-[3.33vw] leading-[3.33vw];
-  @apply md:text-xs md:leading-3 md:max-w-[215px] md:mr-4 md:translate-y-0;
-  @apply lg:text-[13.52px] lg:leading-[13.52px] lg:max-w-[222px] lg:mr-[38px];
-  @apply xl:text-sm xl:leading-[14px] xl:max-w-[230px] xl:mr-[40px];
+  @apply md:text-xs md:leading-3 md:mr-4 md:translate-y-0;
+  @apply lg:text-[13.52px] lg:leading-[13.52px] lg:mr-[38px];
+  @apply xl:text-sm xl:leading-[14px] xl:mr-[40px];
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:max-w-[19.06vw] 3xl:mr-[3.54vw];
 }
 

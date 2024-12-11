@@ -3,8 +3,23 @@ import styles from "./Footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import FooterLogo from "@/svg/footer-logo.svg";
+import { useTranslations } from "next-intl";
+import { useMemo } from "react";
+import { INNER_SITES } from "@/constants";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
+  const navLinks = useMemo(
+    () =>
+      // @ts-expect-error
+      Object.values(t.raw("links.nav.links-list")).map((name, inx) => ({
+        title: name,
+        link: Object.values(INNER_SITES)[inx].link,
+      })),
+    []
+  );
+
   return (
     <footer className={`${styles.footer}`}>
       <div className={`${styles.footerContent}`}>
@@ -15,12 +30,9 @@ export default function Footer() {
 
           <div className={`${styles.footerLinks}`}>
             <div className={`${styles.goToTelegram}`}>
-              <p>
-                Закажите оплату, перевод, обмен или консультацию уже сегодня
-                в нашем Telegram-боте{" "}
-              </p>
+              <p>{t("tg-block.title")}</p>
 
-              <Button theme="red">Перейти в Telegram</Button>
+              <Button theme="red">{t("tg-block.go-to-tg")}</Button>
             </div>
 
             <div className="flex md:block mt-[12.22vw] md:mt-0">
@@ -28,13 +40,13 @@ export default function Footer() {
                 <div
                   className={`${styles.footerLinksNav} ${styles.footerLinksGridItem}`}
                 >
-                  <h5>Навигация</h5>
+                  <h5>{t("links.nav.title")}</h5>
 
                   <div className={`${styles.footerLinksList}`}>
                     <ul>
-                      {Array.from({ length: 5 }).map((_, inx) => (
-                        <li key={inx}>
-                          <Link href="/">Главная</Link>
+                      {navLinks.map(({ title, link }) => (
+                        <li key={title as string}>
+                          <Link href={link}>{title as string}</Link>
                         </li>
                       ))}
                     </ul>
@@ -44,12 +56,12 @@ export default function Footer() {
                 <div
                   className={`${styles.footerContacts} ${styles.footerLinksGridItem}`}
                 >
-                  <h5>Контакты</h5>
+                  <h5>{t("links.contacts.title")}</h5>
 
                   <div className={`${styles.footerContactsList}`}>
-                    {Array.from({ length: 3 }).map((_, inx) => (
-                      <a key={inx} href={""}>
-                        email@example.com
+                    {contacts.map(({name, link}) => (
+                      <a key={name} href={link}>
+                        {name}
                       </a>
                     ))}
                   </div>
@@ -58,10 +70,10 @@ export default function Footer() {
                 <div
                   className={`${styles.footerSubscribe} ${styles.footerLinksGridItem}`}
                 >
-                  <h5>Подпишитесь, чтобы получать наши статьи</h5>
+                  <h5>{t("links.subscribe.title")}</h5>
 
                   <div>
-                    <Button>Подписаться</Button>
+                    <Button>{t("links.subscribe.subscribe-button")}</Button>
                   </div>
                 </div>
               </div>
@@ -75,11 +87,11 @@ export default function Footer() {
               className={`${styles.footerSubscribe} ${styles.footerLinksGridItem} ${styles.footerSubscribeMobile}`}
             >
               <h5 className="border-none">
-                Подпишитесь, чтобы получать наши статьи
+                {t("links.subscribe.title")}
               </h5>
 
               <div>
-                <Button>Подписаться</Button>
+                <Button>{t("links.subscribe.subscribe-button")}</Button>
               </div>
             </div>
           </div>
@@ -93,14 +105,14 @@ export default function Footer() {
           <div className={`${styles.bottomLinks}`}>
             <div className={`${styles.bottomLinksItem}`}>
               <a href="/privacy-policy" target="_blank">
-                Политика конфиденциальности
+                {t("policy")}
               </a>
 
-              <p>© {new Date().getFullYear()} Все права защищены</p>
+              <p>© {new Date().getFullYear()} {t("rights")}</p>
             </div>
 
             <a href="https://skynet.agency" target="_blank">
-              Разработка сайта
+              {t("development")}
             </a>
           </div>
         </div>
@@ -108,3 +120,18 @@ export default function Footer() {
     </footer>
   );
 }
+
+const contacts = [
+  {
+    name: "@TG Bot",
+    link: "@TG Bot"
+  },
+  {
+    name: "+7 999 999 99 99",
+    link: "tel:+7 999 999 99 99"
+  },
+  {
+    name: "email@example.com",
+    link: "mailto:email@example.com"
+  }
+]

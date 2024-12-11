@@ -1,5 +1,5 @@
 .button {
-  @apply flex items-center rounded-[100px];
+  @apply flex items-center rounded-[100px] transition-colors duration-300;
   @apply md:gap-[6.67px] md:py-[5.67px] md:px-[6px];
   @apply lg:gap-[6.67px];
   @apply xl:gap-[6.67px] xl:py-[5.67px] xl:px-[6px];
@@ -7,7 +7,7 @@
 }
 
 .buttonBlack {
-  @apply bg-black text-white;
+  @apply bg-black text-white hover:bg-primary-red;
 }
 
 .button p {

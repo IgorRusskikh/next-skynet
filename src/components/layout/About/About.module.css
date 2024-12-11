@@ -8,10 +8,10 @@
 
 .aboutContent {
   @apply max-w-[91.67vw] mx-auto;
-  @apply md:max-w-[728px] md:ml-[150px];
-  @apply lg:max-w-[964px] w-full;
-  @apply xl:max-w-[915px] xl:ml-[26.172vw] xl:pl-0;
-  @apply 3xl:max-w-[63.281vw] 3xl:ml-[29vw];
+  @apply md:max-w-[728px] md:pl-[130px];
+  @apply lg:max-w-[964px] lg:pl-[170px] w-full;
+  @apply xl:max-w-[1200px] xl:pl-[290px];
+  @apply 3xl:max-w-[84.375vw] 3xl:pl-[21vw];
 }
 
 .aboutTitle {

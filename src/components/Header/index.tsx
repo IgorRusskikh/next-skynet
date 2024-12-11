@@ -5,11 +5,21 @@ import styles from "./Header.module.css";
 import IconButton from "../ui/buttons/IconButton";
 import TelegramIcon from "@/svg/telegram.svg";
 import { DropdownContext } from "@/providers/DropdownProvider";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import Logo from "@/svg/logo.svg";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
   const { isOpen, setIsOpen } = useContext(DropdownContext);
+
+  const t = useTranslations("Index.Header");
+
+  const navLinks = useMemo(() => {
+    // @ts-expect-error
+    return Object.values(t.raw("nav-links")) as string[]
+  }, [])
+
+  console.log(navLinks)
 
   return (
     <div className={`${styles.navbar}`}>
@@ -25,9 +35,9 @@ export default function Header() {
 
         <nav>
           <ul>
-            {Array.from({ length: 4 }).map((_, inx) => (
+            {navLinks.map((link, inx) => (
               <li key={inx}>
-                <Link href="/">USDT – FIAT</Link>
+                <Link href="/">{link}</Link>
               </li>
             ))}
           </ul>
@@ -58,7 +68,7 @@ export default function Header() {
           </div>
 
           <IconButton icon={TelegramIcon} className={`${styles.telegram}`}>
-            TG-Бот
+            {t("actions.tg-bot")}
           </IconButton>
         </div>
       </div>
