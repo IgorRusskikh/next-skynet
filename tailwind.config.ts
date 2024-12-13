@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwind3d from "tailwindcss-3d";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -18,8 +19,45 @@ export default {
       },
       screens: {
         "3xl": "1800px",
-      }
+      },
     },
   },
-  plugins: [tailwind3d({ legacy: true })],
+  plugins: [
+    tailwind3d({ legacy: true }),
+    plugin(function ({ addUtilities, addComponents }) {
+      addUtilities({
+        ".section-title": {
+          "@apply uppercase text-[#898C98] text-[2.78vw] leading-[2.78vw]": {},
+          "@apply md:text-[10px] md:leading-[10px]": {},
+          "@apply lg:text-[10px] lg:leading-[10px]": {},
+          "@apply xl:text-[10px] xl:leading-[10px]": {},
+          "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw]": {},
+        },
+        ".section-subtitle": {
+          "@apply font-medium text-[5.56vw] leading-[6.11vw]": {},
+          "@apply md:text-[26px] md:leading-[28.6px]": {},
+          "@apply lg:text-[32px] lg:leading-[35.2px]": {},
+          "@apply xl:text-[38px] xl:leading-[41.8px]": {},
+          "@apply 3xl:text-[2.4vw] 3xl:leading-[2.64vw]": {},
+        },
+      });
+      addComponents({
+        ".container": {
+          "margin": "0 auto",
+          "@media (min-width: 768px) and (max-width: 1023px)": {
+            "max-width": "728px",
+          },
+          "@media (min-width: 1024px) and (max-width: 1279px)": {
+            "max-width": "964px",
+          },
+          "@media (min-width: 1280px) and (max-width: 1799px)": {
+            "max-width": "1220px",
+          },
+          "@media (min-width: 1800px)": {
+            "max-width": "84.38vw",
+          }
+        }
+      })
+    }),
+  ],
 } satisfies Config;

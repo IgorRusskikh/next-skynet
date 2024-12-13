@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ttNorms } from "@/utils/fonts";
 import Header from "@/components/Header";
-import Footer from "@/components/layout/Footer";
+import Footer from "@/components/layout/MainPage/Footer";
 import Dropdown from "@/components/Dropdown";
 import DropdownProvider from "@/providers/DropdownProvider";
 import { NextIntlClientProvider } from "next-intl";

@@ -6,7 +6,7 @@ import Image from "next/image";
 import CustomLink from "../ui/Link";
 import "swiper/css";
 import { useMemo } from "react";
-import { service } from "../layout/Services";
+import { service } from "../layout/MainPage/Services";
 
 interface IServicesSliderProps {
   services: IService[];

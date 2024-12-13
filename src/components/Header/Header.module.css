@@ -88,3 +88,9 @@
   @apply md:h-[1.6px];
   @apply lg:h-[2px];
 }
+
+.headerContent {
+  @apply flex items-center;
+  @apply xl:gap-[40px];
+  @apply 3xl:gap-14;
+}

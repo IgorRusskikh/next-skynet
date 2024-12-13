@@ -375,7 +375,7 @@ export default function HowToUse() {
       scrollTrigger: {
         trigger: startAnimRef.current,
         start: `top+=${(95 / 4.5) * inx + 5}%`,
-        end: `top+=${(95 / 4.5) * (inx + 1)}%`,
+        end: `top+=${(95 / 4.5) * (inx + 1) + 10}%`,
         scrub: true,
       },
     };

@@ -1,0 +1,211 @@
+.locations {
+  @apply font-tt-norms;
+  @apply md:h-[900px];
+  @apply lg:h-[800px];
+  @apply xl:mt-[140px] xl:h-[1208px];
+  @apply 3xl:mt-[10vw] 3xl:h-[70.83vw];
+}
+
+.locationsContainer {
+  @apply md:pt-[120px];
+  @apply lg:pt-[140px];
+  @apply xl:pt-[160px];
+  @apply 3xl:pt-[10.42vw];
+}
+
+.locationsTitleWrapper {
+  @apply container flex;
+  @apply md:gap-14;
+  @apply lg:gap-[96px];
+  @apply xl:gap-[231px];
+  @apply 3xl:gap-[12.55vw];
+}
+
+.locationsTitleWrapper h2 {
+  @apply text-[#898C98] uppercase font-[450] text-[2.78vw] leading-[2.78vw];
+  @apply md:text-[10px] md:leading-[10px];
+  @apply lg:text-[10px] lg:leading-[10px];
+  @apply xl:text-[10px] xl:leading-[10px] xl:font-normal;
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
+}
+
+.locationsText {
+  @apply md:max-w-[547px];
+  @apply lg:max-w-[665px];
+  @apply xl:max-w-[789px];
+  @apply 3xl:max-w-[56.88vw];
+}
+
+.locationsTextTitle {
+  @apply font-medium;
+  @apply md:text-[26px] md:leading-[28.6px];
+  @apply lg:text-[32px] lg:leading-[35.2px];
+  @apply xl:text-[38px] xl:leading-[41.8px];
+  @apply 3xl:text-[2.4vw] 3xl:leading-[2.64vw];
+}
+
+.locationsTextDescription {
+  @apply font-medium text-[#898C98];
+  @apply md:text-base md:leading-[17.6px] md:max-w-[497px] md:mt-8;
+  @apply lg:text-base lg:leading-[17.6px] lg:max-w-[497px] lg:mt-6;
+  @apply xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:mt-8;
+  @apply 3xl:text-[1.15vw] 3xl:leading-[1.26vw] 3xl:max-w-[31.2vw] 3xl:mt-[2.08vw];
+}
+
+.locationsMapWrapper {
+  @apply md:h-[736px];
+  @apply lg:h-[652px];
+  @apply xl:h-[652px];
+  @apply 3xl:h-[44.69vw] relative overflow-clip;
+}
+
+.locationsMap {
+  @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
+  @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw];
+  @apply lg:h-[456px] lg:w-[150vw] lg:left-[-25vw];
+  @apply xl:h-[455px] xl:w-[130vw] xl:left-[-15vw];
+  @apply 3xl:h-[30.36vw] 3xl:w-[130vw] rounded-t-[50%] absolute 3xl:left-[-15vw];
+}
+
+.locationsMapInner {
+  @apply w-full h-full relative container;
+  @apply 3xl:!max-w-none;
+}
+
+.northAmericaWrapper {
+  @apply absolute;
+  @apply md:left-[-46.97px] md:top-[37.43px];
+  @apply lg:left-[-30px] lg:top-[46.69px];
+  @apply xl:left-[50px] xl:top-[46.69px];
+  @apply 3xl:left-[28.16vw] 3xl:top-[3.07vw];
+}
+
+.northAmerica {
+  @apply md:w-[344.36px] md:h-[133.3px];
+  @apply lg:w-[429.04px] lg:h-[166.14px];
+  @apply xl:w-[429.04px] xl:h-[166.14px];
+  @apply 3xl:w-[28.24vw] 3xl:h-[10.93vw];
+}
+
+.latinAmericaWrapper {
+  @apply absolute;
+  @apply md:left-[-40.66px] md:top-[161.88px];
+  @apply lg:left-[-22.17px] lg:top-[201.79px];
+  @apply xl:left-[57.76px] xl:top-[201.79px];
+  @apply 3xl:left-[28.68vw] 3xl:top-[13.28vw];
+}
+
+.latinAmerica {
+  @apply md:w-[222.62px] md:h-[209.51px];
+  @apply lg:w-[277.36px] lg:h-[261.12px];
+  @apply xl:w-[277.36px] xl:h-[261.12px];
+  @apply 3xl:w-[18.26vw] 3xl:h-[17.19vw];
+}
+
+.africaWrapper {
+  @apply absolute;
+  @apply md:left-[253.37px] md:top-[142.77px];
+  @apply lg:left-[344.71px] lg:top-[177.97px];
+  @apply xl:left-[424px] xl:top-[177.97px];
+  @apply 3xl:left-[52.74vw] 3xl:top-[11.71vw];
+}
+
+.africa {
+  @apply md:w-[237.51px] md:h-[179.75px];
+  @apply lg:w-[295.92px] lg:h-[224.02px];
+  @apply xl:w-[295.92px] xl:h-[224.02px];
+  @apply 3xl:w-[19.48vw] 3xl:h-[14.74vw];
+}
+
+.eastWrapper {
+  @apply absolute;
+  @apply md:left-[405.74px] md:top-[142.77px];
+  @apply lg:left-[521px] lg:top-[159.1px];
+  @apply xl:left-[601px] xl:top-[159.1px];
+  @apply 3xl:left-[64.41vw] 3xl:top-[10.47vw];
+}
+
+.east {
+  @apply md:w-[107.78px] md:h-[74.29px];
+  @apply lg:w-[134.28px] lg:h-[92.58px];
+  @apply xl:w-[134.28px] xl:h-[92.58px];
+  @apply 3xl:w-[8.84vw] 3xl:leading-[6.09vw];
+}
+
+.asiaWrapper {
+  @apply absolute;
+  @apply md:right-[-47.72px] md:top-[112.87px];
+  @apply lg:right-[-19px] lg:top-[140.71px];
+  @apply xl:right-[157.56px] xl:top-[140.71px];
+  @apply 3xl:right-[35.24vw] 3xl:top-[9.26vw];
+}
+
+.asia {
+  @apply md:w-[310.26px] md:h-[144.85px];
+  @apply lg:w-[386.55px] lg:h-[180.53px];
+  @apply xl:w-[386.55px] xl:h-[180.53px];
+  @apply 3xl:w-[25.44vw] 3xl:h-[11.88vw];
+}
+
+.europaWrapper {
+  @apply absolute;
+  @apply md:left-[289.94px] md:top-[42.18px];
+  @apply lg:left-[389px] lg:top-[52.61px];
+  @apply xl:left-[469.66px] xl:top-[52.61px];
+  @apply 3xl:left-[55.74vw] 3xl:top-[3.46vw];
+}
+
+.europa {
+  @apply md:w-[121.14px] md:h-[104.18px];
+  @apply lg:w-[150.93px] lg:h-[129.84px];
+  @apply xl:w-[150.93px] xl:h-[129.84px];
+  @apply 3xl:w-[9.93vw] 3xl:h-[8.55vw];
+}
+
+.russiaWrapper {
+  @apply absolute;
+  @apply md:right-[-5.24px] md:top-[42.56px];
+  @apply lg:right-[35.23px] lg:top-[53.09px];
+  @apply xl:right-[211.29px] xl:top-[53.09px];
+  @apply 3xl:right-[38.78vw] 3xl:top-[3.49vw];
+}
+
+.russia {
+  @apply md:w-[330.45px] md:h-[104.56px];
+  @apply lg:w-[411.71px] lg:h-[130.32px];
+  @apply xl:w-[411.71px] xl:h-[130.32px];
+  @apply 3xl:w-[27.1vw] 3xl:h-[8.58vw];
+}
+
+.australiaWrapper {
+  @apply absolute;
+  @apply md:-right-[182.5px] md:top-[239.25px];
+  @apply lg:-right-[186.44px] lg:top-[298.22px];
+  @apply xl:-right-[11px] xl:top-[298.22px];
+  @apply 3xl:right-[24.19vw] 3xl:top-[19.63vw];
+}
+
+.australia {
+  @apply md:w-[174.17px] md:h-[104.56px];
+  @apply lg:w-[217px] lg:h-[130.32px];
+  @apply xl:w-[217px] xl:h-[130.32px];
+  @apply 3xl:w-[14.28vw] 3xl:h-[8.58vw];
+}
+
+/* POINTER STYLES */
+
+.pointerWrapper {
+  @apply absolute z-10 hover:!text-primary-red transition-colors duration-300;
+}
+
+.pointerInner {
+  @apply relative w-fit h-fit;
+}
+
+.pointer {
+  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw];
+}
+
+.northAmericaPointer {
+  @apply 3xl:left-[9.82vw] 3xl:top-[2vw];
+}

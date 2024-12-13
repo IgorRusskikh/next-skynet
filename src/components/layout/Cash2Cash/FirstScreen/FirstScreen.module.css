@@ -1,0 +1,70 @@
+.firstScreen {
+  @apply container font-tt-norms relative;
+  @apply md:pt-[119px] md:min-h-[752px];
+  @apply lg:pt-[59px] lg:min-h-[701px];
+  @apply xl:pt-[59px] xl:min-h-fit;
+  @apply 3xl:pt-[3.13vw];
+}
+
+.firstScreenContent h1 {
+  @apply uppercase font-medium;
+  @apply md:text-[94px] md:leading-[103.4px];
+  @apply lg:text-[126px] lg:leading-[138.6px];
+  @apply xl:text-[160px] xl:leading-[176px];
+  @apply 3xl:text-[11.15vw] 3xl:leading-[12.26vw];
+}
+
+.content {
+  @apply md:mt-3 md:max-w-[728px];
+  @apply lg:mt-[80px] lg:ml-[47px] lg:max-w-[519px];
+  @apply xl:mt-[40px] xl:ml-[110px] xl:max-w-[557px];
+  @apply 3xl:mt-[3.13vw] 3xl:ml-[6.46vw] 3xl:max-w-[39.01vw];
+}
+
+.typingBlock {
+  @apply uppercase border-y border-[#DFE2E9];
+  @apply md:py-4 md:text-xl md:leading-[22px];
+  @apply lg:py-6 lg:text-[28px] lg:leading-[30.8px];
+  @apply xl:py-6 xl:text-[28px] xl:leading-[30.8px];
+  @apply 3xl:py-[1.67vw] 3xl:text-[1.98vw] 3xl:leading-[2.19vw];
+}
+
+.descriptionBlock {
+  @apply font-[400];
+  @apply md:max-w-[339px] md:text-sm md:leading-[14px] md:mt-[100px];
+  @apply lg:max-w-[339px] lg:text-sm lg:leading-[14px] lg:mt-14;
+  @apply xl:max-w-[339px] xl:text-sm xl:leading-[14px] xl:mt-[70px];
+  @apply 3xl:max-w-[26.35vw] 3xl:text-[1.04vw] 3xl:leading-[1.04vw] 3xl:mt-[6.25vw];
+}
+
+.descriptionBlock button {
+  @apply font-medium;
+  @apply md:text-xs md:leading-3 md:max-w-[339px] md:mt-6;
+  @apply lg:text-xs lg:leading-3 lg:max-w-[339px] lg:mt-6;
+  @apply xl:text-xs xl:leading-3 xl:max-w-[339px] xl:mt-8;
+  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw];
+}
+
+.mascotWrapper {
+  @apply absolute;
+  @apply md:right-[84px] md:top-[235px];
+  @apply lg:right-[149px] lg:top-[159px];
+  @apply xl:right-[255px] xl:top-[164px];
+  @apply 3xl:right-[15.78vw] 3xl:top-[13.229vw];
+}
+
+.mascotImage {
+  @apply relative z-10;
+  @apply md:w-[234px] md:h-[517px];
+  @apply lg:w-[248px] lg:h-[551px];
+  @apply xl:w-[244px] xl:h-[534px];
+  @apply 3xl:w-[17.55vw] 3xl:h-[37.55vw];
+}
+
+.blurCircle {
+  @apply absolute rounded-full bg-[#DFE2E9] bg-opacity-20 backdrop-blur-[5.54px] -z-10;
+  @apply md:size-[364px] md:top-[-43px] md:right-[-65px];
+  @apply lg:size-[530px] lg:top-[-35px] lg:right-[-115px];
+  @apply xl:w-[508px] xl:h-[493px] xl:top-[-25px] xl:right-[-155px];
+  @apply 3xl:size-[36.46vw] 3xl:top-[-3.96vw] 3xl:right-[-9.48vw];
+}

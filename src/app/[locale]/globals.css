@@ -16,3 +16,7 @@ body {
 .gray-text {
   @apply text-[#898C98];
 }
+
+.container {
+  @apply xl:max-w-[84.38vw];
+}
