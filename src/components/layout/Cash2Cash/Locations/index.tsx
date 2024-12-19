@@ -182,63 +182,43 @@ export default function Locations() {
                   {name !== "australia" && (
                     <Pointer
                       className={`${styles[`${name}Pointer`]}`}
-                      lineWrapperClassName={`${
-                        styles[`${name}PointerLineWrapper`]
-                      }`}
+                      lineWrapperClassName={`${styles[`${name}PointerLineWrapper`]}`}
                       lineClassName={`${styles[`${name}Line`]}`}
-                      citiesContainerClassName={`${
-                        styles[`${name}CitiesContainer`]
-                      }`}
+                      citiesContainerClassName={`${styles[`${name}CitiesContainer`]}`}
                       isHovered={hoveredCountries[inx]}
-                      onClick={() => {
-                        onClickHandler(inx);
-                      }}
-                      onMouseEnter={() => {
-                        onMouseEnterHandler(inx);
-                      }}
-                      onMouseLeave={() => {
-                        onMouseLeaveHandler(inx);
-                      }}
+                      onClick={() => onClickHandler(inx)}
+                      onMouseEnter={() => onMouseEnterHandler(inx)}
+                      onMouseLeave={() => onMouseLeaveHandler(inx)}
                       country={locations[inx].country}
                       cities={locations[inx].cities as string[]}
-                      children={
-                        Line && AdaptiveLine ? (
-                          <>
-                            {AdaptiveLine !== null && (
-                              // @ts-expect-error need a type
-                              <Line className={`${styles[`${name}Line`]}`} />
-                            )}
-                            {Line !== null && AdaptiveLine !== null && (
-                              <>
-                                <div
-                                  className={`relative ${
-                                    styles[`${name}Line`]
-                                  } `}
-                                >
-                                  <Image
-                                    src={`/images/cash-to-cash/locations/${Line}-3xl.png`}
-                                    fill
-                                    alt=""
-                                    className="hidden 3xl:block"
-                                  />
-                                  <Image
-                                    src={`/images/cash-to-cash/locations/${Line}-xl.png`}
-                                    fill
-                                    alt=""
-                                    className="hidden lg:block 3xl:hidden"
-                                  />
-                                </div>
-                                {/* <AdaptiveLine
-                                  className={`${
-                                    styles[`${name}Line`]
-                                  } block 3xl:hidden`}
-                                /> */}
-                              </>
-                            )}
-                          </>
-                        ) : null
-                      }
-                    />
+                    >
+                      {Line && AdaptiveLine ? (
+                        <>
+                          {AdaptiveLine !== null && (
+                            // @ts-expect-error need a type
+                            <Line className={`${styles[`${name}Line`]}`} />
+                          )}
+                          {Line !== null && AdaptiveLine !== null && (
+                            <>
+                              <div className={`relative ${styles[`${name}Line`]}`}>
+                                <Image
+                                  src={`/images/cash-to-cash/locations/${Line}-3xl.png`}
+                                  fill
+                                  alt=""
+                                  className="hidden 3xl:block"
+                                />
+                                <Image
+                                  src={`/images/cash-to-cash/locations/${Line}-xl.png`}
+                                  fill
+                                  alt=""
+                                  className="hidden lg:block 3xl:hidden"
+                                />
+                              </div>
+                            </>
+                          )}
+                        </>
+                      ) : null}
+                    </Pointer>
                   )}
                 </div>
               ))}

@@ -11,7 +11,7 @@ import gsap from "gsap";
 import styles from "./HowToUse.module.css";
 
 interface Props {
-  tNamespace: string;
+  tNamespace?: string;
 }
 
 export default function HowToUse({ tNamespace }: Props) {
