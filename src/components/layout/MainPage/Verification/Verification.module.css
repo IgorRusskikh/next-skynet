@@ -150,8 +150,12 @@
 
 .cardLink {
   @apply uppercase mt-[8.89vw];
-  @apply md:mt-[51px];
+  @apply md:mt-[31px];
   @apply lg:mt-[44px];
   @apply xl:mt-[32px];
   @apply 3xl:mt-[3.13vw];
+}
+
+.cardLink a {
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }

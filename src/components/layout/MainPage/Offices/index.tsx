@@ -1,10 +1,11 @@
 "use client";
 
-import { HTMLAttributes, FC, useEffect, useRef, useMemo } from "react";
-import styles from "./Offices.module.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FC, HTMLAttributes, useEffect, useMemo, useRef } from "react";
+
 import { BREAKPOINTS } from "@/constants";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import styles from "./Offices.module.css";
 import { useTranslations } from "next-intl";
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
@@ -41,10 +42,10 @@ export default function Offices(): JSX.Element {
           context.conditions as any;
 
         gsap.to(officesBlockRef.current, {
-          x: -200,
+          x: isVerticalTablet ? -300 : -200,
           scrollTrigger: {
             trigger: officesBlockRef.current,
-            start: `top-=${isMobile ? 350 : 200}%`,
+            start: `top-=${isMobile ? 350 : isVerticalTablet ? 400 : 200}%`,
             end: `bottom+=${isDesktop ? 600 : 30}%`,
             scrub: 0.8,
           },
@@ -73,14 +74,20 @@ export default function Offices(): JSX.Element {
     <section id="offices" className={`${styles.offices}`}>
       <div className={`${styles.officesInner}`}>
         <div className={`${styles.officesTitleWrapper}`}>
-          <h2 className={`${styles.officesTitle}`}>{t("title")}</h2>
+          <h2 className={`${styles.officesTitle} section-title`}>
+            {t("title")}
+          </h2>
 
           <div className={`${styles.officesText}`}>
-            <p className={`${styles.officesTextTitle}`}>{t("description")}</p>
+            <p
+              className={`${styles.officesTextTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+            />
 
-            <p className={`${styles.officesTextDescription}`}>
-              {t("subtitle")}
-            </p>
+            <p
+              className={`${styles.officesTextDescription}`}
+              dangerouslySetInnerHTML={{ __html: t.raw("description") }}
+            ></p>
           </div>
         </div>
 

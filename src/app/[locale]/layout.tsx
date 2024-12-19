@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { ttNorms } from "@/utils/fonts";
-import Header from "@/components/Header";
-import Footer from "@/components/layout/MainPage/Footer";
+
+import { getLocale, getMessages } from "next-intl/server";
+
 import Dropdown from "@/components/Dropdown";
 import DropdownProvider from "@/providers/DropdownProvider";
+import Footer from "@/components/layout/MainPage/Footer";
+import Header from "@/components/Header";
+import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { ttNorms } from "@/utils/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -40,7 +42,6 @@ export default async function LocaleLayout({
             <Header />
           </DropdownProvider>
           {children}
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

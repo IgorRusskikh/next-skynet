@@ -1,7 +1,7 @@
+import CustomLink from "@/components/ui/Link";
+import { HTMLAttributes } from "react";
 import Image from "next/image";
 import styles from "./Verification.module.css";
-import { HTMLAttributes } from "react";
-import CustomLink from "@/components/ui/Link";
 import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
@@ -13,29 +13,33 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function Verification() {
-  const t = useTranslations("Index.Verification")
+  const t = useTranslations("Index.Verification");
 
   return (
     <section id="verification" className={`${styles.verification}`}>
       <div className={`${styles.verificationInner}`}>
         <div className={`${styles.verificationTitleWrapper}`}>
-          <h2 className={`${styles.verificationTitle}`}>{t("title")}</h2>
+          <h2 className={`${styles.verificationTitle} section-title`}>
+            {t("title")}
+          </h2>
 
-          <h3 className={`${styles.verificationDescription} hidden md:block lg:hidden`}>
-            {t("subtitle")}
-          </h3>
+          <h3
+            className={`${styles.verificationDescription} hidden md:block lg:hidden section-subtitle`}
+            dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+          />
         </div>
 
         <div className={`${styles.verificationContent}`}>
-          <h3 className={`${styles.verificationDescription} md:hidden lg:block`}>
-            {t("subtitle")}
-          </h3>
+          <h3
+            className={`${styles.verificationDescription} md:hidden lg:block section-subtitle`}
+            dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+          />
 
           <div className={`${styles.cardsWrapper}`}>
             <div className={`${styles.cardsCol} ${styles.cardsColFirst}`}>
               <Card
                 title={t("cards.0.title")}
-                description={t("cards.0.description")}
+                description={t.raw("cards.0.description")}
                 image
                 className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
@@ -52,10 +56,10 @@ export default function Verification() {
                 className="flex-1"
               />
               <Card
-                description={t("red-card.description")}
+                description={t.raw("red-card.description")}
                 red
                 descriptionClassName={styles.redCardDescription}
-                className="xl:max-h-[223px] 3xl:max-h-[11.61vw]"
+                className="md:max-h-[156px] lg:max-h-[180px] xl:max-h-[223px] 3xl:max-h-[11.61vw]"
               />
             </div>
           </div>
@@ -74,7 +78,7 @@ const Card = ({
   descriptionClassName,
   ...props
 }: ICardProps) => {
-  const t = useTranslations("Index.Verification.red-card")
+  const t = useTranslations("Index.Verification.red-card");
 
   return (
     <div
@@ -84,13 +88,16 @@ const Card = ({
       {!red && <div className={`${styles.redDot}`}></div>}
 
       <div
-        className={`${styles.cardContent} ${red && styles.redCardContent} cardContent`}
+        className={`${styles.cardContent} ${
+          red && styles.redCardContent
+        } cardContent`}
       >
         {!red && <h4 className={`${styles.cardTitle}`}>{title}</h4>}
 
-        <p className={`${descriptionClassName} cardDescription`}>
-          {description}
-        </p>
+        <p
+          className={`${descriptionClassName} cardDescription`}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
         {red && (
           <div className={`${styles.cardLink}`}>

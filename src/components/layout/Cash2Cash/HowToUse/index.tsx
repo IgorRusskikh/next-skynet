@@ -1,5 +1,6 @@
 "use client";
 
+import { NamespaceKeys, useTranslations } from "use-intl";
 import { RefObject, useEffect, useMemo, useRef, useState } from "react";
 
 import { BREAKPOINTS } from "@/constants";
@@ -9,7 +10,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./HowToUse.module.css";
 
-export default function HowToUse() {
+interface Props {
+  tNamespace: string;
+}
+
+export default function HowToUse({ tNamespace }: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const startAnimationRef = useRef<HTMLDivElement>(null);
@@ -20,6 +25,10 @@ export default function HowToUse() {
   // PHONES REFS
   const leftPhoneRef = useRef<HTMLDivElement>(null);
   const rightPhoneRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations(
+    `${tNamespace}.HowToUse` as NamespaceKeys<IntlMessages, "CashToCash">
+  );
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -110,19 +119,22 @@ export default function HowToUse() {
   const adaptiveMovePhonesAnim = (inx: number) => {
     const mm = gsap.matchMedia();
 
-    mm.add(`(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`, (context) => {
-      gsap.to(leftPhoneRef.current, {
-        y: (inx * -6) / 3 + '%',
-        duration: 0.5,
-        ease: "power.inOut"
-      });
+    mm.add(
+      `(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`,
+      (context) => {
+        gsap.to(leftPhoneRef.current, {
+          y: (inx * -6) / 3 + "%",
+          duration: 0.5,
+          ease: "power.inOut",
+        });
 
-      gsap.to(rightPhoneRef.current, {
-        y: (inx * 28) / 3 + '%',
-        duration: 0.5,
-        ease: "power.inOut"
-      });
-    });
+        gsap.to(rightPhoneRef.current, {
+          y: (inx * 28) / 3 + "%",
+          duration: 0.5,
+          ease: "power.inOut",
+        });
+      }
+    );
   };
 
   const fadeAnim = (refsList: RefObject<HTMLElement[]>) => {
@@ -151,22 +163,14 @@ export default function HowToUse() {
   };
 
   const stepsTitles = useMemo(
-    () => [
-      "Укажите детали перестановки в TG-боте",
-      "Обсудите детали с менеджером",
-      "Оплатите любым удобным способом",
-      "Получите средства в выбранной локации",
-    ],
+    // @ts-expect-error: need a type
+    () => Object.values(t.raw("steps")).map(({ title }) => title),
     []
   );
 
   const stepsDescriptions = useMemo(
-    () => [
-      "Выберите валюту отправки и получения и локации, в которых удобно отдать и получить средства",
-      "Мы свяжемся для уточнения условий операции и сроков",
-      "Выберите подходящий способ и оплатите комиссию и необходимую сумму перестановки",
-      "Заберите деньги в нашем офисе или офисе партнёров или примите курьера",
-    ],
+    // @ts-expect-error: need a type
+    () => Object.values(t.raw("steps")).map(({ description }) => description),
     []
   );
 
@@ -174,13 +178,21 @@ export default function HowToUse() {
     <section id="how-to-use" className={`${styles.howToUse}`}>
       <div className={styles.howToUseContainer}>
         <div className={styles.howToUseTitleWrapper}>
-          <h2 className={`section-title`}>как это работает</h2>
+          <h2 className={`section-title`}>
+            {
+              // @ts-expect-error: need a type
+              t("title")
+            }
+          </h2>
 
           <div className={styles.howToUseContentText}>
-            <h3 className={`${styles.howToUseContentTitle} section-subtitle`}>
-              Воспользуйтесь Telegram-ботом для перестановки средств за 4
-              простых шага
-            </h3>
+            <h3
+              className={`${styles.howToUseContentTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{
+                // @ts-expect-error: need a type
+                __html: t.raw("subtitle"),
+              }}
+            />
           </div>
         </div>
 
@@ -205,7 +217,9 @@ export default function HowToUse() {
                             counterRefs.current.push(node);
                           }
                         }}
-                        className={`${styles.stepCount}`}
+                        className={`${styles.stepCount} ${
+                          inx === 0 ? "" : "opacity-0"
+                        }`}
                       >
                         0{inx + 1}
                       </span>
@@ -219,9 +233,13 @@ export default function HowToUse() {
 
                 <div className={`${styles.descriptionContainer}`}>
                   <p className={`${styles.stepTitlCntainer}`}>
-                    <span className="!opacity-0">
-                      Укажите детали перестановки в TG-боте
-                    </span>
+                    <span
+                      className="!opacity-0"
+                      dangerouslySetInnerHTML={{
+                        // @ts-expect-error: need a type
+                        __html: t.raw("steps.0.title"),
+                      }}
+                    />
 
                     {stepsTitles.map((title, inx) => (
                       <span
@@ -234,14 +252,18 @@ export default function HowToUse() {
                         className={`${styles.stepTitle} ${
                           inx === 0 ? "" : "opacity-0"
                         }`}
-                      >
-                        {title}
-                      </span>
+                        dangerouslySetInnerHTML={{ __html: title as string }}
+                      />
                     ))}
                   </p>
 
                   <p className={`${styles.stepDescriptionContainer}`}>
-                    <span className="!opacity-0">{stepsDescriptions[0]}</span>
+                    <span
+                      className="!opacity-0"
+                      dangerouslySetInnerHTML={{
+                        __html: stepsDescriptions[0] as string,
+                      }}
+                    />
 
                     {stepsDescriptions.map((desc, inx) => (
                       <span
@@ -254,9 +276,8 @@ export default function HowToUse() {
                         className={`${styles.stepDescriptionText} ${
                           inx === 0 ? "" : "opacity-0"
                         }`}
-                      >
-                        {desc}
-                      </span>
+                        dangerouslySetInnerHTML={{ __html: desc as string }}
+                      />
                     ))}
                   </p>
                 </div>

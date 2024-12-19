@@ -47,7 +47,7 @@
   @apply md:w-[844px] md:h-[294px] md:left-[-60px] md:-bottom-[40%];
   @apply lg:w-[844px] lg:h-[294px] lg:left-[90px] lg:-bottom-[30%];
   @apply xl:w-[844px] xl:h-[294px] xl:left-[276px] xl:-bottom-[15%];
-  @apply 3xl:w-[63.59vw] 3xl:h-[20.16vw] 3xl:left-[15.06vw] 3xl:-bottom-[20%];
+  @apply 3xl:w-[63.59vw] 3xl:h-[20.16vw] 3xl:left-[15.06vw] 3xl:-bottom-[37%];
 }
 
 .hidingBlocksWrapper {
@@ -69,7 +69,7 @@
 
 .infoContainer {
   @apply relative z-20 hidden;
-  @apply md:mb-[159px] md:max-w-[254px] md:block;
+  @apply md:mb-[159px] md:max-w-[270px] md:block;
   @apply lg:mb-[110px] lg:max-w-[326px];
   @apply xl:mb-[192px] xl:max-w-[326px];
   @apply 3xl:mb-[10.47vw] 3xl:max-w-[25.21vw];
@@ -96,7 +96,7 @@
 }
 
 .stepCount {
-  @apply absolute left-0 top-0 opacity-0;
+  @apply absolute left-0 top-0;
 }
 
 .phonesContainerWrapper {

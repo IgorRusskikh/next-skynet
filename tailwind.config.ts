@@ -28,10 +28,10 @@ export default {
       addUtilities({
         ".section-title": {
           "@apply uppercase text-[#898C98] text-[2.78vw] leading-[2.78vw]": {},
-          "@apply md:text-[10px] md:leading-[10px]": {},
-          "@apply lg:text-[10px] lg:leading-[10px]": {},
-          "@apply xl:text-[10px] xl:leading-[10px]": {},
-          "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw]": {},
+          "@apply md:text-[10px] md:leading-[10px] md:translate-y-[6px]": {},
+          "@apply lg:text-[10px] lg:leading-[10px] lg:translate-y-[8px]": {},
+          "@apply xl:text-[10px] xl:leading-[10px] xl:translate-y-[10px]": {},
+          "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[0.5vw]": {},
         },
         ".section-subtitle": {
           "@apply font-medium text-[5.56vw] leading-[6.11vw]": {},

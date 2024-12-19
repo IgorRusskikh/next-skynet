@@ -1,7 +1,7 @@
 .locations {
   @apply font-tt-norms min-h-[227.33vw];
-  @apply md:h-[1101px] md:min-h-0;
-  @apply lg:h-[1024px];
+  @apply md:min-h-[1101px];
+  @apply lg:h-[1024px] lg:min-h-0;
   @apply xl:mt-[140px] xl:h-[1208px];
   @apply 3xl:mt-[10vw] 3xl:h-[70.83vw];
 }
@@ -63,9 +63,9 @@
 .locationsMap {
   @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-3px_25px_0px_rgba(0,0,0,0.2)] relative h-[59.22vw] w-[190vw] left-[-48vw] top-[20vw];
   @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw] md:top-[34px];
-  @apply lg:h-[456px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
+  @apply lg:h-[580px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
   @apply xl:h-[455px] xl:w-[130vw] xl:left-[-15vw] xl:bottom-[-30%];
-  @apply 3xl:h-[30.36vw] 3xl:w-[130vw] rounded-t-[50%] 3xl:left-[-15vw] 3xl:bottom-[-12vw];
+  @apply 3xl:h-[50.36vw] 3xl:w-[130vw] rounded-t-[50%] 3xl:left-[-15vw] 3xl:bottom-[-12vw];
 }
 
 .locationsMapInner {
@@ -94,13 +94,13 @@
   @apply md:-top-[211px] md:left-[36%];
   @apply lg:-top-[211px] lg:left-[36%];
   @apply xl:-top-[211px] xl:left-[36%];
-  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+  @apply 3xl:-top-[14.2vw] 3xl:left-[36%];
 }
 
 .northAmericaLine {
   @apply lg:h-[213px];
   @apply xl:h-[213px];
-  @apply 3xl:h-[16.3vw];
+  @apply 3xl:h-[14.3vw];
 }
 
 .northAmericaPointer {
@@ -115,7 +115,7 @@
   @apply hidden;
   @apply lg:min-w-[467px] lg:max-h-[132px] lg:top-[-10px] lg:block;
   @apply xl:min-w-[467px] xl:max-h-[132px] xl:top-[-10px];
-  @apply 3xl:min-w-[23.8vw] 3xl:top-[-0.5vw];
+  @apply 3xl:min-w-[23.8vw] 3xl:top-[-0.3vw];
 }
 
 .latinAmericaWrapper {
@@ -138,13 +138,13 @@
   @apply absolute;
   @apply lg:-top-[234px] lg:left-[36%];
   @apply xl:-top-[234px] xl:left-[36%];
-  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+  @apply 3xl:-top-[15.1vw] 3xl:left-[36%];
 }
 
 .latinAmericaLine {
   @apply lg:h-[416px] lg:!top-[-180px];
   @apply xl:h-[416px] xl:!top-[-180px];
-  @apply 3xl:h-[28.65vw] 3xl:!top-[-12.4vw];
+  @apply 3xl:h-[27.65vw] 3xl:!top-[-12.4vw];
 }
 
 .latinAmericaPointer {
@@ -158,7 +158,7 @@
 .latinAmericaCitiesContainer {
   @apply lg:min-w-[461px] lg:top-[-189px];
   @apply xl:min-w-[461px] xl:top-[-189px];
-  @apply 3xl:min-w-[26.72vw] 3xl:top-[-12.78vw];
+  @apply 3xl:min-w-[26.72vw] 3xl:top-[-12.68vw];
 }
 
 .africaWrapper {
@@ -181,13 +181,13 @@
   @apply absolute;
   @apply lg:-top-[233px] lg:left-[36%];
   @apply xl:-top-[233px] xl:left-[36%];
-  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+  @apply 3xl:-top-[14.3vw] 3xl:left-[36%];
 }
 
 .africaLine {
   @apply lg:h-[351px] lg:!top-[-117px];
   @apply xl:h-[351px] xl:!top-[-117px];
-  @apply 3xl:h-[25.7vw] 3xl:!top-[-9.4vw];
+  @apply 3xl:h-[23.8vw] 3xl:!top-[-9.4vw];
 }
 
 .africaPointer {
@@ -201,7 +201,7 @@
 .africaCitiesContainer {
   @apply lg:min-w-[461px] lg:top-[-128px];
   @apply xl:min-w-[461px] xl:top-[-148px];
-  @apply 3xl:min-w-[26.72vw] 3xl:top-[-9.4vw];
+  @apply 3xl:min-w-[26.72vw] 3xl:top-[-9.6vw];
 }
 
 .eastWrapper {
@@ -224,14 +224,14 @@
   @apply absolute;
   @apply lg:-top-[233px] lg:left-[36%];
   @apply xl:-top-[233px] xl:left-[36%];
-  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+  @apply 3xl:-top-[14.5vw] 3xl:left-[36%];
 }
 
 .eastLine {
   @apply relative;
   @apply lg:h-[304px] lg:!top-[-70px];
   @apply xl:h-[304px] xl:!top-[-70px];
-  @apply 3xl:h-[21.5vw] 3xl:!top-[-5.2vw];
+  @apply 3xl:h-[19.8vw] 3xl:!top-[-5.2vw];
 }
 
 .eastPointer {
@@ -289,7 +289,7 @@
 .asiaCitiesContainer {
   @apply lg:min-w-[622px] lg:top-[-85px];
   @apply xl:min-w-[622px] xl:top-[-85px];
-  @apply 3xl:min-w-[13.13vw] 3xl:top-[-1.7vw];
+  @apply 3xl:min-w-[13.13vw] 3xl:top-[-1.5vw] 3xl:ml-[-1.25vw];
 }
 
 .europaWrapper {
@@ -331,7 +331,7 @@
 .europaCitiesContainer {
   @apply lg:min-w-[1054px] lg:top-[-10px];
   @apply xl:min-w-[1054px] xl:top-[-10px];
-  @apply 3xl:min-w-[13.13vw] 3xl:left-[2vw] 3xl:top-[-0.5vw];
+  @apply 3xl:min-w-[13.13vw] 3xl:left-[2vw] 3xl:top-[0.25vw];
 }
 
 .russiaWrapper {
@@ -420,7 +420,7 @@
   @apply md:w-[34px] md:h-[52px];
   @apply lg:w-[35px] lg:h-[52px];
   @apply xl:w-[34px] xl:h-[52px];
-  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw] text-black hover:text-primary-red transition-colors duration-500;
+  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw] text-[#898C98] hover:text-primary-red transition-colors duration-500;
 }
 
 .pointerLine {

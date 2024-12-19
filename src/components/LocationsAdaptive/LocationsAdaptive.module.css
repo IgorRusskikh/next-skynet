@@ -32,3 +32,33 @@
   @apply max-h-[61.11vw];
   @apply md:max-h-[140px];
 }
+
+.europaCitiesList {
+  @apply max-h-[114.44vw];
+  @apply md:!max-h-[214px];
+}
+
+.eastCitiesList {
+  @apply max-h-[39.44vw];
+  @apply md:max-h-[1412px];
+}
+
+.asiaCitiesList {
+  @apply max-h-[44.44vw];
+  @apply md:!max-h-[160px];
+}
+
+.northAmericaCitiesList {
+  @apply max-h-[37.78vw];
+  @apply md:!max-h-[136px];
+}
+
+.latinAmericaCitiesList {
+  @apply max-h-[29.44vw];
+  @apply md:max-h-[106px];
+}
+
+.africaCitiesList {
+  @apply max-h-[9.44vw];
+  @apply md:max-h-[34px];
+}

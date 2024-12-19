@@ -1,8 +1,76 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 import Button from "@/components/ui/buttons/Button";
 import Image from "next/image";
+import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
+import { useTranslations } from "next-intl";
 
 export default function FirstScreen() {
+  const typingTextRef = useRef<HTMLSpanElement>(null);
+  const cursorRef = useRef(null);
+
+  const t = useTranslations("CashToCash.FirstScreen");
+
+  useEffect(() => {
+    // @ts-expect-error: need a type
+    const texts: string[] = Object.values(t.raw("typing-text"));
+    const typingText = typingTextRef.current;
+    const cursor = cursorRef.current;
+
+    if (typingText) {
+      typingText.textContent = "";
+    }
+
+    gsap.to(cursor, {
+      opacity: 0,
+      duration: 0.5,
+      repeat: -1,
+      yoyo: true,
+    });
+
+    const tl = gsap.timeline();
+
+    texts[0].split("").forEach((letter) => {
+      tl.to(typingText, {
+        duration: 0.1,
+        onComplete: () => {
+          if (typingText) {
+            typingText.textContent += letter;
+          }
+        },
+      });
+    });
+
+    tl.to({}, { duration: 1 });
+
+    [...texts[0]].forEach(() => {
+      tl.to(typingText, {
+        duration: 0.05,
+        onComplete: () => {
+          if (typingText && typeof typingText.textContent === "string") {
+            typingText.textContent = typingText.textContent.slice(0, -1);
+          }
+        },
+      });
+    });
+
+    tl.to({}, { duration: 0.5 });
+
+    texts[1].split("").forEach((letter) => {
+      tl.to(typingText, {
+        duration: 0.1,
+        onComplete: () => {
+          if (typingText) {
+            typingText.textContent += letter;
+          }
+        },
+      });
+    });
+  }, []);
+
   return (
     <section className={`${styles.firstScreen}`}>
       <div className={`${styles.firstScreenContent}`}>
@@ -12,14 +80,19 @@ export default function FirstScreen() {
 
         <div className={`${styles.content}`}>
           <div className={`${styles.typingBlock}`}>
-            <h2>Любая валюта.</h2>
+            <h2>
+              <span ref={typingTextRef}></span>
+              <span
+                ref={cursorRef}
+                className="text-primary-red xl:text-4xl 3xl:text-[3vw] font-extralight"
+              >
+                |
+              </span>
+            </h2>
           </div>
 
           <div className={`${styles.descriptionBlock}`}>
-            <p>
-              Перемещаем средства и выдаём в любой удобной валюте в наших
-              офисах, через сеть партнёров или доставкой курьером
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t.raw("description") }}></p>
 
             <Button theme="red">Заказать перестановку в TG-боте</Button>
           </div>

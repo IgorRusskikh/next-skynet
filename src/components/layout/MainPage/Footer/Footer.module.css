@@ -1,8 +1,8 @@
 .footer {
   @apply font-tt-norms pt-[22.22vw];
-  @apply md:pt-[120px];
-  @apply lg:pt-[140px];
-  @apply xl:pt-[160px];
+  @apply md:pt-[120px] md:pb-4;
+  @apply lg:pt-[140px] lg:pb-4;
+  @apply xl:pt-[160px] xl:pb-4;
   @apply 3xl:pt-[10.42vw] 3xl:pb-[1.25vw];
 }
 
@@ -68,16 +68,20 @@
 
 .footerSubscribe button {
   @apply max-w-[91.67vw];
-  @apply md:max-w-[292px];
-  @apply lg:max-w-none;
-  @apply xl:mt-8;
-  @apply 3xl:mt-[1.667vw];
+  @apply md:max-w-[292px] md:mt-[22px];
+  @apply lg:max-w-none lg:mt-6;
+  @apply xl:mt-8 xl:py-[14px] xl:max-w-[305px];
+  @apply 3xl:mt-[1.667vw] 3xl:py-[0.89vw] 3xl:max-w-[18.96vw];
+}
+
+.footerSubscribe button p {
+  @apply 3xl:!text-[0.73vw] 3xl:!leading-[0.73vw];
 }
 
 .footerLinksGridItem {
   @apply flex flex-col gap-[2.5vw];
   @apply md:gap-6;
-  @apply lg:gap-[58px];
+  @apply lg:gap-6;
   @apply xl:gap-8;
   @apply 3xl:gap-[1.67vw];
 }
@@ -135,7 +139,7 @@
 }
 
 .bottomLinks {
-  @apply flex justify-between border-t border-[#E0E2E9] mt-[2.78vw] pt-[2.22vw] text-[2.78vw] leading-[2.78vw];
+  @apply flex justify-between border-t border-[#E0E2E9] mt-[2.78vw] pt-[2.22vw] text-[2.78vw] leading-[2.78vw] font-normal;
   @apply md:mt-6 md:pt-4 md:text-xs md:leading-3;
   @apply lg:mt-6 lg:pt-4 lg:text-xs lg:leading-3;
   @apply xl:mt-[26px] xl:pt-4 xl:text-xs xl:leading-3;

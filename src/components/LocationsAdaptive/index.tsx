@@ -6,14 +6,29 @@ import Plus from "@/svg/plus.svg";
 import gsap from "gsap";
 import styles from "./LocationsAdaptive.module.css";
 
+interface Props {
+  locations: [{ country: string; cities: string[] }];
+}
+
 interface ICities {
   citiesListRef: HTMLDivElement | null;
   isOpen: boolean;
 }
 
-export default function LocationsAdaptive() {
+const CLASSNAMES = [
+  "northAmerica",
+  "latinAmerica",
+  "africa",
+  "east",
+  "asia",
+  "europa",
+  "russia",
+  "australia",
+] as const;
+
+export default function LocationsAdaptive({ locations }: Props) {
   const [cities, setCities] = useState<ICities[]>(
-    Array.from({ length: 7 }).map(() => ({
+    Array.from({ length: locations.length }).map(() => ({
       citiesListRef: null,
       isOpen: false,
     }))
@@ -30,7 +45,7 @@ export default function LocationsAdaptive() {
   return (
     <div className={`${styles.listWrapper}`}>
       <div className={`${styles.countriesList}`}>
-        {Array.from({ length: 7 }).map((_, inx) => (
+        {locations.map((location, inx) => (
           <div
             key={inx}
             className={`${styles.countriesItem}`}
@@ -47,7 +62,7 @@ export default function LocationsAdaptive() {
             }}
           >
             <div className={`${styles.country}`}>
-              <h4>Россия</h4>
+              <h4>{location.country}</h4>
 
               <Plus
                 className={`${cities[inx].isOpen ? "rotate-45" : "rotate-0"}`}
@@ -61,10 +76,10 @@ export default function LocationsAdaptive() {
               className="transition-all duration-500 overflow-clip max-h-0"
             >
               <div
-                className={`${styles.citiesList} ${styles.russiaCitiesList}`}
+                className={`${styles.citiesList} ${styles[`${CLASSNAMES[inx]}CitiesList`]}`}
               >
-                {Array.from({ length: 20 }).map((_, inx) => (
-                  <p key={inx}>Москва</p>
+                {location.cities.map((city, inx) => (
+                  <p key={inx}>{city}</p>
                 ))}
               </div>
             </div>

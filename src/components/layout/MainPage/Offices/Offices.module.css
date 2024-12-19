@@ -39,7 +39,7 @@
 }
 
 .officesTextDescription {
-  @apply text-[#898C98] mt-[4.44vw] max-w-[91.67vw] text-[3.89vw] leading-[4.28vw];
+  @apply text-[#898C98] mt-[4.44vw] max-w-[91.67vw] text-[3.89vw] leading-[4.28vw] font-medium;
   @apply md:mt-6 md:max-w-[471px] md:text-base md:leading-[17.6px];
   @apply lg:mt-6 lg:max-w-[471px] lg:text-base lg:leading-[17.6px];
   @apply xl:mt-8 xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px];

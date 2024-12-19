@@ -5,8 +5,10 @@
 }
 
 .linkArrow {
-  @apply absolute -right-[3.33vw] -top-[0.28vw];
-  @apply md:-right-3 md:-top-[1px];
+  @apply absolute -right-[3.33vw] -top-[0.28vw] transition-all duration-300 ease-in-out;
+  @apply md:w-[7.33px] md:h-[6.67px] md:-right-3 md:-top-[1px];
+  @apply xl:w-[7.33px] xl:h-[6.67px] xl:top-[-2px] xl:-right-[12px];
+  @apply 3xl:w-[0.57vw] 3xl:leading-[0.52vw] 3xl:top-[-0.3vw] 3xl:-right-[1vw];
 }
 
 .lightLink {

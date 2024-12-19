@@ -20,6 +20,7 @@ import RussiaLine from "@/svg/russia-line.svg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Locations.module.css";
+import { useTranslations } from "next-intl";
 
 const REGIONS = [
   {
@@ -64,6 +65,8 @@ export default function Locations() {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const t = useTranslations("CashToCash.Locations");
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -103,15 +106,27 @@ export default function Locations() {
     );
   };
 
-  const setHoveredPoint = (inx: number) => {
-    setHoveredCountries(
-      hoveredCountries.map((idHovered, countryInx) =>
-        countryInx === inx ? true : idHovered
-      )
-    );
+  const onClickHandler = (inx: number) => {
+    if (window.innerWidth < 1280 && window.innerWidth >= 1024) {
+      setHoveredCountries(
+        hoveredCountries.map((_, countryInx) =>
+          countryInx === inx ? true : false
+        )
+      );
+    }
   };
 
-  const setUnhoveredPoint = (inx: number) => {
+  const onMouseEnterHandler = (inx: number) => {
+    if (window.innerWidth >= 1280) {
+      setHoveredCountries(
+        hoveredCountries.map((idHovered, countryInx) =>
+          countryInx === inx ? true : idHovered
+        )
+      );
+    }
+  };
+
+  const onMouseLeaveHandler = (inx: number) => {
     if (window.innerWidth >= 1280) {
       setHoveredCountries(
         hoveredCountries.map((idHovered, countryInx) =>
@@ -121,26 +136,36 @@ export default function Locations() {
     }
   };
 
+  const locations: { country: string; cities: string[] }[] =
+    // @ts-expect-error need a type
+    Object.values(t.raw("locations")).map((location) => {
+      return {
+        // @ts-expect-error need a type
+        country: location.country,
+        // @ts-expect-error need a type
+        cities: Object.values(location.cities),
+      };
+    });
+
   return (
     <section id="locations" className={styles.locations}>
       <div ref={containerRef} className={`${styles.locationsContainer}`}>
         <div className={`${styles.locationsTitleWrapper}`}>
-          <h2>География</h2>
+          <h2 className="section-title">{t("title")}</h2>
 
           <div className={`${styles.locationsText}`}>
-            <p className={`${styles.locationsTextTitle}`}>
-              Получайте наличные в любой валюте там, где вам удобно
+            <p className={`${styles.locationsTextTitle} section-subtitle`}>
+              {t("subtitle")}
             </p>
 
             <p className={`${styles.locationsTextDescription}`}>
-              Мы принимаем криптовалюту и FIAT, работаем с ведущими игроками и
-              предоставляем удобные варианты получения средств по всему миру
+              {t("description")}
             </p>
           </div>
         </div>
 
         <div className={`${styles.locationsMapWrapper}`}>
-          <LocationsAdaptive />
+          <LocationsAdaptive locations={locations as any} />
 
           <div className={`${styles.locationsMap} text-[#DFE2E9]`}>
             <div className={`${styles.locationsMapInner}`}>
@@ -165,13 +190,22 @@ export default function Locations() {
                         styles[`${name}CitiesContainer`]
                       }`}
                       isHovered={hoveredCountries[inx]}
-                      onMouseEnter={() => setHoveredPoint(inx)}
-                      onClick={() => setHoveredPoint(inx)}
-                      onMouseLeave={() => setUnhoveredPoint(inx)}
+                      onClick={() => {
+                        onClickHandler(inx);
+                      }}
+                      onMouseEnter={() => {
+                        onMouseEnterHandler(inx);
+                      }}
+                      onMouseLeave={() => {
+                        onMouseLeaveHandler(inx);
+                      }}
+                      country={locations[inx].country}
+                      cities={locations[inx].cities as string[]}
                       children={
                         Line && AdaptiveLine ? (
                           <>
                             {AdaptiveLine !== null && (
+                              // @ts-expect-error need a type
                               <Line className={`${styles[`${name}Line`]}`} />
                             )}
                             {Line !== null && AdaptiveLine !== null && (
@@ -221,6 +255,8 @@ interface IPointerProps extends HTMLAttributes<HTMLDivElement> {
   lineClassName?: string;
   citiesContainerClassName?: string;
   isHovered?: boolean;
+  country: string;
+  cities: string[];
 }
 
 function Pointer({
@@ -230,14 +266,12 @@ function Pointer({
   lineClassName,
   citiesContainerClassName,
   isHovered,
+  country,
+  cities,
   ...props
 }: IPointerProps) {
-  console.log(children);
-
   return (
-    <div
-      className={`${styles.pointerWrapper} ${className}`}
-    >
+    <div className={`${styles.pointerWrapper} ${className}`}>
       <div className={`${styles.pointerInner}`}>
         <div
           className={`${lineWrapperClassName} transition-all duration-500 ease-in-out hidden lg:block ${
@@ -255,12 +289,10 @@ function Pointer({
             }`}
           >
             <div className="relative">
-              <h4 className={`${styles.country}`}>США и Канада</h4>
+              <h4 className={`${styles.country}`}>{country}</h4>
 
               <div className={`${styles.citiesList}`}>
-                {Array.from({ length: 40 }).map((_, inx) => (
-                  <p>🇺🇸 Нью-Йорк</p>
-                ))}
+                {cities && cities.map((city, inx) => <p key={inx}>{city}</p>)}
               </div>
             </div>
           </div>

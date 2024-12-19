@@ -22,6 +22,11 @@ export const ttNorms = localFont({
       weight: "400",
       style: "normal",
     },
+    {
+      path: "../app/[locale]/fonts/TT Norms Expanded Normal.ttf",
+      weight: "200",
+      style: "extralight",
+    },
   ],
   variable: "--font-tt-norms",
 });
