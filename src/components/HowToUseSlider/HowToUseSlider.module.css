@@ -1,0 +1,19 @@
+.card {
+  @apply bg-[#F3F3F3] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] font-tt-norms;
+}
+
+.slidesCount {
+  @apply max-w-[18.67vw] flex justify-between text-[2.78vw] leading-[2.78vw];
+}
+
+.cardContent {
+  @apply mt-[8.89vw];
+}
+
+.cardContent h4 {
+  @apply font-medium text-[3.89vw] leading-[4.28vw];
+}
+
+.cardContent p {
+  @apply mt-[3.33vw] text-[3.33vw] leading-[3.33vw] text-[#898C98];
+}

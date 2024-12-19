@@ -1,5 +1,5 @@
 .howToUse {
-  @apply font-tt-norms overflow-x-clip bg-white overflow-clip relative z-10;
+  @apply font-tt-norms overflow-x-clip bg-white overflow-clip relative z-10 pt-[8.89vw] rounded-[8vw] mb-0;
   @apply md:pt-[60px] md:rounded-[50px] md:mb-[120px];
   @apply lg:pt-[60px] lg:rounded-[50px] lg:mb-[140px];
   @apply xl:pt-[80px] xl:rounded-[50px] xl:mb-[160px];
@@ -11,7 +11,7 @@
 }
 
 .howToUseTitleWrapper {
-  @apply flex flex-col container;
+  @apply flex flex-col container gap-[6.67vw];
   @apply md:gap-4 md:pl-[130px];
   @apply lg:flex-row lg:gap-[53px] lg:pl-0;
   @apply xl:gap-[188px];
@@ -19,6 +19,7 @@
 }
 
 .howToUseContentText h3 {
+  @apply max-w-[91.11vw];
   @apply md:max-w-[498px];
   @apply lg:max-w-[611px];
   @apply xl:max-w-[726px];
@@ -26,6 +27,7 @@
 }
 
 .contentWrapper {
+  @apply h-[178.61vw];
   @apply md:h-[2448px];
   @apply lg:h-[2892px];
   @apply xl:h-[2892px];
@@ -33,15 +35,15 @@
 }
 
 .howToUseContent {
-  @apply container relative flex items-end;
-  @apply md:min-h-[851px] md:pt-[80px] md:pb-0;
+  @apply relative flex items-end min-h-full pt-[13.33vw] pb-[13.06vw];
+  @apply md:min-h-[851px] md:pt-[80px] md:pb-0 md:container;
   @apply lg:min-h-[723px] lg:pt-[60px] lg:pb-[30px];
   @apply xl:min-h-[883px] xl:pt-[77px] xl:pb-[62px];
   @apply 3xl:min-h-[53.02vw] 3xl:pt-[5.21vw] 3xl:pb-[4.64vw];
 }
 
 .hidingBlocks {
-  @apply absolute left-0;
+  @apply absolute w-[234.44vw] h-[60.67vw] left-[-125vw] bottom-[20vw];
   @apply md:w-[844px] md:h-[294px] md:left-[-60px] md:-bottom-[40%];
   @apply lg:w-[844px] lg:h-[294px] lg:left-[90px] lg:-bottom-[30%];
   @apply xl:w-[844px] xl:h-[294px] xl:left-[276px] xl:-bottom-[15%];
@@ -58,7 +60,7 @@
 }
 
 .smallCircle {
-  @apply w-full bg-white absolute left-0 top-0 blur-[100px];
+  @apply w-full bg-white absolute left-0 top-0 blur-[100px] h-[81.67vw];
   @apply md:h-[294px];
   @apply lg:h-[294px];
   @apply xl:h-[294px];
@@ -66,15 +68,15 @@
 }
 
 .infoContainer {
-  @apply relative z-20;
-  @apply md:mb-[159px] md:max-w-[254px];
+  @apply relative z-20 hidden;
+  @apply md:mb-[159px] md:max-w-[254px] md:block;
   @apply lg:mb-[110px] lg:max-w-[326px];
   @apply xl:mb-[192px] xl:max-w-[326px];
   @apply 3xl:mb-[10.47vw] 3xl:max-w-[25.21vw];
 }
 
 .stepNumber {
-  @apply font-normal flex justify-between;
+  @apply font-normal flex justify-between text-[2.78vw] leading-[2.78vw] w-[16.67vw];
   @apply md:text-[10px] md:leading-[10px] md:w-14;
   @apply lg:text-[10px] lg:leading-[10px] lg:w-14;
   @apply xl:text-[10px] xl:leading-[10px] xl:w-[60px];
@@ -98,12 +100,12 @@
 }
 
 .phonesContainerWrapper {
-  @apply absolute;
-  @apply top-0 right-0;
+  @apply absolute top-[-12vw] right-0;
+  @apply md:top-0;
 }
 
 .phonesContainer {
-  @apply relative;
+  @apply relative w-[91.11vw] h-[118.89vw];
   @apply md:w-[597.86px] md:h-[577px];
   @apply lg:w-[835.21px] lg:h-[723px];
   @apply xl:w-[835.21px] xl:h-[723px];
@@ -111,6 +113,7 @@
 }
 
 .servicesCardCountSeparator {
+  @apply mx-[2.78vw];
   @apply md:mx-[10px];
   @apply lg:mx-[10px];
   @apply xl:mx-[10px];
@@ -118,6 +121,7 @@
 }
 
 .descriptionContainer {
+  @apply mt-[8.89vw];
   @apply md:mt-10;
   @apply lg:mt-12;
   @apply xl:mt-12;
@@ -125,7 +129,7 @@
 }
 
 .stepTitlCntainer {
-  @apply font-medium relative;
+  @apply font-medium relative text-[3.89vw] leading-[4.28vw];
   @apply md:text-base md:leading-[17.6px];
   @apply lg:text-xl lg:leading-[22px];
   @apply xl:text-2xl xl:leading-[26.4px];
@@ -137,7 +141,7 @@
 }
 
 .stepDescriptionContainer {
-  @apply text-[#898C98] relative;
+  @apply text-[#898C98] relative text-[3.33vw] leading-[3.33vw] mt-[3.33vw];
   @apply md:text-sm md:leading-[14px] md:mt-4;
   @apply lg:text-sm lg:leading-[14px] lg:mt-6;
   @apply xl:text-sm xl:leading-[14px] xl:mt-6;
@@ -153,7 +157,7 @@
 }
 
 .leftIphone {
-  @apply relative;
+  @apply relative w-[165.23vw] h-[123.92vw] -left-[50vw] top-0;
   @apply md:w-[894.8px] md:h-[671.1px] md:-left-[250px] md:top-0;
   @apply lg:w-[1119.84px] lg:h-[839.88px] lg:-left-[200px] lg:-top-[90px];
   @apply xl:w-[1119.84px] xl:h-[839.88px] xl:-left-[400px] xl:-top-[40px];
@@ -161,7 +165,7 @@
 }
 
 .rightIphoneWrapper {
-  @apply absolute;
+  @apply absolute right-[-38vw] top-[20vw];
   @apply md:right-[-230px] md:top-[110px];
   @apply lg:right-[-280px] lg:top-[40px];
   @apply xl:right-[-100px] xl:top-[80px];
@@ -169,7 +173,7 @@
 }
 
 .rightIphone {
-  @apply relative;
+  @apply relative w-[144.31vw] h-[108.23vw];
   @apply md:w-[856.01px] md:h-[642.01px];
   @apply lg:w-[973.82px] lg:h-[730.37px];
   @apply xl:w-[973.82px] xl:h-[730.37px];

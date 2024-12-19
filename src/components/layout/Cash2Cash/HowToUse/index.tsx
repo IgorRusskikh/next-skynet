@@ -1,14 +1,17 @@
 "use client";
 
-import { RefObject, useEffect, useMemo, useRef } from "react";
+import { RefObject, useEffect, useMemo, useRef, useState } from "react";
 
 import { BREAKPOINTS } from "@/constants";
+import HowToUseSlider from "@/components/HowToUseSlider";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./HowToUse.module.css";
 
 export default function HowToUse() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const startAnimationRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const counterRefs = useRef<HTMLSpanElement[]>([]);
@@ -19,6 +22,8 @@ export default function HowToUse() {
   const rightPhoneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     pinAnim();
 
     fadeAnim(counterRefs);
@@ -32,20 +37,22 @@ export default function HowToUse() {
     };
   }, []);
 
+  useEffect(() => {
+    adaptiveMovePhonesAnim(currentSlide);
+  }, [currentSlide]);
+
   const pinAnim = () => {
     const mm = gsap.matchMedia();
 
     mm.add(
       {
-        isVerticalTablet: `(min-width: ${BREAKPOINTS.verticalTablet}px) and (max-width: ${
-          BREAKPOINTS.tablet - 1
-        }px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px)`,
       },
       (context) => {
         const { isTablet, isVerticalTablet } = context.conditions as any;
-        
-        console.log(isTablet);
 
         gsap.to(startAnimationRef.current, {
           scrollTrigger: {
@@ -66,9 +73,9 @@ export default function HowToUse() {
 
     mm.add(
       {
-        isVerticalTablet: `(min-width: ${BREAKPOINTS.verticalTablet}px) and (max-width: ${
-          BREAKPOINTS.tablet - 1
-        }px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
         isTablet: `(min-width: ${BREAKPOINTS.tablet - 1}px) and (max-width: ${
           BREAKPOINTS.laptop - 1
         }px)`,
@@ -98,6 +105,24 @@ export default function HowToUse() {
         });
       }
     );
+  };
+
+  const adaptiveMovePhonesAnim = (inx: number) => {
+    const mm = gsap.matchMedia();
+
+    mm.add(`(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`, (context) => {
+      gsap.to(leftPhoneRef.current, {
+        y: (inx * -6) / 3 + '%',
+        duration: 0.5,
+        ease: "power.inOut"
+      });
+
+      gsap.to(rightPhoneRef.current, {
+        y: (inx * 28) / 3 + '%',
+        duration: 0.5,
+        ease: "power.inOut"
+      });
+    });
   };
 
   const fadeAnim = (refsList: RefObject<HTMLElement[]>) => {
@@ -162,6 +187,11 @@ export default function HowToUse() {
         <div ref={startAnimationRef}>
           <div ref={parentRef} className={`${styles.contentWrapper}`}>
             <div className={styles.howToUseContent}>
+              <HowToUseSlider
+                currentSlide={currentSlide}
+                setCurrentSlide={setCurrentSlide}
+              />
+
               <div className={`${styles.infoContainer}`}>
                 <div className={`${styles.stepNumber}`}>
                   <div className={`${styles.stepNumberWrapper}`}>
@@ -244,6 +274,7 @@ export default function HowToUse() {
                         src="/images/cash-to-cash/left-phone.png"
                         fill
                         alt="left-phone"
+                        unoptimized
                       />
                     </div>
                   </div>
@@ -258,6 +289,7 @@ export default function HowToUse() {
                         src="/images/cash-to-cash/right-phone.png"
                         fill
                         alt="right-phone"
+                        unoptimized
                       />
                     </div>
                   </div>

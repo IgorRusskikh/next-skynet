@@ -1,0 +1,34 @@
+.listWrapper {
+  @apply container w-full font-tt-norms;
+  @apply lg:hidden;
+}
+
+.countriesList {
+  @apply flex flex-col ml-auto gap-[6.67vw] mt-[8.89vw];
+  @apply md:gap-8 md:max-w-[598px] md:mt-[40px];
+}
+
+.countriesItem {
+  @apply border-b border-[#DFE2E9] pb-[3.33vw] pt-[0.28vw];
+  @apply md:pb-3 md:pt-[1px];
+}
+
+.country {
+  @apply flex justify-between w-full font-medium text-[3.89vw] leading-[4.28vw];
+  @apply md:text-sm md:leading-[15.4px];
+}
+
+.country svg {
+  @apply transition-['rotate'] duration-500 size-[4.44vw];
+  @apply md:size-4;
+}
+
+.citiesList {
+  @apply flex flex-col flex-wrap text-[#898C98] gap-x-[15.56vw] gap-y-[1.11vw] text-[3.33vw] leading-[3.33vw];
+  @apply md:gap-x-14 md:gap-y-1 md:text-sm md:leading-[14px];
+}
+
+.russiaCitiesList {
+  @apply max-h-[61.11vw];
+  @apply md:max-h-[140px];
+}

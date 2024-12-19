@@ -1,0 +1,89 @@
+.services {
+  @apply font-tt-norms container;
+}
+
+.servicesContainer {
+  @apply md:pt-[120px];
+  @apply lg:pt-[140px];
+  @apply xl:pt-40;
+  @apply 3xl:pt-[10.42vw];
+}
+
+.servicesContentText {
+  @apply font-medium;
+}
+
+.servicesTitleWrapper {
+  @apply flex;
+  @apply md:gap-[81px];
+  @apply lg:gap-[121px];
+  @apply xl:gap-64;
+  @apply 3xl:gap-[17.55vw];
+}
+
+.servicesContentDescription {
+  @apply text-[#898C98];
+  @apply md:mt-8 md:max-w-[497px] md:text-base md:leading-[17.6px];
+  @apply lg:mt-6 lg:max-w-[497px] lg:text-base lg:leading-[17.6px];
+  @apply xl:mt-8 xl:max-w-[562px] xl:text-[18px] xl:leading-[19.8px];
+  @apply 3xl:mt-[2.08vw] 3xl:max-w-[32.24vw] 3xl:text-[1.15vw] 3xl:leading-[1.26vw];
+}
+
+.cards {
+  @apply grid;
+  @apply md:grid-cols-2 md:gap-4 md:mt-[60px];
+  @apply lg:grid-cols-2 lg:gap-5 lg:mt-[60px];
+  @apply xl:grid-cols-2 xl:gap-5 xl:mt-[80px];
+  @apply 3xl:grid-cols-2 3xl:gap-[1.04vw] 3xl:mt-[5.21vw];
+}
+
+.card {
+  @apply bg-white;
+  @apply md:min-h-[210px] md:p-5 md:rounded-[20px];
+  @apply lg:min-h-[248px] lg:p-6 lg:rounded-[20px];
+  @apply xl:min-h-[260px] xl:p-6 xl:rounded-[20px];
+  @apply 3xl:min-h-[18.65vw] 3xl:px-[2.08vw] 3xl:py-[2.5vw] 3xl:rounded-[1.04vw];
+}
+
+.forWhom {
+  @apply bg-[#F3F3F3] font-medium w-fit flex items-center uppercase;
+  @apply md:rounded-[100px] md:text-[10px] md:leading-[10px] md:px-5 md:py-3;
+  @apply lg:rounded-[100px] lg:text-[10px] lg:leading-[10px] lg:px-5 lg:py-3;
+  @apply xl:rounded-[100px] xl:text-xs xl:leading-3 xl:px-5 xl:py-[14px];
+  @apply 3xl:rounded-[5.21vw] 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:px-[1.04vw] 3xl:py-[0.83vw];
+}
+
+.dot {
+  @apply bg-primary-red rounded-full;
+  @apply md:size-[6px] md:mr-[6px];
+  @apply lg:size-[6px] lg:mr-[6px];
+  @apply xl:size-[6px] xl:mr-2;
+  @apply 3xl:size-[0.31vw] 3xl:mr-[0.52vw];
+}
+
+.forWhom p {
+  @apply font-medium;
+}
+
+.cardContent {
+  @apply md:mt-[40px];
+  @apply lg:mt-12;
+  @apply xl:mt-[60px];
+  @apply 3xl:mt-[3.13vw];
+}
+
+.cardTitle {
+  @apply font-medium;
+  @apply md:text-base md:leading-[17.6px] md:max-w-[278px];
+  @apply lg:text-xl lg:leading-[22px] lg:max-w-[424pz];
+  @apply xl:text-2xl xl:leading-[26.4px] xl:max-w-[507px];
+  @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:max-w-[27.92vw];
+}
+
+.cardDescription {
+  @apply text-[#898C98];
+  @apply md:mt-4 md:text-xs md:leading-3 md:max-w-[316px];
+  @apply lg:mt-6 lg:text-sm lg:leading-[14px] lg:max-w-[424px];
+  @apply xl:mt-6 xl:text-sm xl:leading-[14px] xl:max-w-[536px];
+  @apply 3xl:mt-[1.25vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:max-w-[27.92vw];
+}

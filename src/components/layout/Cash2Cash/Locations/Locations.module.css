@@ -1,12 +1,13 @@
 .locations {
-  @apply font-tt-norms;
-  @apply md:h-[900px];
-  @apply lg:h-[800px];
+  @apply font-tt-norms min-h-[227.33vw];
+  @apply md:h-[1101px] md:min-h-0;
+  @apply lg:h-[1024px];
   @apply xl:mt-[140px] xl:h-[1208px];
   @apply 3xl:mt-[10vw] 3xl:h-[70.83vw];
 }
 
 .locationsContainer {
+  @apply pt-[22.22vw];
   @apply md:pt-[120px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px];
@@ -14,8 +15,8 @@
 }
 
 .locationsTitleWrapper {
-  @apply container flex;
-  @apply md:gap-14;
+  @apply container flex flex-col gap-[4.44vw];
+  @apply md:gap-14 md:flex-row;
   @apply lg:gap-[96px];
   @apply xl:gap-[231px];
   @apply 3xl:gap-[12.55vw];
@@ -37,7 +38,7 @@
 }
 
 .locationsTextTitle {
-  @apply font-medium;
+  @apply font-medium text-[5.56vw] leading-[6.11vw];
   @apply md:text-[26px] md:leading-[28.6px];
   @apply lg:text-[32px] lg:leading-[35.2px];
   @apply xl:text-[38px] xl:leading-[41.8px];
@@ -45,7 +46,7 @@
 }
 
 .locationsTextDescription {
-  @apply font-medium text-[#898C98];
+  @apply font-medium text-[#898C98] text-[3.89vw] leading-[4.28vw] mt-[3.33vw];
   @apply md:text-base md:leading-[17.6px] md:max-w-[497px] md:mt-8;
   @apply lg:text-base lg:leading-[17.6px] lg:max-w-[497px] lg:mt-6;
   @apply xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:mt-8;
@@ -53,18 +54,18 @@
 }
 
 .locationsMapWrapper {
-  @apply md:h-[736px];
+  @apply relative overflow-x-clip;
   @apply lg:h-[652px];
   @apply xl:h-[652px];
-  @apply 3xl:h-[44.69vw] relative overflow-clip;
+  @apply 3xl:h-[44.69vw];
 }
 
 .locationsMap {
-  @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
-  @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw];
-  @apply lg:h-[456px] lg:w-[150vw] lg:left-[-25vw];
-  @apply xl:h-[455px] xl:w-[130vw] xl:left-[-15vw];
-  @apply 3xl:h-[30.36vw] 3xl:w-[130vw] rounded-t-[50%] absolute 3xl:left-[-15vw];
+  @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-3px_25px_0px_rgba(0,0,0,0.2)] relative h-[59.22vw] w-[190vw] left-[-48vw] top-[20vw];
+  @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw] md:top-[34px];
+  @apply lg:h-[456px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
+  @apply xl:h-[455px] xl:w-[130vw] xl:left-[-15vw] xl:bottom-[-30%];
+  @apply 3xl:h-[30.36vw] 3xl:w-[130vw] rounded-t-[50%] 3xl:left-[-15vw] 3xl:bottom-[-12vw];
 }
 
 .locationsMapInner {
@@ -73,7 +74,7 @@
 }
 
 .northAmericaWrapper {
-  @apply absolute;
+  @apply absolute left-0 top-[4.17vw];
   @apply md:left-[-46.97px] md:top-[37.43px];
   @apply lg:left-[-30px] lg:top-[46.69px];
   @apply xl:left-[50px] xl:top-[46.69px];
@@ -81,14 +82,44 @@
 }
 
 .northAmerica {
+  @apply w-[37.95vw] h-[14.69vw];
   @apply md:w-[344.36px] md:h-[133.3px];
   @apply lg:w-[429.04px] lg:h-[166.14px];
   @apply xl:w-[429.04px] xl:h-[166.14px];
   @apply 3xl:w-[28.24vw] 3xl:h-[10.93vw];
 }
 
-.latinAmericaWrapper {
+.northAmericaPointerLineWrapper {
   @apply absolute;
+  @apply md:-top-[211px] md:left-[36%];
+  @apply lg:-top-[211px] lg:left-[36%];
+  @apply xl:-top-[211px] xl:left-[36%];
+  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+}
+
+.northAmericaLine {
+  @apply lg:h-[213px];
+  @apply xl:h-[213px];
+  @apply 3xl:h-[16.3vw];
+}
+
+.northAmericaPointer {
+  @apply left-[7.5vw] top-[1.11vw];
+  @apply md:left-[84px] md:top-[19px];
+  @apply lg:left-[139px] lg:top-[23px];
+  @apply xl:left-[126px] xl:top-[23px];
+  @apply 3xl:left-[9.82vw] 3xl:top-[2vw];
+}
+
+.northAmericaCitiesContainer {
+  @apply hidden;
+  @apply lg:min-w-[467px] lg:max-h-[132px] lg:top-[-10px] lg:block;
+  @apply xl:min-w-[467px] xl:max-h-[132px] xl:top-[-10px];
+  @apply 3xl:min-w-[23.8vw] 3xl:top-[-0.5vw];
+}
+
+.latinAmericaWrapper {
+  @apply absolute left-[0.56vw] top-[17.78vw];
   @apply md:left-[-40.66px] md:top-[161.88px];
   @apply lg:left-[-22.17px] lg:top-[201.79px];
   @apply xl:left-[57.76px] xl:top-[201.79px];
@@ -96,14 +127,42 @@
 }
 
 .latinAmerica {
+  @apply w-[24.53vw] h-[23.09vw];
   @apply md:w-[222.62px] md:h-[209.51px];
   @apply lg:w-[277.36px] lg:h-[261.12px];
   @apply xl:w-[277.36px] xl:h-[261.12px];
   @apply 3xl:w-[18.26vw] 3xl:h-[17.19vw];
 }
 
-.africaWrapper {
+.latinAmericaPointerLineWrapper {
   @apply absolute;
+  @apply lg:-top-[234px] lg:left-[36%];
+  @apply xl:-top-[234px] xl:left-[36%];
+  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+}
+
+.latinAmericaLine {
+  @apply lg:h-[416px] lg:!top-[-180px];
+  @apply xl:h-[416px] xl:!top-[-180px];
+  @apply 3xl:h-[28.65vw] 3xl:!top-[-12.4vw];
+}
+
+.latinAmericaPointer {
+  @apply left-[16.94vw] top-[5.56vw];
+  @apply md:left-[123px] md:top-[51px];
+  @apply lg:left-[198px] lg:top-[68px];
+  @apply xl:left-[198px] xl:top-[68px];
+  @apply 3xl:left-[13.5vw] 3xl:top-[4.5vw];
+}
+
+.latinAmericaCitiesContainer {
+  @apply lg:min-w-[461px] lg:top-[-189px];
+  @apply xl:min-w-[461px] xl:top-[-189px];
+  @apply 3xl:min-w-[26.72vw] 3xl:top-[-12.78vw];
+}
+
+.africaWrapper {
+  @apply absolute left-[33.06vw] top-[15.56vw];
   @apply md:left-[253.37px] md:top-[142.77px];
   @apply lg:left-[344.71px] lg:top-[177.97px];
   @apply xl:left-[424px] xl:top-[177.97px];
@@ -111,14 +170,42 @@
 }
 
 .africa {
+  @apply w-[26.18vw] h-[19.81vw];
   @apply md:w-[237.51px] md:h-[179.75px];
   @apply lg:w-[295.92px] lg:h-[224.02px];
   @apply xl:w-[295.92px] xl:h-[224.02px];
   @apply 3xl:w-[19.48vw] 3xl:h-[14.74vw];
 }
 
-.eastWrapper {
+.africaPointerLineWrapper {
   @apply absolute;
+  @apply lg:-top-[233px] lg:left-[36%];
+  @apply xl:-top-[233px] xl:left-[36%];
+  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+}
+
+.africaLine {
+  @apply lg:h-[351px] lg:!top-[-117px];
+  @apply xl:h-[351px] xl:!top-[-117px];
+  @apply 3xl:h-[25.7vw] 3xl:!top-[-9.4vw];
+}
+
+.africaPointer {
+  @apply left-[11.11vw] top-[2.22vw];
+  @apply md:left-[93px] md:top-[22px];
+  @apply lg:left-[129px] lg:top-[31px];
+  @apply xl:left-[129px] xl:top-[31px];
+  @apply 3xl:left-[10.5vw] 3xl:top-[3vw];
+}
+
+.africaCitiesContainer {
+  @apply lg:min-w-[461px] lg:top-[-128px];
+  @apply xl:min-w-[461px] xl:top-[-148px];
+  @apply 3xl:min-w-[26.72vw] 3xl:top-[-9.4vw];
+}
+
+.eastWrapper {
+  @apply absolute left-[48.89vw] top-[14.45vw];
   @apply md:left-[405.74px] md:top-[142.77px];
   @apply lg:left-[521px] lg:top-[159.1px];
   @apply xl:left-[601px] xl:top-[159.1px];
@@ -126,14 +213,43 @@
 }
 
 .east {
+  @apply w-[11.88vw] h-[8.19vw];
   @apply md:w-[107.78px] md:h-[74.29px];
   @apply lg:w-[134.28px] lg:h-[92.58px];
   @apply xl:w-[134.28px] xl:h-[92.58px];
-  @apply 3xl:w-[8.84vw] 3xl:leading-[6.09vw];
+  @apply 3xl:w-[8.84vw] 3xl:h-[6.09vw];
+}
+
+.eastPointerLineWrapper {
+  @apply absolute;
+  @apply lg:-top-[233px] lg:left-[36%];
+  @apply xl:-top-[233px] xl:left-[36%];
+  @apply 3xl:-top-[16.2vw] 3xl:left-[36%];
+}
+
+.eastLine {
+  @apply relative;
+  @apply lg:h-[304px] lg:!top-[-70px];
+  @apply xl:h-[304px] xl:!top-[-70px];
+  @apply 3xl:h-[21.5vw] 3xl:!top-[-5.2vw];
+}
+
+.eastPointer {
+  @apply left-[3.33vw] top-[-0.56vw];
+  @apply md:left-[34px] md:top-[-5px];
+  @apply lg:left-[42px] lg:top-[1.5px];
+  @apply xl:left-[42px] xl:top-[1.5px];
+  @apply 3xl:left-[3.5vw] 3xl:top-0;
+}
+
+.eastCitiesContainer {
+  @apply lg:min-w-[228px] lg:top-[-80px];
+  @apply xl:min-w-[228px] xl:top-[-80px];
+  @apply 3xl:min-w-[13.13vw] 3xl:top-[-5.6vw];
 }
 
 .asiaWrapper {
-  @apply absolute;
+  @apply absolute right-[1.39vw] top-[12.5vw];
   @apply md:right-[-47.72px] md:top-[112.87px];
   @apply lg:right-[-19px] lg:top-[140.71px];
   @apply xl:right-[157.56px] xl:top-[140.71px];
@@ -141,14 +257,43 @@
 }
 
 .asia {
+  @apply w-[34.19vw] h-[15.96vw];
   @apply md:w-[310.26px] md:h-[144.85px];
   @apply lg:w-[386.55px] lg:h-[180.53px];
   @apply xl:w-[386.55px] xl:h-[180.53px];
   @apply 3xl:w-[25.44vw] 3xl:h-[11.88vw];
 }
 
-.europaWrapper {
+.asiaPointerLineWrapper {
   @apply absolute;
+  @apply lg:-top-[192px] lg:left-[-628px];
+  @apply xl:-top-[196px] xl:left-[-577px];
+  @apply 3xl:-top-[16.2vw] 3xl:left-[-15vw];
+}
+
+.asiaLine {
+  @apply relative;
+  @apply lg:h-[269px] lg:w-[647.5px] lg:top-[-76px];
+  @apply xl:h-[272.5px] xl:w-[595.5px] xl:top-[-76px];
+  @apply 3xl:h-[17.4vw] 3xl:w-[18.39vw] 3xl:top-[-1.1vw] 3xl:left-[-2.1vw];
+}
+
+.asiaPointer {
+  @apply left-[15.83vw] top-[-1.67vw];
+  @apply md:left-[141px] md:top-[-5px];
+  @apply lg:left-[182px] lg:top-[-13px];
+  @apply xl:left-[182px] xl:top-[-13px];
+  @apply 3xl:left-[11.5vw] 3xl:top-[-1vw];
+}
+
+.asiaCitiesContainer {
+  @apply lg:min-w-[622px] lg:top-[-85px];
+  @apply xl:min-w-[622px] xl:top-[-85px];
+  @apply 3xl:min-w-[13.13vw] 3xl:top-[-1.7vw];
+}
+
+.europaWrapper {
+  @apply absolute left-[37.22vw] top-[4.72vw];
   @apply md:left-[289.94px] md:top-[42.18px];
   @apply lg:left-[389px] lg:top-[52.61px];
   @apply xl:left-[469.66px] xl:top-[52.61px];
@@ -156,14 +301,41 @@
 }
 
 .europa {
+  @apply w-[13.35vw] h-[11.48vw];
   @apply md:w-[121.14px] md:h-[104.18px];
   @apply lg:w-[150.93px] lg:h-[129.84px];
   @apply xl:w-[150.93px] xl:h-[129.84px];
   @apply 3xl:w-[9.93vw] 3xl:h-[8.55vw];
 }
 
+.europaPointerLineWrapper {
+  @apply lg:top-[-220.08px] lg:left-[-440px];
+  @apply xl:top-[-228.08px] xl:left-[-468px];
+  @apply absolute 3xl:-top-[16.2vw] 3xl:left-[-27.1vw];
+}
+
+.europaLine {
+  @apply lg:w-[458.5px] lg:h-[221.5px] lg:left-[0px];
+  @apply xl:w-[486px] xl:h-[229px] xl:left-[0px];
+  @apply 3xl:w-[26.46vw] 3xl:h-[15.65vw] 3xl:left-[1.9vw] 3xl:top-[0.6vw];
+}
+
+.europaPointer {
+  @apply left-[5vw] top-[1.94vw];
+  @apply md:left-[47px] md:top-[23px];
+  @apply lg:left-[58px] lg:top-[29px];
+  @apply xl:left-[58px] xl:top-[29px];
+  @apply 3xl:left-[3.5vw] 3xl:top-[2vw];
+}
+
+.europaCitiesContainer {
+  @apply lg:min-w-[1054px] lg:top-[-10px];
+  @apply xl:min-w-[1054px] xl:top-[-10px];
+  @apply 3xl:min-w-[13.13vw] 3xl:left-[2vw] 3xl:top-[-0.5vw];
+}
+
 .russiaWrapper {
-  @apply absolute;
+  @apply absolute right-[6.11vw] top-[4.72vw];
   @apply md:right-[-5.24px] md:top-[42.56px];
   @apply lg:right-[35.23px] lg:top-[53.09px];
   @apply xl:right-[211.29px] xl:top-[53.09px];
@@ -171,14 +343,41 @@
 }
 
 .russia {
+  @apply w-[36.42vw] h-[41.47px];
   @apply md:w-[330.45px] md:h-[104.56px];
   @apply lg:w-[411.71px] lg:h-[130.32px];
   @apply xl:w-[411.71px] xl:h-[130.32px];
   @apply 3xl:w-[27.1vw] 3xl:h-[8.58vw];
 }
 
+.russiaPointerLineWrapper {
+  @apply lg:top-[-186px] lg:left-[-612px];
+  @apply xl:top-[135px] xl:left-[-612px];
+  @apply absolute 3xl:-top-[12vw] 3xl:left-[-37.3vw];
+}
+
+.russiaLine {
+  @apply lg:w-[630px] lg:h-[186.5px] lg:!top-[-0px];
+  @apply xl:w-[630px] xl:h-[186.5px] xl:!top-[-320px];
+  @apply 3xl:w-[38.54vw] 3xl:h-[13.28vw] 3xl:!top-[-1.2vw];
+}
+
+.russiaPointer {
+  @apply left-[9.72vw] top-[-1.67vw];
+  @apply md:left-[96px] md:top-[6px];
+  @apply lg:left-[113px] lg:top-[-13px];
+  @apply xl:left-[113px] xl:top-[-13px];
+  @apply 3xl:left-[8.5vw] 3xl:top-0;
+}
+
+.russiaCitiesContainer {
+  @apply lg:min-w-[972px] lg:top-[-5px];
+  @apply xl:min-w-[972px] xl:top-[-325px];
+  @apply 3xl:min-w-[13.13vw] 3xl:top-[-1.5vw];
+}
+
 .australiaWrapper {
-  @apply absolute;
+  @apply absolute -right-[9.17vw] top-[26.39vw];
   @apply md:-right-[182.5px] md:top-[239.25px];
   @apply lg:-right-[186.44px] lg:top-[298.22px];
   @apply xl:-right-[11px] xl:top-[298.22px];
@@ -186,6 +385,7 @@
 }
 
 .australia {
+  @apply w-[19.19vw] h-[11.52vw];
   @apply md:w-[174.17px] md:h-[104.56px];
   @apply lg:w-[217px] lg:h-[130.32px];
   @apply xl:w-[217px] xl:h-[130.32px];
@@ -193,6 +393,19 @@
 }
 
 /* POINTER STYLES */
+
+.country {
+  @apply font-medium text-black;
+  @apply xl:text-[18px] xl:leading-[19.8px];
+  @apply 3xl:text-[1.15vw] 3xl:leading-[1.26vw];
+}
+
+.citiesList {
+  @apply flex flex-col flex-wrap text-[#898C98] font-medium ;
+  @apply lg:text-sm lg:leading-[15.4px] lg:mt-4 lg:gap-y-[4.5px] lg:gap-x-8 lg:max-h-[96px];
+  @apply xl:text-sm xl:leading-[15.4px] xl:mt-4 xl:gap-y-[4.5px] xl:gap-x-8 xl:max-h-[96px];
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.92vw] 3xl:mt-[1.04vw] 3xl:gap-y-[0.31vw] 3xl:gap-x-[1.04vw] 3xl:max-h-[5.94vw];
+}
 
 .pointerWrapper {
   @apply absolute z-10 hover:!text-primary-red transition-colors duration-300;
@@ -203,9 +416,16 @@
 }
 
 .pointer {
-  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw];
+  @apply w-[3.86vw] h-[5.73vw];
+  @apply md:w-[34px] md:h-[52px];
+  @apply lg:w-[35px] lg:h-[52px];
+  @apply xl:w-[34px] xl:h-[52px];
+  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw] text-black hover:text-primary-red transition-colors duration-500;
 }
 
-.northAmericaPointer {
-  @apply 3xl:left-[9.82vw] 3xl:top-[2vw];
+.pointerLine {
+  @apply absolute -top-full bg-primary-red hidden;
+  @apply lg:w-[2px] lg:block;
+  @apply xl:w-[1.6px];
+  @apply 3xl:w-[0.1vw] left-[0.3vw];
 }
