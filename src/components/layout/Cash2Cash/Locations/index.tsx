@@ -182,9 +182,13 @@ export default function Locations() {
                   {name !== "australia" && (
                     <Pointer
                       className={`${styles[`${name}Pointer`]}`}
-                      lineWrapperClassName={`${styles[`${name}PointerLineWrapper`]}`}
+                      lineWrapperClassName={`${
+                        styles[`${name}PointerLineWrapper`]
+                      }`}
                       lineClassName={`${styles[`${name}Line`]}`}
-                      citiesContainerClassName={`${styles[`${name}CitiesContainer`]}`}
+                      citiesContainerClassName={`${
+                        styles[`${name}CitiesContainer`]
+                      }`}
                       isHovered={hoveredCountries[inx]}
                       onClick={() => onClickHandler(inx)}
                       onMouseEnter={() => onMouseEnterHandler(inx)}
@@ -200,7 +204,9 @@ export default function Locations() {
                           )}
                           {Line !== null && AdaptiveLine !== null && (
                             <>
-                              <div className={`relative ${styles[`${name}Line`]}`}>
+                              <div
+                                className={`relative ${styles[`${name}Line`]}`}
+                              >
                                 <Image
                                   src={`/images/cash-to-cash/locations/${Line}-3xl.png`}
                                   fill
@@ -251,10 +257,16 @@ function Pointer({
   ...props
 }: IPointerProps) {
   return (
-    <div className={`${styles.pointerWrapper} ${className}`}>
+    <div
+      className={`${styles.pointerWrapper} ${className} ${
+        isHovered ? "z-10" : "!z-20"
+      }`}
+    >
       <div className={`${styles.pointerInner}`}>
         <div
-          className={`${lineWrapperClassName} transition-all duration-500 ease-in-out hidden lg:block ${
+          className={`${lineWrapperClassName} ${
+            children && styles.lineImage
+          } transition-all duration-500 ease-in-out hidden lg:block ${
             isHovered ? "visible opacity-100" : "invisible opacity-0"
           }`}
         >
@@ -272,13 +284,21 @@ function Pointer({
               <h4 className={`${styles.country}`}>{country}</h4>
 
               <div className={`${styles.citiesList}`}>
-                {cities && cities.map((city, inx) => <p key={inx}>{city}</p>)}
+                {cities &&
+                  cities.map((city, inx) => (
+                    <p key={inx} dangerouslySetInnerHTML={{ __html: city }} />
+                  ))}
               </div>
             </div>
           </div>
         </div>
 
-        <PointerSvg className={`${styles.pointer}`} {...props} />
+        <PointerSvg
+          className={`${styles.pointer} ${
+            isHovered ? "!text-primary-red" : ""
+          }`}
+          {...props}
+        />
       </div>
     </div>
   );

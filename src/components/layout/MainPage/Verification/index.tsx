@@ -45,7 +45,7 @@ export default function Verification() {
               />
               <Card
                 title={t("cards.1.title")}
-                description={t("cards.1.description")}
+                description={t.raw("cards.1.description")}
                 className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
             </div>

@@ -39,11 +39,11 @@
 }
 
 .descriptionBlock button {
-  @apply font-medium text-[2.78vw] leading-[2.78vw] max-w-[76.67vw] mt-[4.44vw];
-  @apply md:text-xs md:leading-3 md:max-w-[339px] md:mt-6;
+  @apply font-medium text-[2.78vw] leading-[2.78vw] max-w-[76.67vw] mt-[4.44vw] tracking-[-0.05vw];
+  @apply md:text-xs md:leading-3 md:max-w-[339px] md:mt-6 md:tracking-normal;
   @apply lg:text-xs lg:leading-3 lg:max-w-[339px] lg:mt-6;
   @apply xl:text-xs xl:leading-3 xl:max-w-[339px] xl:mt-8;
-  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw] 3xl:tracking-[-0.01vw];
+  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw];
 }
 
 .mascotWrapper {

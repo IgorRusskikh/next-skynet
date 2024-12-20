@@ -1,9 +1,9 @@
 .card {
-  @apply bg-[#F3F3F3] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] font-tt-norms;
+  @apply bg-[#F3F3F3] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] font-tt-norms min-h-[46.67vw];
 }
 
 .slidesCount {
-  @apply max-w-[18.67vw] flex justify-between text-[2.78vw] leading-[2.78vw];
+  @apply max-w-[15.67vw] flex justify-between text-[2.78vw] leading-[2.78vw];
 }
 
 .cardContent {

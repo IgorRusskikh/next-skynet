@@ -7,7 +7,7 @@ import gsap from "gsap";
 import styles from "./LocationsAdaptive.module.css";
 
 interface Props {
-  locations: [{ country: string; cities: string[] }];
+  locations: { country: string; cities: string[] }[];
 }
 
 interface ICities {
@@ -16,13 +16,13 @@ interface ICities {
 }
 
 const CLASSNAMES = [
+  "russia",
+  "europa",
+  "east",
+  "asia",
   "northAmerica",
   "latinAmerica",
   "africa",
-  "east",
-  "asia",
-  "europa",
-  "russia",
   "australia",
 ] as const;
 
@@ -42,10 +42,20 @@ export default function LocationsAdaptive({ locations }: Props) {
     });
   };
 
+  const formattedLocations = [
+    locations[6],
+    locations[5],
+    locations[3],
+    locations[4],
+    locations[0],
+    locations[1],
+    locations[2],
+  ];
+
   return (
     <div className={`${styles.listWrapper}`}>
       <div className={`${styles.countriesList}`}>
-        {locations.map((location, inx) => (
+        {formattedLocations.map((location, inx) => (
           <div
             key={inx}
             className={`${styles.countriesItem}`}
@@ -76,10 +86,12 @@ export default function LocationsAdaptive({ locations }: Props) {
               className="transition-all duration-500 overflow-clip max-h-0"
             >
               <div
-                className={`${styles.citiesList} ${styles[`${CLASSNAMES[inx]}CitiesList`]}`}
+                className={`${styles.citiesList} ${
+                  styles[`${CLASSNAMES[inx]}CitiesList`]
+                }`}
               >
                 {location.cities.map((city, inx) => (
-                  <p key={inx}>{city}</p>
+                  <p key={inx} dangerouslySetInnerHTML={{ __html: city }} />
                 ))}
               </div>
             </div>

@@ -199,10 +199,7 @@ export default function HowToUse({ tNamespace }: Props) {
         <div ref={startAnimationRef}>
           <div ref={parentRef} className={`${styles.contentWrapper}`}>
             <div className={styles.howToUseContent}>
-              <HowToUseSlider
-                currentSlide={currentSlide}
-                setCurrentSlide={setCurrentSlide}
-              />
+              <HowToUseSlider setCurrentSlide={setCurrentSlide} />
 
               <div className={`${styles.infoContainer}`}>
                 <div className={`${styles.stepNumber}`}>

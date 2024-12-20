@@ -1,5 +1,5 @@
 .footer {
-  @apply font-tt-norms pt-[22.22vw];
+  @apply font-tt-norms pt-[22.22vw] pb-[4.44vw];
   @apply md:pt-[120px] md:pb-4;
   @apply lg:pt-[140px] lg:pb-4;
   @apply xl:pt-[160px] xl:pb-4;

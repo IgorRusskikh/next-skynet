@@ -34,7 +34,7 @@ export default {
           "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[0.5vw]": {},
         },
         ".section-subtitle": {
-          "@apply font-medium text-[5.56vw] leading-[6.11vw]": {},
+          "@apply font-medium text-[5.56vw] leading-[6.11vw] tracking-[-0.05vw]": {},
           "@apply md:text-[26px] md:leading-[28.6px]": {},
           "@apply lg:text-[32px] lg:leading-[35.2px]": {},
           "@apply xl:text-[38px] xl:leading-[41.8px]": {},

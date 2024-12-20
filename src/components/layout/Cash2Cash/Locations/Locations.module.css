@@ -64,7 +64,7 @@
   @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-3px_25px_0px_rgba(0,0,0,0.2)] relative h-[59.22vw] w-[190vw] left-[-48vw] top-[20vw];
   @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw] md:top-[34px];
   @apply lg:h-[580px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_40px_0px_rgba(0,0,0,0.2)];
-  @apply xl:h-[455px] xl:w-[130vw] xl:left-[-15vw] xl:bottom-[-30%];
+  @apply xl:h-[800px] xl:w-[150vw] xl:left-[-25vw] xl:bottom-[-30%];
   @apply 3xl:h-[50.36vw] 3xl:w-[130vw] rounded-t-[50%] 3xl:left-[-15vw] 3xl:bottom-[-12vw];
 }
 
@@ -270,6 +270,12 @@
   @apply xl:-top-[196px] xl:left-[-577px];
   @apply 3xl:-top-[16.2vw] 3xl:left-[-15vw];
 }
+.asiaPointerLineWrapper::after {
+  @apply content-[''] absolute visible opacity-100 rounded-full bg-primary-red z-50;
+  @apply lg:left-[-3px] lg:top-[-78px] lg:size-2;
+  @apply xl:left-[-4px] xl:top-[-80px] xl:size-[10px];
+  @apply 3xl:left-[-2.32vw] 3xl:top-[-1.1vw] 3xl:size-[0.52vw];
+}
 
 .asiaLine {
   @apply relative;
@@ -314,6 +320,13 @@
   @apply absolute 3xl:-top-[16.2vw] 3xl:left-[-27.1vw];
 }
 
+.europaPointerLineWrapper::after {
+  @apply content-[''] absolute visible opacity-100 rounded-full bg-primary-red z-50;
+  @apply lg:left-[-4px] lg:top-[-5px] lg:size-[10px];
+  @apply xl:left-[-4px] xl:top-[-5px] xl:size-[10px];
+  @apply 3xl:left-[1.68vw] 3xl:top-[0.6vw] 3xl:size-[0.52vw];
+}
+
 .europaLine {
   @apply lg:w-[458.5px] lg:h-[221.5px] lg:left-[0px];
   @apply xl:w-[486px] xl:h-[229px] xl:left-[0px];
@@ -354,6 +367,13 @@
   @apply lg:top-[-186px] lg:left-[-612px];
   @apply xl:top-[135px] xl:left-[-612px];
   @apply absolute 3xl:-top-[12vw] 3xl:left-[-37.3vw];
+}
+
+.russiaPointerLineWrapper::after {
+  @apply content-[''] absolute visible opacity-100 rounded-full bg-primary-red z-50;
+  @apply lg:left-[-1px] lg:top-[1px] lg:size-2;
+  @apply xl:left-[-2px] xl:top-[-320px] xl:size-[10px];
+  @apply 3xl:left-[-0.2vw] 3xl:top-[-1.2vw] 3xl:size-[0.52vw];
 }
 
 .russiaLine {
@@ -401,7 +421,7 @@
 }
 
 .citiesList {
-  @apply flex flex-col flex-wrap text-[#898C98] font-medium ;
+  @apply flex flex-col flex-wrap text-[#898C98] font-medium;
   @apply lg:text-sm lg:leading-[15.4px] lg:mt-4 lg:gap-y-[4.5px] lg:gap-x-8 lg:max-h-[96px];
   @apply xl:text-sm xl:leading-[15.4px] xl:mt-4 xl:gap-y-[4.5px] xl:gap-x-8 xl:max-h-[96px];
   @apply 3xl:text-[0.83vw] 3xl:leading-[0.92vw] 3xl:mt-[1.04vw] 3xl:gap-y-[0.31vw] 3xl:gap-x-[1.04vw] 3xl:max-h-[5.94vw];
@@ -416,16 +436,20 @@
 }
 
 .pointer {
-  @apply w-[3.86vw] h-[5.73vw];
+  @apply w-[3.86vw] h-[5.73vw] z-10 relative;
   @apply md:w-[34px] md:h-[52px];
   @apply lg:w-[35px] lg:h-[52px];
   @apply xl:w-[34px] xl:h-[52px];
-  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw] text-[#898C98] hover:text-primary-red transition-colors duration-500;
+  @apply 3xl:w-[2.4vw] 3xl:h-[3.65vw] text-[#898C98] xl:hover:text-primary-red transition-colors duration-500;
 }
 
 .pointerLine {
   @apply absolute -top-full bg-primary-red hidden;
   @apply lg:w-[2px] lg:block;
-  @apply xl:w-[1.6px];
+  @apply xl:w-[2px];
   @apply 3xl:w-[0.1vw] left-[0.3vw];
+}
+
+.pointerLine::after {
+  @apply content-[''] absolute visible opacity-100 size-[10px] rounded-full right-[-4px] bg-primary-red;
 }
