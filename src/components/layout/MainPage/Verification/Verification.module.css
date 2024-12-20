@@ -24,7 +24,7 @@
 }
 
 .verificationContent {
-  @apply max-w-[91.67vw] mt-[13.33vw];
+  @apply max-w-[91.67vw] mt-[13.33vw] w-full;
   @apply md:max-w-[728px] md:mt-0;
   @apply lg:max-w-[794px];
   @apply xl:max-w-[915px];

@@ -19,7 +19,7 @@
   @apply md:gap-14 md:flex-row;
   @apply lg:gap-[96px];
   @apply xl:gap-[231px];
-  @apply 3xl:gap-[12.55vw];
+  @apply 3xl:gap-[15.73vw];
 }
 
 .locationsTitleWrapper h2 {

@@ -88,7 +88,7 @@
     },
     "Verification": {
       "title": "Верификация",
-      "subtitle": "Управление финансами ещё <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />удобнее с premium-опциями <br class=\"hidden xl:block 3xl:hidden\" />для верифицированных клиентов",
+      "subtitle": "Управление финансами ещё <br class=\"hidden md:block\" />удобнее с premium-опциями <br class=\"hidden xl:block\" />для верифицированных клиентов",
       "cards": {
         "0": {
           "title": "Доставка курьером",
