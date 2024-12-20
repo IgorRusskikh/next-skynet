@@ -199,7 +199,7 @@ export default function HowToUse({ tNamespace }: Props) {
         <div ref={startAnimationRef}>
           <div ref={parentRef} className={`${styles.contentWrapper}`}>
             <div className={styles.howToUseContent}>
-              <HowToUseSlider setCurrentSlide={setCurrentSlide} />
+              <HowToUseSlider setCurrentSlide={setCurrentSlide} tNamespace={tNamespace} />
 
               <div className={`${styles.infoContainer}`}>
                 <div className={`${styles.stepNumber}`}>
@@ -234,7 +234,7 @@ export default function HowToUse({ tNamespace }: Props) {
                       className="!opacity-0"
                       dangerouslySetInnerHTML={{
                         // @ts-expect-error: need a type
-                        __html: t.raw("steps.0.title"),
+                        __html: t.raw("steps.3.title"),
                       }}
                     />
 

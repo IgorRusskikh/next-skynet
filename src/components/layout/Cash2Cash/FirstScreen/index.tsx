@@ -7,6 +7,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
 import { useTranslations } from "next-intl";
+import useTypeText from "@/hooks/useTypeText";
 
 export default function FirstScreen() {
   const typingTextRef = useRef<HTMLSpanElement>(null);
@@ -14,62 +15,14 @@ export default function FirstScreen() {
 
   const t = useTranslations("CashToCash.FirstScreen");
 
-  useEffect(() => {
-    // @ts-expect-error: need a type
-    const texts: string[] = Object.values(t.raw("typing-text"));
-    const typingText = typingTextRef.current;
-    const cursor = cursorRef.current;
-
-    if (typingText) {
-      typingText.textContent = "";
-    }
-
-    gsap.to(cursor, {
-      opacity: 0,
-      duration: 0.5,
-      repeat: -1,
-      yoyo: true,
-    });
-
-    const tl = gsap.timeline();
-
-    texts[0].split("").forEach((letter) => {
-      tl.to(typingText, {
-        duration: 0.1,
-        onComplete: () => {
-          if (typingText) {
-            typingText.textContent += letter;
-          }
-        },
-      });
-    });
-
-    tl.to({}, { duration: 1 });
-
-    [...texts[0]].forEach(() => {
-      tl.to(typingText, {
-        duration: 0.05,
-        onComplete: () => {
-          if (typingText && typeof typingText.textContent === "string") {
-            typingText.textContent = typingText.textContent.slice(0, -1);
-          }
-        },
-      });
-    });
-
-    tl.to({}, { duration: 0.5 });
-
-    texts[1].split("").forEach((letter) => {
-      tl.to(typingText, {
-        duration: 0.1,
-        onComplete: () => {
-          if (typingText) {
-            typingText.textContent += letter;
-          }
-        },
-      });
-    });
-  }, []);
+  useTypeText({
+    typingTextRef,
+    cursorRef,
+    texts: Object.values(
+      // @ts-expect-error: need a type
+      t.raw("typing-text")
+    ),
+  });
 
   return (
     <section className={`${styles.firstScreen}`}>
@@ -94,7 +47,9 @@ export default function FirstScreen() {
           <div className={`${styles.descriptionBlock}`}>
             <p dangerouslySetInnerHTML={{ __html: t.raw("description") }}></p>
 
-            <Button theme="red" className="mx-auto">{t("tg-bot")}</Button>
+            <Button theme="red" className="mx-auto">
+              {t("tg-bot")}
+            </Button>
           </div>
         </div>
       </div>

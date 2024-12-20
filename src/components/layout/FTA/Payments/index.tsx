@@ -10,6 +10,7 @@ import Ruble from "@/svg/ruble.svg";
 import USD from "@/svg/usd.svg";
 import gsap from "gsap";
 import styles from "./Payments.module.css";
+import { useTranslations } from "next-intl";
 
 export default function Payments() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -19,11 +20,18 @@ export default function Payments() {
   const rubleRef = useRef<SVGElement>(null);
   const coinsRefs = useRef<SVGElement[]>([]);
 
+  const t = useTranslations("VED.Payment");
+
   useEffect(() => {
     const progressTl = gsap.timeline();
 
-    stepsRefs.current.forEach((ref) => {
-      gsap.killTweensOf(ref);
+    gsap.killTweensOf(stepsRefs.current);
+    gsap.killTweensOf(rubleRef.current);
+    gsap.killTweensOf(coinsRefs.current);
+
+    gsap.set(rubleRef.current, { x: 0, y: 0 });
+    coinsRefs.current.forEach((coin) => {
+      gsap.set(coin, { x: 0, y: 0 });
     });
 
     stepsRefs.current.forEach((ref) => {
@@ -67,7 +75,7 @@ export default function Payments() {
   const secondStepAnim = (tl: ReturnType<typeof gsap.timeline>) => {
     tl.to(stepsRefs.current[1], {
       width: "100%",
-      duration: 12,
+      duration: 13,
       onComplete: () => {
         setCurrentStep(0);
       },
@@ -87,6 +95,7 @@ export default function Payments() {
 
     mm.add(
       {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
         isVerticalTablet: `(min-width: ${
           BREAKPOINTS.verticalTablet
         }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
@@ -99,18 +108,22 @@ export default function Payments() {
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
-        const { isTablet, isLaptop, isDesktop } = context.conditions as any;
+        const { isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
 
         gsap.to(rubleRef.current, {
-          x: isDesktop
-            ? "21.83vw"
-            : isLaptop
-            ? "340px"
-            : isTablet
-            ? "380px"
-            : "320px",
+          x: isVerticalTablet
+            ? isDesktop
+              ? "21.83vw"
+              : isLaptop
+              ? "360px"
+              : isTablet
+              ? "380px"
+              : "320px"
+            : 0,
+          y: isVerticalTablet ? 0 : "52vw",
           ease: "sine.inOut",
-          duration: 4,
+          duration: isVerticalTablet ? 4 : 3,
           repeat: -1,
         });
       }
@@ -123,6 +136,7 @@ export default function Payments() {
 
     mm.add(
       {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
         isVerticalTablet: `(min-width: ${
           BREAKPOINTS.verticalTablet
         }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
@@ -135,7 +149,8 @@ export default function Payments() {
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
-        const { isTablet, isLaptop, isDesktop } = context.conditions as any;
+        const { isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
 
         coinsRefs.current.forEach((_, inx) => {
           tl.to(
@@ -143,40 +158,62 @@ export default function Payments() {
             {
               keyframes: [
                 {
-                  x: `${
-                    (isDesktop
-                      ? 10.915
-                      : isLaptop
-                      ? 170
-                      : isTablet
-                      ? 220
-                      : 180) *
-                    (1 - (isLaptop ? 0.15 : 0.07) * inx)
-                  }${isDesktop ? "vw" : "px"}`,
+                  x: isVerticalTablet
+                    ? `${
+                        (isDesktop
+                          ? 10.915
+                          : isLaptop
+                          ? 170
+                          : isTablet
+                          ? 220
+                          : 180) *
+                        (1 - (isLaptop ? 0.15 : 0.11) * inx)
+                      }${isDesktop ? "vw" : "px"}`
+                    : 0,
+                  y: isVerticalTablet
+                    ? 0
+                    : `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`,
                   duration: 2,
                   delay: inx * 1,
                   ease: "sine.inOut",
                 },
                 {
-                  x: `${
-                    (isDesktop
-                      ? 10.915
-                      : isLaptop
-                      ? 170
-                      : isTablet
-                      ? 220
-                      : 180) *
-                    (1 - (isLaptop ? 0.15 : 0.07) * inx)
-                  }${isDesktop ? "vw" : "px"}`,
-                  duration: 2.25,
+                  x: isVerticalTablet
+                    ? `${
+                        (isDesktop
+                          ? 10.915
+                          : isLaptop
+                          ? 170
+                          : isTablet
+                          ? 220
+                          : 180) *
+                        (1 - (isLaptop ? 0.12 : 0.11) * inx)
+                      }${isDesktop ? "vw" : "px"}`
+                    : 0,
+                  y: isVerticalTablet
+                    ? 0
+                    : `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`,
+                  duration: isDesktop ? 2.25 : 2,
                 },
                 {
-                  x: `${
-                    isDesktop ? 21.83 : isLaptop ? 340 : isTablet ? 380 : 320
-                  }${isDesktop ? "vw" : "px"}`,
+                  x: isVerticalTablet
+                    ? `${
+                        isDesktop
+                          ? 21.83
+                          : isLaptop
+                          ? 340
+                          : isTablet
+                          ? 380
+                          : 320
+                      }${isDesktop ? "vw" : "px"}`
+                    : 0,
+                  y: isVerticalTablet ? 0 : `52vw`,
                   delay: inx * -1,
                   ease: "sine.inOut",
-                  duration: 2 * (1 + (isLaptop ? 0.15 : 0.07) * inx),
+                  duration:
+                    2 *
+                    (1 +
+                      (isLaptop ? 0.12 : isVerticalTablet ? 0.07 : 0.15) * inx),
                 },
               ],
             },
@@ -187,13 +224,11 @@ export default function Payments() {
     );
   };
 
-  const desciptions = useMemo(
-    () => [
-      ["Ваша компания в РФ", "Иностранная компания"],
-      ["Счёт нерезидента в РФ", "Ваш поставщик"],
-    ],
+  const from = useMemo(
+    () => [t("card.steps.0.from"), t("card.steps.1.from")],
     []
   );
+  const to = useMemo(() => [t("card.steps.0.to"), t("card.steps.1.to")], []);
 
   const coins = [EUR, USD, CNY];
 
@@ -201,65 +236,54 @@ export default function Payments() {
     <section id="payments" className={`${styles.payments}`}>
       <div className={`${styles.paymentsContainer}`}>
         <div className={`${styles.paymentsTitleWrapper}`}>
-          <h2 className={`${styles.paymentsTitle} section-title`}>
-            Схема платежей
-          </h2>
+          <h2
+            className={`${styles.paymentsTitle} section-title`}
+            dangerouslySetInnerHTML={{ __html: t.raw("title") }}
+          />
 
           <div className={`${styles.paymentsContentText}`}>
             <h3 className={`${styles.paymentsContentTitle} section-subtitle`}>
-              Работаем с зарубежными поставщиками через сеть иностранных
-              компаний по простой и прозрачной системе
+              {t("subtitle")}
             </h3>
           </div>
         </div>
 
         <div className={`${styles.card}`}>
           <div className={`${styles.stepsContainer}`}>
-            <div className={`${styles.step}`}>
-              <button
-                className={`${styles.stepDescription}`}
-                onClick={() => setCurrentStep(0)}
-              >
-                <p className={`${styles.count}`}>Шаг 1</p>
-                <p
-                  className={`${styles.title} ${
-                    currentStep === 1 ? "!text-[#898C98]" : "!text-black"
-                  }`}
+            {Array.from({
+              length: Object.values(
+                // @ts-expect-error: need a type
+                t.raw("card.steps")
+              ).length,
+            }).map((_, inx) => (
+              <div key={inx} className={`${styles.step}`}>
+                <button
+                  className={`${styles.stepDescription}`}
+                  onClick={() => setCurrentStep(inx)}
                 >
-                  Оплата в рублях
-                </p>
-              </button>
+                  <p className={`${styles.count}`}>{`${t("step")} ${
+                    inx + 1
+                  }`}</p>
+                  <p
+                    className={`${styles.title} ${
+                      currentStep === inx ? "!text-black" : "!text-[#898C98]"
+                    }`}
+                  >
+                    {
+                      // @ts-expect-error: need a type
+                      t(`card.steps.${inx}.step`)
+                    }
+                  </p>
+                </button>
 
-              <div
-                ref={(node) => {
-                  stepsRefs.current.push(node!);
-                }}
-                className={`${styles.stepProgress}`}
-              ></div>
-            </div>
-
-            <div className={`${styles.step}`}>
-              <button
-                className={`${styles.stepDescription}`}
-                onClick={() => setCurrentStep(1)}
-              >
-                <p className={`${styles.count}`}>Шаг 1</p>
-                <p
-                  className={`${styles.title} ${
-                    currentStep === 0 ? "!text-[#898C98]" : "!text-black"
-                  }`}
-                >
-                  Оплата в рублях
-                </p>
-              </button>
-
-              <div
-                ref={(node) => {
-                  stepsRefs.current.push(node!);
-                }}
-                className={`${styles.stepProgress}`}
-              ></div>
-            </div>
+                <div
+                  ref={(node) => {
+                    stepsRefs.current.push(node!);
+                  }}
+                  className={`${styles.stepProgress}`}
+                ></div>
+              </div>
+            ))}
           </div>
 
           <div className={`${styles.cardContentWrapper}`}>
@@ -267,7 +291,7 @@ export default function Payments() {
               <div className={`${styles.animation}`}>
                 <Ruble
                   ref={rubleRef}
-                  className={`${styles.coin} lg:!size-[36px] ${
+                  className={`${styles.ruble} ${
                     currentStep === 1 ? "hidden" : "block"
                   }`}
                 />
@@ -292,16 +316,16 @@ export default function Payments() {
                       descriptionRefs.current.push(node!);
                     }}
                   >
-                    <p className="opacity-0">{desciptions[0][currentStep]}</p>
+                    <p className="opacity-0">{from[currentStep]}</p>
 
-                    {desciptions[0].map((desciption, inx) => (
+                    {from.map((fromText, inx) => (
                       <span
                         key={inx}
                         className={`${styles.blockTitle} ${
                           currentStep === inx ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        {desciption}
+                        {fromText}
                       </span>
                     ))}
                   </div>
@@ -309,7 +333,12 @@ export default function Payments() {
 
                 <div className={`${styles.path}`}>
                   <Agreement className={`${styles.agreement}`} />
-                  <p>Агентский договор</p>
+                  <p>
+                    {
+                      // @ts-expect-error: need a type
+                      t(`card.steps.${currentStep}.within`)
+                    }
+                  </p>
                 </div>
 
                 <div
@@ -319,26 +348,29 @@ export default function Payments() {
                   className={`${styles.to}`}
                 >
                   <div>
-                    <p className="opacity-0">{desciptions[0][currentStep]}</p>
+                    <p className="opacity-0">{to[currentStep]}</p>
 
-                    {desciptions[0].map((desciption, inx) => (
+                    {to.map((toText, inx) => (
                       <span
                         key={inx}
                         className={`${styles.blockTitle} ${
                           currentStep === inx ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        {desciption}
+                        {toText}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <p className={`${styles.cardDescription}`}>
-                Оплатите сумму для оплаты поставщику и комиссию в рублях на счёт
-                компании-нерезидента по агентсткому договору
-              </p>
+              <p
+                className={`${styles.cardDescription}`}
+                dangerouslySetInnerHTML={{
+                  // @ts-expect-error: need a type
+                  __html: t.raw(`card.steps.${currentStep}.description`),
+                }}
+              />
             </div>
           </div>
         </div>

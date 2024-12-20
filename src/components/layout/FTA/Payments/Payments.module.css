@@ -3,6 +3,7 @@
 }
 
 .paymentsContainer {
+  @apply py-[22.22vw];
   @apply md:py-[120px];
   @apply lg:py-[140px];
   @apply xl:py-40;
@@ -10,14 +11,15 @@
 }
 
 .paymentsTitleWrapper {
-  @apply flex;
-  @apply md:gap-[86px];
+  @apply flex flex-col gap-[4.44vw];
+  @apply md:gap-[86px] md:flex-row;
   @apply lg:gap-[55px];
   @apply xl:gap-[190px];
   @apply 3xl:gap-[12.71vw];
 }
 
 .paymentsContentText {
+  @apply max-w-[91.11vw];
   @apply md:max-w-[598px];
   @apply lg:max-w-[794px];
   @apply xl:max-w-[915px];
@@ -25,7 +27,7 @@
 }
 
 .card {
-  @apply ml-auto w-full bg-white;
+  @apply ml-auto w-full bg-white mt-[32px] rounded-[4.44vw] p-[4.44vw];
   @apply md:mt-[60px] md:max-w-[725px] md:rounded-[20px] md:p-6;
   @apply lg:mt-[60px] lg:max-w-[794px] lg:rounded-[20px] lg:px-8 lg:py-6;
   @apply xl:mt-[80px] xl:max-w-[915px] xl:rounded-[20px] xl:px-8 xl:py-6;
@@ -37,7 +39,9 @@
 }
 
 .step {
-  @apply flex-1;
+  @apply flex-1 border-b-[0.28vw] border-[#DFE2E9];
+  @apply md:border-b-[1px];
+  @apply 3xl:border-[0.05vw];
 }
 
 .stepDescription {
@@ -45,7 +49,7 @@
 }
 
 .count {
-  @apply text-[#898C98];
+  @apply text-[#898C98] text-[2.78vw] leading-[2.78vw];
   @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-sm lg:leading-[14px];
   @apply xl:text-sm xl:leading-[14px];
@@ -53,14 +57,15 @@
 }
 
 .title {
-  @apply font-medium;
-  @apply md:text-base md:leading-[17.6px] md:mt-[6px];
+  @apply font-medium text-[3.89vw] leading-[4.28vw] mt-[1.67vw] tracking-[-0.1vw];
+  @apply md:text-base md:leading-[17.6px] md:mt-[6px] md:tracking-normal;
   @apply lg:text-xl lg:leading-[22px] lg:mt-2;
   @apply xl:text-2xl xl:leading-[26.4px] xl:mt-2;
   @apply 3xl:text-[1.56vw] 3xl:leading-[1.56vw] 3xl:mt-[0.42vw];
 }
 
 .stepProgress {
+  @apply mt-[3.33vw] h-[0.28vw] relative;
   @apply md:mt-3 md:h-[1px];
   @apply lg:mt-3 lg:h-[1px];
   @apply w-0 xl:mt-3 h-[1px];
@@ -68,7 +73,7 @@
 }
 
 .cardContentWrapper {
-  @apply w-full bg-[#F3F3F3];
+  @apply w-full bg-[#F3F3F3] mt-[4.44vw] py-[6.67vw] rounded-[2.78vw];
   @apply md:mt-6 md:pt-12 md:pb-6 md:rounded-2xl;
   @apply lg:mt-8 lg:pt-12 lg:pb-6 lg:rounded-2xl;
   @apply xl:mt-8 xl:pt-12 xl:pb-6 xl:rounded-xl;
@@ -84,20 +89,29 @@
 }
 
 .animation {
-  @apply flex relative;
+  @apply flex flex-col items-center relative min-h-[62.22vw];
+  @apply md:flex-row md:items-start md:min-h-0;
 }
 
 .coin {
-  @apply absolute z-10;
-  @apply md:size-[28px] md:top-[5%] md:left-[20%];
-  @apply lg:size-[28px] lg:top-[5%] lg:left-[17%];
-  @apply xl:size-14 xl:top-[-23%] xl:left-[22%];
-  @apply 3xl:size-[4.08vw] 3xl:top-[-8%] 3xl:left-[25%];
+  @apply absolute z-10 size-[6.5vw] top-[1vw] left-[38.5vw];
+  @apply md:size-[39px] md:!top-[1%] md:left-[20%];
+  @apply lg:size-[40px] lg:!top-[2%] lg:left-[17%];
+  @apply xl:size-[44px] xl:!top-[0%] xl:left-[22%];
+  @apply 3xl:size-[2.6vw] 3xl:!top-[8%] 3xl:left-[25%];
+}
+
+.ruble {
+  @apply absolute z-10 size-[9vw] top-[2vw] left-[36.8vw];
+  @apply md:size-[50px] md:top-[-17%] md:left-[20%];
+  @apply lg:size-[52px] lg:top-[-16%] lg:left-[20%];
+  @apply xl:size-[56px] xl:top-[-14%] xl:left-[22%];
+  @apply 3xl:size-[3.13vw] 3xl:top-[-5%];
 }
 
 .from,
 .to {
-  @apply bg-[#898C98] text-white relative z-20 w-fit;
+  @apply bg-[#898C98] text-white relative z-20 w-fit px-[7.78vw] py-[3.06vw] text-[3.89vw] leading-[4.28vw] rounded-[27.78vw];
   @apply md:px-[18px] md:py-[10.5px] md:text-sm md:leading-[15.4px] md:rounded-[100px];
   @apply lg:px-5 lg:py-[11.5px] lg:text-sm lg:leading-[15.4px] lg:rounded-[100px];
   @apply xl:px-6 xl:py-3 xl:text-base xl:leading-[17.6px] xl:rounded-[100px];
@@ -119,8 +133,8 @@
 }
 
 .path {
-  @apply flex flex-1 justify-center relative text-[#898C98];
-  @apply md:text-[10px] md:leading-[10px] md:gap-[6px];
+  @apply flex flex-1 justify-center relative text-[#898C98] text-[2.78vw] leading-[2.78vw] h-full -rotate-90 left-[16.78vw];
+  @apply md:text-[10px] md:leading-[10px] md:gap-[6px] md:left-auto md:rotate-0;
   @apply lg:text-[10px] lg:leading-[10px] lg:gap-[6px];
   @apply xl:mt-1 xl:text-[10px] xl:leading-[10px] xl:gap-[6px];
   @apply 3xl:mt-[0.16vw] 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:gap-[0.31vw];
@@ -131,20 +145,21 @@
 }
 
 .path::after {
-  @apply bg-[url('/images/fta/dots-border.png')];
-  @apply md:h-[1px] md:bottom-[40%];
+  @apply bg-[url('/images/fta/dots-border.png')] h-[0.28vw] !w-[38.89vw] top-[4vw];
+  @apply md:h-[1px] md:!w-[95%] md:bottom-[-30%] md:top-auto;
   @apply lg:h-[1px] lg:bottom-[45%];
-  @apply xl:h-[1px] xl:bottom-[45%];
+  @apply xl:h-[1px] xl:bottom-[48%];
   @apply w-[90%] content-[''] 3xl:h-[0.05vw] absolute 3xl:bottom-[45%];
 }
 
 .agreement {
-  @apply md:w-[13.33px] md:h-[15px];
+  @apply hidden;
+  @apply md:w-[13.33px] md:h-[15px] md:block;
 }
 
 .cardDescription {
-  @apply text-center mx-auto text-[#898C98];
-  @apply md:max-w-[429px] md:mt-8 md:text-xs md:leading-3;
+  @apply mx-auto text-[#898C98] max-w-[73.33vw] mt-[6.67vw] text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
+  @apply md:max-w-[429px] md:mt-8 md:text-xs md:leading-3 md:tracking-normal md:text-center;
   @apply lg:max-w-[494px] lg:mt-8 lg:text-sm lg:leading-[14px];
   @apply xl:max-w-[465px] xl:mt-8 xl:text-sm xl:leading-[14px] xl:tracking-[-0.5px];
   @apply 3xl:max-w-[40vw] 3xl:mt-[3.13vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-normal;
