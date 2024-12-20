@@ -94,7 +94,7 @@ export default function FirstScreen() {
           <div className={`${styles.descriptionBlock}`}>
             <p dangerouslySetInnerHTML={{ __html: t.raw("description") }}></p>
 
-            <Button theme="red">Заказать перестановку в TG-боте</Button>
+            <Button theme="red" className="mx-auto">{t("tg-bot")}</Button>
           </div>
         </div>
       </div>

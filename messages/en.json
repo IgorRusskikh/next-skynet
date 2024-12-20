@@ -2,10 +2,11 @@
   "Index": {
     "Header": {
       "nav-links": {
-        "0": "USDT – FIAT",
-        "1": "cash2cash",
-        "2": "Payments for Foreign Trade",
-        "3": "Blog"
+        "0": "Home",
+        "1": "USDT-FIAT",
+        "2": "Cash2Cash",
+        "3": "Trade Payments",
+        "4": "Blog"
       },
       "actions": {
         "tg-bot": "TG-Bot"
