@@ -234,7 +234,7 @@ export default function HowToUse({ tNamespace }: Props) {
                       className="!opacity-0"
                       dangerouslySetInnerHTML={{
                         // @ts-expect-error: need a type
-                        __html: t.raw("steps.3.title"),
+                        __html: t(`steps.${currentSlide}.title`),
                       }}
                     />
 

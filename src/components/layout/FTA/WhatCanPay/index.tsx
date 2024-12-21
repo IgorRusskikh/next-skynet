@@ -19,9 +19,7 @@ export default function WhatCanPay() {
     <section id="what-can-pay" className={`${styles.whatCanPay}`}>
       <div className={`${styles.whatCanPayInner}`}>
         <div className={`${styles.whatCanPayTitleWrapper}`}>
-          <h2 className={`${styles.whatCanPayTitle} section-title`}>
-            {t("title")}
-          </h2>
+          <h2 className={`${styles.whatCanPayTitle} section-title`} dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
 
           <h3
             className={`${styles.whatCanPayDescription} hidden md:block lg:hidden section-subtitle`}
@@ -41,18 +39,18 @@ export default function WhatCanPay() {
                 title={t("cards.0.title")}
                 description={t.raw("cards.0.description")}
                 image
-                className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
+                className="md:h-[210px] lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
               <Card
                 title={t("cards.1.title")}
                 description={t.raw("cards.1.description")}
-                className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
+                className="md:h-[210px] lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
             </div>
             <div className={`${styles.cardsCol} ${styles.cardsColSecond}`}>
               <Card
                 title={t("cards.2.title")}
-                description={t("cards.2.description")}
+                description={t.raw("cards.2.description")}
                 className="flex-1"
               />
               <Card

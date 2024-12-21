@@ -56,8 +56,12 @@
 
 .footerLinksGrid {
   @apply flex flex-col justify-center gap-[15.56vw];
-  @apply md:grid md:grid-cols-2 md:gap-0;
-  @apply lg:grid-cols-3;
+  @apply md:grid grid-cols-2 md:gap-0;
+  @apply lg:flex lg:flex-row lg:justify-between;
+}
+
+.footerLinksGrid div {
+  @apply flex-1;
 }
 
 .footerLinksGrid > *:nth-child(3) {
@@ -69,7 +73,7 @@
 .footerSubscribe button {
   @apply max-w-[91.67vw];
   @apply md:max-w-[292px] md:mt-[22px];
-  @apply lg:max-w-none lg:mt-6;
+  @apply lg:max-w-[273px] lg:mt-6;
   @apply xl:mt-8 xl:py-[14px] xl:max-w-[305px];
   @apply 3xl:mt-[1.667vw] 3xl:py-[0.89vw] 3xl:max-w-[18.96vw];
 }

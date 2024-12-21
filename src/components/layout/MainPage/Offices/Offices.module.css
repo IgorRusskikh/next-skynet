@@ -7,11 +7,11 @@
 }
 
 .officesTitleWrapper {
-  @apply flex flex-col justify-between w-full mx-auto max-w-[91.67vw];
-  @apply md:max-w-[728px] md:flex-row;
-  @apply lg:max-w-[964px];
-  @apply xl:max-w-[1200px];
-  @apply 3xl:max-w-[84.38vw];
+  @apply flex flex-col w-full mx-auto max-w-[91.67vw];
+  @apply md:max-w-[728px] md:flex-row md:gap-[81px];
+  @apply lg:max-w-[964px] lg:gap-[121px];
+  @apply xl:max-w-[1200px] xl:gap-[256px];
+  @apply 3xl:max-w-[84.38vw] 3xl:gap-[17.5vw];
 }
 
 .officesTitle {

@@ -108,11 +108,11 @@ export default function Payments() {
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
-        const { isVerticalTablet, isTablet, isLaptop, isDesktop } =
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
           context.conditions as any;
 
         gsap.to(rubleRef.current, {
-          x: isVerticalTablet
+          x: !isMobile
             ? isDesktop
               ? "21.83vw"
               : isLaptop
@@ -121,7 +121,7 @@ export default function Payments() {
               ? "380px"
               : "320px"
             : 0,
-          y: isVerticalTablet ? 0 : "52vw",
+          y: isMobile ? "52vw" : 0,
           ease: "sine.inOut",
           duration: isVerticalTablet ? 4 : 3,
           repeat: -1,
@@ -149,7 +149,7 @@ export default function Payments() {
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
-        const { isVerticalTablet, isTablet, isLaptop, isDesktop } =
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
           context.conditions as any;
 
         coinsRefs.current.forEach((_, inx) => {
@@ -158,62 +158,73 @@ export default function Payments() {
             {
               keyframes: [
                 {
-                  x: isVerticalTablet
+                  x: !isMobile
                     ? `${
                         (isDesktop
-                          ? 10.915
+                          ? 13.915
                           : isLaptop
-                          ? 170
+                          ? 210
                           : isTablet
-                          ? 220
+                          ? 240
                           : 180) *
                         (1 - (isLaptop ? 0.15 : 0.11) * inx)
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
-                  y: isVerticalTablet
-                    ? 0
-                    : `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`,
+                  y: isMobile
+                    ? `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`
+                    : 0,
                   duration: 2,
                   delay: inx * 1,
                   ease: "sine.inOut",
                 },
                 {
-                  x: isVerticalTablet
+                  x: !isMobile
                     ? `${
                         (isDesktop
-                          ? 10.915
+                          ? 13.915
                           : isLaptop
-                          ? 170
+                          ? 210
                           : isTablet
-                          ? 220
+                          ? 240
                           : 180) *
                         (1 - (isLaptop ? 0.12 : 0.11) * inx)
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
-                  y: isVerticalTablet
-                    ? 0
-                    : `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`,
+                  y: isMobile
+                    ? `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`
+                    : 0,
                   duration: isDesktop ? 2.25 : 2,
                 },
                 {
-                  x: isVerticalTablet
+                  x: !isMobile
                     ? `${
                         isDesktop
-                          ? 21.83
+                          ? 27.83
                           : isLaptop
-                          ? 340
+                          ? 420
                           : isTablet
-                          ? 380
+                          ? 440
+                          : isVerticalTablet
+                          ? 360
                           : 320
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
-                  y: isVerticalTablet ? 0 : `52vw`,
+                  y: isMobile ? `52vw` : 0,
                   delay: inx * -1,
                   ease: "sine.inOut",
                   duration:
                     2 *
                     (1 +
-                      (isLaptop ? 0.12 : isVerticalTablet ? 0.07 : 0.15) * inx),
+                      (isDesktop
+                        ? 0.05
+                        : isLaptop
+                        ? 0.1
+                        : isTablet
+                        ? 0.1
+                        : isVerticalTablet
+                        ? 0.07
+                        : 0.15) *
+                        inx),
                 },
               ],
             },
@@ -242,9 +253,10 @@ export default function Payments() {
           />
 
           <div className={`${styles.paymentsContentText}`}>
-            <h3 className={`${styles.paymentsContentTitle} section-subtitle`}>
-              {t("subtitle")}
-            </h3>
+            <h3
+              className={`${styles.paymentsContentTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+            />
           </div>
         </div>
 

@@ -147,9 +147,9 @@
 .path::after {
   @apply bg-[url('/images/fta/dots-border.png')] h-[0.28vw] !w-[38.89vw] top-[4vw];
   @apply md:h-[1px] md:!w-[95%] md:bottom-[-30%] md:top-auto;
-  @apply lg:h-[1px] lg:bottom-[45%];
-  @apply xl:h-[1px] xl:bottom-[48%];
-  @apply w-[90%] content-[''] 3xl:h-[0.05vw] absolute 3xl:bottom-[45%];
+  @apply lg:h-[1px] lg:bottom-[-45%];
+  @apply xl:h-[1px] xl:bottom-[-30%];
+  @apply w-[90%] content-[''] 3xl:h-[0.05vw] absolute 3xl:bottom-[-60%];
 }
 
 .agreement {
@@ -160,7 +160,7 @@
 .cardDescription {
   @apply mx-auto text-[#898C98] max-w-[73.33vw] mt-[6.67vw] text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
   @apply md:max-w-[429px] md:mt-8 md:text-xs md:leading-3 md:tracking-normal md:text-center;
-  @apply lg:max-w-[494px] lg:mt-8 lg:text-sm lg:leading-[14px];
-  @apply xl:max-w-[465px] xl:mt-8 xl:text-sm xl:leading-[14px] xl:tracking-[-0.5px];
+  @apply lg:max-w-[494px] lg:mt-8 lg:text-sm lg:leading-[14px] lg:tracking-[-0.1px];
+  @apply xl:max-w-[497px] xl:mt-8 xl:text-sm xl:leading-[14px] xl:tracking-[-0.5px];
   @apply 3xl:max-w-[40vw] 3xl:mt-[3.13vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-normal;
 }

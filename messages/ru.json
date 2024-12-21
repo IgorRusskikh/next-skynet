@@ -110,7 +110,7 @@
     },
     "Offices": {
       "title": "Офисы",
-      "subtitle": "Работаем удалённо по всему миру, но всегда рады видеть вас <br class=\"hidden xl:block 3xl:hidden\" />в наших офисах",
+      "subtitle": "Работаем удалённо по всему миру, но всегда рады видеть вас <br class=\"hidden md:block 3xl:hidden\" />в наших офисах",
       "description": "Приезжайте, чтобы познакомиться с нами <br class=\"hidden 3xl:block\" />лично, обсудить задачи и провести сделку",
       "offices-list": {
         "0": {
@@ -314,7 +314,7 @@
     "FirstScreen": {
       "title": {
         "0": "Платежи",
-        "1": "для вэд."
+        "1": "для вэд"
       },
       "typing-text": {
         "0": "Международные платежи.",
@@ -322,30 +322,30 @@
         "2": "По всему миру."
       },
       "tg": {
-        "description": "Помогаем бизнесу легально вести расчёты с зарубежными поставщиками и клиентами без банковских ограничений",
+        "description": "Помогаем бизнесу легально вести расчёты <br class=\"hidden lg:block xl:hidden\" />с зарубежными поставщиками и клиентами <br class=\"hidden lg:block xl:hidden\" />без банковских ограничений",
         "button": "получить консультацию"
       }
     },
     "Services": {
       "title": "Услуги",
-      "subtitle": "Оплата счетов, репатриация <br class=\"hidden md:block lg:hidden\" />валютной выручки для ВЭД легально <br class=\"hidden md:block lg:hidden\" />и без ограничений",
-      "description": "Мы проводим международные финансовые операции, подбирая быстрые и надежные маршруты для любых задач вашего бизнеса",
+      "subtitle": "Оплата счетов, репатриация <br class=\"hidden md:block 3xl:hidden\" />валютной <br class=\"hidden 3xl:block\" />выручки для ВЭД легально <br class=\"hidden md:block 3xl:hidden\" />и без ограничений",
+      "description": "Мы проводим международные финансовые операции, подбирая быстрые и надежные маршруты для любых <br class=\"hidden md:block 3xl:hidden\" />задач вашего бизнеса",
       "cards": {
         "0": {
           "for-whom": "импортёрам",
           "title": "Оплата счетов зарубежных поставщиков",
-          "description": "Используем надёжные финансовые каналы, чтобы средства доходили до получателя быстро и без задержек"
+          "description": "Используем надёжные финансовые каналы, чтобы средства <br class=\"hidden xl:block 3xl:hidden\" />доходили до получателя быстро и без задержек"
         },
         "1": {
           "for-whom": "Экспортёрам",
-          "title": "Получение оплаты от клиентов и репатриация",
+          "title": "Получение оплаты от клиентов <br class=\"hidden lg:block xl:hidden\" />и репатриация",
           "description": "Помогаем получать средства от зарубежных заказчиков через сеть зарубежных компаний и возвращаем валютную выручку в РФ"
         }
       }
     },
     "Payment": {
       "title": "<span class=\"hidden lg:block\">Схема платежей</span><span class=\"lg:hidden\">Схема</span>",
-      "subtitle": "Работаем с зарубежными поставщиками через сеть иностранных компаний по простой и прозрачной системе",
+      "subtitle": "Работаем с зарубежными поставщиками <br class=\"hidden 3xl:block\" />через сеть иностранных компаний <br class=\"hidden lg:block xl:hidden\" />по простой <br class=\"hidden 3xl:block\" />и прозрачной системе",
       "step": "Шаг",
       "card": {
         "steps": {
@@ -354,43 +354,43 @@
             "from": "Ваша компания в РФ",
             "to": "Счёт нерезидента в РФ",
             "within": "Агентский договор",
-            "description": "Оплатите сумму для оплаты поставщику <br class=\" md:hidden\" />и комиссию в рублях <br class=\"hidden md:block lg:hidden\" />на счёт компании-нерезидента по агентсткому договору"
+            "description": "Оплатите сумму для оплаты поставщику <br class=\" md:hidden\" />и комиссию в рублях <br class=\"hidden md:block xl:hidden 3xl:block\" />на счёт компании-нерезидента по агентсткому договору"
           },
           "1": {
             "step": "Оплата поставщику",
             "from": "Иностранная компания",
             "to": "Ваш поставщик",
             "within": "Контракт",
-            "description": "Мы заключим договор с поставщиком <br class=\" md:hidden\" />от иностранной компании, не связанной <br class=\" md:hidden\" />с РФ, и оплатим счёт в нужной валюте"
+            "description": "Мы заключим договор с поставщиком <br class=\" md:hidden\" />от иностранной <br class=\"hidden 3xl:block\" />компании, <br class=\"hidden xl:block 3xl:hidden\" />не связанной <br class=\" md:hidden\" />с РФ, и оплатим счёт в нужной валюте"
           }
         }
       }
     },
     "HowToUse": {
       "title": "как это работает",
-      "subtitle": "Воспользуйтесь Telegram-ботом для расчётов <br class=\" md:hidden\" />с контрагентами <br class=\" lg:hidden\" />за 4 простых шага",
+      "subtitle": "Воспользуйтесь Telegram-ботом для расчётов <br class=\" md:hidden\" />с контрагентами <br class=\" xl:hidden\" />за 4 простых шага",
       "steps": {
         "0": {
-          "title": "Выберите услугу в <br class=\" lg:hidden\" />TG-боте",
-          "description": "Укажите вашу задачу, нужную сумму и валюту или закажите консультацию менеджера"
+          "title": "Выберите услугу <br class=\" lg:hidden xl:block\" />в <br class=\"hidden lg:block xl:hidden\" />TG-боте",
+          "description": "<br />Укажите вашу задачу, нужную сумму и валюту или закажите консультацию менеджера"
         },
         "1": {
           "title": "Обсудите детали <br class=\"hidden md:block lg:hidden\" />с менеджером",
-          "description": "Мы свяжемся для уточнения <br class=\"hidden md:block lg:hidden\" />условий операции и сроков"
+          "description": "<br />Мы свяжемся для уточнения <br class=\"hidden md:block lg:hidden 3xl:block\" />условий операции и сроков"
         },
         "2": {
           "title": "Подтвердите сделку",
           "description": "Предоставьте данные и <br class=\"hidden md:block lg:hidden\" />оплатите комиссию для начала операции"
         },
         "3": {
-          "title": "Получите подтверждение оплаты",
-          "description": "Получите документальное подтверждение вашего  <br class=\"hidden md:block lg:hidden\" />перевода"
+          "title": "Получите <br class=\"hidden lg:block xl:hidden 3xl:block\" />подтверждение <br class=\"hidden md:block lg:hidden\" />оплаты",
+          "description": "<br />Получите документальное подтверждение вашего  <br class=\"hidden md:block lg:hidden\" />перевода"
         }
       }
     },
     "WhatCanPay": {
-      "title": "что можно оплатить",
-      "subtitle": "Оплатим инвойсы <br class=\" md:hidden\" />для физических <br class=\" md:hidden\" />и юридических лиц",
+      "title": "что можно <br class=\"hidden lg:block xl:hidden\" />оплатить",
+      "subtitle": "Оплатим инвойсы <br class=\" md:hidden\" />для <br class=\"hidden xl:block 3xl:hidden\" />физических <br class=\" md:hidden lg:block xl:hidden\" />и юридических лиц",
       "cards": {
         "0": {
           "title": "Хотите купить имущество за границей?",
@@ -402,11 +402,11 @@
         },
         "2": {
           "title": "Оплатить образование?",
-          "description": "Закроем счёт за обучение в зарубежном университете. Гарантируем своевременный перевод средств в нужной валюте"
+          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block xl:hidden\" />перевод средств в нужной валюте"
         }
       },
       "red-card": {
-        "description": "Поможем провести оплату <br class=\"hidden md:block lg:hidden\" />по инвойсам от 1 000 000 рублей <br class=\"hidden md:block lg:hidden\" />через Telegram-бот",
+        "description": "Поможем провести оплату <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />по инвойсам от 1 000 000 рублей <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />через Telegram-бот",
         "link": "Оставить заявку"
       }
     }
@@ -416,7 +416,7 @@
       "titles": {
         "main": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-боте ",
         "cash2cash": "Закажите перестановку средств <br style=\"hidden md:block 3xl:hidden\" />уже сегодня через наш<br /> Telegram-бот",
-        "ved": "Запланируйте международный перевод уже сегодня через наш Telegram-бот"
+        "ved": "Запланируйте международный <br class=\"hidden md:block lg:hidden\" />перевод уже сегодня через <br class=\"hidden md:block lg:hidden\" />наш Telegram-бот"
       },
       "go-to-tg": "Перейти в telegram"
     },

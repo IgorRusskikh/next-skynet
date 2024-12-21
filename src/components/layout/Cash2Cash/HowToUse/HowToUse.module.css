@@ -72,7 +72,7 @@
   @apply md:mb-[159px] md:max-w-[284px] md:block md:tracking-[-0.5px];
   @apply lg:mb-[110px] lg:max-w-[326px] lg:tracking-normal;
   @apply xl:mb-[192px] xl:max-w-[326px];
-  @apply 3xl:mb-[10.47vw] 3xl:max-w-[25.21vw];
+  @apply 3xl:mb-[10.47vw] 3xl:max-w-[26.21vw];
 }
 
 .stepNumber {

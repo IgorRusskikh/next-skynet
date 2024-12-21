@@ -28,10 +28,10 @@
 
 .typingBlock {
   @apply font-medium border-y border-[#DFE2E9] uppercase py-[5.6vw] text-[4.44vw] leading-[4.89vw];
-  @apply md:py-[31px] md:text-[18px] md:leading-[19.8px] md:max-w-[384px] md:ml-auto md:text-right md:mt-3;
+  @apply md:py-[31px] md:text-[18px] md:leading-[19.8px] md:max-w-[384px] md:ml-auto md:text-right md:mt-3 md:tracking-[-0.4px];
   @apply lg:py-[37.5px] lg:text-2xl lg:leading-[26.4px] lg:max-w-[482px];
-  @apply xl:py-[35.5px] xl:text-[28px] xl:leading-[30.8px] xl:max-w-[609px];
-  @apply 3xl:pt-[2.6vw] 3xl:pb-[1.67vw] 3xl:text-[1.98vw] 3xl:leading-[2.18vw] 3xl:max-w-[68.07vw];
+  @apply xl:py-[24px] xl:text-[28px] xl:leading-[30.8px] xl:max-w-[609px];
+  @apply 3xl:pt-[2.6vw] 3xl:pb-[1.67vw] 3xl:text-[1.98vw] 3xl:leading-[2.18vw] 3xl:max-w-[68.07vw] 3xl:tracking-normal;
 }
 
 .descriptionBlock {
@@ -39,7 +39,7 @@
   @apply md:mt-[100px] md:mr-[45px] md:max-w-[339px] md:text-sm md:leading-[14px] md:mx-0 md:ml-auto md:text-left md:tracking-normal;
   @apply lg:mt-14 lg:mr-[143px] lg:max-w-[339px] lg:text-sm lg:leading-[14px] lg:tracking-[-0.3px];
   @apply xl:mt-[60px] xl:mr-[280px] xl:max-w-[329px] xl:text-sm xl:leading-[14px] xl:tracking-[-0.3px];
-  @apply 3xl:mt-[4.01vw] 3xl:mr-[18.96vw] 3xl:max-w-[23.23vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
+  @apply 3xl:mt-[4.01vw] 3xl:mr-[18.96vw] 3xl:max-w-[23.23vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-[-0.04vw];
 }
 
 .descriptionBlock button {

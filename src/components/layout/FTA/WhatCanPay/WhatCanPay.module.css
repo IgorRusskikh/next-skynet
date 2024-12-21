@@ -25,7 +25,7 @@
 }
 
 .whatCanPayContent {
-  @apply max-w-[91.67vw] mt-[13.33vw] w-full;
+  @apply max-w-[91.67vw] mt-[4.43vw] w-full;
   @apply md:max-w-[728px] md:mt-0;
   @apply lg:max-w-[794px];
   @apply xl:max-w-[915px];
@@ -89,13 +89,13 @@
   @apply mt-[8.89vw];
   @apply md:mt-[40px];
   @apply lg:mt-[60px];
-  @apply md:mt-[60px];
+  @apply xl:mt-[60px];
   @apply 3xl:mt-[3.13vw];
 }
 
 .cardContent p {
   @apply text-[#898C98] text-[3.33vw] leading-[3.33vw] mt-[3.33vw] tracking-[-0.1vw];
-  @apply md:text-xs md:leading-3 md:mt-4 md:tracking-normal;
+  @apply md:text-xs md:leading-3 md:mt-4 md:tracking-[-0.5px];
   @apply lg:text-sm lg:leading-[14px] lg:mt-6;
   @apply xl:text-sm xl:leading-[14px] xl:mt-6;
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:mt-[1.25vw]; 
@@ -120,7 +120,7 @@
 .redCard p {
   @apply text-white !mt-0 text-[4.44vw] leading-[4.89vw] !max-w-none;
   @apply md:text-sm md:leading-[15.4px];
-  @apply lg:text-sm lg:leading-[14px];
+  @apply lg:text-[18px] lg:leading-[19.8px];
   @apply xl:text-[18px] xl:leading-[19.8px];
   @apply 3xl:text-[1.15vw] 3xl:leading-[1.15vw];
 }
