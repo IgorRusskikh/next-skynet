@@ -1,0 +1,249 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+import { BREAKPOINTS } from "@/constants";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import styles from "./HowToUse.module.css";
+import { useTranslations } from "next-intl";
+
+export default function HowToUse() {
+  const [isStartAnim, setIsStartAnim] = useState(false);
+
+  const sectionRef = useRef(null);
+  const pinRef = useRef<HTMLDivElement>(null);
+  const cardsRefs = useRef<HTMLDivElement[]>([]);
+
+  const t = useTranslations("UsdtFiat.HowToUse");
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    pinAnimation();
+    moveCards();
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  const pinAnimation = () => {
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+        isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+          BREAKPOINTS.laptop - 1
+        }px)`,
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
+      },
+      (context) => {
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
+
+        const endPoint = isDesktop
+          ? "+=97%"
+          : isVerticalTablet
+          ? "+=65%"
+          : isMobile
+          ? "+=82%"
+          : "bottom";
+
+        gsap.to(pinRef.current, {
+          scrollTrigger: {
+            trigger: pinRef.current,
+            start: "top-=1%",
+            end: `bottom ${endPoint}`,
+            pinSpacing: false,
+            pin: true,
+            scrub: true,
+          },
+        });
+      }
+    );
+  };
+
+  const moveCards = () => {
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+        isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+          BREAKPOINTS.laptop - 1
+        }px)`,
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
+      },
+      (context) => {
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
+
+        const initialY = 120;
+        const moveY = isDesktop
+          ? 48
+          : isLaptop
+          ? 50
+          : isTablet
+          ? 42
+          : isVerticalTablet
+          ? 48
+          : 59;
+
+        cardsRefs.current.forEach((element, inx) => {
+          gsap.fromTo(
+            element,
+            {
+              y: `${initialY}vh`,
+            },
+            {
+              keyframes: [
+                {
+                  opacity: isTablet || isVerticalTablet ? 0 : 1,
+                },
+                {
+                  opacity: 1,
+                },
+              ],
+              y: `${
+                moveY * (inx - 1) -
+                (isDesktop
+                  ? inx === 0
+                    ? 0
+                    : -7 * inx
+                  : isLaptop
+                  ? 0
+                  : isTablet
+                  ? 16
+                  : isVerticalTablet
+                  ? 4
+                  : 18 * inx)
+              }%`,
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: `top+=${inx * element.scrollHeight}px`,
+                end: `top+=${
+                  (inx + 1) *
+                  element.scrollHeight *
+                  (isDesktop ? 1.4 : isMobile ? 1.7 : 1)
+                }px`,
+                pinSpacing: false,
+                scrub: isLaptop || isDesktop ? 0.8 : 0.5,
+                onLeave: () => {
+                  element.style.color =
+                    inx === cardsRefs.current.length - 1 ? "" : "#898C98";
+                  if (!isStartAnim) {
+                    setIsStartAnim(true);
+                  }
+                },
+                onEnterBack: () => {
+                  element.style.color = "";
+                },
+              },
+            }
+          );
+        });
+      }
+    );
+  };
+
+  return (
+    <section
+      ref={sectionRef}
+      id="how-it-works"
+      className={`${styles.howToUse}`}
+    >
+      <div ref={pinRef} className={`${styles.contentWrapper}`}>
+        <div className={`${styles.howToUseContainer}`}>
+          <div className={`${styles.howToUseTitleWrapper}`}>
+            <h2 className={`${styles.howToUseTitle} section-title`}>
+              {t("title")}
+            </h2>
+
+            <div className={`${styles.howToUseContentText}`}>
+              <h3
+                className={`${styles.howToUseContentTitle} section-subtitle`}
+                dangerouslySetInnerHTML={{
+                  __html: t.raw("subtitle"),
+                }}
+              />
+              <p
+                className={`${styles.howToUseContentDescription}`}
+                dangerouslySetInnerHTML={{
+                  __html: t.raw("description"),
+                }}
+              />
+            </div>
+          </div>
+
+          <div className={`${styles.cards}`}>
+            <div
+              className={`${styles.card} ${
+                isStartAnim ? "text-[#898C98]" : ""
+              }`}
+            >
+              <div>
+                <p className={`${styles.step}`}>{t("step")} 1</p>
+                <h3
+                  className={`${styles.title}`}
+                  dangerouslySetInnerHTML={{ __html: t.raw("cards.0.title") }}
+                />
+              </div>
+              <p
+                className={`${styles.description}`}
+                dangerouslySetInnerHTML={{
+                  __html: t.raw("cards.0.description"),
+                }}
+              />
+            </div>
+
+            {Array.from({ length: 4 }).map((_, inx) => (
+              <div
+                ref={(node) => {
+                  if (node) {
+                    cardsRefs.current[inx] = node;
+                  }
+                }}
+                key={inx}
+                className={`${styles.card} absolute`}
+              >
+                <div>
+                  <p className={`${styles.step}`}>
+                    {t("step")} {inx + 2}
+                  </p>
+                  <h3
+                    className={`${styles.title}`}
+                    dangerouslySetInnerHTML={{
+                      // @ts-expect-error: need a type
+                      __html: t.raw(`cards.${inx + 1}.title`),
+                    }}
+                  />
+                </div>
+                <p
+                  className={`${styles.description}`}
+                  dangerouslySetInnerHTML={{
+                    // @ts-expect-error: need a type
+                    __html: t.raw(`cards.${inx + 1}.description`),
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

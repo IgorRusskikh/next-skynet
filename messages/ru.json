@@ -411,12 +411,57 @@
       }
     }
   },
+  "UsdtFiat": {
+    "FirstScreen": {
+      "title": {
+        "0": "USDT ⇄ USD,",
+        "1": "EUR,Rub"
+      },
+      "typing-text": {
+        "0": "Мгновенная конвертация.",
+        "1": "Минимальная комиссия."
+      },
+      "tg": {
+        "description": "Обменивайте криптовалюту на наличные с минимальными комиссиями в удобной валюте и с прозрачным сопровождением",
+        "button": "Провести обмен в TG-боте"
+      }
+    },
+    "HowToUse": {
+      "title": "Как это работает",
+      "subtitle": "Как происходит обмен USDT ⇄  FIAT? ",
+      "description": "Наши специалисты помогут вам <br class=\"md:hidden\" />произвести <br class=\"hidden lg:block xl:hidden\" />обмен быстро, и безопасно",
+      "step": "Шаг",
+      "cards": {
+        "0": {
+          "title": "Оставьте заявку в Telegram-боте",
+          "description": "В нашем Telegram-боте выберите функцию продажи <br class=\"hidden md:block xl:hidden\" />или покупки USDT и укажите нужную сумму"
+        },
+        "1": {
+          "title": "Наш менеджер свяжется с вами",
+          "description": "Менеджер актуализирует вашу заявку и уточнит оставшиеся моменты"
+        },
+        "2": {
+          "title": "Фиксируем курс обмена",
+          "description": "Если вы верифицированный пользователь, мы зафиксируем <br class=\"hidden md:block lg:hidden\" />курс на момент подачи <br class=\"hidden lg:block xl:hidden\" />вашей заявки. В другом случае, курс <br class=\"hidden md:block lg:hidden\" />фиксируется <br class=\"md:hidden\" />после приезда в офис."
+        },
+        "3": {
+          "title": "Закажите пропуск в офис",
+          "description": "В Телеграм-боте закажите пропуск в офис по ID вашей сделке"
+        },
+        "4": {
+          "title": "Приезжайте в офис для завершения сделки",
+          "description": "В офисе мы произведём обмен USDT <br class=\"hidden md:block lg:hidden\" />на наличные <br class=\"hidden lg:block xl:hidden\" />согласно вашей заявке"
+        }
+      }
+    }
+  },
   "Footer": {
     "tg-block": {
       "titles": {
         "main": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-боте ",
         "cash2cash": "Закажите перестановку средств <br style=\"hidden md:block 3xl:hidden\" />уже сегодня через наш<br /> Telegram-бот",
-        "ved": "Запланируйте международный <br class=\"hidden md:block lg:hidden\" />перевод уже сегодня через <br class=\"hidden md:block lg:hidden\" />наш Telegram-бот"
+        "ved": "Запланируйте международный <br class=\"hidden md:block lg:hidden\" />перевод уже сегодня через <br class=\"hidden md:block lg:hidden\" />наш Telegram-бот",
+        "usdt-fiat": "Начните обмен уже сегодня <br class=\"xl:hidden\" />через наш Telegram-бот"
       },
       "go-to-tg": "Перейти в telegram"
     },

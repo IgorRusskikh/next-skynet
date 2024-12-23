@@ -6,11 +6,15 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import useTypeText from "@/hooks/useTypeText";
 
-export default function FirstScreen() {
+interface Props {
+  tNamespace?: "VED" | "UsdtFiat";
+}
+
+export default function FirstScreen({ tNamespace = "VED" }: Props) {
   const typingTextRef = useRef<HTMLSpanElement>(null);
   const cursorRef = useRef(null);
 
-  const t = useTranslations("VED.FirstScreen");
+  const t = useTranslations(`${tNamespace}.FirstScreen`);
 
   useTypeText({
     typingTextRef,
@@ -27,7 +31,8 @@ export default function FirstScreen() {
         <h1>
           <p>{t("title.0")}</p>
           <p className={`${styles.bottomLine}`}>
-            {t("title.1")}<span className="text-primary-red">.</span>
+            {t("title.1")}
+            <span className="text-primary-red">.</span>
           </p>
         </h1>
 
@@ -36,7 +41,7 @@ export default function FirstScreen() {
             <span ref={typingTextRef}></span>
             <span
               ref={cursorRef}
-              className="text-primary-red xl:text-4xl 3xl:text-[3vw] font-extralight"
+              className="text-primary-red font-medium text-[7vw] md:text-3xl xl:text-4xl 3xl:text-[3vw]"
             >
               |
             </span>
@@ -46,9 +51,7 @@ export default function FirstScreen() {
         <div className={`${styles.descriptionBlock}`}>
           <p dangerouslySetInnerHTML={{ __html: t.raw("tg.description") }} />
 
-          <Button theme="red">
-            {t('tg.button')}
-          </Button>
+          <Button theme="red">{t("tg.button")}</Button>
         </div>
       </div>
     </section>

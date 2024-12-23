@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, HTMLAttributes, useEffect, useMemo, useRef } from "react";
+import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
 
 import { BREAKPOINTS } from "@/constants";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,19 +8,14 @@ import gsap from "gsap";
 import styles from "./Offices.module.css";
 import { useTranslations } from "next-intl";
 
-interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
-  image: string;
-  location: string;
-  address: string;
-  index: number;
-}
+interface Props extends HTMLAttributes<HTMLElement> {}
 
 type office = {
   country: string;
   address: string;
 };
 
-export default function Offices(): JSX.Element {
+export default function Offices({ className }: Props): JSX.Element {
   const officesBlockRef = useRef<HTMLDivElement>(null);
 
   const t = useTranslations("Index.Offices");
@@ -71,7 +66,7 @@ export default function Offices(): JSX.Element {
   );
 
   return (
-    <section id="offices" className={`${styles.offices}`}>
+    <section id="offices" className={`${styles.offices} ${className}`}>
       <div className={`${styles.officesInner}`}>
         <div className={`${styles.officesTitleWrapper}`}>
           <h2 className={`${styles.officesTitle} section-title`}>
@@ -116,6 +111,13 @@ export default function Offices(): JSX.Element {
 
 const images = ["moscow.png", "dubai.png", "ufa.png", "usa.png"];
 const flags = ["🇷🇺", "🇦🇪", "🇷🇺", "🇺🇸"];
+
+interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
+  image: string;
+  location: string;
+  address: string;
+  index: number;
+}
 
 function OfficeCard({
   image,

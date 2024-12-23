@@ -41,7 +41,7 @@
 .step {
   @apply flex-1 border-b-[0.28vw] border-[#DFE2E9];
   @apply md:border-b-[1px];
-  @apply 3xl:border-[0.05vw];
+  @apply 3xl:border-b-[0.05vw];
 }
 
 .stepDescription {

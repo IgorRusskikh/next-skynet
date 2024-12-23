@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
 
 import Agreement from "@/svg/agreement.svg";
 import { BREAKPOINTS } from "@/constants";
@@ -12,7 +12,11 @@ import gsap from "gsap";
 import styles from "./Payments.module.css";
 import { useTranslations } from "next-intl";
 
-export default function Payments() {
+interface Props extends HTMLAttributes<HTMLElement> {
+  containerClassName?: string;
+}
+
+export default function Payments({ containerClassName, className }: Props) {
   const [currentStep, setCurrentStep] = useState(0);
 
   const stepsRefs = useRef<HTMLDivElement[]>([]);
@@ -244,8 +248,8 @@ export default function Payments() {
   const coins = [EUR, USD, CNY];
 
   return (
-    <section id="payments" className={`${styles.payments}`}>
-      <div className={`${styles.paymentsContainer}`}>
+    <section id="payments" className={`${styles.payments} ${className}`}>
+      <div className={`${styles.paymentsContainer} ${containerClassName}`}>
         <div className={`${styles.paymentsTitleWrapper}`}>
           <h2
             className={`${styles.paymentsTitle} section-title`}
