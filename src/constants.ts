@@ -17,7 +17,7 @@ export const INNER_SITES = {
     title: "USDT – FIAT",
   },
   cash2cash: {
-    link: "/cash-2-cash",
+    link: "/cash-to-cash",
     title: "Cash2cash",
   },
   paymentsForExport: {

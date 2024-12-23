@@ -19,18 +19,18 @@ export default function Verification() {
     <section id="verification" className={`${styles.verification}`}>
       <div className={`${styles.verificationInner}`}>
         <div className={`${styles.verificationTitleWrapper}`}>
-          <h2 className={`${styles.verificationTitle} section-title`}>
+          <h3 className={`${styles.verificationTitle} section-title`}>
             {t("title")}
-          </h2>
+          </h3>
 
-          <h3
+          <h2
             className={`${styles.verificationDescription} hidden md:block lg:hidden section-subtitle`}
             dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
           />
         </div>
 
         <div className={`${styles.verificationContent}`}>
-          <h3
+          <h2
             className={`${styles.verificationDescription} md:hidden lg:block section-subtitle`}
             dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
           />
@@ -41,25 +41,25 @@ export default function Verification() {
                 title={t("cards.0.title")}
                 description={t.raw("cards.0.description")}
                 image
-                className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
+                className="md:h-[210px] lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
               <Card
                 title={t("cards.1.title")}
                 description={t.raw("cards.1.description")}
-                className="lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
+                className="md:h-[210px] lg:h-[258px] xl:h-[258px] 3xl:h-[16.61vw]"
               />
             </div>
             <div className={`${styles.cardsCol} ${styles.cardsColSecond}`}>
               <Card
                 title={t("cards.2.title")}
-                description={t("cards.2.description")}
+                description={t.raw("cards.2.description")}
                 className="flex-1"
               />
               <Card
                 description={t.raw("red-card.description")}
                 red
                 descriptionClassName={styles.redCardDescription}
-                className="md:max-h-[156px] lg:max-h-[180px] xl:max-h-[223px] 3xl:max-h-[11.61vw]"
+                className="md:max-h-[156px] lg:max-h-[180px] xl:max-h-[180px] 3xl:max-h-[11.61vw]"
               />
             </div>
           </div>

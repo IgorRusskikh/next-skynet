@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect, useState, useRef, useMemo } from "react";
-import styles from "./About.module.css";
-import gsap from "gsap";
+import { useEffect, useMemo, useRef, useState } from "react";
+
 import { BREAKPOINTS } from "@/constants";
+import gsap from "gsap";
+import styles from "./About.module.css";
 import { useTranslations } from "next-intl";
 
 export default function About() {
   const [isOpen, setIsOpen] = useState(0);
   const [step, setStep] = useState(0);
 
-  const numberRef = useRef<HTMLSpanElement>(null);
+  const numberRef = useRef<HTMLParagraphElement>(null);
   const advantageTextRef = useRef<HTMLParagraphElement>(null);
 
   const t = useTranslations("Index.AboutUs");
@@ -60,6 +61,11 @@ export default function About() {
               delay: 0,
               duration: 0.9,
             },
+            {
+              y: 0,
+              delay: 0,
+              duration: 0.6,
+            },
           ],
           repeat: -1,
           ease: "none",
@@ -106,10 +112,21 @@ export default function About() {
           <div className={`md:max-w-[501px] lg:max-w-[65%] w-full text-right`}>
             <div className={`${styles.advantageItem}`}>
               <div className={`${styles.advantageNumberWrapper}`}>
-                <span className={`${styles.advantageNumber}`} ref={numberRef}>
-                  {step === 0 ? 150 : step === 1 ? 1000 : 30}
-                </span>
-                <span className={`${styles.advantagePlus}`}>+</span>
+                <p className={`${styles.advantageNumber}`} ref={numberRef}>
+                  {step === 0 ? (
+                    <>
+                      150<span className={`${styles.advantagePlus}`}>+</span>
+                    </>
+                  ) : step === 1 ? (
+                    <>
+                      1000<span className={`${styles.advantagePlus}`}>+</span>
+                    </>
+                  ) : (
+                    <>
+                      30<span className={`${styles.advantagePlus}`}>+</span>
+                    </>
+                  )}
+                </p>
               </div>
 
               <p className={`${styles.advantageText}`} ref={advantageTextRef}>
@@ -118,8 +135,8 @@ export default function About() {
                     key={advantage}
                     className={`${
                       step === inx
-                        ? "opacity-100 visible translate-y-0"
-                        : "opacity-0 invisible translate-y-4"
+                        ? "opacity-100 visible"
+                        : "opacity-0 invisible"
                     }`}
                   >
                     {advantage}

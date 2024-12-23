@@ -129,7 +129,7 @@ function OfficeCard({
 }: IOfficeCard) {
   return (
     <div
-      className={`${styles.officesListItem} ${className}`}
+      className={`${styles.officesListItem} ${className} group`}
       style={{ backgroundImage: `url('/images/offices/${image}')` }}
       {...props}
     >
@@ -138,7 +138,7 @@ function OfficeCard({
         {location}
       </div>
 
-      <div className={`${styles.address}`}>
+      <div className={`${styles.address} group-hover:opacity-100 group-hover:visible`}>
         <p>{address}</p>
       </div>
     </div>

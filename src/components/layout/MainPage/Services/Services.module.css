@@ -85,8 +85,8 @@
 
 .servicesCard {
   @apply bg-white rounded-[30px] flex flex-col justify-between relative;
-  @apply md:min-h-[369px] md:px-6 md:py-8 md:w-full;
-  @apply lg:min-h-80 lg:px-[40px] lg:py-8 lg:min-w-[482px] lg:w-auto;
+  @apply md:min-h-[369px] md:px-6 md:py-8 md:w-full md:rounded-[20px];
+  @apply lg:min-h-80 lg:px-[40px] lg:py-8 lg:min-w-[482px] lg:w-auto lg:rounded-[30px];
   @apply xl:min-h-80 xl:px-10 xl:py-8 xl:min-w-[520px];
   @apply 3xl:min-h-[21.77vw] 3xl:px-[2.08vw] 3xl:py-[2.5vw] 3xl:min-w-[42.19vw];
 }
@@ -100,6 +100,7 @@
 }
 
 .servicesCardCountSeparator {
+  @apply text-[#898C98];
   @apply lg:mx-[10px];
   @apply xl:mx-[10px];
   @apply 3xl:mx-[0.52vw]
@@ -128,7 +129,11 @@
 }
 
 .servicesCardLink a {
-  @apply absolute top-0 left-0 transition-all duration-700 uppercase;
+  @apply absolute top-0 left-0 transition-all duration-700 uppercase font-medium;
+  @apply md:translate-y-4;
+  @apply lg:translate-y-2;
+  @apply xl:translate-y-0;
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }
 
 .serviceImage {

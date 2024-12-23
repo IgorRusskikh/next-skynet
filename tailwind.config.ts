@@ -16,6 +16,7 @@ export default {
       colors: {
         "gray-light": "#E0E2E9",
         "primary-red": "#D02E27",
+        "black": "#1D1D1B",
       },
       screens: {
         "3xl": "1800px",
@@ -31,7 +32,7 @@ export default {
           "@apply md:text-[10px] md:leading-[10px] md:translate-y-[10px]": {},
           "@apply lg:text-[10px] lg:leading-[10px] lg:translate-y-[8px]": {},
           "@apply xl:text-[10px] xl:leading-[10px] xl:translate-y-[10px]": {},
-          "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[0.5vw]": {},
+          "@apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[0.42vw]": {},
         },
         ".section-subtitle": {
           "@apply font-medium text-[5.56vw] leading-[6.11vw] tracking-[-0.05vw]": {},

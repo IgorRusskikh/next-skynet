@@ -1,6 +1,9 @@
 .verification {
   @apply font-tt-norms pt-[25vw];
-  @apply md:pt-0;
+  @apply md:pt-[120px];
+  @apply lg:pt-[140px];
+  @apply xl:pt-[160px];
+  @apply 3xl:pt-[10.42vw];
 }
 
 .verificationInner {
@@ -12,7 +15,8 @@
 }
 
 .verificationTitleWrapper {
-  @apply flex justify-between;
+  @apply flex md:gap-[34px];
+  @apply lg:justify-between;
 }
 
 .verificationTitle {
@@ -109,7 +113,7 @@
   @apply md:text-xs md:leading-3 md:mt-4 md:tracking-normal;
   @apply lg:text-sm lg:leading-[14px] lg:max-w-[232px] lg:mt-6;
   @apply xl:text-sm xl:leading-[14px] xl:max-w-[232px] xl:mt-6;
-  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:mt-[1.25vw]; 
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:mt-[1.25vw] 3xl:tracking-[-0.05vw];
 }
 
 .cardImageWrapper {
@@ -124,8 +128,8 @@
   @apply w-[22.5vw] h-[13.61vw];
   @apply md:w-[92px] md:h-[76px];
   @apply lg:w-[119px] lg:h-[102px];
-  @apply relative xl:w-[142px] xl:h-[103px] rotate-y-180;
-  @apply 3xl:w-[10vw] 3xl:h-[8.44vw];
+  @apply relative xl:w-[174px] xl:h-[103px] rotate-y-180;
+  @apply 3xl:w-[12vw] 3xl:h-[8.44vw];
 }
 
 .redCard {
@@ -135,7 +139,7 @@
 .redCard p {
   @apply text-white !mt-0 text-[4.44vw] leading-[4.89vw] !max-w-none;
   @apply md:text-sm md:leading-[15.4px];
-  @apply lg:text-sm lg:leading-[14px];
+  @apply lg:text-[18px] lg:leading-[19.8px];
   @apply xl:text-[18px] xl:leading-[19.8px];
   @apply 3xl:text-[1.15vw] 3xl:leading-[1.15vw];
 }

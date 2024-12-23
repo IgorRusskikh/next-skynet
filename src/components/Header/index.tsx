@@ -1,16 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import styles from "./Header.module.css";
-import IconButton from "../ui/buttons/IconButton";
-import TelegramIcon from "@/svg/telegram.svg";
+import { useContext, useMemo, useRef } from "react";
+
 import { DropdownContext } from "@/providers/DropdownProvider";
-import { useContext, useMemo } from "react";
+import IconButton from "../ui/buttons/IconButton";
+import Link from "next/link";
 import Logo from "@/svg/logo.svg";
+import TelegramIcon from "@/svg/telegram.svg";
+import styles from "./Header.module.css";
+import useInView from "@/hooks/useInView";
+import useNearTop from "@/hooks/useNearTop";
 import { useTranslations } from "next-intl";
 
-export default function Header() {
+interface Props {
+  fixed?: boolean;
+}
+
+export default function Header({ fixed }: Props) {
   const { isOpen, setIsOpen } = useContext(DropdownContext);
+
+  const isNearTop = useNearTop(5);
 
   const t = useTranslations("Index.Header");
 
@@ -19,10 +28,10 @@ export default function Header() {
     return Object.values(t.raw("nav-links")) as string[];
   }, []);
 
-  console.log(navLinks);
-
   return (
-    <div className={`${styles.navbar}`}>
+    <div
+      className={`${styles.navbar} ${fixed ? styles.fixed : ""} ${isNearTop && fixed ? "!top-[-20vh]" : ""}`}
+    >
       <div className={`${styles.container}`}>
         <div className={`${styles.logo}`}>
           {/* <div className={`${styles.dots}`}>

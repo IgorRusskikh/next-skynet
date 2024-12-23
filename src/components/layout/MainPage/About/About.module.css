@@ -23,19 +23,19 @@
 }
 
 .advantages {
-  @apply flex flex-col justify-between mt-[6.67vw];
-  @apply md:mt-[66px] md:flex-col-reverse;
-  @apply lg:mt-[74px] lg:flex-row lg:items-end;
-  @apply xl:mt-[70px];
-  @apply 3xl:mt-[63.94px];
+  @apply flex flex-col justify-between pt-[6.67vw] overflow-clip;
+  @apply md:pt-[66px] md:flex-col-reverse;
+  @apply lg:pt-[74px] lg:flex-row lg:items-end;
+  @apply xl:pt-[70px];
+  @apply 3xl:pt-[63.94px];
 }
 
 .advantagesText {
-  @apply font-normal max-w-[68.06vw] text-[3.33vw] leading-[3.33vw];
-  @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px];
+  @apply font-light max-w-[68.06vw] text-[3.33vw] leading-[3.33vw];
+  @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px] md:tracking-[-0.5px];
   @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px] lg:mt-0;
   @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
-  @apply 3xl:max-w-[17.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
+  @apply 3xl:max-w-[17.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:tracking-normal;
 }
 
 .advantageItem {
@@ -52,8 +52,10 @@
 }
 
 .advantageItem::before {
-  @apply content-[''] absolute left-0 bottom-[-150px] w-full border-t border-[#E0E2E9] bg-[#F3F3F3] z-10 hidden;
-  @apply md:block md:h-[160px];
+  @apply content-[''] absolute left-0 bottom-[-155px] w-full border-t border-[#E0E2E9] bg-[#F3F3F3] z-10 hidden;
+  @apply md:block md:h-[160px] md:bottom-[-155px];
+  @apply lg:h-[160px] lg:bottom-[-150px];
+  @apply xl:h-[160px] xl:bottom-[-155px];
   @apply 3xl:h-[11vw] 3xl:bottom-[-10.5vw];
 }
 
@@ -63,7 +65,7 @@
 }
 
 .advantageNumber {
-  @apply text-[30.56vw] leading-[23.61vw] tracking-[-2.78vw] relative;
+  @apply text-[30.56vw] leading-[23.61vw] tracking-[-2.78vw] relative flex items-center justify-end text-right;
   @apply md:text-[120px] md:leading-[88px] md:tracking-[-10px];
   @apply lg:text-[120px] lg:leading-[88px] lg:tracking-[-10px];
   @apply xl:text-[140px] xl:leading-[84px] xl:tracking-[-12px];
@@ -80,18 +82,18 @@
 
 .advantageText {
   @apply inline-block md:text-left relative text-[3.33vw] leading-[3.33vw] min-w-[34.72vw] text-center w-full z-20;
-  @apply md:mb-[10px] md:text-xs md:leading-3 md:min-w-[125px] md:w-auto;
-  @apply lg:mb-[10px] lg:text-xs lg:leading-3 lg:min-w-[125px];
-  @apply xl:mb-[10px] xl:text-xs xl:leading-3 xl:min-w-[125px];
-  @apply 3xl:mb-[0.63vw];
+  @apply md:mb-[10px] md:text-xs md:leading-3 md:min-w-fit md:max-w-[125px];
+  @apply lg:mb-[10px] lg:text-xs lg:leading-3 lg:max-w-[125px];
+  @apply xl:mb-[10px] xl:text-xs xl:leading-3 xl:max-w-[125px];
+  @apply 3xl:mb-[0.73vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:w-[9.33vw] 3xl:max-w-none;
 }
 
 .advantageText span {
   @apply absolute left-0 transition-all duration-700 w-full text-center;
   @apply md:-top-4 md:w-auto md:text-left;
   @apply lg:-top-4;
-  @apply xl:-top-4;
-
+  @apply xl:-top-3;
+  @apply 3xl:-top-[0.83vw]
 }
 
 /* USELESS */

@@ -40,6 +40,7 @@ export default async function LocaleLayout({
           <DropdownProvider>
             <Dropdown />
             <Header />
+            <Header fixed />
           </DropdownProvider>
           {children}
         </NextIntlClientProvider>

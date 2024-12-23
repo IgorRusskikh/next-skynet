@@ -27,7 +27,7 @@
   @apply md:text-[10px] md:leading-[10px];
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px];
-  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[1vw];
 }
 
 .howToUseDescription {
@@ -44,10 +44,10 @@
 
 .howToUseContent {
   @apply mt-[13.33vw] h-[850vw];
-  @apply md:mt-[60px] md:h-[4000px];
-  @apply lg:mt-[60px] lg:h-[4000px];
-  @apply xl:mt-[80px] xl:h-[4000px];
-  @apply 3xl:mt-[5.21vw] 3xl:h-[225vw];
+  @apply md:mt-[60px] md:h-[2150px];
+  @apply lg:mt-[60px] lg:h-[1700px];
+  @apply xl:mt-[80px] xl:h-[2200px];
+  @apply 3xl:mt-[5.21vw] 3xl:h-[180vw];
 }
 
 .banner {
@@ -82,7 +82,7 @@
   @apply md:text-[203px] md:leading-[203px] md:-translate-x-[60px];
   @apply lg:text-[270px] lg:leading-[270px] lg:-translate-x-[60px] lg:tracking-[-1px];
   @apply xl:text-[280px] xl:leading-[280px] xl:-translate-x-[80px] xl:tracking-[-1px];
-  @apply 3xl:text-[18.75vw] 3xl:leading-[18.75vw] 3xl:-translate-x-[4.69vw] 3xl:tracking-[-0.06vw];
+  @apply 3xl:text-[18.75vw] 3xl:leading-[18.75vw] 3xl:-translate-x-[4.69vw] 3xl:tracking-[-0.06vw] 3xl:translate-y-[1vw];
 }
 
 .bannerStepNumber span {
@@ -96,14 +96,15 @@
 .bannerStepDescription {
   @apply text-[#F3F3F3] relative w-fit h-fit translate-y-[34vw] text-[3.33vw] leading-[3.33vw];
   @apply md:text-xs md:leading-3 md:mr-4 md:translate-y-0;
-  @apply lg:text-[13.52px] lg:leading-[13.52px] lg:mr-[38px];
+  @apply lg:text-[13.52px] lg:leading-[13.52px] lg:mr-0;
   @apply xl:text-sm xl:leading-[14px] xl:mr-[40px];
-  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:max-w-[19.06vw] 3xl:mr-[3.54vw];
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:min-w-[13.13vw];
 }
 
 .bannerStepDescription span {
   @apply absolute left-0 top-0 w-full opacity-0 max-w-[250px] pl-[5.56vw];
-  @apply md:max-w-none;
+  @apply md:max-w-none md:pl-24;
+  @apply 3xl:pl-[7vw]
 }
 
 .bottomPhoneImageWrapper {
@@ -111,14 +112,14 @@
   @apply md:left-[15px] md:translate-y-[550px];
   @apply lg:left-[40px] lg:translate-y-[450px];
   @apply xl:left-[50px] xl:translate-y-[450px];
-  @apply 3xl:left-[2vw] 3xl:translate-y-[35.04vw];
+  @apply 3xl:left-[2vw] 3xl:translate-y-[45.04vw];
 }
 
 .bottomPhoneImage {
   @apply scale-[1.1] w-[70vw] h-[100vw];
   @apply md:w-[700px] md:h-[480px];
   @apply relative lg:w-[900px] lg:h-[450px];
-  @apply 3xl:w-[70vw] 3xl:h-[40.32vw];
+  @apply 3xl:w-[70vw] 3xl:h-[35.32vw];
 }
 
 .topCallImageWrapper {
@@ -126,7 +127,7 @@
   @apply md:left-[197px] md:-translate-y-[60px];
   @apply lg:left-[261px] lg:-translate-y-[80px];
   @apply xl:left-[285px] xl:-translate-y-[80px];
-  @apply 3xl:left-[20.31vw] 3xl:-translate-y-[5.69vw];
+  @apply 3xl:left-[21.31vw] 3xl:-translate-y-[5.69vw];
 }
 
 .topCallImage {
@@ -149,5 +150,5 @@
   @apply relative w-[50vw] h-[67.22vw];
   @apply md:w-[218px] md:h-[294px];
   @apply lg:w-[303px] lg:h-[280px];
-  @apply 3xl:w-[25.59vw] 3xl:h-[25.38vw];
+  @apply 3xl:w-[25.59vw] 3xl:h-[23.38vw];
 }

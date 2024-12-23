@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./Services.module.css";
 import { useMemo, useState } from "react";
+
 import CustomLink from "@/components/ui/Link";
+import Image from "next/image";
 import ServicesSlider from "@/components/ServicesSlider";
+import styles from "./Services.module.css";
 import { useTranslations } from "next-intl";
 
 export type service = {
@@ -34,27 +35,30 @@ export default function Services() {
     <section id="services" className={`${styles.services}`}>
       <div className={`${styles.servicesContainer}`}>
         <div className={`${styles.servicesTitleWrapper}`}>
-          <h2 className={`${styles.servicesTitle}`}>{t("title")}</h2>
+          <h3 className={`${styles.servicesTitle} section-title`}>
+            {t("title")}
+          </h3>
 
           <div
             className={`${styles.servicesContentText} hidden md:block lg:hidden`}
           >
-            <h3 className={`${styles.servicesContentTitle}`}>
-              {t("description")}
-            </h3>
+            <h3
+              className={`${styles.servicesContentTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+            />
             <p className={`${styles.servicesContentDescription}`}>
-              {t("subtitle")}
+              {t("description")}
             </p>
           </div>
         </div>
 
         <div className={`${styles.servicesContent}`}>
           <div className={`${styles.servicesContentText} md:hidden lg:block`}>
-            <h3 className={`${styles.servicesContentTitle}`}>
-              {t("description")}
-            </h3>
-            <p className={`${styles.servicesContentDescription}`}>
+            <h2 className={`${styles.servicesContentTitle}`}>
               {t("subtitle")}
+            </h2>
+            <p className={`${styles.servicesContentDescription}`}>
+              {t("description")}
             </p>
           </div>
 
@@ -85,13 +89,16 @@ export default function Services() {
                 <div className={`${styles.servicesCardCount}`}>
                   <span className="w-[20px]">{`0${currentService + 1}`} </span>
                   <span className={`${styles.servicesCardCountSeparator}`}>
-                    -
+                    —
                   </span>{" "}
-                  {`0${services.length}`}
+                  <span className="text-[#898C98]">{`0${services.length}`}</span>
                 </div>
 
                 <div className={`${styles.servicesCardContent}`}>
                   <p className={`${styles.servicesCardDescription}`}>
+                    <span className="opacity-0 !relative">
+                      {services[0].description}
+                    </span>
                     {services.map(({ description }, inx) => (
                       <span
                         key={inx}
@@ -107,6 +114,7 @@ export default function Services() {
                   </p>
 
                   <p className={`${styles.servicesCardLink}`}>
+                    <span className="opacity-0">{services[0].link}</span>
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}
@@ -145,15 +153,16 @@ export default function Services() {
 
               <div className={`${styles.servicesCardDescriptionContainer}`}>
                 <p className={`${styles.servicesCardCount}`}>
-                  01
+                  0{currentService + 1}
                   <span className={`${styles.servicesCardCountSeparator}`}>
                     -
                   </span>
-                  {`0${services.length}`}
+                  <span className="text-[#898C98]">{`0${services.length}`}</span>
                 </p>
 
                 <div className={`${styles.serviceDescription}`}>
                   <p className={`${styles.servicesCardDescription}`}>
+                    <span className="opacity-0 !relative">{services[0].description}</span>
                     {services.map(({ description }, inx) => (
                       <span
                         key={inx}
@@ -169,6 +178,7 @@ export default function Services() {
                   </p>
 
                   <p className={`${styles.servicesCardLink}`}>
+                    <span className="opacity-0">{services[0].link}</span>
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}

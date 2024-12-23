@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import styles from "./HowToUse.module.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+
 import { BREAKPOINTS } from "@/constants";
+import Image from "next/image";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import styles from "./HowToUse.module.css";
 import { useTranslations } from "next-intl";
 
 type step = {
@@ -48,16 +49,38 @@ export default function HowToUse() {
     mm.add(
       {
         isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
-        isVertical: `(min-width: ${BREAKPOINTS.verticalTablet}px)`,
+        isVerticalTablet: `(min-width: ${
+          BREAKPOINTS.verticalTablet
+        }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+        isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+          BREAKPOINTS.laptop - 1
+        }px)`,
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (context) => {
-        const { isMobile, isVertical } = context.conditions as any;
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: parentRef.current,
-            start: `top-=${isMobile ? "1%" : 125}`,
-            end: "bottom bottom",
+            start: `top-=${
+              isDesktop
+                ? "5%"
+                : isLaptop
+                ? "6.5%"
+                : isTablet
+                ? "7.5%"
+                : isVerticalTablet
+                ? "10%"
+                : "1%"
+            }`,
+            end: `bottom-=${
+              isDesktop ? 28 : isLaptop ? 32 : isTablet ? 39 : 38
+            }%`,
             scrub: true,
             pin: true,
             pinSpacing: false,
@@ -68,8 +91,53 @@ export default function HowToUse() {
   };
 
   const showTitlesAnim = () => {
+    const mm = gsap.matchMedia();
+
     titlesRefs.current.forEach((title, inx) => {
-      gsap.to(title, getHideAnimOptions(inx));
+      mm.add(
+        {
+          isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+          isVerticalTablet: `(min-width: ${
+            BREAKPOINTS.verticalTablet
+          }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+          isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+            BREAKPOINTS.laptop - 1
+          }px)`,
+          isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+            BREAKPOINTS.desktop - 1
+          }px)`,
+          isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
+        },
+        (context) => {
+          const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+            context.conditions as any;
+
+          gsap.to(title, {
+            keyframes: [
+              { opacity: 1, duration: 1 },
+              { opacity: 1, duration: 1 },
+              {
+                opacity:
+                  inx === stepsDescriptionRefs.current.length - 1 ? 1 : 0,
+                duration: 1,
+              },
+            ],
+            scrollTrigger: {
+              trigger: startAnimRef.current,
+              start: `top+=${
+                (95 / 4.5) * inx +
+                5 -
+                (isDesktop ? 20 : isLaptop || isTablet ? 24 : 28)
+              }%`,
+              end: `top+=${
+                (95 / 4.5) * (inx + (isVerticalTablet ? -1 : 1)) -
+                (isDesktop ? 1 : isLaptop || isTablet ? 15 : -39)
+              }%`,
+              scrub: true,
+            },
+          });
+        }
+      );
     });
   };
 
@@ -83,18 +151,21 @@ export default function HowToUse() {
           isVerticalTablet: `(min-width: ${
             BREAKPOINTS.verticalTablet
           }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+          isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+            BREAKPOINTS.laptop - 1
+          }px)`,
           isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
             BREAKPOINTS.desktop - 1
           }px)`,
           isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
         },
         (context) => {
-          const { isMobile, isVerticalTablet, isLaptop, isDesktop } =
+          const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
             context.conditions as any;
 
           tl.to(stepsCountRefs.current[inx], {
             keyframes: [
-              { y: 0, duration: 1 },
+              { y: 0, duration: 1, opacity: isVerticalTablet ? 1 :1 },
               {
                 y: isMobile
                   ? "-20.67vw"
@@ -126,13 +197,23 @@ export default function HowToUse() {
                       ? "-11vw"
                       : -168
                     : 0,
+                opacity:
+                  isVerticalTablet && inx !== stepsCountRefs.current.length - 1
+                    ? 0
+                    : 1,
                 duration: 1,
               },
             ],
             scrollTrigger: {
               trigger: startAnimRef.current,
-              start: `top+=${(95 / 4.5) * inx}%`,
-              end: `top+=${(95 / 4.5) * (inx + 1) - 2}%`,
+              start: `top+=${
+                (95 / 4.5) * inx -
+                (isDesktop || isLaptop ? 20 : isTablet ? 17 : 35)
+              }%`,
+              end: `top+=${
+                (95 / 4.5) * (inx + (isVerticalTablet ? 0 : 1)) -
+                (isDesktop ? 10 : isLaptop ? 15 : isTablet ? 10.5 : -10 * inx)
+              }%`,
               scrub: true,
             },
           });
@@ -143,9 +224,46 @@ export default function HowToUse() {
 
   const showStepsDescriptionAnim = () => {
     const tl = gsap.timeline();
+    const mm = gsap.matchMedia();
 
     stepsDescriptionRefs.current.forEach((step, inx) => {
-      tl.to(step, getHideAnimOptions(inx));
+      mm.add(
+        {
+          isMobile: `(max-width: ${BREAKPOINTS.verticalTablet - 1}px)`,
+          isVerticalTablet: `(min-width: ${
+            BREAKPOINTS.verticalTablet
+          }px) and (max-width: ${BREAKPOINTS.tablet - 1}px)`,
+          isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
+            BREAKPOINTS.laptop - 1
+          }px)`,
+          isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+            BREAKPOINTS.desktop - 1
+          }px)`,
+          isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
+        },
+        (context) => {
+          const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+            context.conditions as any;
+
+          tl.to(step, {
+            keyframes: [
+              { opacity: 1, duration: 1 },
+              { opacity: 1, duration: 1 },
+              {
+                opacity:
+                  inx === stepsDescriptionRefs.current.length - 1 ? 1 : 0,
+                duration: 1,
+              },
+            ],
+            scrollTrigger: {
+              trigger: startAnimRef.current,
+              start: `top+=${(95 / 4.5) * inx + 5 - (isVerticalTablet ? 30 : 20)}%`,
+              end: `top+=${(95 / 4.5) * (inx + 1) - (isVerticalTablet ? 7 : 1)}%`,
+              scrub: true,
+            },
+          });
+        }
+      );
     });
   };
 
@@ -172,32 +290,32 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "-2vw"
+                ? "3vw"
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 60
                 : isMobile
                 ? "45vw"
-                : 80,
+                : 92,
               duration: 1,
               scale: 1,
             },
             {
               y: isDesktop
-                ? "-2vw"
+                ? "3vw"
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 60
                 : isMobile
                 ? "45vw"
-                : 80,
+                : 92,
               duration: 1,
             },
             {
               y: isDesktop
-                ? "30vw"
+                ? "35vw"
                 : isLaptop
                 ? 450
                 : isTablet
@@ -210,8 +328,15 @@ export default function HowToUse() {
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: `top+=${(95 / 4) * 0 + 4}%`,
-            end: `top+=${(95 / 4) * 1 - 4}%`,
+            start: `top+=${
+              (95 / 4) * 0 +
+              4 -
+              (isDesktop ? 15 : isLaptop ? 20 : isTablet ? 17 : 36)
+            }%`,
+            end: `top+=${
+              (95 / 4) * 1 -
+              (isDesktop ? 12 : isLaptop ? 17 : isTablet ? 9 : 20)
+            }%`,
             scrub: true,
           },
         });
@@ -220,7 +345,7 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "-2vw"
+                ? "3vw"
                 : isLaptop
                 ? 99
                 : isTablet
@@ -233,7 +358,7 @@ export default function HowToUse() {
             },
             {
               y: isDesktop
-                ? "-2vw"
+                ? "3vw"
                 : isLaptop
                 ? 99
                 : isTablet
@@ -245,7 +370,7 @@ export default function HowToUse() {
             },
             {
               y: isDesktop
-                ? "30vw"
+                ? "45vw"
                 : isLaptop
                 ? 450
                 : isTablet
@@ -258,8 +383,14 @@ export default function HowToUse() {
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: `top+=${(95 / 4.5) * 2 + 4}%`,
-            end: `top+=${(95 / 4.5) * 3}%`,
+            start: `top+=${
+              (95 / 4.5) * 2 +
+              4 -
+              (isDesktop ? 15 : isLaptop ? 16.05 : isTablet ? 17 : 23)
+            }%`,
+            end: `top+=${
+              (95 / 4.5) * 3 - (isDesktop ? 11 : isLaptop ? 15.5 : isTablet ? 10 : 5)
+            }%`,
             scrub: true,
           },
         });
@@ -268,7 +399,7 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "15vw"
+                ? "19vw"
                 : isLaptop
                 ? 270
                 : isTablet
@@ -281,7 +412,7 @@ export default function HowToUse() {
             },
             {
               y: isDesktop
-                ? "15vw"
+                ? "19vw"
                 : isLaptop
                 ? 270
                 : isTablet
@@ -294,8 +425,12 @@ export default function HowToUse() {
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: `top+=${(95 / 4.5) * 3 + 4}%`,
-            end: `top+=${(95 / 4.5) * 4 - (isDesktop ? 12 : 0)}%`,
+            start: `top+=${
+              (95 / 4.5) * 3 + 4 - (isDesktop ? 15 : isLaptop ? 17 : isTablet ? 15 : 13)
+            }%`,
+            end: `top+=${
+              (95 / 4.5) * 4 - (isDesktop ? 19 : isLaptop ? 19 : 16)
+            }%`,
             scrub: true,
           },
         });
@@ -353,32 +488,17 @@ export default function HowToUse() {
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
-            start: `top+=${(95 / 4.5) * 1 + 4}%`,
-            end: `top+=${(95 / 4.5) * 2}%`,
+            start: `top+=${
+              (95 / 4.5) * 1 +
+              4 -
+              (isDesktop ? 20 : isLaptop || isTablet ? 20 : 30)
+            }%`,
+            end: `top+=${(95 / 4.5) * 2 - (isLaptop ? 10 : 0)}%`,
             scrub: true,
           },
         });
       }
     );
-  };
-
-  const getHideAnimOptions = (inx: number) => {
-    return {
-      keyframes: [
-        { opacity: 1, duration: 1 },
-        { opacity: 1, duration: 1 },
-        {
-          opacity: inx === stepsDescriptionRefs.current.length - 1 ? 1 : 0,
-          duration: 1,
-        },
-      ],
-      scrollTrigger: {
-        trigger: startAnimRef.current,
-        start: `top+=${(95 / 4.5) * inx + 5}%`,
-        end: `top+=${(95 / 4.5) * (inx + 1) + 10}%`,
-        scrub: true,
-      },
-    };
   };
 
   const bannerTitles = useMemo(
@@ -398,7 +518,9 @@ export default function HowToUse() {
     <section id="how-to-use" className={`${styles.howToUse}`}>
       <div className={`${styles.howToUseInner}`}>
         <div className={`${styles.sectionHeader}`}>
-          <h2 className={`${styles.howToUseTitle}`}>{t("title")}</h2>
+          <h3 className={`${styles.howToUseTitle} section-title`}>
+            {t("title")}
+          </h3>
 
           <p className={`${styles.howToUseDescription}`}>
             {t.rich("subtitle", {
@@ -490,6 +612,7 @@ export default function HowToUse() {
                     fill
                     alt="phone"
                     className="hidden lg:block"
+                    unoptimized
                   />
                   <Image
                     src={"/images/how-to-use/phone-md.png"}
@@ -518,6 +641,7 @@ export default function HowToUse() {
                     fill
                     alt="phone"
                     className="hidden lg:block"
+                    unoptimized
                   />
                   <Image
                     src={"/images/how-to-use/phone-success-md.png"}
@@ -546,6 +670,7 @@ export default function HowToUse() {
                     fill
                     alt="transaction"
                     className="hidden lg:block"
+                    unoptimized
                   />
                   <Image
                     src={"/images/how-to-use/transaction-success-md.png"}

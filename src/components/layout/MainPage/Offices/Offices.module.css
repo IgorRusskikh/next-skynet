@@ -43,7 +43,7 @@
   @apply md:mt-6 md:max-w-[471px] md:text-base md:leading-[17.6px];
   @apply lg:mt-6 lg:max-w-[471px] lg:text-base lg:leading-[17.6px];
   @apply xl:mt-8 xl:max-w-[525px] xl:text-[18px] xl:leading-[19.8px];
-  @apply 3xl:mt-[1.67vw] 3xl:max-w-[27.34vw] 3xl:text-[0.94vw] 3xl:leading-[1.03vw];
+  @apply 3xl:mt-[1.67vw] 3xl:max-w-[27.34vw] 3xl:text-[1.15vw] 3xl:leading-[1.26vw];
 }
 
 .officesContent {
@@ -95,7 +95,7 @@
 }
 
 .address {
-  @apply text-[2.78vw] leading-[2.78vw] hidden;
+  @apply text-[2.78vw] leading-[2.78vw] hidden transition-all duration-500 ease-in-out opacity-0 invisible;
   @apply md:text-[10px] md:leading-[10px] md:ml-[22px] md:block;
   @apply lg:text-xs lg:leading-3 lg:ml-[22px];
   @apply xl:text-xs xl:leading-3 xl:ml-6;

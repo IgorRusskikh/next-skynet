@@ -1,12 +1,13 @@
 "use client";
 
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
-import styles from "./FirstScreen.module.css";
-import Image from "next/image";
-import Button from "@/components/ui/buttons/Button";
-import { useTranslations } from "next-intl";
+
 import Arrow from "@/svg/fs-arrow.svg";
+import Button from "@/components/ui/buttons/Button";
+import Image from "next/image";
 import gsap from "gsap";
+import styles from "./FirstScreen.module.css";
+import { useTranslations } from "next-intl";
 
 interface IAdvantage extends HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -24,7 +25,7 @@ export default function FirstScreen() {
           x: 0,
         },
         {
-          x: 50,
+          x: "100%",
         },
         {
           rotate: "180deg",
@@ -37,7 +38,7 @@ export default function FirstScreen() {
           duration: 0.8,
         },
         {
-          x: -50,
+          x: "-100%",
         },
         {
           rotate: "0deg",
@@ -56,7 +57,7 @@ export default function FirstScreen() {
           x: 0,
         },
         {
-          x: -50,
+          x: "-100%",
         },
         {
           rotate: "0deg",
@@ -69,7 +70,7 @@ export default function FirstScreen() {
           duration: 0.8,
         },
         {
-          x: 50,
+          x: "100%",
         },
         {
           rotate: "180deg",
@@ -88,8 +89,6 @@ export default function FirstScreen() {
     () => Object.values(t.raw("banner.advantages")) as string[],
     []
   );
-
-  console.log(arrowsRefs);
 
   return (
     <>

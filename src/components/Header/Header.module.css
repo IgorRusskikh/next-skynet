@@ -6,6 +6,10 @@
   @apply 3xl:py-[1.25vw];
 }
 
+.fixed {
+  @apply !fixed top-0 left-0 z-20 bg-white bg-opacity-50 backdrop-blur-xl transition-['transform'] duration-500 ease-in-out;
+}
+
 .container {
   @apply flex items-center justify-between mx-auto max-w-[91.11vw];
   @apply md:max-w-[728px];
@@ -66,7 +70,7 @@
 }
 
 .telegram {
-  @apply !hidden;
+  @apply !hidden text-[#F3F3F3];
   @apply md:w-[101px] md:!flex;
   @apply lg:w-[101px];
   @apply xl:w-[101px];
