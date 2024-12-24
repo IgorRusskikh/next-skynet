@@ -1,16 +1,16 @@
 "use client";
 
-import { useContext, useMemo, useRef } from "react";
+import { useContext, useEffect, useMemo } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { DropdownContext } from "@/providers/DropdownProvider";
+import { INNER_SITES } from "@/constants";
 import IconButton from "../ui/buttons/IconButton";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Logo from "@/svg/logo.svg";
 import TelegramIcon from "@/svg/telegram.svg";
 import styles from "./Header.module.css";
-import useInView from "@/hooks/useInView";
 import useNearTop from "@/hooks/useNearTop";
-import { useTranslations } from "next-intl";
 
 interface Props {
   fixed?: boolean;
@@ -19,9 +19,10 @@ interface Props {
 export default function Header({ fixed }: Props) {
   const { isOpen, setIsOpen } = useContext(DropdownContext);
 
-  const isNearTop = useNearTop(5);
+  let isNearTop = useNearTop(5);
 
   const t = useTranslations("Index.Header");
+  const locale = useLocale();
 
   const navLinks = useMemo(() => {
     // @ts-expect-error: needs interface
@@ -30,7 +31,9 @@ export default function Header({ fixed }: Props) {
 
   return (
     <div
-      className={`${styles.navbar} ${fixed ? styles.fixed : ""} ${isNearTop && fixed ? "!top-[-20vh]" : ""}`}
+      className={`${styles.navbar} ${fixed ? styles.fixed : ""} ${
+        isNearTop && fixed ? "!top-[-20vh]" : "!top-0"
+      }`}
     >
       <div className={`${styles.container}`}>
         <div className={`${styles.logo}`}>
@@ -47,7 +50,9 @@ export default function Header({ fixed }: Props) {
             <ul>
               {navLinks.map((link, inx) => (
                 <li key={inx}>
-                  <Link href="/">{link}</Link>
+                  <a href={`/${locale}/${Object.values(INNER_SITES)[inx].link}`}>
+                    {link}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -55,13 +60,15 @@ export default function Header({ fixed }: Props) {
 
           <div className={styles.actions}>
             <div
-              className={`${styles.burger} xl:!hidden`}
+              className={`${styles.burger} xl:!hidden ${
+                isOpen ? "translate-y-[-0.8vw] md:translate-y-0" : ""
+              }`}
               onClick={() => setIsOpen(!isOpen)}
             >
               <div
                 className={`${styles.burgerLine} ${
                   isOpen
-                    ? "-rotate-45 translate-y-[2.5vw] translate-x-[0.04vw] md:translate-y-[9.5px] md:-translate-x-[1px] lg:translate-y-[12px] lg:-translate-x-[1px]"
+                    ? "-rotate-45 translate-y-[2.7vw] translate-x-[-0.1vw] md:translate-y-[9.5px] md:-translate-x-[1px] lg:translate-y-[12px] lg:-translate-x-[1px]"
                     : "rotate-0"
                 }`}
               ></div>

@@ -28,7 +28,7 @@
 }
 
 .verificationContent {
-  @apply max-w-[91.67vw] mt-[13.33vw] w-full;
+  @apply max-w-[91.67vw] mt-[4.44vw] w-full;
   @apply md:max-w-[728px] md:mt-0;
   @apply lg:max-w-[794px];
   @apply xl:max-w-[915px];
@@ -60,14 +60,11 @@
 }
 
 .cardsColFirst:nth-child(1) .cardContent p {
-  @apply max-w-[78.89vw];
   @apply md:max-w-[261px];
   @apply 3xl:max-w-[19.27vw];
 }
 
 .cardsColSecond:nth-child(2) .cardContent p {
-  @apply max-w-[72.5vw];
-  @apply md:max-w-[284px];
   @apply 3xl:max-w-[20.99vw];
 }
 
@@ -78,8 +75,8 @@
 }
 
 .card {
-  @apply w-full bg-white rounded-[20px] px-[4.44vw] py-[6.67vw] relative overflow-clip;
-  @apply md:px-5 md:py-[28px];
+  @apply w-full bg-white rounded-[4.44vw] px-[4.44vw] py-[6.67vw] relative overflow-clip;
+  @apply md:px-5 md:py-[28px] md:rounded-[20px];
   @apply lg:px-6 lg:py-8;
   @apply xl:px-6 xl:py-8;
   @apply 3xl:px-[1.67vw] 3xl:py-[2.08vw];

@@ -105,9 +105,7 @@ export default function About() {
         </p>
 
         <div className={`${styles.advantages}`}>
-          <p className={`${styles.advantagesText} relative z-20`}>
-            {t("description")}
-          </p>
+          <p className={`${styles.advantagesText} relative z-20`} dangerouslySetInnerHTML={{ __html: t.raw("description") }} />
 
           <div className={`md:max-w-[501px] lg:max-w-[65%] w-full text-right`}>
             <div className={`${styles.advantageItem}`}>
@@ -130,6 +128,7 @@ export default function About() {
               </div>
 
               <p className={`${styles.advantageText}`} ref={advantageTextRef}>
+                <span className="!relative opacity-0">{advantages[0]}</span>
                 {advantages.map((advantage, inx) => (
                   <span
                     key={advantage}

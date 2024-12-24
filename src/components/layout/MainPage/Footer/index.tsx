@@ -1,3 +1,5 @@
+import { useLocale, useTranslations } from "next-intl";
+
 import Button from "@/components/ui/buttons/Button";
 import FooterLogo from "@/svg/footer-logo.svg";
 import { INNER_SITES } from "@/constants";
@@ -5,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { useMemo } from "react";
-import { useTranslations } from "next-intl";
 
 interface Props {
   page: string;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function Footer({ page }: Props) {
   const t = useTranslations("Footer");
+  const locale = useLocale();
 
   const navLinks = useMemo(
     () =>
@@ -55,7 +57,7 @@ export default function Footer({ page }: Props) {
                     <ul>
                       {navLinks.map(({ title, link }) => (
                         <li key={title as string}>
-                          <Link href={link}>{title as string}</Link>
+                          <a href={`/${locale}/${link}`}>{title as string}</a>
                         </li>
                       ))}
                     </ul>

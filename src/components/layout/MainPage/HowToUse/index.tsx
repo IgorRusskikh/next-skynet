@@ -73,10 +73,10 @@ export default function HowToUse() {
                 : isLaptop
                 ? "6.5%"
                 : isTablet
-                ? "7.5%"
+                ? "8%"
                 : isVerticalTablet
                 ? "10%"
-                : "1%"
+                : "6%"
             }`,
             end: `bottom-=${
               isDesktop ? 28 : isLaptop ? 32 : isTablet ? 39 : 38
@@ -127,11 +127,11 @@ export default function HowToUse() {
               start: `top+=${
                 (95 / 4.5) * inx +
                 5 -
-                (isDesktop ? 20 : isLaptop || isTablet ? 24 : 28)
+                (isDesktop ? 20 : isLaptop || isTablet ? 24 : isVerticalTablet ? 28 : 20)
               }%`,
               end: `top+=${
                 (95 / 4.5) * (inx + (isVerticalTablet ? -1 : 1)) -
-                (isDesktop ? 1 : isLaptop || isTablet ? 15 : -39)
+                (isDesktop ? 1 : isLaptop || isTablet ? 10 : isVerticalTablet ? -39 : 0)
               }%`,
               scrub: true,
             },
@@ -165,7 +165,11 @@ export default function HowToUse() {
 
           tl.to(stepsCountRefs.current[inx], {
             keyframes: [
-              { y: 0, duration: 1, opacity: isVerticalTablet ? 1 :1 },
+              {
+                y: 0,
+                duration: 1,
+                opacity: isVerticalTablet || isMobile ? 0 : 1,
+              },
               {
                 y: isMobile
                   ? "-20.67vw"
@@ -174,6 +178,7 @@ export default function HowToUse() {
                   : isDesktop
                   ? "-11vw"
                   : -168,
+                opacity: 1,
                 duration: 1,
               },
               {
@@ -198,7 +203,8 @@ export default function HowToUse() {
                       : -168
                     : 0,
                 opacity:
-                  isVerticalTablet && inx !== stepsCountRefs.current.length - 1
+                  isVerticalTablet ||
+                  (isMobile && inx !== stepsCountRefs.current.length - 1)
                     ? 0
                     : 1,
                 duration: 1,
@@ -208,11 +214,25 @@ export default function HowToUse() {
               trigger: startAnimRef.current,
               start: `top+=${
                 (95 / 4.5) * inx -
-                (isDesktop || isLaptop ? 20 : isTablet ? 17 : 35)
+                (isDesktop || isLaptop
+                  ? 20
+                  : isTablet
+                  ? 17
+                  : isVerticalTablet
+                  ? 35
+                  : 23)
               }%`,
               end: `top+=${
                 (95 / 4.5) * (inx + (isVerticalTablet ? 0 : 1)) -
-                (isDesktop ? 10 : isLaptop ? 15 : isTablet ? 10.5 : -10 * inx)
+                (isDesktop
+                  ? 10
+                  : isLaptop
+                  ? 15
+                  : isTablet
+                  ? 10.5
+                  : isVerticalTablet
+                  ? -10 * inx
+                  : 0)
               }%`,
               scrub: true,
             },
@@ -257,8 +277,12 @@ export default function HowToUse() {
             ],
             scrollTrigger: {
               trigger: startAnimRef.current,
-              start: `top+=${(95 / 4.5) * inx + 5 - (isVerticalTablet ? 30 : 20)}%`,
-              end: `top+=${(95 / 4.5) * (inx + 1) - (isVerticalTablet ? 7 : 1)}%`,
+              start: `top+=${
+                (95 / 4.5) * inx + 5 - (isVerticalTablet ? 30 : isLaptop ? 25 : 20)
+              }%`,
+              end: `top+=${
+                (95 / 4.5) * (inx + 1) - (isVerticalTablet ? 7 : isTablet ? 10 : isLaptop ? 10 : 1)
+              }%`,
               scrub: true,
             },
           });
@@ -331,11 +355,11 @@ export default function HowToUse() {
             start: `top+=${
               (95 / 4) * 0 +
               4 -
-              (isDesktop ? 15 : isLaptop ? 20 : isTablet ? 17 : 36)
+              (isDesktop ? 15 : isLaptop ? 20 : isTablet ? 17 : isVerticalTablet ? 36 : 15)
             }%`,
             end: `top+=${
               (95 / 4) * 1 -
-              (isDesktop ? 12 : isLaptop ? 17 : isTablet ? 9 : 20)
+              (isDesktop ? 12 : isLaptop ? 17 : isTablet ? 9 : isVerticalTablet ? 20 : 5)
             }%`,
             scrub: true,
           },
@@ -386,10 +410,11 @@ export default function HowToUse() {
             start: `top+=${
               (95 / 4.5) * 2 +
               4 -
-              (isDesktop ? 15 : isLaptop ? 16.05 : isTablet ? 17 : 23)
+              (isDesktop ? 15 : isLaptop ? 16.05 : isTablet ? 17 : isVerticalTablet ? 23 : 13)
             }%`,
             end: `top+=${
-              (95 / 4.5) * 3 - (isDesktop ? 11 : isLaptop ? 15.5 : isTablet ? 10 : 5)
+              (95 / 4.5) * 3 -
+              (isDesktop ? 11 : isLaptop ? 15.5 : isTablet ? 10 : 5)
             }%`,
             scrub: true,
           },
@@ -426,7 +451,9 @@ export default function HowToUse() {
           scrollTrigger: {
             trigger: startAnimRef.current,
             start: `top+=${
-              (95 / 4.5) * 3 + 4 - (isDesktop ? 15 : isLaptop ? 17 : isTablet ? 15 : 13)
+              (95 / 4.5) * 3 +
+              4 -
+              (isDesktop ? 15 : isLaptop ? 17 : isTablet ? 15 : 13)
             }%`,
             end: `top+=${
               (95 / 4.5) * 4 - (isDesktop ? 19 : isLaptop ? 19 : 16)
@@ -491,9 +518,9 @@ export default function HowToUse() {
             start: `top+=${
               (95 / 4.5) * 1 +
               4 -
-              (isDesktop ? 20 : isLaptop || isTablet ? 20 : 30)
+              (isDesktop ? 20 : isLaptop || isTablet ? 20 : isMobile ? 13 : 30)
             }%`,
-            end: `top+=${(95 / 4.5) * 2 - (isLaptop ? 10 : 0)}%`,
+            end: `top+=${(95 / 4.5) * 2 - (isLaptop ? 10 : isMobile ? 0 : 0)}%`,
             scrub: true,
           },
         });

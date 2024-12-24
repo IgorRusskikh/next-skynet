@@ -54,9 +54,10 @@ export default function Services() {
 
         <div className={`${styles.servicesContent}`}>
           <div className={`${styles.servicesContentText} md:hidden lg:block`}>
-            <h2 className={`${styles.servicesContentTitle}`}>
-              {t("subtitle")}
-            </h2>
+            <h2
+              className={`${styles.servicesContentTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+            />
             <p className={`${styles.servicesContentDescription}`}>
               {t("description")}
             </p>
@@ -96,9 +97,12 @@ export default function Services() {
 
                 <div className={`${styles.servicesCardContent}`}>
                   <p className={`${styles.servicesCardDescription}`}>
-                    <span className="opacity-0 !relative">
-                      {services[0].description}
-                    </span>
+                    <span
+                      className="opacity-0 !relative"
+                      dangerouslySetInnerHTML={{
+                        __html: services[0].description,
+                      }}
+                    />
                     {services.map(({ description }, inx) => (
                       <span
                         key={inx}
@@ -107,9 +111,8 @@ export default function Services() {
                             ? "opacity-100 visible"
                             : "opacity-0 invisible"
                         }`}
-                      >
-                        {description}
-                      </span>
+                        dangerouslySetInnerHTML={{ __html: description }}
+                      />
                     ))}
                   </p>
 
@@ -162,7 +165,9 @@ export default function Services() {
 
                 <div className={`${styles.serviceDescription}`}>
                   <p className={`${styles.servicesCardDescription}`}>
-                    <span className="opacity-0 !relative">{services[0].description}</span>
+                    <span className="opacity-0 !relative">
+                      {services[0].description}
+                    </span>
                     {services.map(({ description }, inx) => (
                       <span
                         key={inx}
@@ -171,9 +176,8 @@ export default function Services() {
                             ? "opacity-100 visible"
                             : "opacity-0 invisible"
                         }`}
-                      >
-                        {description}
-                      </span>
+                        dangerouslySetInnerHTML={{ __html: description }}
+                      />
                     ))}
                   </p>
 

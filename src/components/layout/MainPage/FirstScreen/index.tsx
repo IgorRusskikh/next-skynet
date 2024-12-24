@@ -90,6 +90,14 @@ export default function FirstScreen() {
     []
   );
 
+  const mobileAdvatages = useMemo(
+    () => [
+      [advantages[1], advantages[3], advantages[0]],
+      [advantages[2], advantages[4]],
+    ],
+    []
+  );
+
   return (
     <>
       <section className={styles.firstScreen}>
@@ -141,14 +149,14 @@ export default function FirstScreen() {
                 </div>
 
                 <div className={`${styles.advantages} md:!hidden`}>
-                  <div>
-                    {advantages.map((advantage, index) => (
+                  <div className="z-10">
+                    {mobileAdvatages[0].map((advantage, index) => (
                       <Advantage key={advantage}>{advantage}</Advantage>
                     ))}
                   </div>
 
-                  <div className={`${styles.advantagesBottomRow}`}>
-                    {advantages.map((advantage, index) => (
+                  <div className={`${styles.advantagesBottomRow} relative z-20`}>
+                    {mobileAdvatages[1].map((advantage, index) => (
                       <Advantage key={advantage}>{advantage}</Advantage>
                     ))}
                   </div>
@@ -178,7 +186,7 @@ export default function FirstScreen() {
               </div>
             </div>
 
-            <div className={`${styles.mascotContainer}`}>
+            <div className={`${styles.mascotContainer} z-10`}>
               <div className={`${styles.mascot}`}>
                 <Image src="/images/mascot.png" fill alt="mascot" />
               </div>

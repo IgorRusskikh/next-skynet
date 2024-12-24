@@ -32,27 +32,28 @@ export default function HowToUse({ tNamespace }: Props) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
+  
     pinAnim();
-
+  
     fadeAnim(counterRefs);
     fadeAnim(titleRefs);
     fadeAnim(descriptionRefs);
-
+  
     movePhonesAnim();
-
+  
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-
+  
   useEffect(() => {
     adaptiveMovePhonesAnim(currentSlide);
   }, [currentSlide]);
-
+  
   const pinAnim = () => {
     const mm = gsap.matchMedia();
-
+    mm.revert();
+  
     mm.add(
       {
         isVerticalTablet: `(min-width: ${
@@ -61,9 +62,9 @@ export default function HowToUse({ tNamespace }: Props) {
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px)`,
       },
       (context) => {
-        const { isTablet, isVerticalTablet } = context.conditions as any;
-
-        gsap.to(startAnimationRef.current, {
+        const { isTablet } = context.conditions as any;
+  
+        const animation = gsap.to(startAnimationRef.current, {
           scrollTrigger: {
             trigger: parentRef.current,
             start: `top ${isTablet ? "top" : "+=174px"}`,
@@ -73,13 +74,18 @@ export default function HowToUse({ tNamespace }: Props) {
             pinSpacing: false,
           },
         });
+  
+        return () => {
+          animation.scrollTrigger?.kill();
+        };
       }
     );
   };
-
+  
   const movePhonesAnim = () => {
     const mm = gsap.matchMedia();
-
+    mm.revert();
+  
     mm.add(
       {
         isVerticalTablet: `(min-width: ${
@@ -92,8 +98,8 @@ export default function HowToUse({ tNamespace }: Props) {
       },
       (context) => {
         const { isLaptop, isTablet } = context.conditions as any;
-
-        gsap.to(leftPhoneRef.current, {
+  
+        const leftPhoneAnim = gsap.to(leftPhoneRef.current, {
           y: isLaptop ? -300 : isTablet ? -140 : -300,
           scrollTrigger: {
             trigger: startAnimationRef.current,
@@ -102,8 +108,8 @@ export default function HowToUse({ tNamespace }: Props) {
             scrub: true,
           },
         });
-
-        gsap.to(rightPhoneRef.current, {
+  
+        const rightPhoneAnim = gsap.to(rightPhoneRef.current, {
           y: isLaptop ? 300 : isTablet ? 190 : 320,
           scrollTrigger: {
             trigger: startAnimationRef.current,
@@ -112,54 +118,77 @@ export default function HowToUse({ tNamespace }: Props) {
             scrub: true,
           },
         });
+  
+        return () => {
+          leftPhoneAnim.scrollTrigger?.kill();
+          rightPhoneAnim.scrollTrigger?.kill();
+        };
       }
     );
   };
-
+  
   const adaptiveMovePhonesAnim = (inx: number) => {
     const mm = gsap.matchMedia();
-
+    mm.revert();
+  
     mm.add(
       `(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`,
-      (context) => {
-        gsap.to(leftPhoneRef.current, {
+      () => {
+        const leftPhoneAnim = gsap.to(leftPhoneRef.current, {
           y: (inx * -6) / 3 + "%",
           duration: 0.5,
           ease: "power.inOut",
         });
-
-        gsap.to(rightPhoneRef.current, {
+  
+        const rightPhoneAnim = gsap.to(rightPhoneRef.current, {
           y: (inx * 28) / 3 + "%",
           duration: 0.5,
           ease: "power.inOut",
         });
+  
+        return () => {
+          leftPhoneAnim.kill();
+          rightPhoneAnim.kill();
+        };
       }
     );
   };
-
+  
   const fadeAnim = (refsList: RefObject<HTMLElement[]>) => {
-    const tl = gsap.timeline();
-
-    if (refsList.current && refsList.current.length !== 0) {
-      refsList.current.forEach((ref, inx) => {
-        const startPercent = (inx * 70) / 4 - 10;
-        const endPercent = ((inx + 1) * 70) / 4 + 5;
-
-        tl.to(ref, {
-          keyframes: [
-            { opacity: inx === 0 ? 1 : 0 },
-            { opacity: 1 },
-            { opacity: inx === 3 ? 1 : 0 },
-          ],
-          scrollTrigger: {
-            trigger: startAnimationRef.current,
-            start: `top+=${startPercent}%`,
-            end: `top+=${endPercent}%`,
-            scrub: true,
-          },
-        });
-      });
-    }
+    const mm = gsap.matchMedia();
+  
+    mm.add(
+      `(min-width: 0px)`,
+      () => {
+        const tl = gsap.timeline();
+  
+        if (refsList.current && refsList.current.length !== 0) {
+          refsList.current.forEach((ref, inx) => {
+            const startPercent = (inx * 70) / 4 - 10;
+            const endPercent = ((inx + 1) * 70) / 4 + 5;
+  
+            tl.to(ref, {
+              keyframes: [
+                { opacity: inx === 0 ? 1 : 0 },
+                { opacity: 1 },
+                { opacity: inx === 3 ? 1 : 0 },
+              ],
+              scrollTrigger: {
+                trigger: startAnimationRef.current,
+                start: `top+=${startPercent}%`,
+                end: `top+=${endPercent}%`,
+                scrub: true,
+              },
+            });
+          });
+        }
+  
+        return () => {
+          tl.scrollTrigger?.kill();
+          tl.kill();
+        };
+      }
+    );
   };
 
   const stepsTitles = useMemo(

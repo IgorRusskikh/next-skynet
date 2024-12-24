@@ -31,19 +31,25 @@
 }
 
 .advantagesText {
-  @apply font-light max-w-[68.06vw] text-[3.33vw] leading-[3.33vw];
+  @apply font-light max-w-[68.06vw] text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
   @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px] md:tracking-[-0.5px];
   @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px] lg:mt-0;
   @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
-  @apply 3xl:max-w-[17.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:tracking-normal;
+  @apply 3xl:max-w-[18.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:tracking-normal;
 }
 
 .advantageItem {
   @apply flex items-end relative mt-[19.44vw] flex-col justify-end;
-  @apply md:gap-8 md:mt-0 md:flex-row;
-  @apply lg:gap-1;
+  @apply md:gap-8 md:mt-0 md:flex-row md:justify-between;
+  @apply lg:gap-1 lg:justify-end;
   @apply xl:gap-[15px];
   @apply 3xl:gap-[0.73vw];
+}
+
+.advantageItem p {
+  @apply mr-[2vw];
+  @apply md:mr-0;
+  @apply 3xl:mr-[1vw]
 }
 
 .advantageNumberWrapper {
@@ -89,8 +95,8 @@
 }
 
 .advantageText span {
-  @apply absolute left-0 transition-all duration-700 w-full text-center;
-  @apply md:-top-4 md:w-auto md:text-left;
+  @apply absolute left-0 transition-all duration-700 w-full text-center -translate-y-[3vw];
+  @apply md:-top-0 md:w-auto md:text-left md:translate-y-0;
   @apply lg:-top-4;
   @apply xl:-top-3;
   @apply 3xl:-top-[0.83vw]

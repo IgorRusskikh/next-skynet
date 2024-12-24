@@ -175,7 +175,7 @@ export default function Locations() {
                     className={`${
                       styles[name]
                     } transition-all duration-500 ease-in-out ${
-                      hoveredCountries[inx] ? "!text-primary-red" : ""
+                      hoveredCountries[inx] ? "!text-[#FFACA9]" : ""
                     }`}
                   />
 
@@ -189,10 +189,11 @@ export default function Locations() {
                       citiesContainerClassName={`${
                         styles[`${name}CitiesContainer`]
                       }`}
+                      citiesListContainer={inx === 6 ? styles.russiaCitiesListContainer : ""}
                       isHovered={hoveredCountries[inx]}
                       onClick={() => onClickHandler(inx)}
                       onMouseEnter={() => onMouseEnterHandler(inx)}
-                      onMouseLeave={() => onMouseLeaveHandler(inx)}
+                      // onMouseLeave={() => onMouseLeaveHandler(inx)}
                       country={locations[inx].country}
                       cities={locations[inx].cities as string[]}
                     >
@@ -240,6 +241,7 @@ interface IPointerProps extends HTMLAttributes<HTMLDivElement> {
   lineWrapperClassName: string;
   lineClassName?: string;
   citiesContainerClassName?: string;
+  citiesListContainer?: string;
   isHovered?: boolean;
   country: string;
   cities: string[];
@@ -251,6 +253,7 @@ function Pointer({
   lineWrapperClassName,
   lineClassName,
   citiesContainerClassName,
+  citiesListContainer,
   isHovered,
   country,
   cities,
@@ -283,7 +286,7 @@ function Pointer({
             <div className="relative">
               <h4 className={`${styles.country}`}>{country}</h4>
 
-              <div className={`${styles.citiesList}`}>
+              <div className={`${styles.citiesList} ${citiesListContainer}`}>
                 {cities &&
                   cities.map((city, inx) => (
                     <p key={inx} dangerouslySetInnerHTML={{ __html: city }} />

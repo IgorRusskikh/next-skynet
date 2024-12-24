@@ -1,5 +1,5 @@
 .firstScreen {
-  @apply mt-[12.22vw];
+  @apply mt-[12.22vw] font-tt-norms;
   @apply md:mt-[80px];
   @apply lg:mt-[98px];
   @apply xl:mt-[116px] w-full;
@@ -37,18 +37,20 @@
 }
 
 .firstScreenContentTopItem {
-  @apply flex;
+  @apply flex gap-[2.22vw];
   @apply md:gap-[14px];
   @apply lg:gap-[14px];
   @apply xl:gap-[26px];
 }
 
 .arrowsContainer {
-  @apply flex flex-col overflow-clip gap-[2px] translate-y-[6px];
+  @apply flex flex-col overflow-clip gap-[0.26vw] translate-y-[0.87vw];
+  @apply md:gap-[2px] md:translate-y-[6px];
   @apply 3xl:gap-[0.1vw] 3xl:translate-y-[0.31vw];
 }
 
 .arrowsContainer svg {
+  @apply w-[6.09vw] h-[2.61vw];
   @apply md:w-[35.08px] md:h-[15.04px];
   @apply lg:w-[35.08px] lg:h-[15.04px];
   @apply xl:w-[43.86px] xl:h-[18.8px];
@@ -86,8 +88,8 @@
 }
 
 .bannerContent {
-  @apply flex justify-between relative z-10 w-full h-full max-w-[91.67vw];
-  @apply md:max-w-[728px] md:mx-auto md:h-fit;
+  @apply flex justify-between relative w-full h-full max-w-[91.67vw];
+  @apply md:max-w-[728px] md:mx-auto md:h-fit md:z-10;
   @apply lg:max-w-none;
 }
 
@@ -122,7 +124,7 @@
 
 .advantage {
   @apply bg-[#FFFFFF99] rounded-[100px] w-fit uppercase px-[3.33vw] py-[2.22vw] backdrop-opacity-80 backdrop-blur-xl;
-  @apply md:px-5 md:py-[10px] md:backdrop-opacity-80 md:backdrop-blur-[20px];
+  @apply md:px-5 md:py-[10px] md:backdrop-opacity-90 md:backdrop-blur-[20px];
   @apply lg:px-5 lg:py-[10px];
   @apply xl:px-6 xl:py-[14px];
   @apply 3xl:px-[1.46vw] 3xl:py-[0.83vw];
@@ -180,6 +182,7 @@
 
 .description {
   @apply max-w-[73.06vw] mx-auto;
+  @apply md:tracking-normal;
 }
 
 .descriptionContainer button {

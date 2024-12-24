@@ -37,11 +37,11 @@ export default function Offices({ className }: Props): JSX.Element {
           context.conditions as any;
 
         gsap.to(officesBlockRef.current, {
-          x: isVerticalTablet ? -300 : -200,
+          x: isVerticalTablet ? -300 : isMobile ? "-130vw" : -200,
           scrollTrigger: {
             trigger: officesBlockRef.current,
-            start: `top-=${isMobile ? 350 : isVerticalTablet ? 400 : 200}%`,
-            end: `bottom+=${isDesktop ? 600 : 30}%`,
+            start: `top-=${isMobile ? 350 : isVerticalTablet ? 400 : isMobile ? 500 : 200}%`,
+            end: `bottom+=${isDesktop ? 600 : isMobile ? 50 : 30}%`,
             scrub: 0.8,
           },
         });

@@ -1,12 +1,14 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./ServicesSlider.module.css";
-import Image from "next/image";
-import CustomLink from "../ui/Link";
 import "swiper/css";
-import { useMemo } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import CustomLink from "../ui/Link";
+import Image from "next/image";
 import { service } from "../layout/MainPage/Services";
+import styles from "./ServicesSlider.module.css";
+import { useMemo } from "react";
 
 interface IServicesSliderProps {
   services: IService[];
@@ -35,9 +37,13 @@ export default function ServicesSlider({
 
             <div className={`${styles.servicesSlideContent}`}>
               <p className={`${styles.serviceSlideCount}`}>
-                {inx + 1}
-                <span className={`${styles.serviceSlideCountDash}`}>-</span>
-                {services.length}
+                0{inx + 1}
+                <span
+                  className={`${styles.serviceSlideCountDash} text-[#898C98]`}
+                >
+                  -
+                </span>
+                <span className="text-[#898C98]">0{services.length}</span>
               </p>
 
               <div className={`${styles.serviceSlideImage}`}>
@@ -45,9 +51,10 @@ export default function ServicesSlider({
               </div>
 
               <div className={`${styles.serviceSlideDescriptionWrapper}`}>
-                <p className={`${styles.serviceSlideDescription}`}>
-                  {service.description}
-                </p>
+                <p
+                  className={`${styles.serviceSlideDescription}`}
+                  dangerouslySetInnerHTML={{ __html: service.description }}
+                />
 
                 <CustomLink href={service.link}>{service.link}</CustomLink>
               </div>

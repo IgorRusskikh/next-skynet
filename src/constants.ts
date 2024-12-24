@@ -21,11 +21,11 @@ export const INNER_SITES = {
     title: "Cash2cash",
   },
   paymentsForExport: {
-    link: "/payments-for-export",
+    link: "/fta",
     title: "Платежи для ВЭД",
   },
-  blog: {
-    link: "/blog",
-    title: "Блог",
-  },
+  // blog: {
+  //   link: "/blog",
+  //   title: "Блог",
+  // },
 };

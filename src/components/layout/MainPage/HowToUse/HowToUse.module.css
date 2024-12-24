@@ -24,9 +24,9 @@
 
 .howToUseTitle {
   @apply text-[#898C98] uppercase;
-  @apply md:text-[10px] md:leading-[10px];
+  @apply md:text-[10px] md:leading-[10px] md:translate-y-0;
   @apply lg:text-[10px] lg:leading-[10px];
-  @apply xl:text-[10px] xl:leading-[10px];
+  @apply xl:text-[10px] xl:leading-[10px] xl:translate-y-5;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[1vw];
 }
 
@@ -43,16 +43,16 @@
 }
 
 .howToUseContent {
-  @apply mt-[13.33vw] h-[850vw];
+  @apply mt-[13.33vw] h-[520vw];
   @apply md:mt-[60px] md:h-[2150px];
-  @apply lg:mt-[60px] lg:h-[1700px];
+  @apply lg:mt-[60px] lg:h-[1750px];
   @apply xl:mt-[80px] xl:h-[2200px];
   @apply 3xl:mt-[5.21vw] 3xl:h-[180vw];
 }
 
 .banner {
-  @apply rounded-[11.62vw] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-left overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
-  @apply md:w-full md:h-[592px] md:justify-between md:rounded-[42px];
+  @apply rounded-[4.44vw] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-center overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
+  @apply md:w-full md:h-[592px] md:justify-between md:rounded-[42px] md:bg-left;
   @apply lg:w-[964px] lg:h-[530px] lg:bg-contain;
   @apply xl:w-[1000px] xl:h-[549px];
   @apply 3xl:w-[72.92vw] 3xl:h-[40.04vw] 3xl:rounded-[3.05vw];
@@ -98,13 +98,14 @@
   @apply md:text-xs md:leading-3 md:mr-4 md:translate-y-0;
   @apply lg:text-[13.52px] lg:leading-[13.52px] lg:mr-0;
   @apply xl:text-sm xl:leading-[14px] xl:mr-[40px];
-  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:min-w-[13.13vw];
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:min-w-[14.13vw] 3xl:mr-[1vw];
 }
 
 .bannerStepDescription span {
-  @apply absolute left-0 top-0 w-full opacity-0 max-w-[250px] pl-[5.56vw];
-  @apply md:max-w-none md:pl-24;
-  @apply 3xl:pl-[7vw]
+  @apply absolute left-0 top-0 w-full opacity-0 max-w-[69.44vw] pl-[1.1vw] -translate-y-[10vw];
+  @apply md:max-w-none md:pl-24 md:translate-y-0;
+  @apply xl:pl-20;
+  @apply 3xl:pl-[6vw]
 }
 
 .bottomPhoneImageWrapper {

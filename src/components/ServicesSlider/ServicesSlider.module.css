@@ -1,9 +1,9 @@
 .servicesSliderItem {
-  @apply w-[86.67vw] h-[99.72vw] bg-[#FFFFFF] px-[4.44vw] py-[6.67vw] rounded-[16px] pb-[3.33vw];
+  @apply w-[86.67vw] h-[99.72vw] bg-[#FFFFFF] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] pb-[6.67vw];
 }
 
 .servicesSliderItem h3 {
-  @apply pb-[3.33vw] border-b border-[#DFE2E9];
+  @apply pb-[3.33vw] border-b border-[#DFE2E9] text-[3.89vw] leading-[4.28vw] font-medium;
 }
 
 .servicesSlideContent {
@@ -11,7 +11,7 @@
 }
 
 .serviceSlideCount {
-  @apply text-[2.78vw] leading-[2.78vw] font-[450];
+  @apply text-[2.78vw] leading-[2.78vw] font-[400];
 }
 
 .serviceSlideCountDash {
@@ -23,7 +23,7 @@
 }
 
 .serviceSlideDescriptionWrapper {
-  @apply mt-[6.67vw] max-w-[66.39vw] text-[2.78vw] leading-[2.78vw] h-[18.89vw] flex flex-col justify-between;
+  @apply mt-[6.67vw] text-[2.78vw] leading-[2.78vw] h-[18.89vw] flex flex-col justify-between;
 }
 
 .serviceSlideDescriptionWrapper a {
