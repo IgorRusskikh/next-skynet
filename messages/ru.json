@@ -295,12 +295,12 @@
           "description": "<br />Выберите валюту отправки и <br class=\"hidden lg:block 3xl:hidden\" />получения и локации, в которых <br class=\"hidden lg:block 3xl:hidden\" />удобно отдать и получить средства"
         },
         "1": {
-          "title": "Обсудите детали с менеджером",
-          "description": "Мы свяжемся для уточнения условий операции и сроков"
+          "title": "Обсудите детали <br class=\"hidden md:block lg:hidden\" />с менеджером",
+          "description": "<br />Мы свяжемся для уточнения условий операции и сроков"
         },
         "2": {
           "title": "Оплатите любым <br class=\"hidden lg:block\" />удобным способом",
-          "description": "<br />Выберите подходящий способ <br class=\"hidden md:block lg:hidden\" />и <br class=\"hidden lg:block 3xl:hidden\" />оплатите комиссию и необходимую <br class=\"hidden lg:block 3xl:hidden\" />сумму <br class=\"hidden lg:block lg:hidden\" />перестановки"
+          "description": "<br />Выберите подходящий способ <br class=\"hidden md:block lg:hidden\" />и <br class=\"hidden lg:block 3xl:hidden\" />оплатите комиссию и <br class=\"hidden md:block lg:hidden\" />необходимую <br class=\"hidden lg:block 3xl:hidden\" />сумму <br class=\"hidden lg:block lg:hidden\" />перестановки"
         },
         "3": {
           "title": "Получите средства <br class=\"hidden md:block lg:hidden\" />в выбранной локации",

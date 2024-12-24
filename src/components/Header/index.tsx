@@ -19,7 +19,7 @@ interface Props {
 export default function Header({ fixed }: Props) {
   const { isOpen, setIsOpen } = useContext(DropdownContext);
 
-  let isNearTop = useNearTop(5);
+  const isNearTop = useNearTop(5);
 
   const t = useTranslations("Index.Header");
   const locale = useLocale();
