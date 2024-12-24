@@ -299,7 +299,7 @@ function Pointer({
               <div className={`${styles.citiesList} ${citiesListContainer}`}>
                 {cities &&
                   cities.map((city, inx) => (
-                    <p key={inx} dangerouslySetInnerHTML={{ __html: city }} />
+                    <p key={inx} className="emoji" dangerouslySetInnerHTML={{ __html: city }} />
                   ))}
               </div>
             </div>

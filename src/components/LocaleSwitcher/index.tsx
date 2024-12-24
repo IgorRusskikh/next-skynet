@@ -32,6 +32,7 @@ export default function LocaleSwitcher() {
             {LOCALES.map((locale) => (
               <a
                 key={locale}
+                href={`/${locale}`}
                 className={`${styles.localeItem} ${locale === curLocale ? styles.activeLocale : ""}`}
                 role="button"
               >
