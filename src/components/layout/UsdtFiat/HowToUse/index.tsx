@@ -54,7 +54,7 @@ export default function HowToUse() {
           : isVerticalTablet
           ? "+=64%"
           : isMobile
-          ? "+=72%"
+          ? "bottom"
           : "bottom";
 
         gsap.to(pinRef.current, {

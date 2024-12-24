@@ -64,10 +64,6 @@ export default function Locations() {
     Array.from({ length: REGIONS.length }).map(() => false)
   );
 
-  useEffect(() => {
-    twemoji.parse(document.body);
-  }, []);
-
   const containerRef = useRef<HTMLDivElement>(null);
 
   const t = useTranslations("CashToCash.Locations");

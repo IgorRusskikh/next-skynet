@@ -83,6 +83,7 @@
 
 .actions {
   @apply flex justify-between items-center;
+  @apply xl:gap-4;
   @apply 3xl:gap-[1.25vw];
 }
 

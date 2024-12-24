@@ -1,10 +1,12 @@
 .switcherContainer {
-  @apply relative;
+  @apply relative font-medium;
+  @apply xl:text-[10px] xl:leading-[10px];
   @apply 3xl:text-sm 3xl:leading-[14px];
 }
 
 .arrow {
   @apply inline transition-['rotate'] duration-300 ease-in-out;
+  @apply xl:w-[12px] xl:h-[6px];
   @apply 3xl:w-[0.56vw] 3xl:h-[0.66vw];
 }
 
@@ -17,10 +19,12 @@
 }
 
 .localesContainer {
-  @apply flex flex-col gap-[0.4vw];
+  @apply xl:gap-2;
+  @apply flex flex-col 3xl:gap-[0.4vw];
 }
 
 .open {
+  @apply xl:top-5;
   @apply 3xl:top-[1.8vw] visible opacity-100;
 }
 

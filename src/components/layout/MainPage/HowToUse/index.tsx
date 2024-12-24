@@ -76,10 +76,10 @@ export default function HowToUse() {
                 ? "8%"
                 : isVerticalTablet
                 ? "10%"
-                : "6%"
+                : "4%"
             }`,
             end: `bottom-=${
-              isDesktop ? 28 : isLaptop ? 32 : isTablet ? 39 : 38
+              isDesktop ? 28 : isLaptop ? 32 : isTablet ? 39 : 36
             }%`,
             scrub: true,
             pin: true,

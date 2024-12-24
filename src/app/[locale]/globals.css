@@ -20,8 +20,3 @@ body {
 .container {
   @apply xl:max-w-[84.38vw];
 }
-
-.emoji {
-  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
-}
-
