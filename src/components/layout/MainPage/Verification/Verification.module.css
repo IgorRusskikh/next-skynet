@@ -44,7 +44,7 @@
 }
 
 .cardsWrapper {
-  @apply flex flex-col gap-[2.22vw] mt-[13.33vw];
+  @apply flex flex-col gap-[2.22vw] mt-[8.89vw];
   @apply md:gap-4 md:mt-[60px] md:flex-row;
   @apply lg:gap-[19px] lg:mt-[60px];
   @apply xl:gap-5 xl:mt-[80px];
@@ -90,7 +90,7 @@
 }
 
 .cardTitle {
-  @apply text-[3.89vw] leading-[4.28vw];
+  @apply text-[4.44vw] leading-[4.89vw];
   @apply md:text-base md:leading-[17.6px];
   @apply lg:text-2xl lg:leading-[24px];
   @apply xl:text-2xl xl:leading-[26.4px] font-medium;

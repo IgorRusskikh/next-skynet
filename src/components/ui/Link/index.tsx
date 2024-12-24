@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import TopArrow from "@/svg/right-top-arrow.svg";
+import TopArrowDesktop from "@/svg/right-top-arrow.svg";
 import styles from "./Link.module.css";
 
 interface ILinkProps extends HTMLAttributes<HTMLAnchorElement> {
@@ -24,8 +25,11 @@ export default function CustomLink({
       suppressHydrationWarning
     >
       {children}
+      <TopArrowDesktop
+        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] 3xl:hidden`}
+      />
       <TopArrow
-        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw]`}
+        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] hidden 3xl:block`}
       />
     </a>
   );

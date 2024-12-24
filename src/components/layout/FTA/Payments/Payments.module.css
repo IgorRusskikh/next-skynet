@@ -41,7 +41,7 @@
 .step {
   @apply flex-1 border-b-[0.28vw] border-[#DFE2E9];
   @apply md:border-b-[1px];
-  @apply 3xl:border-b-[0.05vw];
+  @apply 3xl:border-b-[0.1vw];
 }
 
 .stepDescription {
@@ -57,7 +57,7 @@
 }
 
 .title {
-  @apply font-medium text-[3.89vw] leading-[4.28vw] mt-[1.67vw] tracking-[-0.1vw];
+  @apply font-medium text-[3.89vw] leading-[4.28vw] mt-[1.67vw] tracking-[-0.3vw];
   @apply md:text-base md:leading-[17.6px] md:mt-[6px] md:tracking-normal;
   @apply lg:text-xl lg:leading-[22px] lg:mt-2;
   @apply xl:text-2xl xl:leading-[26.4px] xl:mt-2;
@@ -65,11 +65,11 @@
 }
 
 .stepProgress {
-  @apply mt-[3.33vw] h-[0.28vw] relative;
-  @apply md:mt-3 md:h-[1px];
-  @apply lg:mt-3 lg:h-[1px];
+  @apply mt-[3.33vw] h-[0.28vw] relative z-10;
+  @apply md:mt-2 md:h-[1px];
+  @apply lg:mt-2 lg:h-[1px];
   @apply w-0 xl:mt-3 h-[1px];
-  @apply 3xl:mt-[0.73vw] bg-primary-red h-[0.05vw];
+  @apply 3xl:mt-[0.73vw] bg-primary-red h-[0.08vw] translate-y-[0.05vw];
 }
 
 .cardContentWrapper {
@@ -89,12 +89,12 @@
 }
 
 .animation {
-  @apply flex flex-col items-center relative min-h-[62.22vw];
+  @apply flex flex-col items-center relative min-h-[62.22vw] overflow-clip;
   @apply md:flex-row md:items-start md:min-h-0;
 }
 
 .coin {
-  @apply absolute z-10 size-[6.5vw] top-[1vw] left-[38.5vw];
+  @apply absolute z-10 size-[9.5vw] top-[1vw] left-[37vw];
   @apply md:size-[39px] md:!top-[1%] md:left-[20%];
   @apply lg:size-[40px] lg:!top-[2%] lg:left-[17%];
   @apply xl:size-[44px] xl:!top-[0%] xl:left-[22%];
@@ -102,7 +102,7 @@
 }
 
 .ruble {
-  @apply absolute z-10 size-[9vw] top-[2vw] left-[36.8vw];
+  @apply absolute z-10 size-[12vw] top-[-1vw] left-[35.8vw];
   @apply md:size-[50px] md:top-[-17%] md:left-[20%];
   @apply lg:size-[52px] lg:top-[-16%] lg:left-[20%];
   @apply xl:size-[56px] xl:top-[-14%] xl:left-[22%];
@@ -111,7 +111,7 @@
 
 .from,
 .to {
-  @apply bg-[#898C98] text-white relative z-20 w-fit px-[7.78vw] py-[3.06vw] text-[3.89vw] leading-[4.28vw] rounded-[27.78vw];
+  @apply bg-[#898C98] text-white relative z-20 w-fit px-[7.78vw] py-[3.06vw] text-[3.89vw] leading-[4.28vw] rounded-[27.78vw] font-medium;
   @apply md:px-[18px] md:py-[10.5px] md:text-sm md:leading-[15.4px] md:rounded-[100px];
   @apply lg:px-5 lg:py-[11.5px] lg:text-sm lg:leading-[15.4px] lg:rounded-[100px];
   @apply xl:px-6 xl:py-3 xl:text-base xl:leading-[17.6px] xl:rounded-[100px];

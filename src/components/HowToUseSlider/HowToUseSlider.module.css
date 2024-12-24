@@ -1,5 +1,5 @@
 .card {
-  @apply bg-[#F3F3F3] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] font-tt-norms min-h-[46.67vw];
+  @apply bg-[#F3F3F3] px-[4.44vw] py-[6.67vw] rounded-[4.44vw] font-tt-norms min-h-[51.67vw];
 }
 
 .slidesCount {

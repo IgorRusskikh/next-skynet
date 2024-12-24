@@ -1,9 +1,9 @@
 .howToUse {
   @apply font-tt-norms overflow-x-clip bg-white overflow-clip relative z-10 pt-[8.89vw] rounded-[8vw] mb-0;
-  @apply md:pt-[60px] md:rounded-[50px] md:mb-[120px];
-  @apply lg:pt-[60px] lg:rounded-[50px] lg:mb-[140px];
-  @apply xl:pt-[80px] xl:rounded-[50px] xl:mb-[160px];
-  @apply 3xl:pt-[6.25vw] 3xl:rounded-[3.13vw] 3xl:mb-[10.42vw];
+  @apply md:pt-[60px] md:rounded-[50px] md:mb-0;
+  @apply lg:pt-[60px] lg:rounded-[50px] lg:mb-0;
+  @apply xl:pt-[80px] xl:rounded-[50px] xl:mb-0;
+  @apply 3xl:pt-[6.25vw] 3xl:rounded-[3.13vw] 3xl:mb-0;
 
   -webkit-box-shadow: 0px -5px 20px 10px #d3d3d340;
   -moz-box-shadow: 0px -5px 20px 10px #d3d3d340;
@@ -35,7 +35,7 @@
 }
 
 .howToUseContent {
-  @apply relative flex items-end min-h-full pt-[13.33vw] pb-[13.06vw];
+  @apply relative flex items-end min-h-full pt-[13.33vw] pb-[4.44vw];
   @apply md:min-h-[851px] md:pt-[80px] md:pb-0 md:container;
   @apply lg:min-h-[723px] lg:pt-[60px] lg:pb-[30px];
   @apply xl:min-h-[883px] xl:pt-[77px] xl:pb-[62px];
@@ -44,7 +44,7 @@
 
 .hidingBlocks {
   @apply absolute w-[234.44vw] h-[60.67vw] left-[-125vw] bottom-[20vw];
-  @apply md:w-[844px] md:h-[294px] md:left-[-60px] md:-bottom-[40%];
+  @apply md:w-[844px] md:h-[294px] md:left-[-60px] md:-bottom-[10%];
   @apply lg:w-[844px] lg:h-[294px] lg:left-[90px] lg:-bottom-[30%];
   @apply xl:w-[844px] xl:h-[294px] xl:left-[276px] xl:-bottom-[15%];
   @apply 3xl:w-[63.59vw] 3xl:h-[20.16vw] 3xl:left-[15.06vw] 3xl:-bottom-[37%];
@@ -159,7 +159,7 @@
 .leftIphone {
   @apply relative w-[165.23vw] h-[123.92vw] -left-[50vw] top-0;
   @apply md:w-[894.8px] md:h-[671.1px] md:-left-[250px] md:top-0;
-  @apply lg:w-[1119.84px] lg:h-[839.88px] lg:-left-[200px] lg:-top-[90px];
+  @apply lg:w-[1119.84px] lg:h-[839.88px] lg:-left-[250px] lg:-top-[90px];
   @apply xl:w-[1119.84px] xl:h-[839.88px] xl:-left-[400px] xl:-top-[40px];
   @apply 3xl:w-[82.12vw] 3xl:h-[61.59vw] 3xl:-left-[20.34vw] 3xl:-top-[3.28vw];
 }
@@ -167,7 +167,7 @@
 .rightIphoneWrapper {
   @apply absolute right-[-38vw] top-[20vw];
   @apply md:right-[-230px] md:top-[110px];
-  @apply lg:right-[-280px] lg:top-[40px];
+  @apply lg:right-[-230px] lg:top-[40px];
   @apply xl:right-[-100px] xl:top-[80px];
   @apply 3xl:right-[-14.84vw] 3xl:top-[5vw];
 }

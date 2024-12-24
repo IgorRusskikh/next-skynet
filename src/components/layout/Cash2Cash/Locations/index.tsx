@@ -86,15 +86,18 @@ export default function Locations() {
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px) and (max-width: ${
           BREAKPOINTS.laptop - 1
         }px)`,
-        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px)`,
+        isLaptop: `(min-width: ${BREAKPOINTS.laptop}px) and (max-width: ${
+          BREAKPOINTS.desktop - 1
+        }px)`,
+        isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
       (conditions) => {
-        const { isTablet, isLaptop } = conditions;
+        const { isTablet, isLaptop, isDesktop } = conditions;
 
         gsap.to(containerRef.current, {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: `top+=${isLaptop ? 15 : 15}%`,
+            start: `top+=${isLaptop ? 15 : isDesktop ? 15 : 7}%`,
             end: "bottom+=20%",
             pin: true,
             scrub: true,
@@ -189,11 +192,13 @@ export default function Locations() {
                       citiesContainerClassName={`${
                         styles[`${name}CitiesContainer`]
                       }`}
-                      citiesListContainer={inx === 6 ? styles.russiaCitiesListContainer : ""}
+                      citiesListContainer={
+                        inx === 6 ? styles.russiaCitiesListContainer : ""
+                      }
                       isHovered={hoveredCountries[inx]}
                       onClick={() => onClickHandler(inx)}
                       onMouseEnter={() => onMouseEnterHandler(inx)}
-                      // onMouseLeave={() => onMouseLeaveHandler(inx)}
+                      onMouseLeave={() => onMouseLeaveHandler(inx)}
                       country={locations[inx].country}
                       cities={locations[inx].cities as string[]}
                     >

@@ -19,6 +19,7 @@ export default function HowToUse({ tNamespace }: Props) {
 
   const startAnimationRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+  const infoBlockRef = useRef(null)
   const counterRefs = useRef<HTMLSpanElement[]>([]);
   const titleRefs = useRef<HTMLSpanElement[]>([]);
   const descriptionRefs = useRef<HTMLSpanElement[]>([]);
@@ -62,13 +63,13 @@ export default function HowToUse({ tNamespace }: Props) {
         isTablet: `(min-width: ${BREAKPOINTS.tablet}px)`,
       },
       (context) => {
-        const { isTablet } = context.conditions as any;
+        const { isVerticalTablet, isTablet } = context.conditions as any;
   
         const animation = gsap.to(startAnimationRef.current, {
           scrollTrigger: {
             trigger: parentRef.current,
             start: `top ${isTablet ? "top" : "+=174px"}`,
-            end: "bottom bottom",
+            end: `bottom bottom`,
             pin: true,
             scrub: true,
             pinSpacing: false,
@@ -230,7 +231,7 @@ export default function HowToUse({ tNamespace }: Props) {
             <div className={styles.howToUseContent}>
               <HowToUseSlider setCurrentSlide={setCurrentSlide} tNamespace={tNamespace} />
 
-              <div className={`${styles.infoContainer}`}>
+              <div ref={infoBlockRef} className={`${styles.infoContainer}`}>
                 <div className={`${styles.stepNumber}`}>
                   <div className={`${styles.stepNumberWrapper}`}>
                     <p className={`${styles.numberMask}`}>04</p>
@@ -251,10 +252,10 @@ export default function HowToUse({ tNamespace }: Props) {
                       </span>
                     ))}
                   </div>
-                  <span className={`${styles.servicesCardCountSeparator}`}>
-                    -
+                  <span className={`${styles.servicesCardCountSeparator} text-[#898C98]`}>
+                  —
                   </span>
-                  04
+                  <span className="text-[#898C98]">04</span>
                 </div>
 
                 <div className={`${styles.descriptionContainer}`}>
@@ -333,7 +334,7 @@ export default function HowToUse({ tNamespace }: Props) {
                   >
                     <div className={`${styles.rightIphone}`}>
                       <Image
-                        src="/images/cash-to-cash/right-phone.png"
+                        src={`/images/${tNamespace === "VED" ? "fta/how-to-use" : "cash-to-cash"}/right-phone.png`}
                         fill
                         alt="right-phone"
                         unoptimized

@@ -47,7 +47,7 @@
 
 .locationsTextDescription {
   @apply font-medium text-[#898C98] text-[3.89vw] leading-[4.28vw] mt-[3.33vw];
-  @apply md:text-base md:leading-[17.6px] md:max-w-[497px] md:mt-8;
+  @apply md:text-base md:leading-[17.6px] md:max-w-[497px] md:mt-6;
   @apply lg:text-base lg:leading-[17.6px] lg:max-w-[497px] lg:mt-6;
   @apply xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:mt-8;
   @apply 3xl:text-[1.15vw] 3xl:leading-[1.26vw] 3xl:max-w-[31.2vw] 3xl:mt-[2.08vw];

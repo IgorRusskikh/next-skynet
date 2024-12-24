@@ -50,17 +50,17 @@ export default function HowToUse() {
           context.conditions as any;
 
         const endPoint = isDesktop
-          ? "+=97%"
+          ? "+=98%"
           : isVerticalTablet
-          ? "+=65%"
+          ? "+=64%"
           : isMobile
-          ? "+=82%"
+          ? "+=72%"
           : "bottom";
 
         gsap.to(pinRef.current, {
           scrollTrigger: {
             trigger: pinRef.current,
-            start: "top-=1%",
+            start: `top-=${isDesktop ? -6 : isLaptop ? -5 : isTablet ? -4 : isVerticalTablet ? -4 : 5}%`,
             end: `bottom ${endPoint}`,
             pinSpacing: false,
             pin: true,
@@ -92,7 +92,7 @@ export default function HowToUse() {
         const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
           context.conditions as any;
 
-        const initialY = 120;
+        const initialY = isMobile ? "250vw" : "120vh";
         const moveY = isDesktop
           ? 48
           : isLaptop
@@ -107,13 +107,10 @@ export default function HowToUse() {
           gsap.fromTo(
             element,
             {
-              y: `${initialY}vh`,
+              y: `${initialY}`,
             },
             {
               keyframes: [
-                {
-                  opacity: isTablet || isVerticalTablet ? 0 : 1,
-                },
                 {
                   opacity: 1,
                 },
@@ -138,7 +135,7 @@ export default function HowToUse() {
                 end: `top+=${
                   (inx + 1) *
                   element.scrollHeight *
-                  (isDesktop ? 1.4 : isMobile ? 1.7 : 1)
+                  (isDesktop ? 0.8 : isMobile ? 1.7 : 1)
                 }px`,
                 pinSpacing: false,
                 scrub: isLaptop || isDesktop ? 0.8 : 0.5,
@@ -150,6 +147,9 @@ export default function HowToUse() {
                   }
                 },
                 onEnterBack: () => {
+                  if (inx === 0) {
+                    setIsStartAnim(false);
+                  }
                   element.style.color = "";
                 },
               },
@@ -169,9 +169,7 @@ export default function HowToUse() {
       <div ref={pinRef} className={`${styles.contentWrapper}`}>
         <div className={`${styles.howToUseContainer}`}>
           <div className={`${styles.howToUseTitleWrapper}`}>
-            <h2 className={`${styles.howToUseTitle} section-title`}>
-              {t("title")}
-            </h2>
+            <h2 className={`${styles.howToUseTitle} section-title`} dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
 
             <div className={`${styles.howToUseContentText}`}>
               <h3

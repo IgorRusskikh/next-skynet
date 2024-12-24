@@ -1,12 +1,11 @@
 "use client";
 
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { DropdownContext } from "@/providers/DropdownProvider";
 import { INNER_SITES } from "@/constants";
 import IconButton from "../ui/buttons/IconButton";
-import { Link } from "@/i18n/routing";
 import Logo from "@/svg/logo.svg";
 import TelegramIcon from "@/svg/telegram.svg";
 import styles from "./Header.module.css";

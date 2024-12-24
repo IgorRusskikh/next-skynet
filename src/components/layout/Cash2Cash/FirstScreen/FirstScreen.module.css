@@ -15,7 +15,7 @@
 }
 
 .content {
-  @apply mt-[3.33vw] max-w-[91.67vw];
+  @apply max-w-[91.67vw];
   @apply md:mt-3 md:max-w-[728px];
   @apply lg:mt-[80px] lg:ml-[47px] lg:max-w-[519px];
   @apply xl:mt-[40px] xl:ml-[110px] xl:max-w-[557px];
@@ -23,15 +23,15 @@
 }
 
 .typingBlock {
-  @apply uppercase border-y border-[#DFE2E9] py-[2.78vw] text-[4.44vw] leading-[4.89vw] font-medium;
-  @apply md:py-4 md:text-xl md:leading-[22px];
+  @apply uppercase border-y border-[#DFE2E9] py-[5.2vw] text-[4.44vw] leading-[4.89vw] font-medium;
+  @apply md:py-6 md:text-xl md:leading-[22px];
   @apply lg:py-6 lg:text-[28px] lg:leading-[30.8px];
   @apply xl:py-6 xl:text-[28px] xl:leading-[30.8px];
   @apply 3xl:py-[1.67vw] 3xl:text-[1.98vw] 3xl:leading-[2.19vw];
 }
 
 .descriptionBlock {
-  @apply font-[400] max-w-[76.94vw] text-[3.33vw] leading-[3.33vw] mt-[118.61vw] mx-auto text-center;
+  @apply font-[400] max-w-[76.94vw] text-[3.33vw] leading-[3.33vw] mt-[114.61vw] mx-auto text-center;
   @apply md:max-w-[339px] md:text-sm md:leading-[14px] md:mt-[100px] md:mx-0 md:text-left;
   @apply lg:max-w-[339px] lg:text-sm lg:leading-[14px] lg:mt-14;
   @apply xl:max-w-[339px] xl:text-sm xl:leading-[14px] xl:mt-[70px];
@@ -39,16 +39,24 @@
 }
 
 .descriptionBlock button {
-  @apply font-medium text-[2.78vw] leading-[2.78vw] max-w-[76.67vw] mt-[4.44vw] tracking-[-0.05vw];
-  @apply md:text-xs md:leading-3 md:max-w-[339px] md:mt-6 md:tracking-normal;
-  @apply lg:text-xs lg:leading-3 lg:max-w-[339px] lg:mt-6;
-  @apply xl:text-xs xl:leading-3 xl:max-w-[339px] xl:mt-8;
-  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw] 3xl:tracking-[-0.01vw];
+  @apply font-medium !text-[2.78vw] !leading-[2.78vw] max-w-[76.67vw] mt-[4.44vw] tracking-[-0.05vw] w-full justify-center;
+  @apply md:!text-xs md:!leading-3 md:max-w-[339px] md:mt-6 md:tracking-normal;
+  @apply lg:!text-xs lg:!leading-3 lg:max-w-[339px] lg:mt-6;
+  @apply xl:!text-xs xl:!leading-3 xl:max-w-[339px] xl:mt-8;
+  @apply 3xl:!text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw] 3xl:tracking-[-0.01vw];
+}
+
+.descriptionBlock button p {
+  @apply font-medium text-[2.78vw] leading-[2.78vw];
+  @apply md:text-xs md:leading-3;
+  @apply lg:text-xs lg:leading-3;
+  @apply xl:text-xs xl:leading-3 xl:tracking-[-0.5px];
+  @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:tracking-[-0.01vw];
 }
 
 .mascotWrapper {
-  @apply absolute right-[22.36vw] top-[42.22vw];
-  @apply md:right-[84px] md:top-[235px];
+  @apply absolute right-[22.36vw] top-[42vw];
+  @apply md:right-[64px] md:top-[235px];
   @apply lg:right-[149px] lg:top-[159px];
   @apply xl:right-[255px] xl:top-[164px];
   @apply 3xl:right-[15.78vw] 3xl:top-[13.229vw];
@@ -63,7 +71,7 @@
 }
 
 .blurCircle {
-  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[-2vw] right-[-23.64vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[-0.42vw] right-[-23.64vw] bg-[#9B9DA61A] border border-[#DFE2E9];
   @apply md:size-[364px] md:top-[-43px] md:right-[-65px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
   @apply lg:size-[530px] lg:top-[-35px] lg:right-[-115px];
   @apply xl:w-[508px] xl:h-[493px] xl:top-[-25px] xl:right-[-155px];

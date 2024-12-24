@@ -1,6 +1,6 @@
 .button {
   @apply flex items-center rounded-[100px] gap-[1.11vw] py-[3.89vw] px-[4.44vw] transition-colors duration-300;
-  @apply md:gap-1 md:py-[14px] md:px-6;
+  @apply md:gap-1 md:py-[14px] md:px-6 md:h-12;
   @apply lg:gap-1 lg:py-[14px] lg:px-6;
   @apply xl:gap-[6.67px] xl:py-[18px] xl:px-6;
   @apply 3xl:gap-[0.52vw] 3xl:py-[1.35vw] 3xl:px-[1.67vw];

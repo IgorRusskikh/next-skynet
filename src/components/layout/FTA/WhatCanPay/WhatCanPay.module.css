@@ -1,6 +1,9 @@
 .whatCanPay {
-  @apply font-tt-norms pt-[25vw];
-  @apply md:pt-0;
+  @apply font-tt-norms pt-[8.89vw];
+  @apply md:pt-[120px];
+  @apply lg:pt-[140px];
+  @apply xl:pt-[160px];
+  @apply 3xl:pt-[10.42vw];
 }
 
 .whatCanPayInner {
@@ -19,8 +22,8 @@
 .whatCanPayTitle {
   @apply text-[#898C98] uppercase text-[2.78vw] leading-[2.78vw];
   @apply md:text-[10px] md:leading-[10px] md:max-w-[86px];
-  @apply lg:text-[10px] lg:leading-[10px] lg:max-w-fit;
-  @apply xl:text-[10px] xl:leading-[10px];
+  @apply lg:text-[10px] lg:leading-3 lg:max-w-[86px];
+  @apply xl:text-[10px] xl:leading-[10px] xl:max-w-none;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }
 
@@ -110,7 +113,7 @@
   @apply md:w-[122px] md:h-[76px];
   @apply lg:w-[159px] lg:h-[102px];
   @apply relative xl:w-[142px] xl:h-[103px];
-  @apply 3xl:w-[12vw] 3xl:h-[8.44vw];
+  @apply 3xl:w-[9vw] 3xl:h-[5.44vw];
 }
 
 .redCard {
@@ -126,7 +129,7 @@
 }
 
 .redCardContent {
-  @apply !mt-0;
+  @apply !mt-0 flex-1 flex flex-col justify-between;
 }
 
 .cardLink {

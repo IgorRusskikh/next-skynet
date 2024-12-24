@@ -1,6 +1,6 @@
 import "swiper/css";
 
-import { Dispatch, HTMLAttributes, SetStateAction, useMemo } from "react";
+import { Dispatch, SetStateAction, useMemo } from "react";
 import { NamespaceKeys, useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 

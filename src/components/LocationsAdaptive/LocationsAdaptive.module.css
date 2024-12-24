@@ -25,7 +25,7 @@
 
 .citiesList {
   @apply flex flex-col flex-wrap text-[#898C98] gap-x-[15.56vw] gap-y-[1.11vw] text-[3.33vw] leading-[3.33vw];
-  @apply md:gap-x-14 md:gap-y-1 md:text-sm md:leading-[14px];
+  @apply md:gap-x-14 md:gap-y-1 md:text-xs md:leading-3;
 }
 
 .russiaCitiesList {

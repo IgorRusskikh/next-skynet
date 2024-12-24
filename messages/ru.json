@@ -138,7 +138,7 @@
         "0": "Любая валюта.",
         "1": "По всему миру."
       },
-      "description": "Перемещаем наличные и выдаём в любой удобной валюте в наших офисах, через <br class=\"block lg:hidden 3xl:block\">сеть партнёров или доставкой курьером",
+      "description": "Перемещаем наличные и выдаём в любой удобной валюте в наших офисах, через <br class=\"block md:hidden lg:block xl:hidden 3xl:block\">сеть партнёров или доставкой курьером",
       "tg-bot": "Заказать перестановку в TG-боте"
     },
     "Locations": {
@@ -291,20 +291,20 @@
       "subtitle": "Воспользуйтесь Telegram-ботом для перестановки средств <br class=\"hidden md:block 3xl:hidden\" />за 4 простых шага",
       "steps": {
         "0": {
-          "title": "Укажите детали <br class=\"hidden md:block lg:hidden\" />перестановки в TG-боте",
+          "title": "Укажите детали <br class=\"hidden md:block lg:hidden 3xl:block\" />перестановки в TG-боте",
           "description": "<br />Выберите валюту отправки и <br class=\"hidden lg:block 3xl:hidden\" />получения и локации, в которых <br class=\"hidden lg:block 3xl:hidden\" />удобно отдать и получить средства"
         },
         "1": {
           "title": "Обсудите детали <br class=\"hidden md:block lg:hidden\" />с менеджером",
-          "description": "<br />Мы свяжемся для уточнения условий операции и сроков"
+          "description": "<br />Мы свяжемся для уточнения <br class=\"hidden md:block lg:hidden 3xl:block\" />условий операции и сроков"
         },
         "2": {
           "title": "Оплатите любым <br class=\"hidden lg:block\" />удобным способом",
-          "description": "<br />Выберите подходящий способ <br class=\"hidden md:block lg:hidden\" />и <br class=\"hidden lg:block 3xl:hidden\" />оплатите комиссию и <br class=\"hidden md:block lg:hidden\" />необходимую <br class=\"hidden lg:block 3xl:hidden\" />сумму <br class=\"hidden lg:block lg:hidden\" />перестановки"
+          "description": "<br />Выберите подходящий способ <br class=\"hidden md:block lg:hidden\" />и <br class=\"hidden lg:block 3xl:hidden\" />оплатите комиссию и <br class=\"hidden md:block lg:hidden\" />необходимую <br class=\"hidden lg:block 3xl:hidden\" />сумму <br class=\"hidden md:block lg:hidden\" />перестановки"
         },
         "3": {
           "title": "Получите средства <br class=\"hidden md:block lg:hidden\" />в выбранной локации",
-          "description": "<br />Заберите деньги в нашем <br class=\"hidden lg:block lg:hidden\" />офисе <br class=\"hidden md:block\" />или офисе партнёров или примите <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />курьера"
+          "description": "<br />Заберите деньги в нашем <br class=\"hidden md:block lg:hidden\" />офисе <br class=\"hidden lg:block\" />или офисе партнёров <br class=\"hidden md:block lg:hidden\" />или примите <br class=\"hidden xl:block 3xl:hidden\" />курьера"
         }
       }
     }
@@ -344,7 +344,7 @@
     },
     "Payment": {
       "title": "<span class=\"hidden lg:block\">Схема платежей</span><span class=\"lg:hidden\">Схема</span>",
-      "subtitle": "Работаем с зарубежными поставщиками <br class=\"hidden 3xl:block\" />через сеть иностранных компаний <br class=\"hidden lg:block xl:hidden\" />по простой <br class=\"hidden 3xl:block\" />и прозрачной системе",
+      "subtitle": "Работаем с зарубежными поставщиками <br class=\"hidden 3xl:block\" />через сеть иностранных компаний <br class=\"hidden lg:block xl:hidden\" />по простой и прозрачной системе",
       "step": "Шаг",
       "card": {
         "steps": {
@@ -388,7 +388,7 @@
       }
     },
     "WhatCanPay": {
-      "title": "что можно <br class=\"hidden lg:block xl:hidden\" />оплатить",
+      "title": "что можно оплатить",
       "subtitle": "Оплатим инвойсы <br class=\" md:hidden\" />для <br class=\"hidden xl:block 3xl:hidden\" />физических <br class=\" md:hidden lg:block xl:hidden\" />и юридических лиц",
       "cards": {
         "0": {
@@ -397,11 +397,11 @@
         },
         "1": {
           "title": "Оплатить услуги зарубежной медицины?",
-          "description": "Организуем оплату медицинских услуг за границей. Поможем избежать <br class=\" md:hidden\" />финансовых сложностей в критической ситуации"
+          "description": "Организуем оплату медицинских услуг за границей. Поможем избежать <br class=\"md:hidden\" />финансовых сложностей в критической ситуации"
         },
         "2": {
           "title": "Оплатить образование?",
-          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block xl:hidden\" />перевод средств в нужной валюте"
+          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block 3xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block 3xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block 3xl:hidden\" />перевод средств в нужной валюте"
         }
       },
       "red-card": {
@@ -426,7 +426,7 @@
       }
     },
     "HowToUse": {
-      "title": "Как это работает",
+      "title": "Как это <br class=\"hidden md:block lg:hidden\" />работает",
       "subtitle": "Как происходит обмен USDT ⇄  FIAT? ",
       "description": "Наши специалисты помогут вам <br class=\"md:hidden\" />произвести <br class=\"hidden lg:block xl:hidden\" />обмен быстро, и безопасно",
       "step": "Шаг",

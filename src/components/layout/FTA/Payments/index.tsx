@@ -175,7 +175,7 @@ export default function Payments({ containerClassName, className }: Props) {
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
                   y: isMobile
-                    ? `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`
+                    ? `${27 * (1 - (isLaptop ? 0.15 : 0.3) * inx)}vw`
                     : 0,
                   duration: 2,
                   delay: inx * 1,
@@ -195,7 +195,7 @@ export default function Payments({ containerClassName, className }: Props) {
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
                   y: isMobile
-                    ? `${26 * (1 - (isLaptop ? 0.15 : 0.25) * inx)}vw`
+                    ? `${27 * (1 - (isLaptop ? 0.15 : 0.30) * inx)}vw`
                     : 0,
                   duration: isDesktop ? 2.25 : 2,
                 },
@@ -213,7 +213,7 @@ export default function Payments({ containerClassName, className }: Props) {
                           : 320
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
-                  y: isMobile ? `52vw` : 0,
+                  y: isMobile ? `${55}vw` : 0,
                   delay: inx * -1,
                   ease: "sine.inOut",
                   duration:
@@ -227,7 +227,7 @@ export default function Payments({ containerClassName, className }: Props) {
                         ? 0.1
                         : isVerticalTablet
                         ? 0.07
-                        : 0.15) *
+                        : 0.10) *
                         inx),
                 },
               ],

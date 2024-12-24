@@ -7,19 +7,19 @@
 }
 
 .contentWrapper {
-  @apply h-[450.78vw];
+  @apply h-[410.78vw];
   @apply md:h-[1260px];
   @apply lg:h-[1460px];
-  @apply xl:h-[1660px];
+  @apply xl:h-[2200px];
   @apply 3xl:h-[112.04vw];
 }
 
 .howToUseContainer {
   @apply overflow-clip h-[432.61vw];
-  @apply md:h-[679px];
+  @apply md:h-[800px];
   @apply lg:h-[715px];
   @apply xl:h-[846px];
-  @apply 3xl:h-[58.85vw];
+  @apply 3xl:h-[104.85vw];
 }
 
 .howToUseContentText {
@@ -28,10 +28,10 @@
 
 .howToUseTitleWrapper {
   @apply flex flex-col gap-[4.44vw];
-  @apply md:gap-[13px] md:flex-row;
+  @apply md:gap-[68px] md:flex-row;
   @apply lg:gap-[53px];
   @apply xl:gap-[188px];
-  @apply 3xl:gap-[17.55vw];
+  @apply 3xl:gap-[12.55vw];
 }
 
 .howToUseContentDescription {
@@ -43,7 +43,7 @@
 }
 
 .cards {
-  @apply ml-auto relative mt-[22.22vw];
+  @apply ml-auto relative mt-[8.89vw];
   @apply md:max-w-[598px] md:mt-[60px];
   @apply lg:max-w-[794px] lg:mt-[60px];
   @apply xl:max-w-[915px] xl:mt-[80px];
@@ -54,8 +54,8 @@
   @apply bg-white w-full shadow-[0px_-5px_40px_10px_rgba(211,211,211,0.2)] p-[4.44vw] min-h-[36.39vw] rounded-[4.44vw];
   @apply md:p-6 md:rounded-[20px] md:min-h-[142px];
   @apply lg:px-8 lg:py-6 lg:rounded-[20px] lg:min-h-[164px];
-  @apply xl:px-8 xl:py-6 xl:rounded-[20px] xl:min-h-[172px];
-  @apply 3xl:px-[1.67vw] 3xl:py-[1.25vw] 3xl:rounded-[1.56vw] 3xl:min-h-[8.96vw];
+  @apply xl:px-8 xl:py-6 xl:pb-8 xl:rounded-[20px] xl:min-h-[174px];
+  @apply 3xl:p-[2.5vw] 3xl:rounded-[1.56vw] 3xl:min-h-[13.07vw];
 }
 
 .step {
@@ -67,7 +67,8 @@
 
 .title {
   @apply font-medium border-b-[0.28vw] border-[#DFE2E9] transition-colors duration-500 mt-[1.67vw] text-[3.89vw] leading-[3.89vw] pb-[2.22vw] tracking-[-0.1vw];
-  @apply md:text-base md:leading-[17.6px] md:mt-[6px] md:pb-3 md:border-b;
+  @apply md:text-base md:leading-[17.6px] md:mt-[6px] md:pb-3 md:border-b md:tracking-normal;
+  @apply lg:text-xl lg:leading-[22px] lg:mt-2 lg:pb-3;
   @apply xl:text-2xl xl:leading-[26.4px] xl:mt-2 xl:pb-4;
   @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:mt-[0.42vw] 3xl:pb-[0.83vw] 3xl:border-b-[0.05vw];
 }
@@ -75,6 +76,6 @@
 .description {
   @apply text-[#898C98] transition-colors duration-500 mt-[3.33vw] text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
   @apply md:mt-5 md:text-sm md:leading-[14px] md:tracking-normal;
-  @apply xl:mt-[40px] xl:text-sm xl:leading-[14px];
-  @apply 3xl:mt-[1.25vw] 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
+  @apply xl:mt-6 xl:text-sm xl:leading-[14px];
+  @apply 3xl:mt-[1.25vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
 }

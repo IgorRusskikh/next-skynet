@@ -34,12 +34,20 @@ export default function LocationsAdaptive({ locations }: Props) {
     }))
   );
 
-  const toggleCitiesList = (blockRef: HTMLDivElement) => {
+  const toggleCitiesList = (blockRef: HTMLDivElement, index: number) => {
     const currentHeight = blockRef.style.maxHeight || "0px";
+
     gsap.set(blockRef, {
       maxHeight: `${currentHeight === "0px" ? blockRef.scrollHeight : 0}px`,
       marginTop: `${currentHeight === "0px" ? 24 : 0}px`,
     });
+
+    setCities(
+      cities.map((city, cityInx) => ({
+        ...city,
+        isOpen: cityInx === index ? !city.isOpen : false,
+      }))
+    );
   };
 
   const formattedLocations = [
@@ -60,22 +68,14 @@ export default function LocationsAdaptive({ locations }: Props) {
             key={inx}
             className={`${styles.countriesItem}`}
             onClick={() => {
-              toggleCitiesList(cities[inx].citiesListRef!);
-              setCities(
-                cities.map((city, cityInx) => {
-                  if (inx === cityInx) {
-                    return { ...city, isOpen: !city.isOpen };
-                  }
-                  return city;
-                })
-              );
+              toggleCitiesList(cities[inx].citiesListRef!, inx);
             }}
           >
             <div className={`${styles.country}`}>
               <h4>{location.country}</h4>
 
               <Plus
-                className={`${cities[inx].isOpen ? "rotate-45" : "rotate-0"}`}
+                className={`${cities[inx].isOpen ? "rotate-45 fill-black" : "rotate-0 fill-[#898C98]"}`}
               />
             </div>
 

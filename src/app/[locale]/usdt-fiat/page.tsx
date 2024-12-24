@@ -10,8 +10,7 @@ export default function UsdtFiatPage() {
       <main>
         <FirstScreen tNamespace="UsdtFiat" />
         <HowToUse />
-        <Payments containerClassName="!pt-0" />
-        <Offices className="!pt-0" />
+        <Offices />
       </main>
       <Footer page="usdt-fiat" />
     </>
