@@ -2,11 +2,10 @@
   "Index": {
     "Header": {
       "nav-links": {
-        "0": "Home",
-        "1": "USDT-FIAT",
-        "2": "Cash2Cash",
-        "3": "Trade Payments",
-        "4": "Blog"
+        "0": "Main",
+        "1": "USDT – FIAT",
+        "2": "Cash2cash",
+        "3": "Payments for Business"
       },
       "actions": {
         "tg-bot": "TG-Bot"
@@ -18,104 +17,104 @@
           "usdt": "USDT",
           "fiat": "FIAT"
         },
-        "bottom-line": "Transfers and exchange worldwide."
+        "bottom-line": "Transfers and exchange. Worldwide."
       },
-      "description": "We exchange cryptocurrency</br> and conduct large international payments for businesses and individuals",
+      "description": "We exchange cryptocurrency<br class=\"hidden md:block\" /> and make <br class=\"md:hidden\" />large international payments for businesses and individuals",
       "banner": {
         "advantages": {
-          "0": "Cryptocurrency exchange",
+          "0": "Crypto Exchange",
           "1": "Cash2Cash",
           "2": "Transfers to 30+ countries",
-          "3": "Settlements for Foreign Trade",
-          "4": "Financial management via TG-bot"
+          "3": "Foreign Trade Payments",
+          "4": "Finance management via TG-Bot"
         },
-        "consultation-button": "Get a consultation"
+        "consultation-button": "Get Consultation"
       }
     },
     "AboutUs": {
-      "title": "Where big finance meets absolute reliability",
-      "description": "Every day we conduct cryptocurrency operations for individuals and large companies who trust us with their finances",
+      "title": "Where big finances meet absolute reliability",
+      "description": "Every day we process <br class=\"md:hidden\" />crypto operations for <br class=\"md:hidden 3xl:hidden\" />individuals and big companies <br class=\"md:hidden\" />that entrust us with their finances",
       "advantages": {
-        "0": "billion rubles per year",
+        "0": "billion rubles yearly",
         "1": "clients",
-        "2": "countries of operation"
+        "2": "countries"
       }
     },
     "Services": {
       "title": "Services",
-      "subtitle": "Exchange cryptocurrency, pay bills, and receive cash worldwide with Skynet",
-      "description": "We create convenient routes for transferring large sums, exchanging cryptocurrency for cash, and settling with foreign suppliers",
+      "subtitle": "Exchange cryptocurrency,<br class=\"hidden md:block lg:hidden\" /> pay <br class=\"hidden 3xl:block\" />invoices, and get cash worldwide<br class=\"md:hidden\" />with Skynet",
+      "description": "We create convenient routes for large transfers, crypto-to-cash exchanges, and settlements with foreign suppliers",
       "services": {
         "0": {
-          "title": "Exchange USDT ⇄ FIAT",
-          "description": "We exchange cryptocurrency for cash or non-cash funds and vice versa. We update exchange rates and current commission in the Telegram-bot",
+          "title": "USDT ⇄ FIAT Exchange",
+          "description": "We exchange crypto to cash <br class=\"lg:hidden xl:block 3xl:hidden\" />or non-cash funds and vice versa. <br class=\"md:hidden\" />Update <br class=\"hidden 3xl:block\" />rates <br class=\"hidden xl:block 3xl:hidden\" />and commission details <br class=\"md:hidden\" />in Telegram-bot",
           "link": "More about USDT – FIAT"
         },
         "1": {
           "title": "Cash2Cash",
-          "description": "We accept USDT/FIAT and issue cash worldwide: in our offices and partner offices in 30+ countries",
-          "link": "more about cash2cash"
+          "description": "We accept USDT/FIAT and issue <br class=\"md:hidden\" />cash<br class=\"hidden lg:block xl:hidden\" />funds worldwide: <br class=\"md:hidden\" />at our offices or <br class=\"hidden 3xl:block\" />partners’ <br class=\"md:hidden\" />locations in 30+ countries",
+          "link": "More about Cash2Cash"
         },
         "2": {
-          "title": "Payments for Foreign Trade",
-          "description": "We pay bills of foreign suppliers through a network of legal entities in 30+ countries. We document all transactions and bypass banking restrictions",
-          "link": "More about Foreign Trade"
+          "title": "Business Payments",
+          "description": "We pay invoices to foreign suppliers<br class=\"md:hidden 3xl:block\" />via our network in 30+ countries.<br class=\"md:hidden 3xl:block\" />All deals are documented and<br class=\"hidden 3xl:block\" />comply with<br class=\"md:hidden\" />banking restrictions",
+          "link": "More about Business Payments"
         }
       }
     },
     "HowToUse": {
-      "title": "How it works",
-      "subtitle": "<span>Manage financial operations in one Telegram-bot.</span> <hidden-text>Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations</hidden-text>",
-      "mobile-subtitle": "Our bot is a convenient tool for managing finances, where you can order cryptocurrency exchanges, transfers, bill payments, currency exchanges, and manager consultations",
+      "title": "How It Works",
+      "subtitle": "<span>Manage financial operations in one Telegram bot.</span> <hidden-text>Our bot is a convenient tool for managing finances. You can request crypto exchanges, transfers, invoice payments, currency exchanges, and consultations with a manager</hidden-text>",
+      "mobile-subtitle": "Our bot is a convenient tool for managing finances. You can request crypto exchanges, transfers, invoice payments, currency exchanges, and consultations with a manager",
       "steps": {
         "0": {
-          "title": "Choose a service <br />in the TG-bot",
-          "description": "Specify your task, the required <br />amount and currency, or order a <br />manager consultation"
+          "title": "Choose a service <br />in TG-Bot",
+          "description": "Specify your task, amount,<br />currency, or request a<br />manager consultation"
         },
         "1": {
           "title": "Discuss details <br />with the manager",
-          "description": "We will contact you to clarify <br />the terms of the operation and timing"
+          "description": "We’ll contact you to clarify<br />terms and deadlines"
         },
         "2": {
-          "title": "Confirm <br />the transaction",
-          "description": "Provide data and <br />pay the commission to <br />start the operation"
+          "title": "Confirm <br />the deal",
+          "description": "Provide details and pay<br />the commission to start<br class=\"hidden md:block\" />the<br class=\"md:hidden\" />operation"
         },
         "3": {
-          "title": "Receive funds or<br /> payment confirmation",
-          "description": "Depending on the selected <br />service, receive cash or <br>get documentary<br /> confirmation of your transfer"
+          "title": "Receive funds or<br />payment confirmation",
+          "description": "Depending on the chosen service,<br />accept cash or<br>receive<br />transfer confirmation"
         }
       }
     },
     "Verification": {
       "title": "Verification",
-      "subtitle": "Financial management is even <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />more convenient with premium options <br class=\"hidden xl:block 3xl:hidden\" />for verified clients",
+      "subtitle": "Finance management gets<br class=\"hidden md:block\" />easier with premium features<br class=\"hidden xl:block\" />for verified clients",
       "cards": {
         "0": {
-          "title": "Courier delivery",
-          "description": "Delivery of funds to a convenient location <br class=\"lg:hidden\" />worldwide"
+          "title": "Courier Delivery",
+          "description": "Delivery of funds<br class=\"hidden 3xl:block\" />to a<br class=\"lg:hidden\" />convenient<br class=\"hidden 3xl:block\" />location worldwide"
         },
         "1": {
-          "title": "Fixed rate",
-          "description": "We fix the exchange rate from the application to the transaction to protect your funds <br class=\"md:hidden\" />from market fluctuations"
+          "title": "Personal Manager",
+          "description": "Expert support<br class=\"hidden 3xl:block\" />in<br class=\"md:hidden\" />crypto operations<br class=\"md:hidden\" />and international transfers"
         },
         "2": {
-          "title": "Personal manager",
-          "description": "Individual support from a cryptocurrency and international transfer expert"
+          "title": "Fixed Rate",
+          "description": "Secure currency rates<br class=\"lg:hidden\" />from request<br class=\"hidden 3xl:block\" />to deal completion<br class=\"lg:hidden\" />to protect your funds<br class=\"hidden 3xl:block\" />from market fluctuations"
         }
       },
       "red-card": {
-        "description": "Discuss verification terms <br class=\"hidden lg:block xl:hidden\" />with the manager to gain <br class=\"hidden lg:block xl:hidden\" />access to premium features",
-        "get-consultation": "get a consultation"
+        "description": "Discuss verification terms<br class=\"hidden lg:block xl:hidden\" />with a manager to access<br class=\"hidden lg:block xl:hidden\" />premium features",
+        "get-consultation": "Get Consultation"
       }
     },
     "Offices": {
       "title": "Offices",
-      "subtitle": "We work remotely worldwide, but are always happy to see you <br class=\"hidden xl:block 3xl:hidden\" />in our offices",
-      "description": "Come to meet us <br class=\"hidden 3xl:block\" />in person, discuss tasks, and conduct a transaction",
+      "subtitle": "We work remotely worldwide,<br class=\"hidden 3xl:block\" />but are always happy to see<br class=\"hidden md:block\" />you in our offices",
+      "description": "Visit us to meet in person,<br class=\"hidden 3xl:block\" />discuss your needs, and<br class=\"hidden 3xl:block\" />finalize a deal",
       "offices-list": {
         "0": {
           "country": "Moscow",
-          "address": "Moscow, ul. Street, 18, office 203"
+          "address": "Moscow-City, Federation Tower"
         },
         "1": {
           "country": "Dubai",
@@ -123,7 +122,7 @@
         },
         "2": {
           "country": "Ufa",
-          "address": ""
+          "address": "Ufa, Mendeleeva 170, Park-City Business Center"
         },
         "3": {
           "country": "Miami",

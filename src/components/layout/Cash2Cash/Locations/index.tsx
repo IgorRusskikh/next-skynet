@@ -20,6 +20,7 @@ import RussiaLine from "@/svg/russia-line.svg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Locations.module.css";
+import twemoji from "twemoji";
 import { useTranslations } from "next-intl";
 
 const REGIONS = [
@@ -62,6 +63,10 @@ export default function Locations() {
   const [hoveredCountries, setHoveredCountries] = useState(
     Array.from({ length: REGIONS.length }).map(() => false)
   );
+
+  useEffect(() => {
+    twemoji.parse(document.body);
+  }, []);
 
   const containerRef = useRef<HTMLDivElement>(null);
 

@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { DropdownContext } from "@/providers/DropdownProvider";
 import { INNER_SITES } from "@/constants";
 import IconButton from "../ui/buttons/IconButton";
+import LocaleSwitcher from "../LocaleSwitcher";
 import Logo from "@/svg/logo.svg";
 import TelegramIcon from "@/svg/telegram.svg";
 import styles from "./Header.module.css";
@@ -49,7 +50,9 @@ export default function Header({ fixed }: Props) {
             <ul>
               {navLinks.map((link, inx) => (
                 <li key={inx}>
-                  <a href={`/${locale}/${Object.values(INNER_SITES)[inx].link}`}>
+                  <a
+                    href={`/${locale}/${Object.values(INNER_SITES)[inx].link}`}
+                  >
                     {link}
                   </a>
                 </li>
@@ -58,6 +61,8 @@ export default function Header({ fixed }: Props) {
           </nav>
 
           <div className={styles.actions}>
+            {!fixed && <LocaleSwitcher />}
+
             <div
               className={`${styles.burger} xl:!hidden ${
                 isOpen ? "translate-y-[-0.8vw] md:translate-y-0" : ""

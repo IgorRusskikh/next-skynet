@@ -16,7 +16,8 @@
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "swiper": "^11.1.15",
-    "tailwindcss-3d": "^1.0.7"
+    "tailwindcss-3d": "^1.0.7",
+    "twemoji": "^14.0.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

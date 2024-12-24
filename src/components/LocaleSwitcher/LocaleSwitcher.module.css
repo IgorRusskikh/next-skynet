@@ -1,0 +1,33 @@
+.switcherContainer {
+  @apply relative;
+  @apply 3xl:text-sm 3xl:leading-[14px];
+}
+
+.arrow {
+  @apply inline transition-['rotate'] duration-300 ease-in-out;
+  @apply 3xl:w-[0.56vw] 3xl:h-[0.66vw];
+}
+
+.currentLocale {
+  @apply hover:text-primary-red uppercase cursor-pointer transition-colors;
+}
+
+.localesWrapper {
+  @apply absolute uppercase transition-all duration-300 ease-in-out;
+}
+
+.localesContainer {
+  @apply flex flex-col gap-[0.4vw];
+}
+
+.open {
+  @apply 3xl:top-[1.8vw] visible opacity-100;
+}
+
+.close {
+  @apply top-[1vw] invisible opacity-0;
+}
+
+.localeItem {
+  @apply hover:text-primary-red transition-colors;
+}
