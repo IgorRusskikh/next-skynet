@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useMemo } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { DropdownContext } from "@/providers/DropdownProvider";
@@ -11,6 +11,7 @@ import Logo from "@/svg/logo.svg";
 import TelegramIcon from "@/svg/telegram.svg";
 import styles from "./Header.module.css";
 import useNearTop from "@/hooks/useNearTop";
+import { usePathname } from "next/navigation";
 
 interface Props {
   fixed?: boolean;
@@ -20,6 +21,9 @@ export default function Header({ fixed }: Props) {
   const { isOpen, setIsOpen } = useContext(DropdownContext);
 
   const isNearTop = useNearTop(5);
+
+  const path = usePathname();
+  const curPath = path.split("/").slice(2).join("/");
 
   const t = useTranslations("Index.Header");
   const locale = useLocale();
@@ -52,6 +56,15 @@ export default function Header({ fixed }: Props) {
                 <li key={inx}>
                   <a
                     href={`/${locale}/${Object.values(INNER_SITES)[inx].link}`}
+                    className={`${
+                      curPath ===
+                      Object.values(INNER_SITES)
+                        [inx].link.split("/")
+                        .slice(1)
+                        .join("/")
+                        ? "font-bold"
+                        : ""
+                    }`}
                   >
                     {link}
                   </a>
@@ -61,7 +74,7 @@ export default function Header({ fixed }: Props) {
           </nav>
 
           <div className={styles.actions}>
-            {!fixed && <LocaleSwitcher />}
+            {!fixed && <LocaleSwitcher className="hidden xl:block" />}
 
             <div
               className={`${styles.burger} xl:!hidden ${

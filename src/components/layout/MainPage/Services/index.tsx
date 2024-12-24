@@ -1,12 +1,13 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import CustomLink from "@/components/ui/Link";
+import { INNER_SITES } from "@/constants";
 import Image from "next/image";
 import ServicesSlider from "@/components/ServicesSlider";
 import styles from "./Services.module.css";
-import { useTranslations } from "next-intl";
 
 export type service = {
   title: string;
@@ -18,6 +19,7 @@ export default function Services() {
   const [currentService, setCurrentService] = useState(0);
 
   const t = useTranslations("Index.Services");
+  const locale = useLocale();
 
   const services = useMemo(
     // @ts-expect-error: need an interface
@@ -121,7 +123,9 @@ export default function Services() {
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}
-                        href=""
+                        href={`/${locale}/${
+                          Object.values(INNER_SITES).slice(1)[inx].link
+                        }`}
                         className={`${
                           currentService === inx
                             ? "opacity-100 visible"
@@ -186,7 +190,9 @@ export default function Services() {
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}
-                        href=""
+                        href={`/${locale}/${
+                          Object.values(INNER_SITES)[inx].link
+                        }`}
                         className={`${
                           currentService === inx
                             ? "opacity-100 visible"

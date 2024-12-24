@@ -13,6 +13,8 @@ const useNearTop = (threshold = 10) => {
       setIsNearTop(distanceFromTop <= threshold);
     };
 
+    handleScroll()
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {

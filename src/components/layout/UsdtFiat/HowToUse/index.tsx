@@ -51,6 +51,8 @@ export default function HowToUse() {
 
         const endPoint = isDesktop
           ? "+=98%"
+          : isLaptop
+          ? "+=80%"
           : isVerticalTablet
           ? "+=64%"
           : isMobile
@@ -60,7 +62,17 @@ export default function HowToUse() {
         gsap.to(pinRef.current, {
           scrollTrigger: {
             trigger: pinRef.current,
-            start: `top-=${isDesktop ? -6 : isLaptop ? -5 : isTablet ? -4 : isVerticalTablet ? -4 : 5}%`,
+            start: `top-=${
+              isDesktop
+                ? -6
+                : isLaptop
+                ? -5
+                : isTablet
+                ? -4
+                : isVerticalTablet
+                ? -4
+                : 5
+            }%`,
             end: `bottom ${endPoint}`,
             pinSpacing: false,
             pin: true,
@@ -169,7 +181,10 @@ export default function HowToUse() {
       <div ref={pinRef} className={`${styles.contentWrapper}`}>
         <div className={`${styles.howToUseContainer}`}>
           <div className={`${styles.howToUseTitleWrapper}`}>
-            <h2 className={`${styles.howToUseTitle} section-title`} dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
+            <h2
+              className={`${styles.howToUseTitle} section-title`}
+              dangerouslySetInnerHTML={{ __html: t.raw("title") }}
+            />
 
             <div className={`${styles.howToUseContentText}`}>
               <h3

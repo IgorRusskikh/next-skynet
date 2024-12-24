@@ -47,7 +47,7 @@
       "services": {
         "0": {
           "title": "Обмен USDT ⇄ FIAT",
-          "description": "Обмениваем криптовалюту на наличные <br class=\"lg:hidden xl:block 3xl:hidden\" />или безналичные средства и наоборот. <br class=\"md:hidden\" />Обновляем <br class=\"hidden 3xl:block\" />курсы <br class=\"hidden xl:block 3xl:hidden\" />валют и актуальную <br class=\"md:hidden\" />комиссию <br class=\"hidden 3xl:block\" />в Telegram-боте",
+          "description": "Обмениваем криптовалюту на наличные <br class=\"lg:hidden xl:block 3xl:hidden\" />или безналичные средства и наоборот. <br class=\"md:hidden\" />Обновляем <br class=\"hidden 3xl:block\" />курсы <br class=\"hidden 3xl:hidden\" />валют и актуальную <br class=\"md:hidden\" />комиссию <br class=\"hidden 3xl:block\" />в Telegram-боте",
           "link": "Подробнее о USDT – FIAT"
         },
         "1": {

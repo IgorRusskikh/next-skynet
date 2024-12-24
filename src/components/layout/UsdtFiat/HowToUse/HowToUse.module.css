@@ -10,7 +10,7 @@
   @apply h-[410.78vw];
   @apply md:h-[1260px];
   @apply lg:h-[1460px];
-  @apply xl:h-[2200px];
+  @apply xl:h-[1700px];
   @apply 3xl:h-[112.04vw];
 }
 
@@ -18,7 +18,7 @@
   @apply overflow-clip h-[432.61vw];
   @apply md:h-[800px];
   @apply lg:h-[715px];
-  @apply xl:h-[846px];
+  @apply xl:h-[946px];
   @apply 3xl:h-[104.85vw];
 }
 

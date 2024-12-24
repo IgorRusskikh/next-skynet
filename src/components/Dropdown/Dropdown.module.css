@@ -11,7 +11,9 @@
 }
 
 .dropdownContent {
-  @apply flex flex-col items-center justify-between h-full w-full;
+  @apply flex flex-col items-center justify-between h-full w-full pb-[13.06vw];
+  @apply md:pb-[70px];
+  @apply lg:pb-[80px];
 }
 
 .dropdownLinksList {
@@ -34,3 +36,9 @@
   @apply lg:top-[37%] md:left-[3%] md:border-t-[4px];
   @apply lg:top-[40%] lg:left-[2%] lg:border-t-[6px];
 }
+
+.telegram {
+  @apply flex max-w-[28.06vw] p-[1.55vw] text-[2.78vw] leading-[2.78vw] gap-[1.94vw] pr-[4.44vw];
+  @apply md:hidden;
+}
+
