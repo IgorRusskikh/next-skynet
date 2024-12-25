@@ -40,36 +40,41 @@ export default function Header({ fixed }: Props) {
       }`}
     >
       <div className={`${styles.container}`}>
-        <div className={`${styles.logo}`}>
+        <a href={`/${locale}`} className={`${styles.logo}`}>
           {/* <div className={`${styles.dots}`}>
             <div></div>
             <div className={`${styles.redDot}`}></div>
           </div> */}
 
           <Logo className={`${styles.logo}`} />
-        </div>
+        </a>
 
         <div className={`${styles.headerContent}`}>
           <nav>
             <ul>
-              {navLinks.map((link, inx) => (
-                <li key={inx}>
-                  <a
-                    href={`/${locale}/${Object.values(INNER_SITES)[inx].link}`}
-                    className={`${
-                      curPath ===
-                      Object.values(INNER_SITES)
-                        [inx].link.split("/")
-                        .slice(1)
-                        .join("/")
-                        ? "font-bold"
-                        : ""
-                    }`}
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map(
+                (link, inx) =>
+                  inx !== 0 && (
+                    <li key={inx}>
+                      <a
+                        href={`/${locale}/${
+                          Object.values(INNER_SITES)[inx].link
+                        }`}
+                        className={`${
+                          curPath ===
+                          Object.values(INNER_SITES)
+                            [inx].link.split("/")
+                            .slice(1)
+                            .join("/")
+                            ? "font-bold"
+                            : ""
+                        }`}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  )
+              )}
             </ul>
           </nav>
 

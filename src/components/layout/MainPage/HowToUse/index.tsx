@@ -71,7 +71,7 @@ export default function HowToUse() {
               isDesktop
                 ? "5%"
                 : isLaptop
-                ? "6.5%"
+                ? "6%"
                 : isTablet
                 ? "8%"
                 : isVerticalTablet
@@ -79,7 +79,15 @@ export default function HowToUse() {
                 : "4%"
             }`,
             end: `bottom-=${
-              isDesktop ? 28 : isLaptop ? 32 : isTablet ? 39 : 36
+              isDesktop
+                ? 28
+                : isLaptop
+                ? 32
+                : isTablet
+                ? 39
+                : isVerticalTablet
+                ? 38
+                : 36
             }%`,
             scrub: true,
             pin: true,
@@ -127,11 +135,23 @@ export default function HowToUse() {
               start: `top+=${
                 (95 / 4.5) * inx +
                 5 -
-                (isDesktop ? 20 : isLaptop || isTablet ? 24 : isVerticalTablet ? 28 : 20)
+                (isDesktop
+                  ? 20
+                  : isLaptop || isTablet
+                  ? 24
+                  : isVerticalTablet
+                  ? 28
+                  : 20)
               }%`,
               end: `top+=${
                 (95 / 4.5) * (inx + (isVerticalTablet ? -1 : 1)) -
-                (isDesktop ? 1 : isLaptop || isTablet ? 10 : isVerticalTablet ? -39 : 0)
+                (isDesktop
+                  ? 1
+                  : isLaptop || isTablet
+                  ? 10
+                  : isVerticalTablet
+                  ? -39
+                  : 0)
               }%`,
               scrub: true,
             },
@@ -278,10 +298,13 @@ export default function HowToUse() {
             scrollTrigger: {
               trigger: startAnimRef.current,
               start: `top+=${
-                (95 / 4.5) * inx + 5 - (isVerticalTablet ? 30 : isLaptop ? 25 : 20)
+                (95 / 4.5) * inx +
+                5 -
+                (isVerticalTablet ? 30 : isLaptop ? 25 : 20)
               }%`,
               end: `top+=${
-                (95 / 4.5) * (inx + 1) - (isVerticalTablet ? 7 : isTablet ? 10 : isLaptop ? 10 : 1)
+                (95 / 4.5) * (inx + 1) -
+                (isVerticalTablet ? 7 : isTablet ? 10 : isLaptop ? 10 : 1)
               }%`,
               scrub: true,
             },
@@ -355,11 +378,27 @@ export default function HowToUse() {
             start: `top+=${
               (95 / 4) * 0 +
               4 -
-              (isDesktop ? 15 : isLaptop ? 20 : isTablet ? 17 : isVerticalTablet ? 36 : 15)
+              (isDesktop
+                ? 15
+                : isLaptop
+                ? 20
+                : isTablet
+                ? 17
+                : isVerticalTablet
+                ? 36
+                : 15)
             }%`,
             end: `top+=${
               (95 / 4) * 1 -
-              (isDesktop ? 12 : isLaptop ? 17 : isTablet ? 9 : isVerticalTablet ? 20 : 5)
+              (isDesktop
+                ? 12
+                : isLaptop
+                ? 17
+                : isTablet
+                ? 9
+                : isVerticalTablet
+                ? 20
+                : 5)
             }%`,
             scrub: true,
           },
@@ -410,7 +449,15 @@ export default function HowToUse() {
             start: `top+=${
               (95 / 4.5) * 2 +
               4 -
-              (isDesktop ? 15 : isLaptop ? 16.05 : isTablet ? 17 : isVerticalTablet ? 23 : 13)
+              (isDesktop
+                ? 15
+                : isLaptop
+                ? 16.05
+                : isTablet
+                ? 17
+                : isVerticalTablet
+                ? 23
+                : 13)
             }%`,
             end: `top+=${
               (95 / 4.5) * 3 -

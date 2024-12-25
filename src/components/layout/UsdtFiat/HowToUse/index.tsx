@@ -52,7 +52,7 @@ export default function HowToUse() {
         const endPoint = isDesktop
           ? "+=98%"
           : isLaptop
-          ? "+=80%"
+          ? "+=650px"
           : isVerticalTablet
           ? "+=64%"
           : isMobile

@@ -60,8 +60,8 @@
 }
 
 .footerLinksGrid {
-  @apply flex flex-col justify-center gap-[15.56vw];
-  @apply md:grid grid-cols-2 md:gap-0;
+  @apply flex flex-col justify-center gap-[15.56vw] mt-[18.06vw];
+  @apply md:grid grid-cols-2 md:gap-0 md:mt-0;
   @apply lg:flex lg:flex-row lg:justify-between;
 }
 

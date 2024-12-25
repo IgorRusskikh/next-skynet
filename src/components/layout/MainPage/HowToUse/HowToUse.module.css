@@ -24,7 +24,7 @@
 
 .howToUseTitle {
   @apply text-[#898C98] uppercase;
-  @apply md:text-[10px] md:leading-[10px] md:translate-y-0;
+  @apply md:text-[10px] md:leading-[10px] md:translate-y-5;
   @apply lg:text-[10px] lg:leading-[10px];
   @apply xl:text-[10px] xl:leading-[10px] xl:translate-y-5;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[1vw];
@@ -95,7 +95,7 @@
 
 .bannerStepDescription {
   @apply text-[#F3F3F3] relative w-fit h-fit translate-y-[34vw] text-[3.33vw] leading-[3.33vw];
-  @apply md:text-xs md:leading-3 md:mr-4 md:translate-y-0;
+  @apply md:text-xs md:leading-3 md:mr-7 md:translate-y-0;
   @apply lg:text-[13.52px] lg:leading-[13.52px] lg:mr-0;
   @apply xl:text-sm xl:leading-[14px] xl:mr-[40px];
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:min-w-[14.13vw] 3xl:mr-[1vw];
@@ -104,8 +104,9 @@
 .bannerStepDescription span {
   @apply absolute left-0 top-0 w-full opacity-0 max-w-[69.44vw] pl-[1.1vw] -translate-y-[10vw];
   @apply md:max-w-none md:pl-24 md:translate-y-0;
-  @apply xl:pl-20;
-  @apply 3xl:pl-[6vw]
+  @apply lg:pl-14;
+  @apply xl:pl-[86px];
+  @apply 3xl:pl-[6vw];
 }
 
 .bottomPhoneImageWrapper {

@@ -24,8 +24,8 @@
 
 .typingBlock {
   @apply uppercase border-y border-[#DFE2E9] py-[5.2vw] text-[4.44vw] leading-[4.89vw] font-medium;
-  @apply md:py-6 md:text-xl md:leading-[22px];
-  @apply lg:py-6 lg:text-[28px] lg:leading-[30.8px];
+  @apply md:py-6 md:text-xl md:leading-[22px] md:max-w-[523px];
+  @apply lg:py-6 lg:text-[28px] lg:leading-[30.8px] lg:max-w-none;
   @apply xl:py-6 xl:text-[28px] xl:leading-[30.8px];
   @apply 3xl:py-[1.67vw] 3xl:text-[1.98vw] 3xl:leading-[2.19vw];
 }
@@ -43,7 +43,7 @@
   @apply md:!text-xs md:!leading-3 md:max-w-[339px] md:mt-6 md:tracking-normal;
   @apply lg:!text-xs lg:!leading-3 lg:max-w-[339px] lg:mt-6;
   @apply xl:!text-xs xl:!leading-3 xl:max-w-[339px] xl:mt-8;
-  @apply 3xl:!text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw] 3xl:tracking-[-0.01vw];
+  @apply 3xl:!text-[0.94vw] 3xl:leading-[0.94vw] 3xl:h-[3.65vw] 3xl:max-w-[26.35vw] 3xl:mt-[2.5vw] 3xl:tracking-[-0.01vw];
 }
 
 .descriptionBlock button p {

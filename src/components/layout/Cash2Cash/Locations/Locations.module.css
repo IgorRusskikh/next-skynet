@@ -63,7 +63,7 @@
 .locationsMap {
   @apply border-t border-[#F3F3F3] bg-white bottom-0 shadow-[0px_-3px_25px_0px_rgba(0,0,0,0.2)] relative h-[59.22vw] w-[190vw] left-[-48vw] top-[20vw];
   @apply md:h-[502.44px] md:w-[190vw] md:left-[-45vw] md:top-[34px];
-  @apply lg:h-[580px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_100px_0px_rgba(0,0,0,0.05)];
+  @apply lg:h-[580px] lg:w-[150vw] lg:left-[-25vw] lg:top-auto lg:bottom-[-30%] lg:shadow-[0px_-5px_100px_0px_rgba(0,0,0,0.01)];
   @apply xl:h-[800px] xl:w-[150vw] xl:left-[-25vw] xl:bottom-[-30%];
   @apply 3xl:h-[50.36vw] 3xl:w-[130vw] rounded-t-[50%] 3xl:left-[-15vw] 3xl:bottom-[-12vw];
 }

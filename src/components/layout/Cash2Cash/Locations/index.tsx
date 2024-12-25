@@ -92,13 +92,14 @@ export default function Locations() {
         }px)`,
         isDesktop: `(min-width: ${BREAKPOINTS.desktop}px)`,
       },
-      (conditions) => {
-        const { isTablet, isLaptop, isDesktop } = conditions;
+      (context) => {
+        const { isMobile, isVerticalTablet, isTablet, isLaptop, isDesktop } =
+          context.conditions as any;
 
         gsap.to(containerRef.current, {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: `top+=${isLaptop ? 15 : isDesktop ? 15 : 7}%`,
+            start: `top+=${isLaptop ? 30 : isDesktop ? 8 : isTablet ? 7 : 0}%`,
             end: "bottom+=20%",
             pin: true,
             scrub: true,
@@ -295,7 +296,11 @@ function Pointer({
               <div className={`${styles.citiesList} ${citiesListContainer}`}>
                 {cities &&
                   cities.map((city, inx) => (
-                    <p key={inx} className="emoji" dangerouslySetInnerHTML={{ __html: city }} />
+                    <p
+                      key={inx}
+                      className="emoji"
+                      dangerouslySetInnerHTML={{ __html: city }}
+                    />
                   ))}
               </div>
             </div>

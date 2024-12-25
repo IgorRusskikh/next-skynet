@@ -103,7 +103,7 @@
   @apply text-[#898C98];
   @apply lg:mx-[10px];
   @apply xl:mx-[10px];
-  @apply 3xl:mx-[0.52vw]
+  @apply 3xl:mx-[0.52vw];
 }
 
 .servicesCardContent {
@@ -132,7 +132,7 @@
   @apply absolute top-0 left-0 transition-all duration-700 uppercase font-medium;
   @apply md:translate-y-4;
   @apply lg:translate-y-2;
-  @apply xl:translate-y-0;
+  @apply xl:translate-y-3;
   @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }
 
