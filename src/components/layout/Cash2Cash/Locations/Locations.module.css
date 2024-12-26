@@ -429,8 +429,8 @@
 .citiesList {
   @apply flex flex-col flex-wrap text-[#898C98] font-medium;
   @apply lg:text-sm lg:leading-[15.4px] lg:mt-4 lg:gap-y-[4.5px] lg:gap-x-8 lg:max-h-[112px];
-  @apply xl:text-sm xl:leading-[15.4px] xl:mt-4 xl:gap-y-[4.5px] xl:gap-x-8 xl:max-h-[112px];
-  @apply 3xl:text-[0.83vw] 3xl:leading-[0.92vw] 3xl:mt-[1.04vw] 3xl:gap-y-[0.31vw] 3xl:gap-x-[1.04vw] 3xl:max-h-[5.94vw];
+  @apply xl:text-sm xl:leading-[15.4px] xl:mt-4 xl:gap-y-[4.5px] xl:gap-x-10 xl:max-h-[112px];
+  @apply 3xl:text-[0.83vw] 3xl:leading-[0.92vw] 3xl:mt-[1.04vw] 3xl:gap-y-[0.31vw] 3xl:gap-x-[3.04vw] 3xl:max-h-[5.94vw];
 }
 
 .pointerWrapper {
