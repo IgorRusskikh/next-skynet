@@ -1,5 +1,5 @@
 .navbar {
-  @apply relative py-[0.83vw] my-[3.89vw];
+  @apply relative py-[0.83vw] my-[3.89vw] z-40;
   @apply md:py-[14px] md:my-0;
   @apply lg:py-[14px];
   @apply w-full xl:py-[14px];

@@ -10,6 +10,7 @@ import LocaleSwitcher from "../LocaleSwitcher";
 import Logo from "@/svg/logo.svg";
 import TelegramIcon from "@/svg/telegram.svg";
 import styles from "./Header.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import useNearTop from "@/hooks/useNearTop";
 import { usePathname } from "next/navigation";
 
@@ -24,6 +25,8 @@ export default function Header({ fixed }: Props) {
 
   const path = usePathname();
   const curPath = path.split("/").slice(2).join("/");
+
+  const { openModal } = useModal();
 
   const t = useTranslations("Index.Header");
   const locale = useLocale();
@@ -106,7 +109,11 @@ export default function Header({ fixed }: Props) {
               ></div>
             </div>
 
-            <IconButton icon={TelegramIcon} className={`${styles.telegram}`}>
+            <IconButton
+              icon={TelegramIcon}
+              className={`${styles.telegram}`}
+              onClick={openModal}
+            >
               {t("actions.tg-bot")}
             </IconButton>
           </div>

@@ -388,8 +388,8 @@
       }
     },
     "WhatCanPay": {
-      "title": "что мож��о оплатить",
-      "subtitle": "Оплатим инвойсы <br class=\" md:hidden\" />для <br class=\"hidden xl:block 3xl:hidden\" />физических <br class=\" md:hidden lg:block xl:hidden\" />и юридических лиц",
+      "title": "что можно оплатить",
+      "subtitle": "Оплатим инвойсы <br class=\" md:hidden\" />для <br class=\"br-xl\" />физических <br class=\"br-lg\" />и юридических лиц",
       "cards": {
         "0": {
           "title": "Хотите купить имущество за границей?",
@@ -401,7 +401,7 @@
         },
         "2": {
           "title": "Оплатить образование?",
-          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block xl:hidden\" />перевод средств в нужной валюте"
+          "description": "Закроем счёт за обучение в <br class=\"br-lg\" />зарубежном <br-xl></br-xl>университете. <br class=\"br-lg\" />Гарантируем своевременный <br class=\"br-lg\" />перевод средств в нужной валюте"
         }
       },
       "red-card": {

@@ -1,0 +1,59 @@
+.modalWrapper {
+  @apply fixed left-0 top-0 w-[100vw] h-[100dvh] bg-[#F3F3F366] bg-opacity-40 backdrop-blur-[20px] z-30 flex justify-center items-center font-tt-norms transition-all duration-500;
+}
+
+.modalContrainer {
+  @apply bg-white w-[91.11vw] h-[138.89vw] rounded-[2.5vw] pr-[3.06vw] pl-[5vw] pt-[22.22vw] pb-[90.83vw] overflow-clip relative transition-all duration-500;
+  @apply md:w-[728px] md:h-[622px] md:rounded-[20px] md:px-[43px] md:pt-40 md:pb-[278px];
+  @apply lg:w-[964px] lg:h-[458px] lg:rounded-[20px] lg:px-[57px] lg:pt-[120px] lg:pb-[97px];
+  @apply xl:w-[1220px] xl:min-h-[580px] xl:rounded-[20px] xl:px-[71px] xl:pt-[149px] xl:pb-[122px];
+  @apply 3xl:w-[84.22vw] 3xl:min-h-[40.1vw] 3xl:rounded-[1.56vw] 3xl:px-[4.9vw] 3xl:pt-[10.31vw] 3xl:pb-[8.44vw];
+}
+
+.tgBot {
+  @apply font-bold text-[#E8E8E8] uppercase relative text-[19.67vw] leading-[21.64vw] tracking-[-1.5vw];
+  @apply md:text-[152px] md:leading-[147.2px] md:tracking-[-10px];
+  @apply lg:text-[202px] lg:leading-[202.2px] lg:tracking-[-14px];
+  @apply xl:text-[256px] xl:leading-[281.6px] xl:tracking-[-20px];
+  @apply 3xl:text-[17.71vw] 3xl:leading-[15.48vw] 3xl:tracking-[-1.2vw];
+}
+
+.comingSoon {
+  @apply text-center uppercase font-medium text-[3.89vw] leading-[4.28vw];
+  @apply md:text-[26px] md:leading-[28.6px] md:text-right;
+  @apply lg:text-[35px] lg:leading-[38.5px];
+  @apply xl:text-[45px] xl:leading-[49.5px];
+  @apply 3xl:text-[3.13vw] 3xl:leading-[3.44vw];
+}
+
+.mascotWrapper {
+  @apply absolute left-[5px] top-[22.83vw];
+  @apply md:left-[114px] md:top-[-102px];
+  @apply lg:left-[214px] lg:top-[-120px];
+  @apply xl:left-[272.05px] xl:top-[-149px];
+  @apply 3xl:left-[18.85vw] 3xl:top-[-10.31vw];
+}
+
+.mascotContainer {
+  @apply relative w-[81.67vw] h-[180.83vw];
+  @apply md:w-[292px] md:h-[537px];
+  @apply lg:w-[243px] lg:h-[447px];
+  @apply xl:w-[308px] xl:h-[566px];
+  @apply 3xl:w-[21.3vw] 3xl:h-[39.11vw];
+}
+
+.closeWrapper {
+  @apply absolute top-[5.83vw] right-[4.72vw];
+  @apply md:top-6 md:right-6;
+  @apply lg:top-[23px] lg:right-[23px];
+  @apply xl:top-6 xl:right-6;
+  @apply 3xl:top-[2.08vw] 3xl:right-[2.08vw];
+}
+
+.closeContainer {
+  @apply relative size-[3.86vw] cursor-pointer;
+  @apply md:size-[13.91px];
+  @apply lg:size-[24px];
+  @apply xl:size-[17.38px];
+  @apply 3xl:size-[1.2vw];
+}

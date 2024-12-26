@@ -98,7 +98,7 @@ export default function Locations() {
         gsap.to(containerRef.current, {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: `top+=${isLaptop ? 30 : isDesktop ? 8 : isTablet ? 7 : 0}%`,
+            start: `top+=${isLaptop ? 10 : isDesktop ? 8 : isTablet ? 7 : 0}%`,
             end: "bottom+=20%",
             pin: true,
             scrub: true,

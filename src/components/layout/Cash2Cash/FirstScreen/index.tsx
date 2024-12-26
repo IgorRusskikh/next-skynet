@@ -6,12 +6,15 @@ import Button from "@/components/ui/buttons/Button";
 import Image from "next/image";
 import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import { useTranslations } from "next-intl";
 import useTypeText from "@/hooks/useTypeText";
 
 export default function FirstScreen() {
   const typingTextRef = useRef<HTMLSpanElement>(null);
   const cursorRef = useRef(null);
+
+  const { openModal } = useModal();
 
   const t = useTranslations("CashToCash.FirstScreen");
 
@@ -47,7 +50,7 @@ export default function FirstScreen() {
           <div className={`${styles.descriptionBlock}`}>
             <p dangerouslySetInnerHTML={{ __html: t.raw("description") }}></p>
 
-            <Button theme="red" className="mx-auto">
+            <Button theme="red" className="mx-auto" onClick={openModal}>
               {t("tg-bot")}
             </Button>
           </div>

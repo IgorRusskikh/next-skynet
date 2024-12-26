@@ -2,11 +2,13 @@ import "./globals.css";
 
 import { getLocale, getMessages } from "next-intl/server";
 
+import ComingSoonModal from "@/components/ComingSoonModal";
 import Dropdown from "@/components/Dropdown";
 import DropdownProvider from "@/providers/DropdownProvider";
 import Footer from "@/components/layout/MainPage/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
+import { ModalProvider } from "@/providers/ModalProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -37,12 +39,15 @@ export default async function LocaleLayout({
     <html lang={currentLocale}>
       <body className={`${ttNorms.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <DropdownProvider>
-            <Dropdown />
-            <Header />
-            <Header fixed />
-          </DropdownProvider>
-          {children}
+          <ModalProvider>
+            <DropdownProvider>
+              <ComingSoonModal />
+              <Dropdown />
+              <Header />
+              <Header fixed />
+            </DropdownProvider>
+            {children}
+          </ModalProvider>
         </NextIntlClientProvider>
       </body>
     </html>

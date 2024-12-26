@@ -1,3 +1,5 @@
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
 
 import Button from "@/components/ui/buttons/Button";
@@ -7,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { useMemo } from "react";
+import { useModal } from "@/providers/ModalProvider";
 
 interface Props {
   page: string;
@@ -15,6 +18,8 @@ interface Props {
 export default function Footer({ page }: Props) {
   const t = useTranslations("Footer");
   const locale = useLocale();
+
+  const { openModal } = useModal();
 
   const navLinks = useMemo(
     () =>
@@ -43,7 +48,9 @@ export default function Footer({ page }: Props) {
                 }}
               />
 
-              <Button theme="red">{t("tg-block.go-to-tg")}</Button>
+              <Button theme="red" onClick={openModal}>
+                {t("tg-block.go-to-tg")}
+              </Button>
             </div>
 
             <div className="flex md:block mt-[12.22vw] md:mt-0">

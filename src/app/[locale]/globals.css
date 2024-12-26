@@ -24,3 +24,7 @@ body {
 .br-lg {
   @apply hidden lg:block xl:hidden;
 }
+
+.br-xl {
+  @apply hidden xl:block 3xl:hidden;
+}

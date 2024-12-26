@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/buttons/Button";
 import styles from "./FirstScreen.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import useTypeText from "@/hooks/useTypeText";
@@ -15,6 +16,8 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
   const cursorRef = useRef(null);
 
   const t = useTranslations(`${tNamespace}.FirstScreen`);
+
+  const { openModal } = useModal();
 
   useTypeText({
     typingTextRef,
@@ -51,7 +54,9 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
         <div className={`${styles.descriptionBlock}`}>
           <p dangerouslySetInnerHTML={{ __html: t.raw("tg.description") }} />
 
-          <Button theme="red">{t("tg.button")}</Button>
+          <Button theme="red" onClick={openModal}>
+            {t("tg.button")}
+          </Button>
         </div>
       </div>
     </section>
