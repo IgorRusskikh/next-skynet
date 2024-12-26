@@ -20,7 +20,6 @@ import RussiaLine from "@/svg/russia-line.svg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Locations.module.css";
-import twemoji from "twemoji";
 import { useTranslations } from "next-intl";
 
 const REGIONS = [
@@ -202,6 +201,7 @@ export default function Locations() {
                       onMouseEnter={() => onMouseEnterHandler(inx)}
                       onMouseLeave={() => onMouseLeaveHandler(inx)}
                       country={locations[inx].country}
+                      countryInx={inx}
                       cities={locations[inx].cities as string[]}
                     >
                       {Line && AdaptiveLine ? (
@@ -251,6 +251,7 @@ interface IPointerProps extends HTMLAttributes<HTMLDivElement> {
   citiesListContainer?: string;
   isHovered?: boolean;
   country: string;
+  countryInx: number;
   cities: string[];
 }
 
@@ -263,9 +264,12 @@ function Pointer({
   citiesListContainer,
   isHovered,
   country,
+  countryInx,
   cities,
   ...props
 }: IPointerProps) {
+  const t = useTranslations("CashToCash.Locations");
+
   return (
     <div
       className={`${styles.pointerWrapper} ${className} ${
@@ -296,11 +300,31 @@ function Pointer({
               <div className={`${styles.citiesList} ${citiesListContainer}`}>
                 {cities &&
                   cities.map((city, inx) => (
-                    <p
+                    <div
                       key={inx}
-                      className="emoji"
-                      dangerouslySetInnerHTML={{ __html: city }}
-                    />
+                      className="flex items-center 3xl:gap-[0.42vw] md:gap-2"
+                      // dangerouslySetInnerHTML={{ __html: city }}
+                    >
+                      {
+                        // @ts-expect-error: need a type
+                        t.rich(`locations.${countryInx}.cities.${inx}`, {
+                          flag: (chunks) => (
+                            <div className="3xl:size-[0.83vw] xl:size-4 lg:size-4 md:size-4 size-[4.44vw] relative inline-block">
+                              <Image
+                                src={`/images/cash-to-cash/locations/${chunks}.png`}
+                                fill
+                                alt=""
+                              />
+                            </div>
+                          ),
+                          "hide-lg": (chunks) => (
+                            <span className="lg:invisible xl:visible">
+                              {chunks}
+                            </span>
+                          ),
+                        })
+                      }
+                    </div>
                   ))}
               </div>
             </div>

@@ -2,9 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import Image from "next/image";
 import Plus from "@/svg/plus.svg";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./LocationsAdaptive.module.css";
+import { useTranslations } from "next-intl";
 
 interface Props {
   locations: { country: string; cities: string[] }[];
@@ -34,6 +37,8 @@ export default function LocationsAdaptive({ locations }: Props) {
     }))
   );
 
+  const t = useTranslations("CashToCash.Locations");
+
   const toggleCitiesList = (blockRef: HTMLDivElement, index: number) => {
     const currentHeight = blockRef.style.maxHeight || "0px";
 
@@ -48,22 +53,26 @@ export default function LocationsAdaptive({ locations }: Props) {
         isOpen: cityInx === index ? !city.isOpen : false,
       }))
     );
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
   };
 
-  const formattedLocations = [
-    locations[6],
-    locations[5],
-    locations[3],
-    locations[4],
-    locations[0],
-    locations[1],
-    locations[2],
-  ];
+  const formattedLocations = {
+    0: { location: locations[6], index: 6 },
+    1: { location: locations[5], index: 5 },
+    2: { location: locations[3], index: 3 },
+    3: { location: locations[4], index: 4 },
+    4: { location: locations[0], index: 0 },
+    5: { location: locations[1], index: 1 },
+    6: { location: locations[2], index: 2 },
+  };
 
   return (
     <div className={`${styles.listWrapper}`}>
       <div className={`${styles.countriesList}`}>
-        {formattedLocations.map((location, inx) => (
+        {Object.values(formattedLocations).map(({ location, index }, inx) => (
           <div
             key={inx}
             className={`${styles.countriesItem}`}
@@ -75,7 +84,11 @@ export default function LocationsAdaptive({ locations }: Props) {
               <h4>{location.country}</h4>
 
               <Plus
-                className={`${cities[inx].isOpen ? "rotate-45 fill-black" : "rotate-0 fill-[#898C98]"}`}
+                className={`${
+                  cities[inx].isOpen
+                    ? "rotate-45 fill-black"
+                    : "rotate-0 fill-[#898C98]"
+                }`}
               />
             </div>
 
@@ -90,8 +103,28 @@ export default function LocationsAdaptive({ locations }: Props) {
                   styles[`${CLASSNAMES[inx]}CitiesList`]
                 }`}
               >
-                {location.cities.map((city, inx) => (
-                  <p key={inx} dangerouslySetInnerHTML={{ __html: city }} />
+                {location.cities.map((city, cityInx) => (
+                  <p key={cityInx} className="w-fit">
+                    {
+                      // @ts-expect-error: need a type
+                      t.rich(`locations.${index}.cities.${cityInx}`, {
+                        flag: (chunks) => (
+                          <div className="3xl:size-[0.83vw] xl:size-4 lg:size-4 md:size-4 size-[4.44vw] relative inline-block">
+                            <Image
+                              src={`/images/cash-to-cash/locations/${chunks}.png`}
+                              fill
+                              alt=""
+                            />
+                          </div>
+                        ),
+                        "hide-lg": (chunks) => (
+                          <span className="lg:invisible xl:visible">
+                            {chunks}
+                          </span>
+                        ),
+                      })
+                    }
+                  </p>
                 ))}
               </div>
             </div>

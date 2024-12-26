@@ -34,31 +34,31 @@
 }
 
 .europaCitiesList {
-  @apply max-h-[114.44vw];
-  @apply md:!max-h-[214px];
+  @apply max-h-[146.44vw];
+  @apply md:!max-h-[266px];
 }
 
 .eastCitiesList {
-  @apply max-h-[39.44vw];
+  @apply max-h-[59.44vw];
   @apply md:max-h-[1412px];
 }
 
 .asiaCitiesList {
-  @apply max-h-[44.44vw];
-  @apply md:!max-h-[160px];
+  @apply max-h-[60.44vw];
+  @apply md:!max-h-[218px];
 }
 
 .northAmericaCitiesList {
-  @apply max-h-[37.78vw];
-  @apply md:!max-h-[136px];
+  @apply max-h-[45.78vw];
+  @apply md:!max-h-[156px];
 }
 
 .latinAmericaCitiesList {
-  @apply max-h-[29.44vw];
-  @apply md:max-h-[106px];
+  @apply max-h-[39.44vw];
+  @apply md:max-h-[134px];
 }
 
 .africaCitiesList {
-  @apply max-h-[9.44vw];
-  @apply md:max-h-[34px];
+  @apply max-h-[12.44vw];
+  @apply md:max-h-[42px];
 }
