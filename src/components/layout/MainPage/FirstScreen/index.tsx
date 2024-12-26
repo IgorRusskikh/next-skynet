@@ -7,6 +7,7 @@ import Button from "@/components/ui/buttons/Button";
 import Image from "next/image";
 import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import { useTranslations } from "next-intl";
 
 interface IAdvantage extends HTMLAttributes<HTMLDivElement> {
@@ -15,6 +16,8 @@ interface IAdvantage extends HTMLAttributes<HTMLDivElement> {
 
 export default function FirstScreen() {
   const arrowsRefs = useRef<SVGElement[]>([]);
+
+  const { openModal } = useModal();
 
   const t = useTranslations("Index.FirstScreen");
 
@@ -155,14 +158,18 @@ export default function FirstScreen() {
                     ))}
                   </div>
 
-                  <div className={`${styles.advantagesBottomRow} relative z-20`}>
+                  <div
+                    className={`${styles.advantagesBottomRow} relative z-20`}
+                  >
                     {mobileAdvatages[1].map((advantage, index) => (
                       <Advantage key={advantage}>{advantage}</Advantage>
                     ))}
                   </div>
                 </div>
 
-                <Button theme="red">{t("banner.consultation-button")}</Button>
+                <Button theme="red" onClick={openModal}>
+                  {t("banner.consultation-button")}
+                </Button>
               </div>
 
               <div className={`${styles.bigGradientGlassWrapper}`}>

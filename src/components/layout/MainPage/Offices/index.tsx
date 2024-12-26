@@ -3,6 +3,7 @@
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
 
 import { BREAKPOINTS } from "@/constants";
+import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Offices.module.css";
@@ -40,7 +41,9 @@ export default function Offices({ className }: Props): JSX.Element {
           x: isVerticalTablet ? -300 : isMobile ? "-130vw" : -200,
           scrollTrigger: {
             trigger: officesBlockRef.current,
-            start: `top-=${isMobile ? 350 : isVerticalTablet ? 400 : isMobile ? 500 : 200}%`,
+            start: `top-=${
+              isMobile ? 350 : isVerticalTablet ? 400 : isMobile ? 500 : 200
+            }%`,
             end: `bottom+=${isDesktop ? 600 : isMobile ? 50 : 30}%`,
             scrub: 0.8,
           },
@@ -99,6 +102,10 @@ export default function Offices({ className }: Props): JSX.Element {
                   location={country}
                   address={address}
                   index={inx}
+                  flag={
+                    // @ts-expect-error: need a type
+                    t(`offices-list.${inx}.flag`)
+                  }
                 />
               ))}
             </div>
@@ -110,13 +117,13 @@ export default function Offices({ className }: Props): JSX.Element {
 }
 
 const images = ["moscow.png", "dubai.png", "ufa.png", "usa.png"];
-const flags = ["🇷🇺", "🇦🇪", "🇷🇺", "🇺🇸"];
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   image: string;
   location: string;
   address: string;
   index: number;
+  flag: string;
 }
 
 function OfficeCard({
@@ -125,6 +132,7 @@ function OfficeCard({
   address,
   className,
   index,
+  flag,
   ...props
 }: IOfficeCard) {
   return (
@@ -134,11 +142,19 @@ function OfficeCard({
       {...props}
     >
       <div className={`${styles.location}`}>
-        <span className={`${styles.locationFlag}`}>{flags[index]}</span>
+        <div className="3xl:size-[0.83vw] xl:size-4 lg:size-4 md:size-4 size-[4.44vw] relative inline-block">
+          <Image
+            src={`/images/cash-to-cash/locations/${flag}.png`}
+            fill
+            alt=""
+          />
+        </div>
         {location}
       </div>
 
-      <div className={`${styles.address} group-hover:opacity-100 group-hover:visible`}>
+      <div
+        className={`${styles.address} group-hover:opacity-100 group-hover:visible`}
+      >
         <p>{address}</p>
       </div>
     </div>

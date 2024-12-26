@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/buttons/Button";
+import Image from "next/image";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
 import { useRef } from "react";
@@ -58,6 +59,12 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
             {t("tg.button")}
           </Button>
         </div>
+
+        {/* <div className={`${styles.mascotWrapper}`}>
+          <div className={`${styles.mascotContainer}`}>
+            <Image src="/images/fta/mascot.png" fill alt="" />
+          </div>
+        </div> */}
       </div>
     </section>
   );
