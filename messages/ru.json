@@ -343,7 +343,7 @@
       }
     },
     "Payment": {
-      "title": "<span class=\"hidden lg:block\">Схема платежей</span><span class=\"lg:hidden\">Схема</span>",
+      "title": "<span class=\"md:hidden lg:block\">Схема платежей</span><span class=\"hidden md:block lg:hidden\">Схема</span>",
       "subtitle": "Работаем с зарубежными поставщиками <br class=\"hidden 3xl:block\" />через сеть иностранных компаний <br class=\"hidden lg:block xl:hidden\" />по простой и прозрачной системе",
       "step": "Шаг",
       "card": {
@@ -370,7 +370,7 @@
       "subtitle": "Воспользуйтесь Telegram-ботом для расчётов <br class=\" md:hidden\" />с контрагентами <br class=\" xl:hidden\" />за 4 простых шага",
       "steps": {
         "0": {
-          "title": "Выберите услугу <br class=\" lg:hidden xl:block\" />в <br class=\"hidden lg:block xl:hidden\" />TG-боте",
+          "title": "Выберите услугу <br class=\" lg:hidden xl:block\" />в <br class=\"br-lg \" />TG-боте",
           "description": "<br />Укажите вашу задачу, нужную сумму и валюту или закажите консультацию менеджера"
         },
         "1": {
@@ -401,7 +401,7 @@
         },
         "2": {
           "title": "Оплатить образование?",
-          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block 3xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block 3xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block 3xl:hidden\" />перевод средств в нужной валюте"
+          "description": "Закроем счёт за обучение в <br class=\"hidden lg:block xl:hidden\" />зарубежном <br class=\"hidden xl:block 3xl:hidden\" />университете. <br class=\"hidden lg:block xl:hidden\" />Гарантируем своевременный <br class=\"hidden lg:block xl:hidden\" />перевод средств в нужной валюте"
         }
       },
       "red-card": {

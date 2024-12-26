@@ -145,7 +145,7 @@
   @apply md:text-sm md:leading-[14px] md:mt-4;
   @apply lg:text-sm lg:leading-[14px] lg:mt-6;
   @apply xl:text-sm xl:leading-[14px] xl:mt-6;
-  @apply 3xl:text-[1.25vw] 3xl:leading-[1.15vw] 3xl:mt-[1.25vw];
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:mt-[1.25vw];
 }
 
 .stepDescriptionText {

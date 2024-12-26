@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #F3F3F3;
-  --foreground: #1D1D1B;
+  --background: #f3f3f3;
+  --foreground: #1d1d1b;
 }
 
 body {
@@ -19,4 +19,8 @@ body {
 
 .container {
   @apply xl:max-w-[84.38vw];
+}
+
+.br-lg {
+  @apply hidden lg:block xl:hidden;
 }

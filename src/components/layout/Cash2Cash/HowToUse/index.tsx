@@ -19,7 +19,7 @@ export default function HowToUse({ tNamespace }: Props) {
 
   const startAnimationRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
-  const infoBlockRef = useRef(null)
+  const infoBlockRef = useRef(null);
   const counterRefs = useRef<HTMLSpanElement[]>([]);
   const titleRefs = useRef<HTMLSpanElement[]>([]);
   const descriptionRefs = useRef<HTMLSpanElement[]>([]);
@@ -33,28 +33,28 @@ export default function HowToUse({ tNamespace }: Props) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
+
     pinAnim();
-  
+
     fadeAnim(counterRefs);
     fadeAnim(titleRefs);
     fadeAnim(descriptionRefs);
-  
+
     movePhonesAnim();
-  
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-  
+
   useEffect(() => {
     adaptiveMovePhonesAnim(currentSlide);
   }, [currentSlide]);
-  
+
   const pinAnim = () => {
     const mm = gsap.matchMedia();
     mm.revert();
-  
+
     mm.add(
       {
         isVerticalTablet: `(min-width: ${
@@ -64,7 +64,7 @@ export default function HowToUse({ tNamespace }: Props) {
       },
       (context) => {
         const { isVerticalTablet, isTablet } = context.conditions as any;
-  
+
         const animation = gsap.to(startAnimationRef.current, {
           scrollTrigger: {
             trigger: parentRef.current,
@@ -75,18 +75,18 @@ export default function HowToUse({ tNamespace }: Props) {
             pinSpacing: false,
           },
         });
-  
+
         return () => {
           animation.scrollTrigger?.kill();
         };
       }
     );
   };
-  
+
   const movePhonesAnim = () => {
     const mm = gsap.matchMedia();
     mm.revert();
-  
+
     mm.add(
       {
         isVerticalTablet: `(min-width: ${
@@ -99,7 +99,7 @@ export default function HowToUse({ tNamespace }: Props) {
       },
       (context) => {
         const { isLaptop, isTablet } = context.conditions as any;
-  
+
         const leftPhoneAnim = gsap.to(leftPhoneRef.current, {
           y: isLaptop ? -300 : isTablet ? -140 : -300,
           scrollTrigger: {
@@ -109,7 +109,7 @@ export default function HowToUse({ tNamespace }: Props) {
             scrub: true,
           },
         });
-  
+
         const rightPhoneAnim = gsap.to(rightPhoneRef.current, {
           y: isLaptop ? 300 : isTablet ? 190 : 320,
           scrollTrigger: {
@@ -119,7 +119,7 @@ export default function HowToUse({ tNamespace }: Props) {
             scrub: true,
           },
         });
-  
+
         return () => {
           leftPhoneAnim.scrollTrigger?.kill();
           rightPhoneAnim.scrollTrigger?.kill();
@@ -127,11 +127,11 @@ export default function HowToUse({ tNamespace }: Props) {
       }
     );
   };
-  
+
   const adaptiveMovePhonesAnim = (inx: number) => {
     const mm = gsap.matchMedia();
     mm.revert();
-  
+
     mm.add(
       `(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`,
       () => {
@@ -140,13 +140,13 @@ export default function HowToUse({ tNamespace }: Props) {
           duration: 0.5,
           ease: "power.inOut",
         });
-  
+
         const rightPhoneAnim = gsap.to(rightPhoneRef.current, {
           y: (inx * 28) / 3 + "%",
           duration: 0.5,
           ease: "power.inOut",
         });
-  
+
         return () => {
           leftPhoneAnim.kill();
           rightPhoneAnim.kill();
@@ -154,42 +154,39 @@ export default function HowToUse({ tNamespace }: Props) {
       }
     );
   };
-  
+
   const fadeAnim = (refsList: RefObject<HTMLElement[]>) => {
     const mm = gsap.matchMedia();
-  
-    mm.add(
-      `(min-width: 0px)`,
-      () => {
-        const tl = gsap.timeline();
-  
-        if (refsList.current && refsList.current.length !== 0) {
-          refsList.current.forEach((ref, inx) => {
-            const startPercent = (inx * 70) / 4 - 10;
-            const endPercent = ((inx + 1) * 70) / 4 + 5;
-  
-            tl.to(ref, {
-              keyframes: [
-                { opacity: inx === 0 ? 1 : 0 },
-                { opacity: 1 },
-                { opacity: inx === 3 ? 1 : 0 },
-              ],
-              scrollTrigger: {
-                trigger: startAnimationRef.current,
-                start: `top+=${startPercent}%`,
-                end: `top+=${endPercent}%`,
-                scrub: true,
-              },
-            });
+
+    mm.add(`(min-width: 0px)`, () => {
+      const tl = gsap.timeline();
+
+      if (refsList.current && refsList.current.length !== 0) {
+        refsList.current.forEach((ref, inx) => {
+          const startPercent = (inx * 70) / 4 - 10;
+          const endPercent = ((inx + 0.7) * 70) / 4 + 5;
+
+          tl.to(ref, {
+            keyframes: [
+              { opacity: inx === 0 ? 1 : 0 },
+              { opacity: 1 },
+              { opacity: inx === 3 ? 1 : 0 },
+            ],
+            scrollTrigger: {
+              trigger: startAnimationRef.current,
+              start: `top+=${startPercent}%`,
+              end: `top+=${endPercent}%`,
+              scrub: true,
+            },
           });
-        }
-  
-        return () => {
-          tl.scrollTrigger?.kill();
-          tl.kill();
-        };
+        });
       }
-    );
+
+      return () => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      };
+    });
   };
 
   const stepsTitles = useMemo(
@@ -229,7 +226,10 @@ export default function HowToUse({ tNamespace }: Props) {
         <div ref={startAnimationRef}>
           <div ref={parentRef} className={`${styles.contentWrapper}`}>
             <div className={styles.howToUseContent}>
-              <HowToUseSlider setCurrentSlide={setCurrentSlide} tNamespace={tNamespace} />
+              <HowToUseSlider
+                setCurrentSlide={setCurrentSlide}
+                tNamespace={tNamespace}
+              />
 
               <div ref={infoBlockRef} className={`${styles.infoContainer}`}>
                 <div className={`${styles.stepNumber}`}>
@@ -252,8 +252,10 @@ export default function HowToUse({ tNamespace }: Props) {
                       </span>
                     ))}
                   </div>
-                  <span className={`${styles.servicesCardCountSeparator} text-[#898C98]`}>
-                  —
+                  <span
+                    className={`${styles.servicesCardCountSeparator} text-[#898C98]`}
+                  >
+                    —
                   </span>
                   <span className="text-[#898C98]">04</span>
                 </div>
@@ -334,7 +336,11 @@ export default function HowToUse({ tNamespace }: Props) {
                   >
                     <div className={`${styles.rightIphone}`}>
                       <Image
-                        src={`/images/${tNamespace === "VED" ? "fta/how-to-use" : "cash-to-cash"}/right-phone.png`}
+                        src={`/images/${
+                          tNamespace === "VED"
+                            ? "fta/how-to-use"
+                            : "cash-to-cash"
+                        }/right-phone.png`}
                         fill
                         alt="right-phone"
                         unoptimized

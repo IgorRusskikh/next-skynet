@@ -1,4 +1,5 @@
 import { HTMLAttributes } from "react";
+import Image from "next/image";
 import TopArrow from "@/svg/right-top-arrow.svg";
 import TopArrowDesktop from "@/svg/right-top-arrow.svg";
 import styles from "./Link.module.css";
@@ -25,11 +26,13 @@ export default function CustomLink({
       suppressHydrationWarning
     >
       {children}
-      <TopArrowDesktop
-        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] 3xl:hidden`}
-      />
+      <div
+        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] hidden 3xl:block relative`}
+      >
+        <Image src="/images/top-right-arrow.png" fill alt="" />
+      </div>
       <TopArrow
-        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] hidden 3xl:block`}
+        className={`${styles.linkArrow} group-hover:xl:top-[-8px] group-hover:xl:-right-[17px] group-hover:3xl:top-[-0.5vw] group-hover:3xl:-right-[1.5vw] 3xl:hidden`}
       />
     </a>
   );

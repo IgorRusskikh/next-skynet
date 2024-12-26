@@ -10,6 +10,9 @@ import { useTranslations } from "next-intl";
 
 export default function HowToUse() {
   const [isStartAnim, setIsStartAnim] = useState(false);
+  const [imposedCards, setImposedCards] = Array.from({ length: 4 }).map(
+    () => false
+  );
 
   const sectionRef = useRef(null);
   const pinRef = useRef<HTMLDivElement>(null);
@@ -124,6 +127,9 @@ export default function HowToUse() {
             {
               keyframes: [
                 {
+                  opacity: isVerticalTablet ? 0 : 1,
+                },
+                {
                   opacity: 1,
                 },
               ],
@@ -152,8 +158,9 @@ export default function HowToUse() {
                 pinSpacing: false,
                 scrub: isLaptop || isDesktop ? 0.8 : 0.5,
                 onLeave: () => {
-                  element.style.color =
-                    inx === cardsRefs.current.length - 1 ? "" : "#898C98";
+                  if (inx < cardsRefs.current.length - 1) {
+                    gsap.to(element, { color: "#898C98", duration: 0.5 });
+                  }
                   if (!isStartAnim) {
                     setIsStartAnim(true);
                   }
