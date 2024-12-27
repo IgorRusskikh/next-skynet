@@ -105,7 +105,10 @@ export default function About() {
         </p>
 
         <div className={`${styles.advantages}`}>
-          <p className={`${styles.advantagesText} relative z-20`} dangerouslySetInnerHTML={{ __html: t.raw("description") }} />
+          <p
+            className={`${styles.advantagesText} relative z-20`}
+            dangerouslySetInnerHTML={{ __html: t.raw("description") }}
+          />
 
           <div className={`md:max-w-[501px] lg:max-w-[65%] w-full text-right`}>
             <div className={`${styles.advantageItem}`}>
@@ -121,7 +124,7 @@ export default function About() {
                     </>
                   ) : (
                     <>
-                      30<span className={`${styles.advantagePlus}`}>+</span>
+                      50<span className={`${styles.advantagePlus}`}>+</span>
                     </>
                   )}
                 </p>

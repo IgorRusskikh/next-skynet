@@ -20,8 +20,8 @@
 
 .howToUseContentText h3 {
   @apply max-w-[91.11vw];
-  @apply md:max-w-[498px];
-  @apply lg:max-w-[611px];
+  @apply md:max-w-[498px] md:mt-1;
+  @apply lg:max-w-[611px] lg:mt-0;
   @apply xl:max-w-[726px];
   @apply 3xl:max-w-[43.96vw];
 }

@@ -104,7 +104,10 @@ export default function LocationsAdaptive({ locations }: Props) {
                 }`}
               >
                 {location.cities.map((city, cityInx) => (
-                  <p key={cityInx} className="w-fit">
+                  <div
+                    key={cityInx}
+                    className="w-fit flex items-center md:gap-2 gap-[2.22vw]"
+                  >
                     {
                       // @ts-expect-error: need a type
                       t.rich(`locations.${index}.cities.${cityInx}`, {
@@ -124,7 +127,7 @@ export default function LocationsAdaptive({ locations }: Props) {
                         ),
                       })
                     }
-                  </p>
+                  </div>
                 ))}
               </div>
             </div>

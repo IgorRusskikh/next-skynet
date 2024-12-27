@@ -8,7 +8,7 @@
 
 .contentWrapper {
   @apply h-[410.78vw];
-  @apply md:h-[1260px];
+  @apply md:h-[1160px];
   @apply lg:h-[1460px];
   @apply xl:h-[1700px];
   @apply 3xl:h-[112.04vw];
@@ -61,6 +61,7 @@
 .step {
   @apply text-[#898C98] text-[2.78vw] leading-[2.78vw];
   @apply md:text-[10px] md:leading-[10px];
+  @apply lg:text-sm lg:leading-[14px];
   @apply xl:text-sm xl:leading-[14px];
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw];
 }

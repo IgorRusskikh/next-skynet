@@ -1,0 +1,18 @@
+.rates {
+  @apply container font-tt-norms;
+  @apply 3xl:pt-[5.21vw];
+}
+
+.updated {
+  @apply text-[#898C98];
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
+}
+
+.header {
+  @apply font-medium uppercase;
+  @apply 3xl:text-[6.67vw] 3xl:leading-[7.33vw];
+}
+
+.tableWrapper {
+  @apply 3xl:mt-[3.13vw] 3xl:max-w-[53.49vw] mx-auto;
+}

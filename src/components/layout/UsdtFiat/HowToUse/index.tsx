@@ -57,7 +57,7 @@ export default function HowToUse() {
           : isLaptop
           ? "+=650px"
           : isVerticalTablet
-          ? "+=64%"
+          ? "+=54%"
           : isMobile
           ? "+=82%"
           : "bottom";

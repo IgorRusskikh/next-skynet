@@ -1,0 +1,56 @@
+.tableWrapper {
+  @apply w-full bg-white;
+  @apply 3xl:rounded-[1.04vw] 3xl:px-[3.13vw] 3xl:py-[2.08vw];
+}
+
+.ratesTable {
+  @apply w-full;
+}
+
+.tableHeader {
+  @apply font-medium grid w-full border-b border-[#DFE2E9];
+  @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:pb-[1.25vw] 3xl:grid-cols-3;
+}
+
+.tableBody {
+  @apply w-full flex flex-col;
+  @apply 3xl:mt-[3.13vw] 3xl:gap-[2.5vw];
+}
+
+.tableRow {
+  @apply grid;
+  @apply 3xl:grid-cols-3;
+}
+
+.source {
+  @apply uppercase flex items-center;
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
+}
+
+.type {
+  @apply relative text-[#898C98];
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:ml-[1.04vw];
+}
+
+.type::before {
+  @apply z-10 content-[''] bg-[#898C98] rounded-full absolute;
+  @apply 3xl:size-[0.21vw] 3xl:left-[-0.42vw] 3xl:top-[0.26vw];
+}
+
+.currency {
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
+}
+
+.price {
+  @apply font-bold flex items-center;
+  @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
+}
+
+.arrowContainer {
+  @apply relative;
+  @apply 3xl:w-[0.78vw] 3xl:h-[0.42vw] 3xl:ml-[0.31vw];
+}
+
+.difference {
+  @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:ml-[0.83vw];
+}

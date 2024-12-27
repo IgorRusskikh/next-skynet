@@ -57,7 +57,7 @@
 }
 
 .title {
-  @apply font-medium text-[3.89vw] leading-[4.28vw] mt-[1.67vw] tracking-[-0.3vw];
+  @apply font-medium text-[3.89vw] leading-[4.28vw] mt-[1.67vw] tracking-[-0.1vw];
   @apply md:text-base md:leading-[17.6px] md:mt-[6px] md:tracking-normal;
   @apply lg:text-xl lg:leading-[22px] lg:mt-2;
   @apply xl:text-2xl xl:leading-[26.4px] xl:mt-2;
@@ -65,7 +65,7 @@
 }
 
 .stepProgress {
-  @apply mt-[2.13vw] h-[0.28vw] relative z-10;
+  @apply mt-[1.53vw] h-[0.28vw] relative z-10;
   @apply md:mt-2 md:h-[1px];
   @apply lg:mt-2 lg:h-[1px];
   @apply w-0 xl:mt-3 h-[1px];
