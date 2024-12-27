@@ -24,6 +24,10 @@ export const INNER_SITES = {
     link: "/fta",
     title: "Платежи для ВЭД",
   },
+  quotes: {
+    link: "/quotes",
+    title: "Котировки",
+  },
   // blog: {
   //   link: "/blog",
   //   title: "Блог",

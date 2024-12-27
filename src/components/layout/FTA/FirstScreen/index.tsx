@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/ui/buttons/Button";
-import Image from "next/image";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
 import { useRef } from "react";

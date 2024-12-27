@@ -1,5 +1,8 @@
 .tableWrapper {
-  @apply w-full bg-white;
+  @apply w-full;
+  @apply md:rounded-[20px] md:px-[40px] md:py-6 md:bg-white;
+  @apply lg:rounded-[20px] lg:px-[40px] lg:py-6;
+  @apply xl:rounded-[20px] xl:px-12 xl:py-8;
   @apply 3xl:rounded-[1.04vw] 3xl:px-[3.13vw] 3xl:py-[2.08vw];
 }
 
@@ -8,49 +11,81 @@
 }
 
 .tableHeader {
-  @apply font-medium grid w-full border-b border-[#DFE2E9];
-  @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:pb-[1.25vw] 3xl:grid-cols-3;
+  @apply font-medium grid w-full border-b border-[#DFE2E9] grid-cols-3 text-[3.89vw] leading-[4.28vw] pb-[4.44vw];
+  @apply md:text-base md:leading-[17.6px] md:pb-4;
+  @apply lg:text-xl lg:leading-[22px] lg:pb-4;
+  @apply xl:text-2xl xl:leading-[26.4px] xl:pb-5;
+  @apply 3xl:text-[1.56vw] 3xl:leading-[1.72vw] 3xl:pb-[1.25vw];
+}
+
+.colTitle:nth-child(2) {
+  @apply ml-[10%];
 }
 
 .tableBody {
-  @apply w-full flex flex-col;
+  @apply w-full flex flex-col mt-[4.44vw] gap-[7.5vw];
+  @apply md:mt-9 md:gap-6;
+  @apply lg:mt-9 lg:gap-6;
+  @apply xl:mt-9 xl:gap-8;
   @apply 3xl:mt-[3.13vw] 3xl:gap-[2.5vw];
 }
 
 .tableRow {
-  @apply grid;
-  @apply 3xl:grid-cols-3;
+  @apply grid items-center grid-cols-3;
 }
 
 .source {
-  @apply uppercase flex items-center;
+  @apply uppercase flex flex-col-reverse text-[2.78vw] leading-[2.78vw] items-start gap-1;
+  @apply md:text-xs md:leading-[13.2px] md:flex-row md:items-center md:gap-0;
+  @apply lg:text-sm lg:leading-[15.4px];
+  @apply xl:text-sm xl:leading-[15.4px];
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
 }
 
 .type {
-  @apply relative text-[#898C98];
+  @apply relative text-[#898C98] normal-case text-[2.78vw] leading-[2.78vw];
+  @apply md:text-xs md:leading-3 md:ml-5;
+  @apply lg:text-sm lg:leading-[14px] lg:ml-5;
+  @apply xl:text-sm xl:leading-[14px] xl:ml-5;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:ml-[1.04vw];
 }
 
 .type::before {
-  @apply z-10 content-[''] bg-[#898C98] rounded-full absolute;
+  @apply z-10 content-[''] bg-[#898C98] rounded-full absolute hidden;
+  @apply md:size-1 md:-left-2 md:top-1 md:block;
+  @apply lg:size-1 lg:-left-2 lg:top-[5px];
+  @apply xl:size-1 xl:-left-2 xl:top-[5px];
   @apply 3xl:size-[0.21vw] 3xl:left-[-0.42vw] 3xl:top-[0.26vw];
 }
 
 .currency {
+  @apply text-[2.78vw] leading-[3.06vw] ml-[10%];
+  @apply md:text-xs md:leading-3;
+  @apply lg:text-sm lg:leading-[14px];
+  @apply xl:text-sm xl:leading-[14px];
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
 }
 
 .price {
-  @apply font-bold flex items-center;
+  @apply font-bold items-start text-[3.33vw] leading-[3.33vw] flex flex-col;
+  @apply md:text-xs md:leading-3 md:flex-row md:items-center;
+  @apply lg:text-sm lg:leading-[14px];
+  @apply xl:text-sm xl:leading-[14px];
   @apply 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
 }
 
 .arrowContainer {
-  @apply relative;
-  @apply 3xl:w-[0.78vw] 3xl:h-[0.42vw] 3xl:ml-[0.31vw];
+  @apply relative w-[3.17vw] h-[1.67vw] ml-[0.56vw] mb-[0.43vw] inline-flex items-center;
+  @apply md:w-[13px] md:h-[6px] md:ml-[2px] md:mb-[3px];
+  @apply lg:w-[13px] lg:h-[6px] lg:ml-1;
+  @apply xl:w-[13px] xl:h-[6px] xl:ml-1;
+  @apply 3xl:w-[0.78vw] 3xl:h-[0.42vw] 3xl:ml-[0.31vw] 3xl:mb-[0.2vw];
 }
 
 .difference {
+  @apply text-[2.78vw] leading-[2.78vw] mt-[1.11vw];
+  @apply md:text-[10px] md:leading-[10px] md:ml-2 md:mt-0;
+  @apply lg:text-xs lg:leading-3 lg:ml-3;
+  @apply xl:text-xs xl:leading-3 xl:ml-3;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:ml-[0.83vw];
 }

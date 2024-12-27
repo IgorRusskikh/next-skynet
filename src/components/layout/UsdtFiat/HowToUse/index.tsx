@@ -60,7 +60,7 @@ export default function HowToUse() {
           ? "+=54%"
           : isMobile
           ? "+=82%"
-          : "bottom";
+          : "+=75%";
 
         gsap.to(pinRef.current, {
           scrollTrigger: {

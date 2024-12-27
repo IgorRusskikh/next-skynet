@@ -52,7 +52,7 @@
 }
 
 .descriptionBlock button p {
-  @apply text-[2.78vw] leading-[2.78vw] tracking-[-0.07vw];
+  @apply text-[2.78vw] leading-[2.78vw] tracking-[-0.1vw];
   @apply md:text-xs md:leading-3 md:tracking-[-0.5px];
   @apply lg:text-xs lg:leading-3;
   @apply xl:text-xs xl:leading-3;

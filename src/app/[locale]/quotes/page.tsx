@@ -8,7 +8,7 @@ export default function QuotesPage() {
       <main>
         <FirstScreen />
       </main>
-      {/* <Footer /> */}
+      <Footer page="quotes" />
     </>
   );
 }
