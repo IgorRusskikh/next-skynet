@@ -9,16 +9,6 @@ export default function FirstScreen() {
   const t = useTranslations("Quotes");
   const currentDate = new Date();
 
-  useEffect(() => {
-    const fetchMarkets = async () => {
-      const response = await fetch("https://garantex.org/api/v2/markets");
-
-      console.log(await response.json());
-    };
-
-    fetchMarkets();
-  }, []);
-
   return (
     <section id="rates" className={`${styles.rates}`}>
       <div>

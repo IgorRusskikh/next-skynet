@@ -54,7 +54,7 @@
   @apply md:mt-6 md:text-base md:leading-[17.6px] md:max-w-[444px] md:tracking-[-0.3px];
   @apply lg:mt-6 lg:text-base lg:leading-[17.6px] lg:max-w-[443px] lg:tracking-[-0.3px];
   @apply xl:mt-8 xl:text-[18px] xl:leading-[19.8px] xl:max-w-[497px] xl:tracking-[-0.3px];
-  @apply 3xl:mt-[2.08vw] 3xl:text-[1.15vw] 3xl:leading-[1.26vw] 3xl:max-w-[31.2vw] 3xl:tracking-[-0.02vw];
+  @apply 3xl:mt-[2.08vw] 3xl:text-[1.15vw] 3xl:leading-[1.26vw] 3xl:max-w-[33.2vw] 3xl:tracking-[-0.02vw];
 }
 
 .servicesList {
