@@ -53,14 +53,14 @@ export default function HowToUse() {
           context.conditions as any;
 
         const endPoint = isDesktop
-          ? "+=98%"
+          ? "+=80%"
           : isLaptop
           ? "+=650px"
           : isVerticalTablet
-          ? "+=54%"
+          ? "+=58%"
           : isMobile
-          ? "+=82%"
-          : "+=75%";
+          ? "+=84%"
+          : "+=90%";
 
         gsap.to(pinRef.current, {
           scrollTrigger: {

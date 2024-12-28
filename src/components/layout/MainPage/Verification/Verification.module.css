@@ -123,7 +123,7 @@
 
 .cardImage {
   @apply w-[22.5vw] h-[13.61vw];
-  @apply md:w-[92px] md:h-[76px];
+  @apply md:w-[112px] md:h-[76px];
   @apply lg:w-[119px] lg:h-[102px];
   @apply relative xl:w-[174px] xl:h-[103px] rotate-y-180;
   @apply 3xl:w-[12vw] 3xl:h-[8.44vw];
