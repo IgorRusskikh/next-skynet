@@ -71,7 +71,7 @@
 }
 
 .blurCircle {
-  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[4.44vw] right-[-2.22vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[3.7vw] right-[-2.22vw] bg-[#9B9DA61A] border border-[#DFE2E9];
   @apply md:size-[364px] md:top-[-9px] md:right-[45px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
   @apply lg:size-[530px] lg:-top-3 lg:right-[-38px];
   @apply xl:w-[508px] xl:h-[493px] xl:top-0 xl:right-[-17px];

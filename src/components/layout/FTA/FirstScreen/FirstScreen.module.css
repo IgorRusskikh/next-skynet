@@ -78,7 +78,7 @@
 }
 
 .mascotImage {
-  @apply relative z-10 w-[124.72vw] h-[124.72vw];
+  @apply relative z-10 w-[124.72vw] h-[114.72vw];
   @apply md:w-[527px] md:h-[527px];
   @apply lg:w-[644px] lg:h-[644px];
   @apply xl:w-[644px] xl:h-[644px];
@@ -110,7 +110,7 @@
 }
 
 .blurCircleUsdt {
-  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[7.5vw] right-[15.83vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[6.5vw] right-[15.83vw] bg-[#9B9DA61A] border border-[#DFE2E9];
   @apply md:size-[349px] md:top-[9px] md:right-[130px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
   @apply lg:size-[443px] lg:top-[38px] lg:right-[97px];
   @apply xl:w-[508px] xl:h-[493px] xl:top-[27px] xl:right-[60px];
