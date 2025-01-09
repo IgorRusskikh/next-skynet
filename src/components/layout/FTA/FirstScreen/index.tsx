@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/buttons/Button";
+import Image from "next/image";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
 import { useRef } from "react";
@@ -51,7 +52,13 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
           </h2>
         </div>
 
-        <div className={`${styles.descriptionBlock}`}>
+        <div
+          className={`${
+            styles[
+              tNamespace === "VED" ? "descriptionBlock" : "descriptionBlockUsdt"
+            ]
+          }`}
+        >
           <p dangerouslySetInnerHTML={{ __html: t.raw("tg.description") }} />
 
           <Button theme="red" onClick={openModal}>
@@ -59,11 +66,31 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
           </Button>
         </div>
 
-        {/* <div className={`${styles.mascotWrapper}`}>
-          <div className={`${styles.mascotContainer}`}>
-            <Image src="/images/fta/mascot.png" fill alt="" />
+        <div
+          className={`${
+            styles[tNamespace === "VED" ? "mascotWrapper" : "mascotWrapperUsdt"]
+          }`}
+        >
+          <div
+            className={`${
+              styles[tNamespace === "VED" ? "mascotImage" : "mascotImageUsdt"]
+            }`}
+          >
+            <Image
+              src={`/images/mascot-${
+                tNamespace === "VED" ? "ved" : "usdt"
+              }.png`}
+              fill
+              alt="Mascot"
+            />
+
+            <div
+              className={`${
+                styles[tNamespace === "VED" ? "blurCircle" : "blurCircleUsdt"]
+              }`}
+            ></div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

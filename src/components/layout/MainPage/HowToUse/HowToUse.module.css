@@ -51,7 +51,7 @@
 }
 
 .banner {
-  @apply rounded-[4.44vw] bg-[url('/images/banner-bg.png')] bg-no-repeat bg-center overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
+  @apply rounded-[4.44vw] bg-[url('/images/main-page-how-to-use/banner-bg.png')] bg-no-repeat bg-center overflow-clip mx-auto flex flex-col relative bg-cover h-[166.67vw];
   @apply md:w-full md:h-[592px] md:justify-between md:rounded-[42px] md:bg-left;
   @apply lg:w-[964px] lg:h-[530px] lg:bg-contain;
   @apply xl:w-[1000px] xl:h-[549px];

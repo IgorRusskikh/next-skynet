@@ -1,5 +1,5 @@
 .footer {
-  @apply font-tt-norms pt-[22.22vw] pb-[4.44vw];
+  @apply font-tt-norms pt-[22.22vw] pb-[4.44vw] relative;
   @apply md:pt-[120px] md:pb-4;
   @apply lg:pt-[140px] lg:pb-4;
   @apply xl:pt-[160px] xl:pb-4;
@@ -18,24 +18,31 @@
   @apply flex;
   @apply md:gap-4;
   @apply lg:gap-6;
-  @apply xl:gap-[52px];
-  @apply 3xl:gap-[2.24vw];
+  @apply xl:gap-[2px];
+  @apply 3xl:gap-[0.21vw];
+}
+
+.footerMascotWrapper {
+  @apply absolute left-[35vw] top-[50.83vw];
+  @apply md:left-[-46px] md:top-[91px];
+  @apply lg:left-[-32px] lg:top-[99px];
+  @apply xl:relative xl:left-auto xl:top-auto;
 }
 
 .footerMascot {
-  @apply relative w-[47.78vw] h-[106.11vw];
-  @apply md:w-[224px] md:h-[496px];
-  @apply lg:w-[221px] lg:h-[491px];
-  @apply xl:w-[224px] xl:h-[496px];
-  @apply 3xl:w-[18.44vw] 3xl:h-[40.83vw];
+  @apply relative w-[63.06vw] h-[123.33vw];
+  @apply md:w-[297px] md:h-[580px];
+  @apply lg:w-[303px] lg:h-[592px];
+  @apply xl:w-[303px] xl:h-[592px] xl:translate-x-[-18px];
+  @apply 3xl:w-[20.89vw] 3xl:h-[40.83vw] 3xl:translate-x-[-4.06vw];
 }
 
 .footerLinks {
   @apply flex-1 flex flex-col;
-  @apply md:pt-[101px] md:gap-[87px];
-  @apply lg:pt-[41px] lg:gap-[60px];
-  @apply xl:pt-[62px] xl:justify-between;
-  @apply 3xl:pt-[5.21vw] 3xl:justify-start 3xl:gap-[5.21vw];
+  @apply md:pt-[101px] md:gap-[87px] md:ml-[251px];
+  @apply lg:pt-[41px] lg:gap-[60px] lg:ml-[277px];
+  @apply xl:pt-[100px] xl:gap-[100px] xl:ml-0;
+  @apply 3xl:pt-[5.21vw] 3xl:justify-start 3xl:gap-[9.38vw];
 }
 
 .goToTelegram {
@@ -130,15 +137,15 @@
 }
 
 .footerSubscribeMobile {
-  @apply mt-[5.78vw] text-center;
+  @apply mt-[23.89vw] text-center;
   @apply md:hidden;
 }
 
 .footerBottom {
   @apply mt-[13.33vw];
   @apply md:mt-[80px];
-  @apply lg:mt-[35px];
-  @apply xl:mt-[100px];
+  @apply lg:mt-[160px];
+  @apply xl:mt-2;
   @apply 3xl:mt-[3.33vw];
 }
 

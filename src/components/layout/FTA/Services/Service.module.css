@@ -4,8 +4,8 @@
 
 .servicesContainer {
   @apply pt-[22.22vw];
-  @apply md:pt-[120px];
-  @apply lg:pt-[140px];
+  @apply md:pt-[178px];
+  @apply lg:pt-[246px];
   @apply xl:pt-40;
   @apply 3xl:pt-[10.42vw];
 }

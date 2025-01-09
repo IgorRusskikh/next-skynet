@@ -1,5 +1,5 @@
 .firstScreen {
-  @apply container font-tt-norms mt-[5.28vw];
+  @apply container font-tt-norms mt-[5.28vw] relative overflow-x-clip;
   @apply md:mt-0;
 }
 
@@ -29,21 +29,30 @@
 
 .typingBlock {
   @apply font-medium border-y border-[#DFE2E9] uppercase py-[5.6vw] text-[4.44vw] leading-[4.89vw] tracking-[-0.1vw];
-  @apply md:py-[18px] md:text-[18px] md:leading-[19.8px] md:max-w-[384px] md:ml-auto md:text-left md:mt-3 md:tracking-[-0.4px];
+  @apply md:py-[18px] md:text-[18px] md:leading-[19.8px] md:max-w-[365px] md:ml-auto md:text-left md:mt-3 md:tracking-[-0.4px];
   @apply lg:py-[18.5px] lg:text-2xl lg:leading-[26.4px] lg:max-w-[482px];
   @apply xl:py-[24px] xl:text-[28px] xl:leading-[30.8px] xl:max-w-[609px];
   @apply 3xl:pt-[2.4vw] 3xl:pb-[1.47vw] 3xl:text-[1.98vw] 3xl:leading-[2.18vw] 3xl:max-w-[68.07vw] 3xl:tracking-normal 3xl:pl-[25.89vw];
 }
 
 .descriptionBlock {
-  @apply mt-[111.11vw] max-w-[76.94vw] mx-auto text-center text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
-  @apply md:mt-[100px] md:mr-[45px] md:max-w-[339px] md:text-sm md:leading-[14px] md:mx-0 md:ml-auto md:text-left md:tracking-normal;
+  @apply mt-[122.11vw] max-w-[76.94vw] mx-auto text-center text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
+  @apply md:mt-[100px] md:mr-[26px] md:max-w-[339px] md:text-sm md:leading-[14px] md:mx-0 md:ml-auto md:text-left md:tracking-normal;
   @apply lg:mt-14 lg:mr-[143px] lg:max-w-[339px] lg:text-sm lg:leading-[14px] lg:tracking-[-0.3px];
   @apply xl:mt-[60px] xl:mr-[280px] xl:max-w-[329px] xl:text-sm xl:leading-[14px] xl:tracking-[-0.3px];
   @apply 3xl:mt-[4.01vw] 3xl:mr-[18.96vw] 3xl:max-w-[23.23vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-[-0.04vw];
 }
 
-.descriptionBlock button {
+.descriptionBlockUsdt {
+  @apply mt-[110.11vw] max-w-[76.94vw] mx-auto text-center text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
+  @apply md:mt-[100px] md:mr-[26px] md:max-w-[339px] md:text-sm md:leading-[14px] md:mx-0 md:ml-auto md:text-left md:tracking-normal;
+  @apply lg:mt-14 lg:mr-[143px] lg:max-w-[339px] lg:text-sm lg:leading-[14px] lg:tracking-[-0.3px];
+  @apply xl:mt-[60px] xl:mr-[280px] xl:max-w-[329px] xl:text-sm xl:leading-[14px] xl:tracking-[-0.3px];
+  @apply 3xl:mt-[4.01vw] 3xl:mr-[18.96vw] 3xl:max-w-[23.23vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-[-0.04vw];
+}
+
+.descriptionBlock button,
+.descriptionBlockUsdt button {
   @apply text-[2.78vw] leading-[2.78vw] max-w-[61.39vw] mt-[4.44vw] mx-auto w-full flex justify-center;
   @apply md:text-xs md:leading-3 md:max-w-[274px] md:mt-6 md:pr-[24.5px] md:mx-0 md:tracking-[-0.5px];
   @apply lg:text-xs lg:leading-3 lg:max-w-[274px] lg:mt-6 lg:pr-[24.5px];
@@ -51,10 +60,59 @@
   @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:max-w-[21.15vw] 3xl:mt-[2.08vw] 3xl:pr-[1.72vw] 3xl:h-[3.65vw];
 }
 
-.descriptionBlock button p {
+.descriptionBlock button p,
+.descriptionBlockUsdt button p {
   @apply text-[2.78vw] leading-[2.78vw] tracking-[-0.15vw];
   @apply md:text-xs md:leading-3 md:tracking-[-0.5px];
   @apply lg:text-xs lg:leading-3;
   @apply xl:text-xs xl:leading-3;
   @apply 3xl:text-[0.94vw] 3xl:leading-[0.94vw] 3xl:tracking-[-0.05vw];
+}
+
+.mascotWrapper {
+  @apply absolute left-[-20.83vw] top-[34vw];
+  @apply md:left-[-108px] md:top-[172px];
+  @apply lg:left-[-117px] lg:top-[144px];
+  @apply xl:-left-8 xl:top-[114px];
+  @apply 3xl:left-[-4.27vw] 3xl:top-[8.59vw];
+}
+
+.mascotImage {
+  @apply relative z-10 w-[124.72vw] h-[124.72vw];
+  @apply md:w-[527px] md:h-[527px];
+  @apply lg:w-[644px] lg:h-[644px];
+  @apply xl:w-[644px] xl:h-[644px];
+  @apply 3xl:w-[46.46vw] 3xl:h-[46.46vw];
+}
+
+.blurCircle {
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[10.44vw] right-[13.06vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply md:size-[349px] md:top-[27px] md:right-[73px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
+  @apply lg:size-[443px] lg:top-[25px] lg:right-[77px];
+  @apply xl:w-[508px] xl:h-[493px] xl:top-[25px] xl:right-[94px];
+  @apply 3xl:size-[36.46vw] 3xl:top-[0.68vw] 3xl:right-[5vw];
+}
+
+.mascotWrapperUsdt {
+  @apply absolute left-[-15.56vw] top-[37.94vw];
+  @apply md:left-[-132px] md:top-[190px];
+  @apply lg:left-[-90px] lg:top-[130px];
+  @apply xl:left-[-64px] xl:top-[112px];
+  @apply 3xl:left-[-4.43vw] 3xl:top-[8.7vw];
+}
+
+.mascotImageUsdt {
+  @apply relative z-10 w-[122.22vw] h-[122.22vw];
+  @apply md:w-[608px] md:h-[608px];
+  @apply lg:w-[637px] lg:h-[637px];
+  @apply xl:w-[637px] xl:h-[637px];
+  @apply 3xl:w-[46.77vw] 3xl:h-[46.77vw];
+}
+
+.blurCircleUsdt {
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[7.5vw] right-[15.83vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply md:size-[349px] md:top-[9px] md:right-[130px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
+  @apply lg:size-[443px] lg:top-[38px] lg:right-[97px];
+  @apply xl:w-[508px] xl:h-[493px] xl:top-[27px] xl:right-[60px];
+  @apply 3xl:size-[36.46vw] 3xl:top-[0.57vw] 3xl:right-[5.16vw];
 }

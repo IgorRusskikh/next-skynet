@@ -622,7 +622,11 @@ export default function HowToUse() {
                 }}
               >
                 <div className={`${styles.topCallImage}`}>
-                  <Image src={"/images/how-to-use/call.png"} fill alt="call" />
+                  <Image
+                    src={"/images/main-page-how-to-use/call.png"}
+                    fill
+                    alt="call"
+                  />
                 </div>
               </div>
 
@@ -682,20 +686,20 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={"/images/how-to-use/phone.png"}
+                    src={"/images/main-page-how-to-use/phone.png"}
                     fill
                     alt="phone"
                     className="hidden lg:block"
                     unoptimized
                   />
                   <Image
-                    src={"/images/how-to-use/phone-md.png"}
+                    src={"/images/main-page-how-to-use/phone-md.png"}
                     fill
                     alt="phone"
                     className="hidden md:block lg:hidden"
                   />
                   <Image
-                    src={"/images/how-to-use/phone-xs.png"}
+                    src={"/images/main-page-how-to-use/phone-xs.png"}
                     fill
                     alt="phone"
                     className="block md:hidden"
@@ -711,20 +715,20 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={"/images/how-to-use/phone-success.png"}
+                    src={"/images/main-page-how-to-use/phone-success.png"}
                     fill
                     alt="phone"
                     className="hidden lg:block"
                     unoptimized
                   />
                   <Image
-                    src={"/images/how-to-use/phone-success-md.png"}
+                    src={"/images/main-page-how-to-use/phone-success-md.png"}
                     fill
                     alt="phone"
                     className="hidden md:block lg:hidden"
                   />
                   <Image
-                    src={"/images/how-to-use/phone-success-xs.png"}
+                    src={"/images/main-page-how-to-use/phone-success-xs.png"}
                     fill
                     alt="phone"
                     className="block md:hidden"
@@ -740,14 +744,16 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomTransactionImage}`}>
                   <Image
-                    src={"/images/how-to-use/transaction-success.png"}
+                    src={"/images/main-page-how-to-use/transaction-success.png"}
                     fill
                     alt="transaction"
                     className="hidden lg:block"
                     unoptimized
                   />
                   <Image
-                    src={"/images/how-to-use/transaction-success-md.png"}
+                    src={
+                      "/images/main-page-how-to-use/transaction-success-md.png"
+                    }
                     fill
                     alt="transaction"
                     className="block lg:hidden"

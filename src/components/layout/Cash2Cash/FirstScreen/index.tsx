@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 import Button from "@/components/ui/buttons/Button";
 import Image from "next/image";
-import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import useTypeText from "@/hooks/useTypeText";
 
@@ -59,7 +57,7 @@ export default function FirstScreen() {
 
       <div className={`${styles.mascotWrapper}`}>
         <div className={`${styles.mascotImage}`}>
-          <Image src={"/images/mascot.png"} fill alt="Mascot" />
+          <Image src={"/images/mascot-cash2cash.png"} fill alt="Mascot" />
 
           <div className={`${styles.blurCircle}`}></div>
         </div>

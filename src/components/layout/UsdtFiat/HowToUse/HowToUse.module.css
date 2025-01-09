@@ -1,7 +1,7 @@
 .howToUse {
   @apply font-tt-norms container mt-[22.22vw] relative overflow-clip mb-0;
-  @apply md:mt-[120px] md:mb-0;
-  @apply lg:mt-[140px];
+  @apply md:mt-[245px] md:mb-0;
+  @apply lg:mt-[246px];
   @apply xl:mt-40 xl:mb-0;
   @apply 3xl:mt-[10.42vw] 3xl:mb-0;
 }

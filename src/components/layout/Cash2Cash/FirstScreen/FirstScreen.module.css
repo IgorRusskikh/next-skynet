@@ -55,25 +55,25 @@
 }
 
 .mascotWrapper {
-  @apply absolute right-[22.36vw] top-[42vw];
-  @apply md:right-[64px] md:top-[235px];
-  @apply lg:right-[149px] lg:top-[159px];
-  @apply xl:right-[255px] xl:top-[164px];
-  @apply 3xl:right-[15.78vw] 3xl:top-[13.229vw];
+  @apply absolute right-[2.5vw] top-[36.78vw];
+  @apply md:-right-12 md:top-[201px];
+  @apply lg:right-[66px] lg:top-[140px];
+  @apply xl:right-[117px] xl:top-[135px];
+  @apply 3xl:right-[6.88vw] 3xl:top-[8.6vw];
 }
 
 .mascotImage {
-  @apply relative z-10 w-[47.78vw] h-[106.11vw];
-  @apply md:w-[234px] md:h-[517px];
-  @apply lg:w-[248px] lg:h-[551px];
-  @apply xl:w-[244px] xl:h-[534px];
-  @apply 3xl:w-[17.55vw] 3xl:h-[37.55vw];
+  @apply relative z-10 w-[89.44vw] h-[110.56vw];
+  @apply md:w-[459px] md:h-[566px];
+  @apply lg:w-[475px] lg:h-[585px];
+  @apply xl:w-[475px] xl:h-[585px];
+  @apply 3xl:w-[35.36vw] 3xl:h-[43.61vw];
 }
 
 .blurCircle {
-  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[-0.42vw] right-[-23.64vw] bg-[#9B9DA61A] border border-[#DFE2E9];
-  @apply md:size-[364px] md:top-[-43px] md:right-[-65px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
-  @apply lg:size-[530px] lg:top-[-35px] lg:right-[-115px];
-  @apply xl:w-[508px] xl:h-[493px] xl:top-[-25px] xl:right-[-155px];
-  @apply 3xl:size-[36.46vw] 3xl:top-[-3.96vw] 3xl:right-[-9.48vw];
+  @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[4.44vw] right-[-2.22vw] bg-[#9B9DA61A] border border-[#DFE2E9];
+  @apply md:size-[364px] md:top-[-9px] md:right-[45px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
+  @apply lg:size-[530px] lg:-top-3 lg:right-[-38px];
+  @apply xl:w-[508px] xl:h-[493px] xl:top-0 xl:right-[-17px];
+  @apply 3xl:size-[36.46vw] 3xl:top-[0.8vw] 3xl:right-[-0.57vw];
 }

@@ -28,9 +28,9 @@ export default function Services() {
   );
 
   const servicesImage = [
-    "/images/services/first-service-image-xs.png",
-    "/images/services/second-service-image-xs.png",
-    "/images/services/third-service-image-xs.png",
+    "/images/main-page-services/first-service-image-xs.png",
+    "/images/main-page-services/second-service-image-xs.png",
+    "/images/main-page-services/third-service-image-xs.png",
   ];
 
   return (
@@ -216,13 +216,13 @@ export default function Services() {
             >
               <div className={`${styles.firstServiceImageInner}`}>
                 <Image
-                  src={"/images/first-service-image.png"}
+                  src={"/images/main-page-services/first-service-image.png"}
                   fill
                   alt=""
                   className="hidden lg:block"
                 />
                 <Image
-                  src={"/images/first-service-image-md.png"}
+                  src={"/images/main-page-services/first-service-image-md.png"}
                   fill
                   alt=""
                   className="block lg:hidden"
@@ -239,13 +239,13 @@ export default function Services() {
             >
               <div className={`${styles.secondServiceImageInner}`}>
                 <Image
-                  src={"/images/second-service-image.png"}
+                  src={"/images/main-page-services/second-service-image.png"}
                   fill
                   alt=""
                   className="hidden lg:block"
                 />
                 <Image
-                  src={"/images/second-service-image-md.png"}
+                  src={"/images/main-page-services/second-service-image-md.png"}
                   fill
                   alt=""
                   className="block lg:hidden"
@@ -262,13 +262,13 @@ export default function Services() {
             >
               <div className={`${styles.thirdServiceImageInner}`}>
                 <Image
-                  src={"/images/third-service-image.png"}
+                  src={"/images/main-page-services/third-service-image.png"}
                   fill
                   alt=""
                   className="hidden lg:block"
                 />
                 <Image
-                  src={"/images/third-service-image-md.png"}
+                  src={"/images/main-page-services/third-service-image-md.png"}
                   fill
                   alt=""
                   className="block lg:hidden"
@@ -284,7 +284,11 @@ export default function Services() {
               }`}
             >
               <div className={`${styles.fourthServiceImageInner}`}>
-                <Image src={"/images/fourth-service-image.png"} fill alt="" />
+                <Image
+                  src={"/images/main-page-services/fourth-service-image.png"}
+                  fill
+                  alt=""
+                />
               </div>
             </div>
           </div>

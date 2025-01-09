@@ -2,7 +2,6 @@
 
 import RatesTable from "../RatesTable";
 import styles from "./FirstScreen.module.css";
-import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 export default function FirstScreen() {

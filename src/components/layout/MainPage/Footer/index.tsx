@@ -6,7 +6,6 @@ import Button from "@/components/ui/buttons/Button";
 import FooterLogo from "@/svg/footer-logo.svg";
 import { INNER_SITES } from "@/constants";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./Footer.module.css";
 import { useMemo } from "react";
 import { useModal } from "@/providers/ModalProvider";
@@ -35,8 +34,10 @@ export default function Footer({ page }: Props) {
     <footer className={`${styles.footer}`}>
       <div className={`${styles.footerContent}`}>
         <div className={`${styles.footerTop}`}>
-          <div className={`${styles.footerMascot} hidden md:block`}>
-            <Image src="/images/mascot.png" fill alt="mascot" />
+          <div className={`${styles.footerMascotWrapper}`}>
+            <div className={`${styles.footerMascot} hidden md:block`}>
+              <Image src="/images/mascot-footer.png" fill alt="mascot" />
+            </div>
           </div>
 
           <div className={`${styles.footerLinks}`}>
@@ -96,8 +97,10 @@ export default function Footer({ page }: Props) {
                 </div>
               </div>
 
-              <div className={`${styles.footerMascot} md:hidden`}>
-                <Image src="/images/mascot.png" fill alt="mascot" />
+              <div className={`${styles.footerMascotWrapper}`}>
+                <div className={`${styles.footerMascot} md:hidden`}>
+                  <Image src="/images/mascot-footer.png" fill alt="mascot" />
+                </div>
               </div>
             </div>
 
