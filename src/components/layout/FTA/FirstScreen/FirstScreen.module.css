@@ -1,6 +1,7 @@
 .firstScreen {
   @apply container font-tt-norms mt-[5.28vw] relative overflow-x-clip;
   @apply md:mt-0;
+  @apply lg:overflow-visible;
 }
 
 .firstScreenContent {
@@ -72,24 +73,24 @@
 .mascotWrapper {
   @apply absolute left-[-20.83vw] top-[34vw];
   @apply md:left-[-108px] md:top-[172px];
-  @apply lg:left-[-117px] lg:top-[144px];
-  @apply xl:-left-8 xl:top-[114px];
-  @apply 3xl:left-[-4.27vw] 3xl:top-[8.59vw];
+  @apply lg:left-[-127px] lg:top-[144px];
+  @apply xl:-left-[112px] xl:top-[114px];
+  @apply 3xl:left-[-8.27vw] 3xl:top-[8.59vw];
 }
 
 .mascotImage {
   @apply relative z-10 w-[124.72vw] h-[114.72vw];
-  @apply md:w-[527px] md:h-[527px];
-  @apply lg:w-[644px] lg:h-[644px];
-  @apply xl:w-[644px] xl:h-[644px];
-  @apply 3xl:w-[46.46vw] 3xl:h-[46.46vw];
+  @apply md:w-[527px] md:h-[500px];
+  @apply lg:w-[654px] lg:h-[600px];
+  @apply xl:w-[744px] xl:h-[644px];
+  @apply 3xl:w-[50.46vw] 3xl:h-[46.46vw];
 }
 
 .blurCircle {
   @apply absolute rounded-full bg-opacity-20 backdrop-blur-[5.54px] -z-10 size-[90.83vw] top-[10.44vw] right-[13.06vw] bg-[#9B9DA61A] border border-[#DFE2E9];
   @apply md:size-[349px] md:top-[27px] md:right-[73px] md:bg-[#DFE2E9] md:backdrop-blur-[6.54px] md:bg-opacity-20;
   @apply lg:size-[443px] lg:top-[25px] lg:right-[77px];
-  @apply xl:w-[508px] xl:h-[493px] xl:top-[25px] xl:right-[94px];
+  @apply xl:w-[508px] xl:h-[493px] xl:top-[25px] xl:right-[114px];
   @apply 3xl:size-[36.46vw] 3xl:top-[0.68vw] 3xl:right-[5vw];
 }
 
