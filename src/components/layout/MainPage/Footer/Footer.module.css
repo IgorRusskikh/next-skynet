@@ -137,7 +137,7 @@
 }
 
 .footerSubscribeMobile {
-  @apply mt-[23.89vw] text-center;
+  @apply mt-[25.89vw] text-center;
   @apply md:hidden;
 }
 

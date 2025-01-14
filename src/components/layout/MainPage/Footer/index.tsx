@@ -143,16 +143,16 @@ export default function Footer({ page }: Props) {
 }
 
 const contacts = [
+  // {
+  //   name: "@TG Bot",
+  //   link: "@TG Bot",
+  // },
   {
-    name: "@TG Bot",
-    link: "@TG Bot",
+    name: "+0 000 000 00 00",
+    link: "",
   },
   {
-    name: "+7 999 999 99 99",
-    link: "tel:+7 999 999 99 99",
-  },
-  {
-    name: "email@example.com",
-    link: "mailto:email@example.com",
+    name: "support@skynetgroup.ru",
+    link: "mailto:support@skynetgroup.ru",
   },
 ];
