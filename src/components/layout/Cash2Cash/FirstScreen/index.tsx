@@ -57,7 +57,12 @@ export default function FirstScreen() {
 
       <div className={`${styles.mascotWrapper}`}>
         <div className={`${styles.mascotImage}`}>
-          <Image src={"/images/mascot-cash2cash.png"} fill alt="Mascot" />
+          <Image
+            src={"/images/mascot-cash2cash.png"}
+            fill
+            alt="Mascot"
+            priority
+          />
 
           <div className={`${styles.blurCircle}`}></div>
         </div>

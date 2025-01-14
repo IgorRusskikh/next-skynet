@@ -195,7 +195,7 @@ export default function FirstScreen() {
 
             <div className={`${styles.mascotContainer} z-10`}>
               <div className={`${styles.mascot}`}>
-                <Image src="/images/mascot.png" fill alt="mascot" />
+                <Image src="/images/mascot.png" fill alt="mascot" priority />
               </div>
             </div>
           </div>

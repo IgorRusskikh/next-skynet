@@ -82,6 +82,7 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
               }.png`}
               fill
               alt="Mascot"
+              priority
             />
 
             <div
