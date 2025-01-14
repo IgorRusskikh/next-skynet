@@ -36,7 +36,12 @@ export default function Footer({ page }: Props) {
         <div className={`${styles.footerTop}`}>
           <div className={`${styles.footerMascotWrapper}`}>
             <div className={`${styles.footerMascot} hidden md:block`}>
-              <Image src="/images/mascot-footer.png" fill alt="mascot" />
+              <Image
+                src="/images/mascot-footer.png"
+                fill
+                alt="mascot"
+                quality={40}
+              />
             </div>
           </div>
 
@@ -101,7 +106,12 @@ export default function Footer({ page }: Props) {
 
               <div className={`${styles.footerMascotWrapper}`}>
                 <div className={`${styles.footerMascot} md:hidden`}>
-                  <Image src="/images/mascot-footer.png" fill alt="mascot" />
+                  <Image
+                    src="/images/mascot-footer.png"
+                    fill
+                    alt="mascot"
+                    quality={40}
+                  />
                 </div>
               </div>
             </div>

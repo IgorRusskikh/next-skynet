@@ -29,7 +29,12 @@ export default function ComingSoonModal() {
 
           <div className={`${styles.mascotWrapper}`}>
             <div className={`${styles.mascotContainer}`}>
-              <Image src={"/images/coming-soon-mascot.png"} fill alt="" />
+              <Image
+                src={"/images/coming-soon-mascot.png"}
+                fill
+                alt=""
+                quality={40}
+              />
             </div>
           </div>
         </div>

@@ -62,6 +62,7 @@ export default function FirstScreen() {
             fill
             alt="Mascot"
             priority
+            quality={40}
           />
 
           <div className={`${styles.blurCircle}`}></div>

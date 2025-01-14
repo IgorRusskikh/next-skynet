@@ -69,9 +69,9 @@ export default function HowToUse() {
             trigger: parentRef.current,
             start: `top-=${
               isDesktop
-                ? "5%"
+                ? "3.5%"
                 : isLaptop
-                ? "6%"
+                ? "5%"
                 : isTablet
                 ? "8%"
                 : isVerticalTablet

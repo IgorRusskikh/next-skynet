@@ -53,14 +53,14 @@ export default function HowToUse() {
           context.conditions as any;
 
         const endPoint = isDesktop
-          ? "+=80%"
+          ? "+=95%"
           : isLaptop
-          ? "+=650px"
+          ? "+=750px"
           : isVerticalTablet
           ? "+=58%"
           : isMobile
           ? "+=84%"
-          : "+=90%";
+          : "+=80%";
 
         gsap.to(pinRef.current, {
           scrollTrigger: {
@@ -109,7 +109,7 @@ export default function HowToUse() {
 
         const initialY = isMobile ? "250vw" : "120vh";
         const moveY = isDesktop
-          ? 48
+          ? 53
           : isLaptop
           ? 50
           : isTablet
@@ -138,7 +138,7 @@ export default function HowToUse() {
                 (isDesktop
                   ? inx === 0
                     ? 0
-                    : -7 * inx
+                    : 5.6 * inx
                   : isLaptop
                   ? 0
                   : isTablet
