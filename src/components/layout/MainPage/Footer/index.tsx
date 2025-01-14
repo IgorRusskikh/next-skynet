@@ -92,7 +92,9 @@ export default function Footer({ page }: Props) {
                   <h5>{t("links.subscribe.title")}</h5>
 
                   <div>
-                    <Button>{t("links.subscribe.subscribe-button")}</Button>
+                    <Button onClick={openModal}>
+                      {t("links.subscribe.subscribe-button")}
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -110,7 +112,9 @@ export default function Footer({ page }: Props) {
               <h5 className="border-none">{t("links.subscribe.title")}</h5>
 
               <div>
-                <Button>{t("links.subscribe.subscribe-button")}</Button>
+                <Button onClick={openModal}>
+                  {t("links.subscribe.subscribe-button")}
+                </Button>
               </div>
             </div>
           </div>

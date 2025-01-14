@@ -1,7 +1,10 @@
+"use client";
+
 import CustomLink from "@/components/ui/Link";
 import { HTMLAttributes } from "react";
 import Image from "next/image";
 import styles from "./WhatCanPay.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
@@ -19,7 +22,10 @@ export default function WhatCanPay() {
     <section id="what-can-pay" className={`${styles.whatCanPay}`}>
       <div className={`${styles.whatCanPayInner}`}>
         <div className={`${styles.whatCanPayTitleWrapper}`}>
-          <h2 className={`${styles.whatCanPayTitle} section-title`} dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
+          <h2
+            className={`${styles.whatCanPayTitle} section-title`}
+            dangerouslySetInnerHTML={{ __html: t.raw("title") }}
+          />
 
           <h3
             className={`${styles.whatCanPayDescription} hidden md:block lg:hidden section-subtitle`}
@@ -76,6 +82,8 @@ const Card = ({
   descriptionClassName,
   ...props
 }: ICardProps) => {
+  const { openModal } = useModal();
+
   const t = useTranslations("VED.WhatCanPay.red-card");
 
   return (
@@ -99,7 +107,14 @@ const Card = ({
 
         {red && (
           <div className={`${styles.cardLink}`}>
-            <CustomLink href="" light>
+            <CustomLink
+              href=""
+              light
+              onClick={(evt) => {
+                evt.preventDefault();
+                openModal();
+              }}
+            >
               {t("link")}
             </CustomLink>
           </div>

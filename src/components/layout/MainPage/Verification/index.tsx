@@ -1,7 +1,10 @@
+"use client";
+
 import CustomLink from "@/components/ui/Link";
 import { HTMLAttributes } from "react";
 import Image from "next/image";
 import styles from "./Verification.module.css";
+import { useModal } from "@/providers/ModalProvider";
 import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
@@ -78,6 +81,8 @@ const Card = ({
   descriptionClassName,
   ...props
 }: ICardProps) => {
+  const { openModal } = useModal();
+
   const t = useTranslations("Index.Verification.red-card");
 
   return (
@@ -101,7 +106,14 @@ const Card = ({
 
         {red && (
           <div className={`${styles.cardLink}`}>
-            <CustomLink href="" light>
+            <CustomLink
+              href=""
+              light
+              onClick={(evt) => {
+                evt.preventDefault();
+                openModal();
+              }}
+            >
               {t("get-consultation")}
             </CustomLink>
           </div>

@@ -1,5 +1,5 @@
 .switcherContainer {
-  @apply relative font-medium font-tt-norms text-[3.33vw] leading-[3.33vw];
+  @apply relative font-medium font-tt-norms text-[3.33vw] leading-[3.33vw] invisible;
   @apply md:text-2xl md:leading-6;
   @apply lg:text-2xl lg:leading-6;
   @apply xl:text-[10px] xl:leading-[10px];
