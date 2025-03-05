@@ -15,17 +15,17 @@
 }
 
 .sectionHeader {
-  @apply flex flex-col max-w-[91.11vw];
-  @apply md:max-w-[578px] ml-auto;
-  @apply lg:gap-[53px] lg:flex-row lg:max-w-none;
+  @apply flex flex-col max-w-[91.11vw] ml-auto;
+  @apply md:max-w-[578px] md:ml-[129.98px];
+  @apply lg:gap-[53px] lg:flex-row lg:max-w-none lg:ml-auto;
   @apply xl:gap-[188px];
   @apply 3xl:gap-[12.55vw];
 }
 
 .howToUseTitle {
   @apply text-[#898C98] uppercase;
-  @apply md:text-[10px] md:leading-[10px] md:translate-y-5;
-  @apply lg:text-[10px] lg:leading-[10px];
+  @apply md:text-[10px] md:leading-[10px] md:translate-y-0;
+  @apply lg:text-[10px] lg:leading-[10px] lg:translate-y-5;
   @apply xl:text-[10px] xl:leading-[10px] xl:translate-y-5;
   @apply 3xl:text-[0.73vw] 3xl:leading-[0.73vw] 3xl:translate-y-[1vw];
 }
@@ -153,4 +153,22 @@
   @apply md:w-[218px] md:h-[294px];
   @apply lg:w-[303px] lg:h-[280px];
   @apply 3xl:w-[25.59vw] 3xl:h-[23.38vw];
+}
+
+.howToUseDescriptionEn {
+  @apply lg:max-w-[490px];
+  @apply xl:max-w-[552px];
+  @apply 3xl:max-w-[36vw];
+}
+
+.bannerStepDescriptionEn {
+  @apply translate-x-[-10px];
+  @apply md:translate-x-0;
+  @apply xl:pl-[20px];
+}
+
+.sectionHeaderEn {
+  @apply lg:gap-[77px];
+  @apply xl:gap-[190px];
+  @apply 3xl:gap-[14.55vw];
 }

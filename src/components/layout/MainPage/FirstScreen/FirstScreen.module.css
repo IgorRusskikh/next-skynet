@@ -188,3 +188,35 @@
 .descriptionContainer button {
   @apply mt-[4.44vw] mx-auto;
 }
+
+.firstScreenContentTopEn {
+  @apply tracking-[-0.28vw];
+  @apply md:max-w-[537px] md:tracking-normal;
+  @apply lg:max-w-[542px];
+  @apply xl:max-w-[720px];
+  @apply 3xl:max-w-[51.61vw];
+}
+
+.mascotEn {
+  @apply relative;
+  @apply lg:w-[228px] lg:h-[531px];
+  @apply xl:w-[252px] xl:h-[544.06px];
+  @apply 3xl:w-[19.38vw] 3xl:h-[42.92vw];
+}
+
+.firstScreenContentBottomEn {
+  @apply xl:max-w-[307px];
+  @apply 3xl:max-w-[23.23vw];
+}
+
+.bannerContentEn button {
+  @apply flex justify-center;
+  @apply hidden;
+  @apply lg:flex;
+}
+
+.advantagesEn {
+  @apply lg:max-w-[570px];
+  @apply xl:max-w-[700px];
+  @apply 3xl:max-w-[40.94vw];
+}

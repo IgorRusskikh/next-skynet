@@ -1,11 +1,12 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
+
 import Button from "@/components/ui/buttons/Button";
 import Image from "next/image";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
 import { useRef } from "react";
-import { useTranslations } from "next-intl";
 import useTypeText from "@/hooks/useTypeText";
 
 interface Props {
@@ -17,6 +18,7 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
   const cursorRef = useRef(null);
 
   const t = useTranslations(`${tNamespace}.FirstScreen`);
+  const locale = useLocale();
 
   const { openModal } = useModal();
 
@@ -34,7 +36,15 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
       <div className={`${styles.firstScreenContent}`}>
         <h1>
           <p>{t("title.0")}</p>
-          <p className={`${styles.bottomLine}`}>
+          <p
+            className={`${styles.bottomLine} ${
+              locale === "en"
+                ? tNamespace === "VED"
+                  ? styles.bottomLineEnVed
+                  : styles.bottomLineEn
+                : ""
+            }`}
+          >
             {t("title.1")}
             <span className="text-primary-red">.</span>
           </p>
@@ -55,8 +65,12 @@ export default function FirstScreen({ tNamespace = "VED" }: Props) {
         <div
           className={`${
             styles[
-              tNamespace === "VED" ? "descriptionBlock" : "descriptionBlockUsdt"
+              tNamespace === "VED" ? `descriptionBlock` : "descriptionBlockUsdt"
             ]
+          } ${
+            locale === "en"
+              ? "!mt-[110.11vw] md:!mt-[100px] lg:!mt-14 xl:!mt-[60px] 3xl:!mt-[4.01vw]"
+              : ""
           }`}
         >
           <p dangerouslySetInnerHTML={{ __html: t.raw("tg.description") }} />

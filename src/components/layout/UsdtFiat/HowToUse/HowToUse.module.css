@@ -80,3 +80,17 @@
   @apply xl:mt-6 xl:text-sm xl:leading-[14px];
   @apply 3xl:mt-[1.25vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw];
 }
+
+.cardsEn {
+  @apply 3xl:max-w-[65.33vw];
+}
+
+.howToUseTitleWrapperEn {
+  @apply md:gap-[42px];
+  @apply xl:gap-[220px];
+}
+
+.howToUseTitleWrapperEn h2 {
+  @apply md:min-w-max;
+  @apply lg:flex-none lg:min-w-fit;
+}

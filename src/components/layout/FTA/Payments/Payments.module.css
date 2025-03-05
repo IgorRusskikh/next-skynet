@@ -164,3 +164,12 @@
   @apply xl:max-w-[497px] xl:mt-8 xl:text-sm xl:leading-[14px] xl:tracking-[-0.5px];
   @apply 3xl:max-w-[40vw] 3xl:mt-[3.13vw] 3xl:text-[1.04vw] 3xl:leading-[1.15vw] 3xl:tracking-normal;
 }
+
+.cardDescriptionEn {
+  @apply 3xl:max-w-[42vw];
+}
+
+.coinEn {
+  @apply xl:left-[20%];
+  @apply 3xl:left-[18%];
+}

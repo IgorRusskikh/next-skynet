@@ -1,6 +1,7 @@
 "use client";
 
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import Arrow from "@/svg/fs-arrow.svg";
 import Button from "@/components/ui/buttons/Button";
@@ -8,7 +9,6 @@ import Image from "next/image";
 import gsap from "gsap";
 import styles from "./FirstScreen.module.css";
 import { useModal } from "@/providers/ModalProvider";
-import { useTranslations } from "next-intl";
 
 interface IAdvantage extends HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -20,6 +20,7 @@ export default function FirstScreen() {
   const { openModal } = useModal();
 
   const t = useTranslations("Index.FirstScreen");
+  const locale = useLocale();
 
   useEffect(() => {
     gsap.to(arrowsRefs.current[0], {
@@ -106,7 +107,11 @@ export default function FirstScreen() {
       <section className={styles.firstScreen}>
         <div className={styles.firstScreenContent}>
           <div className={`${styles.firstScreenContentTopWrapper}`}>
-            <div className={`${styles.firstScreenContentTop}`}>
+            <div
+              className={`${styles.firstScreenContentTop} ${
+                locale === "en" ? styles.firstScreenContentTopEn : ""
+              }`}
+            >
               <p className={`${styles.firstScreenContentTopItem}`}>
                 <span>{t("title.top-line.usdt")}</span>
                 <span className={`${styles.arrowsContainer}`}>
@@ -124,12 +129,19 @@ export default function FirstScreen() {
                 </span>
                 <span>{t("title.top-line.fiat")}</span>
               </p>
-              <p>{t("title.bottom-line")}</p>
+              <p
+                dangerouslySetInnerHTML={{ __html: t.raw("title.bottom-line") }}
+                className={`${
+                  locale === "en" ? styles.firstScreenContentTopItemEn : ""
+                }`}
+              ></p>
             </div>
 
             <div className={`${styles.firstScreenContentBottomWrapper}`}>
               <p
-                className={`${styles.firstScreenContentBottom}`}
+                className={`${styles.firstScreenContentBottom} ${
+                  locale === "en" ? styles.firstScreenContentBottomEn : ""
+                }`}
                 dangerouslySetInnerHTML={{ __html: t.raw("description") }}
               ></p>
 
@@ -144,8 +156,16 @@ export default function FirstScreen() {
 
           <div className={`${styles.bannerWrapper}`}>
             <div className={`${styles.banner}`}>
-              <div className={`${styles.bannerContent}`}>
-                <div className={`${styles.advantages} !hidden md:!flex`}>
+              <div
+                className={`${styles.bannerContent} ${
+                  locale === "en" ? styles.bannerContentEn : ""
+                }`}
+              >
+                <div
+                  className={`${styles.advantages} ${
+                    locale === "en" ? styles.advantagesEn : ""
+                  } !hidden md:!flex`}
+                >
                   {advantages.map((advantage) => (
                     <Advantage key={advantage}>{advantage}</Advantage>
                   ))}
@@ -194,7 +214,11 @@ export default function FirstScreen() {
             </div>
 
             <div className={`${styles.mascotContainer} z-10`}>
-              <div className={`${styles.mascot}`}>
+              <div
+                className={`${styles.mascot} ${
+                  locale === "en" ? styles.mascotEn : ""
+                }`}
+              >
                 <Image
                   src="/images/mascot.png"
                   fill
@@ -206,7 +230,11 @@ export default function FirstScreen() {
             </div>
           </div>
 
-          <div className={`${styles.descriptionContainer}`}>
+          <div
+            className={`${styles.descriptionContainer} ${
+              locale === "en" ? styles.descriptionContainerEn : ""
+            }`}
+          >
             <div className={`${styles.description}`}>
               <h3
                 dangerouslySetInnerHTML={{ __html: t.raw("description") }}

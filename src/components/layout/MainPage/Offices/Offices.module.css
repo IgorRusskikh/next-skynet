@@ -101,3 +101,9 @@
   @apply xl:text-xs xl:leading-3 xl:ml-6;
   @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:ml-[1.46vw];
 }
+
+.officesTextDescriptionEn {
+  @apply lg:max-w-[371px];
+  @apply xl:max-w-[425px];
+  @apply 3xl:max-w-[26vw];
+}

@@ -55,7 +55,7 @@ export default function FTAPage() {
   return (
     <>
       <main>
-        <FirstScreen />
+        <FirstScreen tNamespace="VED" />
         <Services />
         <Payments />
         <HowToUse tNamespace="VED" />

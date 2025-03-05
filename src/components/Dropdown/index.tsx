@@ -40,7 +40,7 @@ export default function Dropdown() {
                 href={`/${locale}/${link}`}
                 className={`${
                   `/${curPath}` === link ? styles.currentPage : ""
-                }`}
+                } ${locale === "en" ? styles.dropdownLinksListEn : ""}`}
               >
                 {
                   // @ts-expect-error: need a type

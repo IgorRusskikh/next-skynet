@@ -109,7 +109,7 @@
 }
 
 .cardImage {
-  @apply w-[27.5vw] h-[20.61vw];
+  @apply w-[29.5vw] h-[20.61vw];
   @apply md:w-[122px] md:h-[76px];
   @apply lg:w-[159px] lg:h-[102px];
   @apply relative xl:w-[142px] xl:h-[103px];
@@ -142,4 +142,8 @@
 
 .cardLink a {
   @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
+}
+
+.whatCanPayTitleEn {
+  @apply lg:max-w-[120px];
 }

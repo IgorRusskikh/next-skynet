@@ -1,7 +1,7 @@
 .firstScreen {
   @apply container font-tt-norms relative pt-[12.22vw] min-h-[180vw] overflow-x-clip;
-  @apply md:pt-[119px] md:min-h-[752px] md:overflow-visible;
-  @apply lg:pt-[59px] lg:min-h-[701px];
+  @apply md:pt-[119px] md:min-h-[752px];
+  @apply lg:pt-[59px] lg:min-h-[701px] lg:overflow-visible;
   @apply xl:pt-[59px] xl:min-h-fit;
   @apply 3xl:pt-[3.13vw];
 }

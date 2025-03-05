@@ -1,6 +1,7 @@
 "use client";
 
 import { HTMLAttributes, useEffect, useMemo, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import Agreement from "@/svg/agreement.svg";
 import { BREAKPOINTS } from "@/constants";
@@ -10,7 +11,6 @@ import Ruble from "@/svg/ruble.svg";
 import USD from "@/svg/usd.svg";
 import gsap from "gsap";
 import styles from "./Payments.module.css";
-import { useTranslations } from "next-intl";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   containerClassName?: string;
@@ -25,6 +25,7 @@ export default function Payments({ containerClassName, className }: Props) {
   const coinsRefs = useRef<SVGElement[]>([]);
 
   const t = useTranslations("VED.Payment");
+  const locale = useLocale();
 
   useEffect(() => {
     const progressTl = gsap.timeline();
@@ -165,9 +166,13 @@ export default function Payments({ containerClassName, className }: Props) {
                   x: !isMobile
                     ? `${
                         (isDesktop
-                          ? 13.915
+                          ? locale === "en"
+                            ? 15.915
+                            : 10.915
                           : isLaptop
-                          ? 210
+                          ? locale === "en"
+                            ? 220
+                            : 210
                           : isTablet
                           ? 240
                           : 180) *
@@ -185,9 +190,13 @@ export default function Payments({ containerClassName, className }: Props) {
                   x: !isMobile
                     ? `${
                         (isDesktop
-                          ? 13.915
+                          ? locale === "en"
+                            ? 15.915
+                            : 13.915
                           : isLaptop
-                          ? 210
+                          ? locale === "en"
+                            ? 220
+                            : 210
                           : isTablet
                           ? 240
                           : 180) *
@@ -195,7 +204,7 @@ export default function Payments({ containerClassName, className }: Props) {
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
                   y: isMobile
-                    ? `${27 * (1 - (isLaptop ? 0.15 : 0.30) * inx)}vw`
+                    ? `${27 * (1 - (isLaptop ? 0.15 : 0.3) * inx)}vw`
                     : 0,
                   duration: isDesktop ? 2.25 : 2,
                 },
@@ -203,13 +212,21 @@ export default function Payments({ containerClassName, className }: Props) {
                   x: !isMobile
                     ? `${
                         isDesktop
-                          ? 27.83
+                          ? locale === "en"
+                            ? 31
+                            : 27.83
                           : isLaptop
-                          ? 420
+                          ? locale === "en"
+                            ? 460
+                            : 420
                           : isTablet
-                          ? 440
+                          ? locale === "en"
+                            ? 450
+                            : 440
                           : isVerticalTablet
-                          ? 360
+                          ? locale === "en"
+                            ? 380
+                            : 360
                           : 320
                       }${isDesktop ? "vw" : "px"}`
                     : 0,
@@ -227,7 +244,7 @@ export default function Payments({ containerClassName, className }: Props) {
                         ? 0.1
                         : isVerticalTablet
                         ? 0.07
-                        : 0.10) *
+                        : 0.1) *
                         inx),
                 },
               ],
@@ -322,7 +339,7 @@ export default function Payments({ containerClassName, className }: Props) {
                       styles.coin
                     } 3xl:!top-[4%] xl:!top-[-6%] lg:!top-[10%] ${
                       currentStep === 0 ? "hidden" : "block"
-                    }`}
+                    } ${locale === "en" ? styles.coinEn : ""}`}
                   />
                 ))}
 
@@ -381,7 +398,9 @@ export default function Payments({ containerClassName, className }: Props) {
               </div>
 
               <p
-                className={`${styles.cardDescription}`}
+                className={`${styles.cardDescription} ${
+                  locale === "en" ? styles.cardDescriptionEn : ""
+                }`}
                 dangerouslySetInnerHTML={{
                   // @ts-expect-error: need a type
                   __html: t.raw(`card.steps.${currentStep}.description`),

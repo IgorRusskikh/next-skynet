@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { BREAKPOINTS } from "@/constants";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./HowToUse.module.css";
-import { useTranslations } from "next-intl";
 
 export default function HowToUse() {
   const [isStartAnim, setIsStartAnim] = useState(false);
@@ -19,6 +19,7 @@ export default function HowToUse() {
   const cardsRefs = useRef<HTMLDivElement[]>([]);
 
   const t = useTranslations("UsdtFiat.HowToUse");
+  const locale = useLocale();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +60,9 @@ export default function HowToUse() {
           : isVerticalTablet
           ? "+=58%"
           : isMobile
-          ? "+=84%"
+          ? locale === "en"
+            ? "+=84%"
+            : "+=84%"
           : "+=80%";
 
         gsap.to(pinRef.current, {
@@ -187,7 +190,11 @@ export default function HowToUse() {
     >
       <div ref={pinRef} className={`${styles.contentWrapper}`}>
         <div className={`${styles.howToUseContainer}`}>
-          <div className={`${styles.howToUseTitleWrapper}`}>
+          <div
+            className={`${styles.howToUseTitleWrapper} ${
+              locale === "en" ? styles.howToUseTitleWrapperEn : ""
+            }`}
+          >
             <h2
               className={`${styles.howToUseTitle} section-title`}
               dangerouslySetInnerHTML={{ __html: t.raw("title") }}
@@ -209,7 +216,11 @@ export default function HowToUse() {
             </div>
           </div>
 
-          <div className={`${styles.cards}`}>
+          <div
+            className={`${styles.cards} ${
+              locale === "en" ? styles.cardsEn : ""
+            }`}
+          >
             <div
               className={`${styles.card} ${
                 isStartAnim ? "text-[#898C98]" : ""

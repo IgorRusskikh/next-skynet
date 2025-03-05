@@ -1,6 +1,7 @@
 "use client";
 
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import Africa from "@/svg/dots-africa.svg";
 import Asia from "@/svg/dots-aisa.svg";
@@ -20,7 +21,6 @@ import RussiaLine from "@/svg/russia-line.svg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Locations.module.css";
-import { useTranslations } from "next-intl";
 
 const REGIONS = [
   {
@@ -66,6 +66,7 @@ export default function Locations() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const t = useTranslations("CashToCash.Locations");
+  const locale = useLocale();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -158,13 +159,17 @@ export default function Locations() {
           <h2 className="section-title">{t("title")}</h2>
 
           <div className={`${styles.locationsText}`}>
-            <p className={`${styles.locationsTextTitle} section-subtitle`}>
-              {t("subtitle")}
-            </p>
+            <p
+              className={`${styles.locationsTextTitle} section-subtitle`}
+              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+            />
 
-            <p className={`${styles.locationsTextDescription}`}>
-              {t("description")}
-            </p>
+            <p
+              className={`${styles.locationsTextDescription} ${
+                locale === "en" ? styles.locationsTextDescriptionEn : ""
+              }`}
+              dangerouslySetInnerHTML={{ __html: t("description") }}
+            ></p>
           </div>
         </div>
 

@@ -160,3 +160,11 @@
 .cardLink a {
   @apply 3xl:text-[0.83vw] 3xl:leading-[0.83vw];
 }
+
+.verificationDescriptionEn {
+  @apply 3xl:!max-w-[50.97vw];
+}
+
+.cardLinkEn {
+  @apply md:mt-[45px];
+}
