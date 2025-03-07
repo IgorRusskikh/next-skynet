@@ -59,6 +59,8 @@ export default function RatesTable() {
             type: 'sell',
           };
           setRatesData((prev) => [...prev, garantexBuyRate, garantexSellRate]);
+
+          console.log(ratesData);
         } else {
           console.error('Insufficient data from Garantex API.');
         }
@@ -124,6 +126,24 @@ export default function RatesTable() {
           <p className={styles.colTitle}>{t('rates')}</p>
         </div>
         <div className={styles.tableBody}>
+          <div className={styles.tableRow}>
+            <p className={styles.source}>
+              GARANTEX <span className={styles.type}>{t('buy')}</span>
+            </p>
+            <p className={styles.currency}>USDT/RUB</p>
+            <div className={styles.price}>
+              <span className={styles.emptyRate}>—</span>
+            </div>
+          </div>
+          <div className={styles.tableRow}>
+            <p className={styles.source}>
+              GARANTEX <span className={styles.type}>{t('sell')}</span>
+            </p>
+            <p className={styles.currency}>USDT/RUB</p>
+            <div className={styles.price}>
+              <span className={styles.emptyRate}>—</span>
+            </div>
+          </div>
           {ratesData.map((rate, index) => {
             const difference =
               rate.previous_value !== 0
