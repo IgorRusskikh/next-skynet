@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useRef } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useMemo, useRef } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { BREAKPOINTS } from "@/constants";
-import Image from "next/image";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-import styles from "./HowToUse.module.css";
+import { BREAKPOINTS } from '@/constants';
+import Image from 'next/image';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import styles from './HowToUse.module.css';
 
 type step = {
   title: string;
@@ -22,7 +22,7 @@ export default function HowToUse() {
   const stepsDescriptionRefs = useRef<HTMLSpanElement[]>([]);
   const imagesRefs = useRef<HTMLDivElement[]>([]);
 
-  const t = useTranslations("Index.HowToUse");
+  const t = useTranslations('Index.HowToUse');
   const locale = useLocale();
 
   const mm = gsap.matchMedia();
@@ -70,14 +70,14 @@ export default function HowToUse() {
             trigger: parentRef.current,
             start: `top-=${
               isDesktop
-                ? "3.5%"
+                ? '3.5%'
                 : isLaptop
-                ? "5%"
+                ? '5%'
                 : isTablet
-                ? "8%"
+                ? '8%'
                 : isVerticalTablet
-                ? "10%"
-                : "4%"
+                ? '10%'
+                : '4%'
             }`,
             end: `bottom-=${
               isDesktop
@@ -138,21 +138,25 @@ export default function HowToUse() {
                 5 -
                 (isDesktop
                   ? 20
-                  : isLaptop || isTablet
-                  ? 24
+                  : isLaptop
+                  ? 20
+                  : isTablet
+                  ? 15
                   : isVerticalTablet
-                  ? 28
-                  : 20)
+                  ? 20
+                  : 15)
               }%`,
               end: `top+=${
                 (95 / 4.5) * (inx + (isVerticalTablet ? -1 : 1)) -
                 (isDesktop
-                  ? 1
-                  : isLaptop || isTablet
+                  ? 15
+                  : isLaptop
+                  ? 20
+                  : isTablet
                   ? 10
                   : isVerticalTablet
-                  ? -39
-                  : 0)
+                  ? -25
+                  : 10)
               }%`,
               scrub: true,
             },
@@ -193,22 +197,22 @@ export default function HowToUse() {
               },
               {
                 y: isMobile
-                  ? "-20.67vw"
+                  ? '-20.67vw'
                   : isVerticalTablet
                   ? -120
                   : isDesktop
-                  ? "-11vw"
+                  ? '-11vw'
                   : -168,
                 opacity: 1,
                 duration: 1,
               },
               {
                 y: isMobile
-                  ? "-20.67vw"
+                  ? '-20.67vw'
                   : isVerticalTablet
                   ? -120
                   : isDesktop
-                  ? "-11vw"
+                  ? '-11vw'
                   : -168,
                 duration: 1,
               },
@@ -216,11 +220,11 @@ export default function HowToUse() {
                 y:
                   inx === stepsCountRefs.current.length - 1
                     ? isMobile
-                      ? "-20.67vw"
+                      ? '-20.67vw'
                       : isVerticalTablet
                       ? -120
                       : isDesktop
-                      ? "-11vw"
+                      ? '-11vw'
                       : -168
                     : 0,
                 opacity:
@@ -301,11 +305,27 @@ export default function HowToUse() {
               start: `top+=${
                 (95 / 4.5) * inx +
                 5 -
-                (isVerticalTablet ? 30 : isLaptop ? 25 : 20)
+                (isVerticalTablet
+                  ? 20
+                  : isLaptop
+                  ? 20
+                  : isTablet
+                  ? 15
+                  : isMobile
+                  ? 15
+                  : 20)
               }%`,
               end: `top+=${
                 (95 / 4.5) * (inx + 1) -
-                (isVerticalTablet ? 7 : isTablet ? 10 : isLaptop ? 10 : 1)
+                (isVerticalTablet
+                  ? 17
+                  : isTablet
+                  ? 10
+                  : isLaptop
+                  ? 20
+                  : isMobile
+                  ? 10
+                  : 15)
               }%`,
               scrub: true,
             },
@@ -338,38 +358,38 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "3vw"
+                ? '3vw'
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 60
                 : isMobile
-                ? "45vw"
+                ? '45vw'
                 : 92,
               duration: 1,
               scale: 1,
             },
             {
               y: isDesktop
-                ? "3vw"
+                ? '3vw'
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 60
                 : isMobile
-                ? "45vw"
+                ? '45vw'
                 : 92,
               duration: 1,
             },
             {
               y: isDesktop
-                ? "35vw"
+                ? '35vw'
                 : isLaptop
                 ? 450
                 : isTablet
                 ? 900
                 : isMobile
-                ? "160vw"
+                ? '160vw'
                 : 600,
               duration: 1,
             },
@@ -409,38 +429,38 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "3vw"
+                ? '3vw'
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 58
                 : isMobile
-                ? "45vw"
+                ? '45vw'
                 : 100,
               duration: 1,
               scale: 1,
             },
             {
               y: isDesktop
-                ? "3vw"
+                ? '3vw'
                 : isLaptop
                 ? 99
                 : isTablet
                 ? 58
                 : isMobile
-                ? "45vw"
+                ? '45vw'
                 : 100,
               duration: 1,
             },
             {
               y: isDesktop
-                ? "45vw"
+                ? '45vw'
                 : isLaptop
                 ? 450
                 : isTablet
                 ? 450
                 : isMobile
-                ? "160vw"
+                ? '160vw'
                 : 600,
               duration: 1,
             },
@@ -472,26 +492,26 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "19vw"
+                ? '19vw'
                 : isLaptop
                 ? 270
                 : isTablet
                 ? 250
                 : isMobile
-                ? "63vw"
+                ? '63vw'
                 : 170,
               duration: 1,
               scale: 1,
             },
             {
               y: isDesktop
-                ? "19vw"
+                ? '19vw'
                 : isLaptop
                 ? 270
                 : isTablet
                 ? 250
                 : isMobile
-                ? "63vw"
+                ? '63vw'
                 : 170,
               duration: 1,
             },
@@ -536,30 +556,30 @@ export default function HowToUse() {
           keyframes: [
             {
               y: isDesktop
-                ? "17vw"
+                ? '17vw'
                 : isLaptop
                 ? 230
                 : isTablet
                 ? 200
                 : isMobile
-                ? "80vw"
+                ? '80vw'
                 : 280,
               duration: 1,
             },
             {
               y: isDesktop
-                ? "17vw"
+                ? '17vw'
                 : isLaptop
                 ? 230
                 : isTablet
                 ? 200
                 : isMobile
-                ? "80vw"
+                ? '80vw'
                 : 280,
               duration: 1,
               opacity: 0.9,
             },
-            { y: "-17vw", duration: 1, opacity: 0 },
+            { y: '-17vw', duration: 1, opacity: 0 },
           ],
           scrollTrigger: {
             trigger: startAnimRef.current,
@@ -579,49 +599,49 @@ export default function HowToUse() {
   const bannerTitles = useMemo(
     () =>
       // @ts-expect-error: need an interface
-      (Object.values(t.raw("steps")) as step[]).map((step) => step.title),
+      (Object.values(t.raw('steps')) as step[]).map((step) => step.title),
     []
   );
   const bannerStepDescription = useMemo(
     () =>
       // @ts-expect-error: need an interface
-      (Object.values(t.raw("steps")) as step[]).map((step) => step.description),
+      (Object.values(t.raw('steps')) as step[]).map((step) => step.description),
     []
   );
 
   return (
-    <section id="how-to-use" className={`${styles.howToUse}`}>
+    <section id='how-to-use' className={`${styles.howToUse}`}>
       <div className={`${styles.howToUseInner}`}>
         <div
           className={`${styles.sectionHeader} ${
-            locale === "en" ? styles.sectionHeaderEn : ""
+            locale === 'en' ? styles.sectionHeaderEn : ''
           }`}
         >
           <h3 className={`${styles.howToUseTitle} section-title`}>
-            {t("title")}
+            {t('title')}
           </h3>
 
           <p
             className={`${styles.howToUseDescription} ${
-              locale === "en" ? styles.howToUseDescriptionEn : ""
+              locale === 'en' ? styles.howToUseDescriptionEn : ''
             }`}
           >
-            {t.rich("subtitle", {
-              "hidden-text": (chunks) => (
-                <span className="!hidden md:!inline">{chunks}</span>
+            {t.rich('subtitle', {
+              'hidden-text': (chunks) => (
+                <span className='!hidden md:!inline'>{chunks}</span>
               ),
               span: (chunks) => (
-                <span className="text-black inline">{chunks}</span>
+                <span className='text-black inline'>{chunks}</span>
               ),
             })}
           </p>
 
           <p className={`${styles.howToUseDescriptionText} md:!hidden`}>
-            {t("mobile-subtitle")}
+            {t('mobile-subtitle')}
           </p>
         </div>
 
-        <div ref={startAnimRef} className="h-fit overflow-clip">
+        <div ref={startAnimRef} className='h-fit overflow-clip'>
           <div className={`${styles.howToUseContent}`} ref={parentRef}>
             <div className={`${styles.banner}`}>
               <div
@@ -632,9 +652,9 @@ export default function HowToUse() {
               >
                 <div className={`${styles.topCallImage}`}>
                   <Image
-                    src={"/images/main-page-how-to-use/call.png"}
+                    src={'/images/main-page-how-to-use/call.png'}
                     fill
-                    alt="call"
+                    alt='call'
                   />
                 </div>
               </div>
@@ -667,15 +687,15 @@ export default function HowToUse() {
 
                 <p
                   className={`${styles.bannerStepDescription} ${
-                    locale === "en" ? styles.bannerStepDescriptionEn : ""
+                    locale === 'en' ? styles.bannerStepDescriptionEn : ''
                   }`}
                 >
                   <span
-                    className="!relative invisible opacity-0"
+                    className='!relative invisible opacity-0'
                     dangerouslySetInnerHTML={{
                       __html:
-                        t.raw("steps.0.description") +
-                        "_______________________",
+                        t.raw('steps.0.description') +
+                        '_______________________',
                     }}
                   ></span>
 
@@ -699,23 +719,23 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={"/images/main-page-how-to-use/phone.png"}
+                    src={'/images/main-page-how-to-use/phone.png'}
                     fill
-                    alt="phone"
-                    className="hidden lg:block"
+                    alt='phone'
+                    className='hidden lg:block'
                     unoptimized
                   />
                   <Image
-                    src={"/images/main-page-how-to-use/phone-md.png"}
+                    src={'/images/main-page-how-to-use/phone-md.png'}
                     fill
-                    alt="phone"
-                    className="hidden md:block lg:hidden"
+                    alt='phone'
+                    className='hidden md:block lg:hidden'
                   />
                   <Image
-                    src={"/images/main-page-how-to-use/phone-xs.png"}
+                    src={'/images/main-page-how-to-use/phone-xs.png'}
                     fill
-                    alt="phone"
-                    className="block md:hidden"
+                    alt='phone'
+                    className='block md:hidden'
                   />
                 </div>
               </div>
@@ -728,23 +748,23 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={"/images/main-page-how-to-use/phone-success.png"}
+                    src={'/images/main-page-how-to-use/phone-success.png'}
                     fill
-                    alt="phone"
-                    className="hidden lg:block"
+                    alt='phone'
+                    className='hidden lg:block'
                     unoptimized
                   />
                   <Image
-                    src={"/images/main-page-how-to-use/phone-success-md.png"}
+                    src={'/images/main-page-how-to-use/phone-success-md.png'}
                     fill
-                    alt="phone"
-                    className="hidden md:block lg:hidden"
+                    alt='phone'
+                    className='hidden md:block lg:hidden'
                   />
                   <Image
-                    src={"/images/main-page-how-to-use/phone-success-xs.png"}
+                    src={'/images/main-page-how-to-use/phone-success-xs.png'}
                     fill
-                    alt="phone"
-                    className="block md:hidden"
+                    alt='phone'
+                    className='block md:hidden'
                   />
                 </div>
               </div>
@@ -757,19 +777,19 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomTransactionImage}`}>
                   <Image
-                    src={"/images/main-page-how-to-use/transaction-success.png"}
+                    src={'/images/main-page-how-to-use/transaction-success.png'}
                     fill
-                    alt="transaction"
-                    className="hidden lg:block"
+                    alt='transaction'
+                    className='hidden lg:block'
                     unoptimized
                   />
                   <Image
                     src={
-                      "/images/main-page-how-to-use/transaction-success-md.png"
+                      '/images/main-page-how-to-use/transaction-success-md.png'
                     }
                     fill
-                    alt="transaction"
-                    className="block lg:hidden"
+                    alt='transaction'
+                    className='block lg:hidden'
                   />
                 </div>
               </div>
