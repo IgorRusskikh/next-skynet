@@ -1,11 +1,12 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
+
 import CustomLink from "@/components/ui/Link";
 import { HTMLAttributes } from "react";
 import Image from "next/image";
 import styles from "./WhatCanPay.module.css";
 import { useModal } from "@/providers/ModalProvider";
-import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -17,13 +18,15 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function WhatCanPay() {
   const t = useTranslations("VED.WhatCanPay");
-
+  const locale = useLocale();
   return (
     <section id="what-can-pay" className={`${styles.whatCanPay}`}>
       <div className={`${styles.whatCanPayInner}`}>
         <div className={`${styles.whatCanPayTitleWrapper}`}>
           <h2
-            className={`${styles.whatCanPayTitle} section-title`}
+            className={`${styles.whatCanPayTitle} section-title ${
+              locale === "en" ? styles.whatCanPayTitleEn : ""
+            }`}
             dangerouslySetInnerHTML={{ __html: t.raw("title") }}
           />
 

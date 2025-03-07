@@ -179,3 +179,9 @@
   @apply xl:w-[973.82px] xl:h-[730.37px];
   @apply 3xl:w-[71.41vw] 3xl:h-[53.56vw];
 }
+
+.howToUseContentTitleEn {
+  @apply lg:!max-w-[642px];
+  @apply xl:!max-w-[726px];
+  @apply 3xl:!max-w-[43.96vw];
+}

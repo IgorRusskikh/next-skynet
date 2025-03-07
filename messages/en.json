@@ -5,7 +5,8 @@
         "0": "Home",
         "1": "USDT – FIAT",
         "2": "Cash2cash",
-        "3": "Payments for Foreign Trade"
+        "3": "Foreign Trade Payments",
+        "4": "Exchange Rates"
       },
       "actions": {
         "tg-bot": "TG Bot"
@@ -15,27 +16,27 @@
       "title": {
         "top-line": {
           "usdt": "USDT",
-          "fiat": "FIAT"
+          "fiat": "FIAT."
         },
-        "bottom-line": "Transfers and exchange worldwide."
+        "bottom-line": "payments. exchange. <br class=\"br-xl\" />worldwide."
       },
-      "description": "Exchange cryptocurrencies<br class=\"hidden md:block \" /> and conduct <br class=\"md:hidden \" />large international payments for businesses and individuals",
+      "description": "Exchange cryptocurrencies and conduct large international payments for businesses and individuals",
       "banner": {
         "advantages": {
           "0": "Cryptocurrency exchange",
           "1": "Cash2Cash",
           "2": "Transfers to 30+ countries",
-          "3": "Settlements for Foreign Trade",
+          "3": "Foreign Trade payments",
           "4": "Financial management via TG Bot"
         },
-        "consultation-button": "Get consultation"
+        "consultation-button": "Get a consultation"
       }
     },
     "AboutUs": {
-      "title": "Where big finances meet absolute reliability",
-      "description": "Every day we handle <br class=\"md:hidden \" />crypto operations for <br class=\"md:hidden 3xl:hidden \" />private individuals and large companies who trust us with their finances",
+      "title": "Where large finances meet absolute reliability",
+      "description": "Every day we perform <br class=\"md:hidden\" />cryptocurrency operations for <br class=\"md:hidden 3xl:hidden\" />individuals and large companies, <br class=\"md:hidden\" />who trust us with their finances",
       "advantages": {
-        "0": "billion rubles per year",
+        "0": "billion rubles annually",
         "1": "clients",
         "2": "countries of operation"
       }
@@ -52,8 +53,8 @@
         },
         "1": {
           "title": "Cash2Cash",
-          "description": "Accept USDT/FIAT and issue <br class=\"md:hidden \" />cash <br class=\"hidden lg:block xl:hidden \" />funds worldwide: <br class=\"md:hidden \" />in our offices and in <br class=\"hidden 3xl:block \" />partner <br class=\"md:hidden \" />offices in 30+ countries",
-          "link": "details about cash2cash"
+          "description": "We accept USDT/FIAT and provide cash <br class=\"hidden lg:block xl:hidden\" />funds worldwide: in our offices and in <br class=\"hidden 3xl:block\" />partner <br class=\"hidden bg-lg br-xl\" />offices in 30+ countries",
+          "link": "More about Cash2Cash"
         },
         "2": {
           "title": "Payments for Foreign Trade",
@@ -68,34 +69,34 @@
       "mobile-subtitle": "Our bot is a convenient financial management tool where you can order cryptocurrency exchange, make transfers, pay bills, exchange currency and get manager consultation.",
       "steps": {
         "0": {
-          "title": "Select a service in TG Bot",
-          "description": "Specify your task, required amount and currency or request manager consultation"
+          "title": "Choose a service <br />in the TG bot",
+          "description": "Specify your task, the required <br />amount and currency or order <br />a manager consultation"
         },
         "1": {
-          "title": "Discuss details with a manager",
-          "description": "We will contact you to clarify transaction conditions and deadlines"
+          "title": "Discuss details <br />with the manager",
+          "description": "We will contact you to clarify <br />operation terms and deadlines"
         },
         "2": {
           "title": "Confirm the deal",
-          "description": "Provide data and pay the commission to start <br class=\"hidden md:block \" />the operation"
+          "description": "Provide data and pay the fee <br />to start the operation"
         },
         "3": {
-          "title": "Receive funds or payment confirmation",
-          "description": "Depending on the selected service, receive cash or get documentation for your transfer"
+          "title": "Receive funds or<br /> payment confirmation",
+          "description": "Depending on the selected <br class\"hidden 3xl:block\" />service, receive cash or <br class\"hidden 3xl:block\" >get a documentary<br class\"hidden 3xl:block\" /> confirmation of your transfer"
         }
       }
     },
     "Verification": {
       "title": "Verification",
-      "subtitle": "Manage finances even <br class=\"hidden md:block \" />more conveniently with premium options <br class=\"hidden xl:block \" />for verified clients",
+      "subtitle": "Manage finances even more conveniently <br class=\"br-xl\" />with premium options for verified clients",
       "cards": {
         "0": {
-          "title": "Courier delivery",
-          "description": "Deliver funds to a convenient <br class=\"hidden 3xl:block\" />location <br class=\"lg:hidden \" />worldwide"
+          "title": "Courier Delivery",
+          "description": "Delivery of funds to a convenient <br class=\"block lg:hidden\" /><br class=\"hidden 3xl:block\" />location worldwide"
         },
         "1": {
-          "title": "Personal manager",
-          "description": "Individual support <br class=\"hidden 3xl:block \" />from <br class=\"md:hidden \" />a crypto and international transfer expert"
+          "title": "Personal Manager",
+          "description": "Individual support from a crypto and international transfer expert"
         },
         "2": {
           "title": "Fixed exchange rate",
@@ -109,22 +110,26 @@
     },
     "Offices": {
       "title": "Offices",
-      "subtitle": "We operate globally, but we are always glad to see you <br class=\"hidden md:block \" />in our offices",
-      "description": "Visit us to meet personally, discuss tasks, and conduct transactions",
+      "subtitle": "We operate globally, but we are always glad to see you in our offices",
+      "description": "Visit us to meet in person, discuss tasks, <br class=\"hidden 3xl:block\" /><br class=\"hidden md:block lg:hidden\" />and conduct deals",
       "offices-list": {
         "0": {
+          "flag": "ru",
           "country": "Moscow",
-          "address": "Moscow City, Federation Tower"
+          "address": "Moscow-City, Federation Tower"
         },
         "1": {
+          "flag": "uae",
           "country": "Dubai",
           "address": ""
         },
         "2": {
+          "flag": "ru",
           "country": "Ufa",
-          "address": "Ufa, Mendeleev 170, BЦ \"Park-City\""
+          "address": "Ufa, Mendleeva 170, Park-City Business Center"
         },
         "3": {
+          "flag": "usa",
           "country": "Miami",
           "address": ""
         }
@@ -133,123 +138,123 @@
   },
   "CashToCash": {
     "FirstScreen": {
-      "title": "Cash2cash<span class=\"text-primary-red\">.</span>",
+      "title": "Cash2Cash<span class=\"text-primary-red\">.</span>",
       "typing-text": {
         "0": "Any currency.",
         "1": "Worldwide."
       },
-      "description": "Transfer cash and receive in any convenient currency in our offices, through <br class=\"block md:hidden lg:block xl:hidden 3xl:block \">partner networks or courier delivery",
-      "tg-bot": "Order transfer via TG Bot"
+      "description": "We transfer cash and provide it in any convenient currency at our offices, through <br class=\"block md:hidden lg:block xl:hidden 3xl:block\">our network of partners or via courier delivery",
+      "tg-bot": "Order transfer in TG bot"
     },
     "Locations": {
       "title": "Geography",
-      "subtitle": "Receive cash in any currency where it is convenient for you",
-      "description": "We accept crypto and FIAT, work with leading players, and offer convenient ways to receive funds globally",
+      "subtitle": "Receive cash in any currency where <br class=\"hidden br-lg 3xl:block\" />it's convenient for you",
+      "description": "We accept cryptocurrency and FIAT, work with leading players, and provide convenient ways to receive funds worldwide",
       "locations": {
         "0": {
           "country": "USA and Canada",
           "cities": {
-            "0": "🇺🇸 Los Angeles",
-            "1": "🇺🇸 New York",
-            "2": "🇺🇸 Chicago",
-            "3": "🇺🇸 Boston",
-            "4": "🇺🇸 Miami",
-            "5": "🇺🇸 Houston",
-            "6": "🇨🇦 Calgary",
-            "7": "🇨🇦 Montreal",
-            "8": "🇨🇦 Vancouver",
-            "9": "🇨🇦 Toronto",
-            "10": "🇨🇦 Edmonton",
-            "11": "🇨🇦 Ottawa",
-            "12": "🇨🇦 Manitoba"
+            "0": "<flag>usa</flag> Los Angeles",
+            "1": "<flag>usa</flag> New York",
+            "2": "<flag>usa</flag> Chicago",
+            "3": "<flag>usa</flag> Boston",
+            "4": "<flag>usa</flag> Miami",
+            "5": "<flag>usa</flag> Houston",
+            "6": "<flag>canada</flag> Calgary",
+            "7": "<flag>canada</flag> Montreal",
+            "8": "<flag>canada</flag> Vancouver",
+            "9": "<flag>canada</flag> Toronto",
+            "10": "<flag>canada</flag> Edmonton",
+            "11": "<flag>canada</flag> Ottawa",
+            "12": "<flag>canada</flag> Manitoba"
           }
         },
         "1": {
           "country": "Latin America",
           "cities": {
-            "0": "🇲🇽 Mexico City",
-            "1": "🇨🇴 Bogota",
-            "2": "🇻🇪 Caracas",
-            "3": "🇧🇷 Buenos Aires",
-            "4": "🇪🇨 Quito",
-            "5": "🇵🇪 Lima",
-            "6": "🇩🇹 Santo Domingo",
-            "7": "🇧🇰 Sao Paulo",
-            "8": "🇨🇱 Santiago",
-            "9": "🇵🇰 Panama",
-            "10": "🇵🇪 Lima",
-            "11": "🇧🇰 Santa Cruz"
+            "0": "<flag>mx</flag> Mexico City",
+            "1": "<flag>bogota</flag> Bogota",
+            "2": "<flag>caracas</flag> Caracas",
+            "3": "<flag>buenos-aires</flag> Buenos Aires",
+            "4": "<flag>kito</flag> Quito",
+            "5": "<flag>lima</flag> Lima",
+            "6": "<flag>santo-domingo</flag> Santo Domingo",
+            "7": "<flag>san-paulu</flag> São Paulo",
+            "8": "<flag>santiago</flag> Santiago",
+            "9": "<flag>panama</flag> Panama",
+            "10": "<flag>lima</flag> Lima",
+            "11": "<flag>santa-crus</flag> Santa Cruz"
           }
         },
         "2": {
           "country": "Africa",
           "cities": {
-            "0": "🇲🇬 Morocco",
-            "1": "🇩🇿 Algeria"
+            "0": "<flag>morocco</flag> Morocco",
+            "1": "<flag>algeria</flag> Algeria"
           }
         },
         "3": {
           "country": "Middle East",
           "cities": {
-            "0": "🇹🇷 Istanbul",
-            "1": "🇹🇷 Alanya",
-            "2": "🇹🇷 Mersin",
-            "3": "🇹🇷 Izmir",
-            "4": "🇹🇷 Antalya",
-            "5": "🇹🇷 Ankara",
-            "6": "🇦🇪 Dubai",
-            "7": "🇰🇿 Tel Aviv"
+            "0": "<flag>tyrkie</flag> Istanbul",
+            "1": "<flag>tyrkie</flag> Alanya",
+            "2": "<flag>tyrkie</flag> Mersin",
+            "3": "<flag>tyrkie</flag> Izmir",
+            "4": "<flag>tyrkie</flag> Antalya",
+            "5": "<flag>tyrkie</flag> Ankara",
+            "6": "<flag>uae</flag> Dubai",
+            "7": "<flag>israel</flag> Tel Aviv"
           }
         },
         "4": {
           "country": "Asia",
           "cities": {
-            "0": "🇰🇷 Seoul",
-            "1": "🇰🇷 Incheon",
-            "2": "🇯🇵 Tokyo",
-            "3": "🇯🇵 Osaka",
-            "4": "🇨🇳 Guangzhou",
-            "5": "🇨🇳 Shenzhen",
-            "6": "🇨🇸 Hong Kong",
-            "7": "🇻🇳 Hanoi",
-            "8": "🇹🇭 Bangkok",
-            "9": "🇹🇭 Phuket",
-            "10": "🇹🇭 Samui",
-            "11": "🇧🇩 Bali",
-            "12": "🇮🇳 Mumbai",
-            "13": "🇮🇳 Delhi",
-            "14": "🇾🇮 Tashkent",
-            "15": "🇾🇮 Samarkand",
-            "16": "🇸🇬 Singapore",
-            "17": "🇭🇰 Colombo"
+            "0": "<flag>korea</flag> Seoul",
+            "1": "<flag>korea</flag> Incheon",
+            "2": "<flag>japan</flag> Tokyo",
+            "3": "<flag>japan</flag> Osaka",
+            "4": "<flag>china</flag> Guangzhou",
+            "5": "<flag>china</flag> Shenzhen",
+            "6": "<flag>china</flag> Hong Kong",
+            "7": "<flag>vietnam</flag> Hanoi",
+            "8": "<flag>thai</flag> Bangkok",
+            "9": "<flag>thai</flag> Samui",
+            "10": "<flag>thai</flag> Phuket",
+            "11": "<flag>indonesia</flag> Bali",
+            "12": "<flag>india</flag> Mumbai",
+            "13": "<flag>india</flag> Delhi",
+            "14": "<flag>uzbekistan</flag> Tashkent",
+            "15": "<flag>uzbekistan</flag> Samarkand",
+            "16": "<flag>singapore</flag> Singapore",
+            "17": "<flag>sri lanka</flag> Colombo"
           }
         },
         "5": {
           "country": "Europe",
           "cities": {
-            "0": "🇬🇧 London",
-            "1": "🇧🇪 Brussels",
-            "2": "🇮🇹 Milan, Rome",
-            "3": "🇩🇿 Limassol",
-            "4": "🇭🇻 Budapest",
-            "5": "🇩🇪 Berlin, Frankfurt, Munich",
-            "6": "🇳🇱 Amsterdam, Rotterdam",
-            "7": "🇫🇷 Paris, Nice",
-            "8": "🇵🇹 Lisbon, Porto, Madeira",
-            "9": "🇵🇱 Warsaw, Krakow, Gdansk",
-            "10": "🇦🇱 Tirana",
-            "11": "🇸🇱 Belgrade",
-            "12": "🇨🇰 Split, Dubrovnik",
-            "13": "🇲🇼 Budva, Podgorica",
-            "14": "🇮🇹 Ljubljana",
-            "15": "🇨🇱 Prague",
-            "16": "🇪🇸 Barcelona, Valencia, Madrid",
-            "17": "🇪🇰 Athens, Thessaloniki, Corfu",
-            "18": "🇧🇱 Burgas, Varna, Sofia",
-            "19": "🇧🇾 Minsk, Gomel, Grodno",
-            "20": "🇩🇬 Vienna",
-            "21": "🇨🇱 Prague",
-            "22": "🇸🇦 Bratislava"
+            "0": "<flag>uk</flag> London",
+            "1": "<flag>belgium</flag> Brussels",
+            "2": "<flag>italy</flag> Milan, Rome",
+            "3": "<flag>cyprus</flag> Limassol",
+            "4": "<flag>hungary</flag> Budapest",
+            "5": "<flag>germany</flag> Berlin, Frankfurt, Munich",
+            "6": "<flag>netherlands</flag> Amsterdam, Rotterdam",
+            "7": "<flag>france</flag> Paris, Nice",
+            "8": "<flag>portugal</flag> Lisbon, Porto, Madeira",
+            "9": "<flag>poland</flag> Warsaw, Krakow, Gdansk",
+            "10": "<flag>albania</flag> Tirana",
+            "11": "<flag>serbia</flag> Belgrade",
+            "12": "<flag>croatia</flag> Split, Dubrovnik",
+            "13": "<flag>montenegro</flag> Budva, Podgorica",
+            "14": "<flag>slovenia</flag> Ljubljana",
+            "15": "<flag>switzerland</flag> Zurich, Geneva",
+            "16": "<flag>spain</flag> Barcelona, Valencia, Madrid",
+            "17": "<flag>greece</flag> Athens, Thessaloniki, Corfu",
+            "18": "<flag>bulgaria</flag> Burgas, Varna, Sofia",
+            "19": "<flag>blrs</flag> Minsk, Gomel, Grodno",
+            "20": "<hide-lg><flag>au</flag> Vienna</hide-lg>",
+            "21": "<hide-lg><flag>cz</flag> Prague</hide-lg>",
+            "22": "<hide-lg><flag>slovakia</flag> Bratislava</hide-lg>"
           }
         },
         "6": {
@@ -279,32 +284,32 @@
             "21": "Novosibirsk",
             "22": "Barnaul",
             "23": "Tomsk",
-            "24": "Irkutsk",
-            "25": "Omsk",
-            "26": "Khabarovsk"
+            "24": "<hide-lg>Irkutsk</hide-lg>",
+            "25": "<hide-lg>Omsk</hide-lg>",
+            "26": "<hide-lg>Khabarovsk</hide-lg>"
           }
         }
       }
     },
     "HowToUse": {
       "title": "how it works",
-      "subtitle": "Use the Telegram bot to transfer funds in 4 simple steps",
+      "subtitle": "Use the Telegram bot to transfer funds <br class=\"hidden br-md-lg\" />in 4 simple steps",
       "steps": {
         "0": {
           "title": "Specify transfer details <br class=\"hidden md:block lg:hidden 3xl:block \" />in TG Bot",
           "description": "<br />Select currency for sending <br class=\"hidden lg:block 3xl:hidden\" />and receiving, as well as convenient locations <br class=\"hidden lg:block 3xl:hidden\" />for transfer and receipt of funds"
         },
         "1": {
-          "title": "Discuss details <br class=\"hidden md:block lg:hidden \" />with a manager",
-          "description": "We will contact you to clarify transaction conditions and deadlines"
+          "title": "Discuss details with <br class=\"hidden md:block lg:hidden\" />the manager",
+          "description": "<br class=\"hidden md:block\" />We will contact you to clarify <br class=\"hidden md:block lg:hidden 3xl:block\" />operation terms and deadlines"
         },
         "2": {
-          "title": "Pay by any <br class=\"hidden lg:block \" />convenient method",
-          "description": "Choose a suitable payment method and pay the commission and transfer amount"
+          "title": "Pay by any convenient <br class=\"hidden md:block\" />method",
+          "description": "<br class=\"hidden md:block\" />Choose a suitable method <br class=\"hidden md:block lg:hidden\" />and <br class=\"hidden lg:block 3xl:hidden\" />pay the fee and the <br class=\"hidden md:block lg:hidden\" />required <br class=\"hidden lg:block 3xl:hidden\" />amount <br class=\"hidden md:hidden lg:hidden\" />of the transfer"
         },
         "3": {
-          "title": "Receive funds <br class=\"hidden md:block lg:hidden \" />in the selected location",
-          "description": "Collect money in our office or partner's office or receive a courier"
+          "title": "Receive funds <br class=\"hidden md:block lg:hidden\" />at the selected location",
+          "description": "<br class=\"hidden md:block\" />Pick up the money at our <br class=\"hidden md:block lg:hidden\" />office <br class=\"hidden lg:block\" />or a partner office <br class=\"hidden md:block lg:hidden\" />or receive a <br class=\"hidden xl:block 3xl:hidden\" />courier"
         }
       }
     }
@@ -317,96 +322,96 @@
       },
       "typing-text": {
         "0": "International payments.",
-        "1": "Importers and exporters.",
+        "1": "For importers and exporters.",
         "2": "Worldwide."
       },
       "tg": {
-        "description": "Help businesses conduct legal settlements <br class=\"hidden lg:block xl:hidden \" />with foreign suppliers and clients <br class=\"hidden lg:block xl:hidden \" />without banking restrictions",
-        "button": "get consultation"
+        "description": "We help businesses legally manage settlements with foreign suppliers and clients without banking restrictions",
+        "button": "get a consultation"
       }
     },
     "Services": {
       "title": "Services",
-      "subtitle": "Invoice payments, repatriation <br class=\"hidden md:block 3xl:hidden \" />of foreign <br class=\"hidden 3xl:block \" />revenue for foreign trade legally <br class=\"hidden md:block 3xl:hidden \" />and without restrictions",
-      "description": "We conduct international financial operations, selecting fast and reliable routes for any business tasks",
+      "subtitle": "Invoice payments, repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
+      "description": "We conduct international financial operations, selecting fast and reliable routes for any <br class=\"hidden br-xl 3xl:hidden\" />tasks of your business",
       "cards": {
         "0": {
-          "for-whom": "importers",
-          "title": "Payment of foreign suppliers' invoices",
-          "description": "Use reliable financial channels to ensure funds reach the recipient quickly and without delays"
+          "for-whom": "for importers",
+          "title": "Payment of foreign suppliers' bills<br /><br class=\"hidden lg:block\" />",
+          "description": "We use reliable financial channels to ensure funds <br class=\"hidden xl:block 3xl:hidden\" />reach the recipient quickly and without delays"
         },
         "1": {
-          "for-whom": "Exporters",
-          "title": "Receiving payment from customers <br class=\"hidden lg:block xl:hidden \" />and repatriation",
-          "description": "Help receive funds from foreign customers through a network of foreign companies and repatriate foreign revenue to Russia"
+          "for-whom": "for exporters",
+          "title": "Receiving payments from clients <br class=\"hidden lg:block xl:hidden\" />and repatriation",
+          "description": "We help receive funds from foreign customers through a network of foreign companies and return currency revenue to Russia"
         }
       }
     },
     "Payment": {
-      "title": "<span class=\"hidden lg:block \">Payment scheme</span><span class=\"lg:hidden \">Scheme</span>",
-      "subtitle": "We work with foreign suppliers <br class=\"hidden 3xl:block \" />through a network of foreign companies <br class=\"hidden lg:block xl:hidden \" />by a simple and transparent system",
+      "title": "<span class=\"md:hidden lg:block\">Payment Scheme</span><span class=\"hidden md:block lg:hidden\">Scheme</span>",
+      "subtitle": "We work with foreign suppliers <br class=\"hidden 3xl:block\" />through a network of foreign companies <br class=\"hidden lg:block xl:hidden\" />on a simple and transparent system",
       "step": "Step",
       "card": {
         "steps": {
           "0": {
-            "step": "Payment in rubles",
+            "step": "Payment in RUB",
             "from": "Your company in Russia",
-            "to": "Account of a non-resident in Russia",
+            "to": "Non-resident account in Russia",
             "within": "Agency agreement",
             "description": "Pay the amount for paying the supplier and the commission in rubles on the account of a non-resident company under an agency agreement"
           },
           "1": {
-            "step": "Payment to the supplier",
+            "step": "Payment to Supplier",
             "from": "Foreign company",
             "to": "Your supplier",
             "within": "Contract",
-            "description": "We will conclude a contract with the supplier on behalf of a foreign company not linked to Russia and pay the invoice in the required currency"
+            "description": "We will conclude a contract with the supplier on behalf of a foreign <br class=\"hidden 3xl:block\" />company not linked to Russia and pay the invoice in the required currency"
           }
         }
       }
     },
     "HowToUse": {
       "title": "how it works",
-      "subtitle": "Use the Telegram bot for settlements <br class=\" md:hidden \" />with counterparties in 4 simple steps",
+      "subtitle": "Use the Telegram bot <br class=\"md:hidden\" />for settlements <br class=\"md:hidden\" />with counterparties <br class=\"md:hidden\" />in 4 simple steps",
       "steps": {
         "0": {
-          "title": "Select a service <br class=\" lg:hidden xl:block \" />in <br class=\"hidden lg:block xl:hidden \" />TG Bot",
-          "description": "Specify your task, required amount and currency or request manager consultation"
+          "title": "Choose a service <br class=\" lg:hidden xl:block\" />in the <br class=\"br-lg \" />TG bot",
+          "description": "<br class=\"hidden md:block\" />Specify your task, the required amount and currency or order a manager consultation"
         },
         "1": {
-          "title": "Discuss details <br class=\"hidden md:block lg:hidden \" />with a manager",
-          "description": "We will contact you to clarify transaction conditions and deadlines"
+          "title": "Discuss details <br class=\"hidden md:block lg:hidden\" />with the manager",
+          "description": "<br class=\"hidden md:block\" />We will contact you to clarify <br class=\"hidden md:block lg:hidden 3xl:block\" />operation terms and deadlines"
         },
         "2": {
           "title": "Confirm the deal",
-          "description": "Provide data and pay the commission to start the operation"
+          "description": "Provide data and <br class=\"hidden md:block lg:hidden\" />pay the fee to start the operation"
         },
         "3": {
-          "title": "Receive <br class=\"hidden lg:block xl:hidden 3xl:block \" />payment confirmation",
-          "description": "Receive documentation for your transfer"
+          "title": "Receive <br class=\"hidden lg:block xl:hidden 3xl:block\" />payment confirmation",
+          "description": "<br class=\"hidden md:block\" />Receive documentary confirmation of your <br class=\"hidden md:block lg:hidden\" />transfer"
         }
       }
     },
     "WhatCanPay": {
       "title": "what can be paid",
-      "subtitle": "We can pay invoices <br class=\" md:hidden \" />for <br class=\"hidden xl:block 3xl:hidden \" />individuals and legal entities",
+      "subtitle": "We will pay invoices <br class=\" md:hidden\" />for <br class=\"br-xl\" />individuals <br class=\"br-lg\" />and legal entities",
       "cards": {
         "0": {
           "title": "Want to buy property abroad?",
-          "description": "Help pay for real estate or a car overseas. Support you at every stage of the deal - from payment to document preparation"
+          "description": "We help pay for real estate or cars abroad. Support you at every stage of the deal — from payment to document processing"
         },
         "1": {
-          "title": "Pay for overseas medical services?",
-          "description": "Arrange payment for medical services abroad. Help avoid financial difficulties in a critical situation"
+          "title": "Pay for foreign medical services?",
+          "description": "We organize payment for medical services abroad. Help you avoid <br class=\"md:hidden\" />financial difficulties in critical situations"
         },
         "2": {
           "title": "Pay for education?",
-          "description": "Settle the account for studying at a foreign university. Ensure timely transfer of funds in the required currency"
+          "description": "We will cover the tuition fee at a foreign <br-xl></br-xl>university. We guarantee timely transfer of funds in the required currency"
         }
       },
       "red-card": {
-        "description": "Help conduct payments <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden \" />on invoices from 1,000,000 rubles <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden \" />via Telegram bot",
-        "link": "Leave a request"
+        "description": "We will help you make payments <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />for invoices from 1,000,000 rubles <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />through the Telegram bot",
+        "link": "Submit an application"
       }
     }
   },
@@ -414,26 +419,26 @@
     "FirstScreen": {
       "title": {
         "0": "USDT ⇄ USD,",
-        "1": "EUR, RUB"
+        "1": "EUR, Rub"
       },
       "typing-text": {
         "0": "Instant conversion.",
         "1": "Minimal commission."
       },
       "tg": {
-        "description": "Exchange crypto for cash with minimal commissions in a convenient currency with transparent support",
-        "button": "Conduct exchange via TG Bot"
+        "description": "Exchange cryptocurrency for cash with <br />minimal commissions in your preferred currency and transparent support",
+        "button": "Exchange in TG-BOt"
       }
     },
     "HowToUse": {
-      "title": "how it <br class=\"hidden md:block lg:hidden \" />works",
-      "subtitle": "How is the USDT ⇄ FIAT exchange conducted?",
-      "description": "Our specialists will help you <br class=\"md:hidden \" />conduct the exchange quickly and safely",
+      "title": "How it works",
+      "subtitle": "How does the USDT ⇄ FIAT <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />exchange happen?",
+      "description": "Our specialists will help you <br class=\"md:hidden\" />exchange <br class=\"hidden lg:block xl:hidden\" />quickly and safely",
       "step": "Step",
       "cards": {
         "0": {
-          "title": "Leave a request in Telegram Bot",
-          "description": "In our Telegram bot, select the sale or purchase of USDT and specify the required amount"
+          "title": "Submit a request in the Telegram bot",
+          "description": "In our Telegram bot, choose the sell <br class=\"hidden md:block xl:hidden\" />or buy USDT function and specify the required amount"
         },
         "1": {
           "title": "Our manager will contact you",
@@ -444,23 +449,47 @@
           "description": "If you are a verified user, we will fix <br class=\"hidden md:block lg:hidden\" />the rate at the time of submission <br class=\"hidden lg:block xl:hidden\" />of your request. Otherwise, the rate <br class=\"hidden md:block lg:hidden\" />is fixed <br class=\"md:hidden\" />during the office visit."
         },
         "3": {
-          "title": "Order an office pass",
-          "description": "In the Telegram bot, order a pass to the office by the ID of your deal"
+          "title": "Order a pass to the office",
+          "description": "Order an office pass in the Telegram bot using your deal ID"
         },
         "4": {
           "title": "Come to the office to complete the deal",
-          "description": "In the office, we will exchange USDT for cash according to your request"
+          "description": "At the office, we will exchange USDT <br class=\"hidden md:block lg:hidden\" />for <br class=\"hidden lg:block xl:hidden\" />cash according to your request"
         }
       }
     }
   },
+  "Quotes": {
+    "updated": "Updated",
+    "currency-rates": "Currency Rates",
+    "months": {
+      "0": "January",
+      "1": "February",
+      "2": "March",
+      "3": "April",
+      "4": "May",
+      "5": "June",
+      "6": "July",
+      "7": "August",
+      "8": "September",
+      "9": "October",
+      "10": "November",
+      "11": "December"
+    },
+    "source": "Source",
+    "currency": "Currency",
+    "rates": "Rate",
+    "buy": "Buy",
+    "sell": "Sell"
+  },
   "Footer": {
     "tg-block": {
       "titles": {
-        "main": "Order payment, transfer, exchange, or consultation today via our Telegram bot",
-        "cash2cash": "Order fund transfer <br style=\"hidden md:block 3xl:hidden \" />today via our Telegram bot",
-        "ved": "Plan an international <br class=\"hidden md:block lg:hidden \" />transfer today via <br class=\"hidden md:block lg:hidden \" />our Telegram bot",
-        "usdt-fiat": "Start the exchange today <br class=\"xl:hidden\" />via our Telegram bot"
+        "main": "Order payment, transfer, exchange or consultation today in our Telegram bot ",
+        "cash2cash": "Order a fund transfer <br style=\"hidden md:block 3xl:hidden\" />today through our<br /> Telegram bot",
+        "ved": "Schedule an international <br class=\"hidden md:block lg:hidden\" />transfer today through <br class=\"hidden md:block lg:hidden\" />our Telegram bot",
+        "usdt-fiat": "Start exchanging today <br class=\"xl:hidden\" />through our Telegram bot",
+        "quotes": "Order payment, transfer, exchange or consultation today in our Telegram bot"
       },
       "go-to-tg": "Go to Telegram"
     },
@@ -488,6 +517,6 @@
     },
     "policy": "Privacy Policy",
     "rights": "All rights reserved",
-    "development": "Website development"
+    "development": "Website Development"
   }
 }

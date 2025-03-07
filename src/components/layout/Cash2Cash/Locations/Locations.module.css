@@ -463,3 +463,7 @@
 .pointerLine::after {
   @apply content-[''] absolute visible opacity-100 size-[10px] rounded-full right-[-4px] bg-primary-red;
 }
+
+.locationsTextDescriptionEn {
+  @apply md:max-w-[534px];
+}

@@ -21,10 +21,18 @@ body {
   @apply xl:max-w-[84.38vw];
 }
 
+.br-md-lg {
+  @apply hidden md:block xl:hidden;
+}
+
 .br-lg {
   @apply hidden lg:block xl:hidden;
 }
 
 .br-xl {
   @apply hidden xl:block 3xl:hidden;
+}
+
+.br-3xl {
+  @apply hidden 3xl:block;
 }

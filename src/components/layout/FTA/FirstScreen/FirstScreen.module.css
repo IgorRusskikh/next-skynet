@@ -117,3 +117,15 @@
   @apply xl:w-[508px] xl:h-[493px] xl:top-[27px] xl:right-[60px];
   @apply 3xl:size-[36.46vw] 3xl:top-[0.57vw] 3xl:right-[5.16vw];
 }
+
+.bottomLineEn {
+  @apply pl-[22%];
+}
+
+.bottomLineEnVed {
+  @apply lg:pl-[11%];
+}
+
+.typingBlock {
+  @apply lg:text-[22px] lg:leading-[24px];
+}

@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { BREAKPOINTS } from "@/constants";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./HowToUse.module.css";
-import { useTranslations } from "next-intl";
 
 type step = {
   title: string;
@@ -23,6 +23,7 @@ export default function HowToUse() {
   const imagesRefs = useRef<HTMLDivElement[]>([]);
 
   const t = useTranslations("Index.HowToUse");
+  const locale = useLocale();
 
   const mm = gsap.matchMedia();
 
@@ -591,12 +592,20 @@ export default function HowToUse() {
   return (
     <section id="how-to-use" className={`${styles.howToUse}`}>
       <div className={`${styles.howToUseInner}`}>
-        <div className={`${styles.sectionHeader}`}>
+        <div
+          className={`${styles.sectionHeader} ${
+            locale === "en" ? styles.sectionHeaderEn : ""
+          }`}
+        >
           <h3 className={`${styles.howToUseTitle} section-title`}>
             {t("title")}
           </h3>
 
-          <p className={`${styles.howToUseDescription}`}>
+          <p
+            className={`${styles.howToUseDescription} ${
+              locale === "en" ? styles.howToUseDescriptionEn : ""
+            }`}
+          >
             {t.rich("subtitle", {
               "hidden-text": (chunks) => (
                 <span className="!hidden md:!inline">{chunks}</span>
@@ -656,7 +665,11 @@ export default function HowToUse() {
                   ))}
                 </p>
 
-                <p className={`${styles.bannerStepDescription}`}>
+                <p
+                  className={`${styles.bannerStepDescription} ${
+                    locale === "en" ? styles.bannerStepDescriptionEn : ""
+                  }`}
+                >
                   <span
                     className="!relative invisible opacity-0"
                     dangerouslySetInnerHTML={{

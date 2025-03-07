@@ -67,3 +67,7 @@
   @apply flex max-w-[28.06vw] p-[1.55vw] text-[2.78vw] leading-[2.78vw] gap-[1.94vw] pr-[4.44vw];
   @apply md:hidden;
 }
+
+.dropdownLinksListEn {
+  @apply text-[5.56vw] leading-[6.67vw];
+}

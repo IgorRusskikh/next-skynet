@@ -200,3 +200,10 @@
   @apply flex flex-col justify-between;
   @apply md:min-h-[104px];
 }
+
+.servicesListItemEn {
+  @apply text-start;
+  @apply lg:tracking-[-0.5px] lg:text-[18px] lg:leading-[18px];
+  @apply xl:tracking-[-0.8px];
+  @apply 3xl:text-[1.46vw] 3xl:leading-[1.6vw] 3xl:tracking-[-0.07vw];
+}

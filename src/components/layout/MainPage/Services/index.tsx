@@ -78,7 +78,9 @@ export default function Services() {
                       } !cursor-pointer`}
                     >
                       <button
-                        className=''
+                        className={`${
+                          locale === 'en' ? styles.servicesListItemEn : ''
+                        }`}
                         onClick={() => setCurrentService(inx)}
                       >
                         {title}

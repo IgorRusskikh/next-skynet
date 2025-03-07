@@ -1,6 +1,6 @@
 "use client";
 
-import { NamespaceKeys, useTranslations } from "use-intl";
+import { NamespaceKeys, useLocale, useTranslations } from "use-intl";
 import { RefObject, useEffect, useMemo, useRef, useState } from "react";
 
 import { BREAKPOINTS } from "@/constants";
@@ -30,6 +30,7 @@ export default function HowToUse({ tNamespace }: Props) {
   const t = useTranslations(
     `${tNamespace}.HowToUse` as NamespaceKeys<IntlMessages, "CashToCash">
   );
+  const locale = useLocale();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -214,7 +215,9 @@ export default function HowToUse({ tNamespace }: Props) {
 
           <div className={styles.howToUseContentText}>
             <h3
-              className={`${styles.howToUseContentTitle} section-subtitle`}
+              className={`${styles.howToUseContentTitle} section-subtitle ${
+                locale === "en" ? styles.howToUseContentTitleEn : ""
+              }`}
               dangerouslySetInnerHTML={{
                 // @ts-expect-error: need a type
                 __html: t.raw("subtitle"),
@@ -321,10 +324,14 @@ export default function HowToUse({ tNamespace }: Props) {
                   >
                     <div className={`${styles.leftIphone}`}>
                       <Image
-                        src="/images/cash-to-cash/left-phone.png"
+                        src={`/images/${
+                          locale === "en"
+                            ? "cash-to-cash/left-phone-en.png"
+                            : "cash-to-cash/left-phone.png"
+                        }`}
                         fill
                         alt="left-phone"
-                        unoptimized
+                        quality={50}
                       />
                     </div>
                   </div>
@@ -340,10 +347,12 @@ export default function HowToUse({ tNamespace }: Props) {
                           tNamespace === "VED"
                             ? "fta/how-to-use"
                             : "cash-to-cash"
-                        }/right-phone.png`}
+                        }/${
+                          locale === "en" ? "right-phone-en" : "right-phone"
+                        }.png`}
                         fill
                         alt="right-phone"
-                        unoptimized
+                        quality={50}
                       />
                     </div>
                   </div>

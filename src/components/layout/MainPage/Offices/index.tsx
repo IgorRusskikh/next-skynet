@@ -1,13 +1,13 @@
 "use client";
 
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { BREAKPOINTS } from "@/constants";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styles from "./Offices.module.css";
-import { useTranslations } from "next-intl";
 
 interface Props extends HTMLAttributes<HTMLElement> {}
 
@@ -20,6 +20,7 @@ export default function Offices({ className }: Props): JSX.Element {
   const officesBlockRef = useRef<HTMLDivElement>(null);
 
   const t = useTranslations("Index.Offices");
+  const locale = useLocale();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -83,7 +84,9 @@ export default function Offices({ className }: Props): JSX.Element {
             />
 
             <p
-              className={`${styles.officesTextDescription}`}
+              className={`${styles.officesTextDescription} ${
+                locale === "en" ? styles.officesTextDescriptionEn : ""
+              }`}
               dangerouslySetInnerHTML={{ __html: t.raw("description") }}
             ></p>
           </div>

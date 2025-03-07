@@ -1,11 +1,12 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
+
 import CustomLink from "@/components/ui/Link";
 import { HTMLAttributes } from "react";
 import Image from "next/image";
 import styles from "./Verification.module.css";
 import { useModal } from "@/providers/ModalProvider";
-import { useTranslations } from "next-intl";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -17,6 +18,7 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Verification() {
   const t = useTranslations("Index.Verification");
+  const locale = useLocale();
 
   return (
     <section id="verification" className={`${styles.verification}`}>
@@ -34,7 +36,11 @@ export default function Verification() {
 
         <div className={`${styles.verificationContent}`}>
           <h2
-            className={`${styles.verificationDescription} md:hidden lg:block section-subtitle`}
+            className={`${
+              styles.verificationDescription
+            } md:hidden lg:block section-subtitle ${
+              locale === "en" ? styles.verificationDescriptionEn : ""
+            }`}
             dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
           />
 
@@ -84,6 +90,7 @@ const Card = ({
   const { openModal } = useModal();
 
   const t = useTranslations("Index.Verification.red-card");
+  const locale = useLocale();
 
   return (
     <div
@@ -105,7 +112,11 @@ const Card = ({
         />
 
         {red && (
-          <div className={`${styles.cardLink}`}>
+          <div
+            className={`${styles.cardLink} ${
+              locale === "en" ? styles.cardLinkEn : ""
+            }`}
+          >
             <CustomLink
               href=""
               light
