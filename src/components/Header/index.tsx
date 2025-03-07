@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useContext, useEffect, useMemo } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useContext, useEffect, useMemo } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { DropdownContext } from "@/providers/DropdownProvider";
-import { INNER_SITES } from "@/constants";
-import IconButton from "../ui/buttons/IconButton";
-import LocaleSwitcher from "../LocaleSwitcher";
-import Logo from "@/svg/logo.svg";
-import TelegramIcon from "@/svg/telegram.svg";
-import styles from "./Header.module.css";
-import { useModal } from "@/providers/ModalProvider";
-import useNearTop from "@/hooks/useNearTop";
-import { usePathname } from "next/navigation";
+import { DropdownContext } from '@/providers/DropdownProvider';
+import { INNER_SITES } from '@/constants';
+import IconButton from '../ui/buttons/IconButton';
+import LocaleSwitcher from '../LocaleSwitcher';
+import Logo from '@/svg/logo.svg';
+import TelegramIcon from '@/svg/telegram.svg';
+import styles from './Header.module.css';
+import { useModal } from '@/providers/ModalProvider';
+import useNearTop from '@/hooks/useNearTop';
+import { usePathname } from 'next/navigation';
 
 interface Props {
   fixed?: boolean;
@@ -24,22 +24,22 @@ export default function Header({ fixed }: Props) {
   const isNearTop = useNearTop(5);
 
   const path = usePathname();
-  const curPath = path.split("/").slice(2).join("/");
+  const curPath = path.split('/').slice(2).join('/');
 
   const { openModal } = useModal();
 
-  const t = useTranslations("Index.Header");
+  const t = useTranslations('Index.Header');
   const locale = useLocale();
 
   const navLinks = useMemo(() => {
     // @ts-expect-error: needs interface
-    return Object.values(t.raw("nav-links")) as string[];
+    return Object.values(t.raw('nav-links')) as string[];
   }, []);
 
   return (
     <div
-      className={`${styles.navbar} ${fixed ? styles.fixed : ""} ${
-        isNearTop && fixed ? "!top-[-20vh]" : "!top-0"
+      className={`${styles.navbar} ${fixed ? styles.fixed : ''} ${
+        isNearTop && fixed ? '!top-[-20vh]' : '!top-0'
       }`}
     >
       <div className={`${styles.container}`}>
@@ -50,6 +50,7 @@ export default function Header({ fixed }: Props) {
           </div> */}
 
           <Logo className={`${styles.logo}`} />
+          <h1 className='opacity-0'>Skynet</h1>
         </a>
 
         <div className={`${styles.headerContent}`}>
@@ -66,11 +67,11 @@ export default function Header({ fixed }: Props) {
                         className={`${
                           curPath ===
                           Object.values(INNER_SITES)
-                            [inx].link.split("/")
+                            [inx].link.split('/')
                             .slice(1)
-                            .join("/")
-                            ? "font-bold"
-                            : ""
+                            .join('/')
+                            ? 'font-bold'
+                            : ''
                         }`}
                       >
                         {link}
@@ -82,29 +83,29 @@ export default function Header({ fixed }: Props) {
           </nav>
 
           <div className={styles.actions}>
-            {!fixed && <LocaleSwitcher className="hidden xl:block" />}
+            {!fixed && <LocaleSwitcher className='hidden xl:block' />}
 
             <div
               className={`${styles.burger} xl:!hidden ${
-                isOpen ? "translate-y-[-0.8vw] md:translate-y-0" : ""
+                isOpen ? 'translate-y-[-0.8vw] md:translate-y-0' : ''
               }`}
               onClick={() => setIsOpen(!isOpen)}
             >
               <div
                 className={`${styles.burgerLine} ${
                   isOpen
-                    ? "-rotate-45 translate-y-[2.7vw] translate-x-[-0.1vw] md:translate-y-[9.5px] md:-translate-x-[1px] lg:translate-y-[12px] lg:-translate-x-[1px]"
-                    : "rotate-0"
+                    ? '-rotate-45 translate-y-[2.7vw] translate-x-[-0.1vw] md:translate-y-[9.5px] md:-translate-x-[1px] lg:translate-y-[12px] lg:-translate-x-[1px]'
+                    : 'rotate-0'
                 }`}
               ></div>
               <div
                 className={`${styles.burgerLine} ${
-                  isOpen ? "opacity-0" : "opacity-100"
+                  isOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               ></div>
               <div
                 className={`${styles.burgerLine} ${
-                  isOpen ? "rotate-45" : "rotate-0"
+                  isOpen ? 'rotate-45' : 'rotate-0'
                 }`}
               ></div>
             </div>
@@ -114,7 +115,7 @@ export default function Header({ fixed }: Props) {
               className={`${styles.telegram}`}
               onClick={openModal}
             >
-              {t("actions.tg-bot")}
+              {t('actions.tg-bot')}
             </IconButton>
           </div>
         </div>
