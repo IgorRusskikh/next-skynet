@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from 'next-intl';
 
-import Button from "@/components/ui/buttons/Button";
-import FooterLogo from "@/svg/footer-logo.svg";
-import { INNER_SITES } from "@/constants";
-import Image from "next/image";
-import styles from "./Footer.module.css";
-import { useMemo } from "react";
-import { useModal } from "@/providers/ModalProvider";
+import Button from '@/components/ui/buttons/Button';
+import FooterLogo from '@/svg/footer-logo.svg';
+import { INNER_SITES } from '@/constants';
+import Image from 'next/image';
+import styles from './Footer.module.css';
+import { useMemo } from 'react';
+import { useModal } from '@/providers/ModalProvider';
 
 interface Props {
   page: string;
 }
 
 export default function Footer({ page }: Props) {
-  const t = useTranslations("Footer");
+  const t = useTranslations('Footer');
   const locale = useLocale();
 
   const { openModal } = useModal();
@@ -23,7 +23,7 @@ export default function Footer({ page }: Props) {
   const navLinks = useMemo(
     () =>
       // @ts-expect-error: need an interface
-      Object.values(t.raw("links.nav.links-list")).map((name, inx) => ({
+      Object.values(t.raw('links.nav.links-list')).map((name, inx) => ({
         title: name,
         link: Object.values(INNER_SITES)[inx].link,
       })),
@@ -37,9 +37,9 @@ export default function Footer({ page }: Props) {
           <div className={`${styles.footerMascotWrapper}`}>
             <div className={`${styles.footerMascot} hidden md:block`}>
               <Image
-                src="/images/mascot-footer.png"
+                src='/images/mascot-footer.png'
                 fill
-                alt="mascot"
+                alt='mascot'
                 quality={40}
               />
             </div>
@@ -54,17 +54,17 @@ export default function Footer({ page }: Props) {
                 }}
               />
 
-              <Button theme="red" onClick={openModal}>
-                {t("tg-block.go-to-tg")}
+              <Button theme='red' onClick={openModal}>
+                {t('tg-block.go-to-tg')}
               </Button>
             </div>
 
-            <div className="flex md:block mt-[12.22vw] md:mt-0">
+            <div className='flex md:block mt-[12.22vw] md:mt-0'>
               <div className={`${styles.footerLinksGrid}`}>
                 <div
                   className={`${styles.footerLinksNav} ${styles.footerLinksGridItem}`}
                 >
-                  <h5>{t("links.nav.title")}</h5>
+                  <h5>{t('links.nav.title')}</h5>
 
                   <div className={`${styles.footerLinksList}`}>
                     <ul>
@@ -80,7 +80,7 @@ export default function Footer({ page }: Props) {
                 <div
                   className={`${styles.footerContacts} ${styles.footerLinksGridItem}`}
                 >
-                  <h5>{t("links.contacts.title")}</h5>
+                  <h5>{t('links.contacts.title')}</h5>
 
                   <div className={`${styles.footerContactsList}`}>
                     {contacts.map(({ name, link }) => (
@@ -94,11 +94,11 @@ export default function Footer({ page }: Props) {
                 <div
                   className={`${styles.footerSubscribe} ${styles.footerLinksGridItem} lg:min-w-[293px] xl:min-w-0`}
                 >
-                  <h5>{t("links.subscribe.title")}</h5>
+                  <h5>{t('links.subscribe.title')}</h5>
 
                   <div>
                     <Button onClick={openModal}>
-                      {t("links.subscribe.subscribe-button")}
+                      {t('links.subscribe.subscribe-button')}
                     </Button>
                   </div>
                 </div>
@@ -107,9 +107,9 @@ export default function Footer({ page }: Props) {
               <div className={`${styles.footerMascotWrapper}`}>
                 <div className={`${styles.footerMascot} md:hidden`}>
                   <Image
-                    src="/images/mascot-footer.png"
+                    src='/images/mascot-footer.png'
                     fill
-                    alt="mascot"
+                    alt='mascot'
                     quality={40}
                   />
                 </div>
@@ -119,11 +119,11 @@ export default function Footer({ page }: Props) {
             <div
               className={`${styles.footerSubscribe} ${styles.footerLinksGridItem} ${styles.footerSubscribeMobile}`}
             >
-              <h5 className="border-none">{t("links.subscribe.title")}</h5>
+              <h5 className='border-none'>{t('links.subscribe.title')}</h5>
 
               <div>
                 <Button onClick={openModal}>
-                  {t("links.subscribe.subscribe-button")}
+                  {t('links.subscribe.subscribe-button')}
                 </Button>
               </div>
             </div>
@@ -137,17 +137,17 @@ export default function Footer({ page }: Props) {
 
           <div className={`${styles.bottomLinks}`}>
             <div className={`${styles.bottomLinksItem}`}>
-              <a href="/privacy-policy" target="_blank">
-                {t("policy")}
+              <a href='/privacy-policy' target='_blank'>
+                {t('policy')}
               </a>
 
               <p>
-                © {new Date().getFullYear()} {t("rights")}
+                © {new Date().getFullYear()} {t('rights')}
               </p>
             </div>
 
-            <a href="https://futuremarkt.com/ru" target="_blank">
-              {t("development")}
+            <a href='https://futuremarkt.com/ru' target='_blank'>
+              {t('development')}
             </a>
           </div>
         </div>
@@ -162,11 +162,11 @@ const contacts = [
   //   link: "@TG Bot",
   // },
   {
-    name: "+0 000 000 00 00",
-    link: "",
+    name: '+7 499 455 50 50',
+    link: 'tel:+74994555050',
   },
   {
-    name: "support@skynetgroup.ru",
-    link: "mailto:support@skynetgroup.ru",
+    name: 'support@skynetgroup.ru',
+    link: 'mailto:support@skynetgroup.ru',
   },
 ];

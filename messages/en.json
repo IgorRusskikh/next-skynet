@@ -42,12 +42,12 @@
     },
     "Services": {
       "title": "Services",
-      "subtitle": "Exchange crypto, <br class=\"hidden md:block lg:hidden \" />pay <br class=\"hidden 3xl:block \" />invoices and receive cash globally using <br class=\"md:hidden \" />Skynet",
+      "subtitle": "Exchange crypto, <br class=\"hidden md:block lg:hidden \" />pay <br class=\"hidden 3xl:block \" />invoices and receive cash globally using <br class=\"md:hidden \" />Skynet<span class=\"text-primary-red\">.</span>",
       "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling with foreign suppliers",
       "services": {
         "0": {
           "title": "Exchange USDT ⇄ FIAT",
-          "description": "Exchange crypto for cash <br class=\"lg:hidden xl:block 3xl:hidden \" />or non-cash funds and vice versa. <br class=\"md:hidden \" />Update <br class=\"hidden 3xl:block\" />exchange rates and current <br class=\"md:hidden \" />commission <br class=\"hidden 3xl:block \" />in the Telegram bot",
+          "description": "Exchange crypto for cash <br class=\"lg:hidden xl:block 3xl:hidden\" /> or non-cash funds and vice versa. <br class=\"md:hidden\" />Update <br class=\"hidden 3xl:block\" />exchange rates and current <br class=\"md:hidden\" />commission <br class=\"hidden 3xl:block\" />in the Telegram bot",
           "link": "More about USDT – FIAT"
         },
         "1": {
@@ -57,15 +57,15 @@
         },
         "2": {
           "title": "Payments for Foreign Trade",
-          "description": "Pay foreign suppliers' invoices <br class=\"md:hidden 3xl:block \" />through a network of legal entities in 30+ countries. <br class=\"md:hidden 3xl:block \" />Document all transactions and <br class=\"hidden 3xl:block\" />manage <br class=\"md:hidden \" />banking restrictions",
+          "description": "Pay foreign suppliers' invoices <br class=\"md:hidden 3xl:block\" />through a network of legal entities in 30+ countries. <br class=\"md:hidden 3xl:block\" />Execute transactions in compliance with Central Bank<br class=\"hidden 3xl:block\" /> regulations, bypassing sanctions restrictions",
           "link": "More about Foreign Trade"
         }
       }
     },
     "HowToUse": {
       "title": "How it works",
-      "subtitle": "<span>Manage financial operations in one Telegram bot.</span> <hidden-text>Our bot is a convenient tool for managing finances, where you can order crypto exchanges, transfers, invoice payments, currency exchange, and manager consultations</hidden-text>",
-      "mobile-subtitle": "Our bot is a convenient tool for managing finances, where you can order crypto exchanges, transfers, invoice payments, currency exchange, and manager consultations",
+      "subtitle": "<span>Manage financial operations in one Telegram bot</span> <hidden-text>Our bot is a convenient financial management tool where you can order cryptocurrency exchange, make transfers, pay bills, exchange currency and get manager consultation.</hidden-text>",
+      "mobile-subtitle": "Our bot is a convenient financial management tool where you can order cryptocurrency exchange, make transfers, pay bills, exchange currency and get manager consultation.",
       "steps": {
         "0": {
           "title": "Select a service in TG Bot",
@@ -98,12 +98,12 @@
           "description": "Individual support <br class=\"hidden 3xl:block \" />from <br class=\"md:hidden \" />a crypto and international transfer expert"
         },
         "2": {
-          "title": "Fixed rate",
-          "description": "Fix the exchange rate from the time of the application <br class=\"lg:hidden \" />to the deal to protect <br class=\"hidden 3xl:block \" />your funds <br class=\"lg:hidden \" />from market fluctuations"
+          "title": "Fixed exchange rate",
+          "description": "Fix the exchange rate from the moment of request submission to the completion of the deal to protect your funds from market fluctuations"
         }
       },
       "red-card": {
-        "description": "Discuss verification terms <br class=\"hidden lg:block xl:hidden \" />with a manager to access premium features",
+        "description": "Discuss verification terms <br class=\"hidden lg:block xl:hidden\" />with a manager to access premium features",
         "get-consultation": "get consultation"
       }
     },
@@ -292,7 +292,7 @@
       "steps": {
         "0": {
           "title": "Specify transfer details <br class=\"hidden md:block lg:hidden 3xl:block \" />in TG Bot",
-          "description": "Select the currency for sending and receiving, and locations where it is convenient to hand over and receive funds"
+          "description": "<br />Select currency for sending <br class=\"hidden lg:block 3xl:hidden\" />and receiving, as well as convenient locations <br class=\"hidden lg:block 3xl:hidden\" />for transfer and receipt of funds"
         },
         "1": {
           "title": "Discuss details <br class=\"hidden md:block lg:hidden \" />with a manager",
@@ -437,11 +437,11 @@
         },
         "1": {
           "title": "Our manager will contact you",
-          "description": "The manager will update your request and clarify the remaining details"
+          "description": "The manager will update your request and clarify all necessary information"
         },
         "2": {
           "title": "Fix the exchange rate",
-          "description": "If you are a verified user, we fix the rate at the time of your request submission. Otherwise, the rate is fixed after arriving at the office."
+          "description": "If you are a verified user, we will fix <br class=\"hidden md:block lg:hidden\" />the rate at the time of submission <br class=\"hidden lg:block xl:hidden\" />of your request. Otherwise, the rate <br class=\"hidden md:block lg:hidden\" />is fixed <br class=\"md:hidden\" />during the office visit."
         },
         "3": {
           "title": "Order an office pass",
@@ -471,7 +471,8 @@
           "0": "Home",
           "1": "USDT – FIAT",
           "2": "Cash2Cash",
-          "3": "Invoice Payments"
+          "3": "Invoice Payments",
+          "4": "Quotes"
         }
       },
       "contacts": {

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useLocale, useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useLocale, useTranslations } from 'next-intl';
+import { useMemo, useState } from 'react';
 
-import CustomLink from "@/components/ui/Link";
-import { INNER_SITES } from "@/constants";
-import Image from "next/image";
-import ServicesSlider from "@/components/ServicesSlider";
-import styles from "./Services.module.css";
+import CustomLink from '@/components/ui/Link';
+import { INNER_SITES } from '@/constants';
+import Image from 'next/image';
+import ServicesSlider from '@/components/ServicesSlider';
+import styles from './Services.module.css';
 
 export type service = {
   title: string;
@@ -18,27 +18,27 @@ export type service = {
 export default function Services() {
   const [currentService, setCurrentService] = useState(0);
 
-  const t = useTranslations("Index.Services");
+  const t = useTranslations('Index.Services');
   const locale = useLocale();
 
   const services = useMemo(
     // @ts-expect-error: need an interface
-    () => Object.values(t.raw("services")) as service[],
+    () => Object.values(t.raw('services')) as service[],
     []
   );
 
   const servicesImage = [
-    "/images/main-page-services/first-service-image-xs.png",
-    "/images/main-page-services/second-service-image-xs.png",
-    "/images/main-page-services/third-service-image-xs.png",
+    '/images/main-page-services/first-service-image-xs.png',
+    '/images/main-page-services/second-service-image-xs.png',
+    '/images/main-page-services/third-service-image-xs.png',
   ];
 
   return (
-    <section id="services" className={`${styles.services}`}>
+    <section id='services' className={`${styles.services}`}>
       <div className={`${styles.servicesContainer}`}>
         <div className={`${styles.servicesTitleWrapper}`}>
           <h3 className={`${styles.servicesTitle} section-title`}>
-            {t("title")}
+            {t('title')}
           </h3>
 
           <div
@@ -46,10 +46,10 @@ export default function Services() {
           >
             <h3
               className={`${styles.servicesContentTitle} section-subtitle`}
-              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+              dangerouslySetInnerHTML={{ __html: t.raw('subtitle') }}
             />
             <p className={`${styles.servicesContentDescription}`}>
-              {t("description")}
+              {t('description')}
             </p>
           </div>
         </div>
@@ -58,10 +58,10 @@ export default function Services() {
           <div className={`${styles.servicesContentText} md:hidden lg:block`}>
             <h2
               className={`${styles.servicesContentTitle} section-subtitle`}
-              dangerouslySetInnerHTML={{ __html: t.raw("subtitle") }}
+              dangerouslySetInnerHTML={{ __html: t.raw('subtitle') }}
             />
             <p className={`${styles.servicesContentDescription}`}>
-              {t("description")}
+              {t('description')}
             </p>
           </div>
 
@@ -74,11 +74,11 @@ export default function Services() {
                     <li
                       key={title}
                       className={`${styles.servicesListItem} ${
-                        currentService === inx ? "text-black" : ""
+                        currentService === inx ? 'text-black' : ''
                       } !cursor-pointer`}
                     >
                       <button
-                        className=""
+                        className=''
                         onClick={() => setCurrentService(inx)}
                       >
                         {title}
@@ -90,17 +90,17 @@ export default function Services() {
 
               <div className={`${styles.servicesCard} !hidden lg:!flex`}>
                 <div className={`${styles.servicesCardCount}`}>
-                  <span className="w-[20px]">{`0${currentService + 1}`} </span>
+                  <span className='w-[20px]'>{`0${currentService + 1}`} </span>
                   <span className={`${styles.servicesCardCountSeparator}`}>
                     —
-                  </span>{" "}
-                  <span className="text-[#898C98]">{`0${services.length}`}</span>
+                  </span>{' '}
+                  <span className='text-[#898C98]'>{`0${services.length}`}</span>
                 </div>
 
                 <div className={`${styles.servicesCardContent}`}>
                   <p className={`${styles.servicesCardDescription}`}>
                     <span
-                      className="opacity-0 !relative"
+                      className='opacity-0 !relative'
                       dangerouslySetInnerHTML={{
                         __html: services[0].description,
                       }}
@@ -110,8 +110,8 @@ export default function Services() {
                         key={inx}
                         className={`${
                           currentService === inx
-                            ? "opacity-100 visible"
-                            : "opacity-0 invisible"
+                            ? 'opacity-100 visible'
+                            : 'opacity-0 invisible'
                         }`}
                         dangerouslySetInnerHTML={{ __html: description }}
                       />
@@ -119,7 +119,7 @@ export default function Services() {
                   </p>
 
                   <p className={`${styles.servicesCardLink}`}>
-                    <span className="opacity-0">{services[0].link}</span>
+                    <span className='opacity-0'>{services[0].link}</span>
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}
@@ -128,8 +128,8 @@ export default function Services() {
                         }`}
                         className={`${
                           currentService === inx
-                            ? "opacity-100 visible"
-                            : "opacity-0 invisible"
+                            ? 'opacity-100 visible'
+                            : 'opacity-0 invisible'
                         }`}
                       >
                         <span className={``}>{link}</span>
@@ -150,7 +150,7 @@ export default function Services() {
                     key={inx}
                     onClick={() => setCurrentService(inx)}
                     className={`${styles.servicesCardHeaderButton} ${
-                      currentService === inx ? "!text-black" : ""
+                      currentService === inx ? '!text-black' : ''
                     }`}
                   >
                     {title}
@@ -164,12 +164,12 @@ export default function Services() {
                   <span className={`${styles.servicesCardCountSeparator}`}>
                     -
                   </span>
-                  <span className="text-[#898C98]">{`0${services.length}`}</span>
+                  <span className='text-[#898C98]'>{`0${services.length}`}</span>
                 </p>
 
                 <div className={`${styles.serviceDescription}`}>
                   <p className={`${styles.servicesCardDescription}`}>
-                    <span className="opacity-0 !relative">
+                    <span className='opacity-0 !relative'>
                       {services[0].description}
                     </span>
                     {services.map(({ description }, inx) => (
@@ -177,8 +177,8 @@ export default function Services() {
                         key={inx}
                         className={`${
                           currentService === inx
-                            ? "opacity-100 visible"
-                            : "opacity-0 invisible"
+                            ? 'opacity-100 visible'
+                            : 'opacity-0 invisible'
                         }`}
                         dangerouslySetInnerHTML={{ __html: description }}
                       />
@@ -186,7 +186,7 @@ export default function Services() {
                   </p>
 
                   <p className={`${styles.servicesCardLink}`}>
-                    <span className="opacity-0">{services[0].link}</span>
+                    <span className='opacity-0'>{services[0].link}</span>
                     {services.map(({ link }, inx) => (
                       <CustomLink
                         key={inx}
@@ -195,8 +195,8 @@ export default function Services() {
                         }`}
                         className={`${
                           currentService === inx
-                            ? "opacity-100 visible"
-                            : "opacity-0 invisible"
+                            ? 'opacity-100 visible'
+                            : 'opacity-0 invisible'
                         }`}
                       >
                         <span className={``}>{link}</span>
@@ -216,16 +216,16 @@ export default function Services() {
             >
               <div className={`${styles.firstServiceImageInner}`}>
                 <Image
-                  src={"/images/main-page-services/first-service-image.png"}
+                  src={'/images/main-page-services/first-service-image.png'}
                   fill
-                  alt=""
-                  className="hidden lg:block"
+                  alt=''
+                  className='hidden lg:block'
                 />
                 <Image
-                  src={"/images/main-page-services/first-service-image-md.png"}
+                  src={'/images/main-page-services/first-service-image-md.png'}
                   fill
-                  alt=""
-                  className="block lg:hidden"
+                  alt=''
+                  className='block lg:hidden'
                 />
               </div>
             </div>
@@ -239,16 +239,16 @@ export default function Services() {
             >
               <div className={`${styles.secondServiceImageInner}`}>
                 <Image
-                  src={"/images/main-page-services/second-service-image.png"}
+                  src={'/images/main-page-services/second-service-image.png'}
                   fill
-                  alt=""
-                  className="hidden lg:block"
+                  alt=''
+                  className='hidden lg:block'
                 />
                 <Image
-                  src={"/images/main-page-services/second-service-image-md.png"}
+                  src={'/images/main-page-services/second-service-image-md.png'}
                   fill
-                  alt=""
-                  className="block lg:hidden"
+                  alt=''
+                  className='block lg:hidden'
                 />
               </div>
             </div>
@@ -262,16 +262,16 @@ export default function Services() {
             >
               <div className={`${styles.thirdServiceImageInner}`}>
                 <Image
-                  src={"/images/main-page-services/third-service-image.png"}
+                  src={'/images/main-page-services/third-service-image.png'}
                   fill
-                  alt=""
-                  className="hidden lg:block"
+                  alt=''
+                  className='hidden lg:block'
                 />
                 <Image
-                  src={"/images/main-page-services/third-service-image-md.png"}
+                  src={'/images/main-page-services/third-service-image-md.png'}
                   fill
-                  alt=""
-                  className="block lg:hidden"
+                  alt=''
+                  className='block lg:hidden'
                 />
               </div>
             </div>
@@ -285,16 +285,15 @@ export default function Services() {
             >
               <div className={`${styles.fourthServiceImageInner}`}>
                 <Image
-                  src={"/images/main-page-services/fourth-service-image.png"}
+                  src={'/images/main-page-services/fourth-service-image.png'}
                   fill
-                  alt=""
+                  alt=''
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <ServicesSlider services={services} images={servicesImage} />
     </section>
   );

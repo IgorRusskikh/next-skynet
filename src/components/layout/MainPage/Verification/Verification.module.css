@@ -152,7 +152,7 @@
 .cardLink {
   @apply uppercase mt-[8.89vw];
   @apply md:mt-[31px];
-  @apply lg:mt-[44px];
+  @apply lg:mt-[24px];
   @apply xl:mt-[32px];
   @apply 3xl:mt-[3.13vw];
 }

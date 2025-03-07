@@ -27,7 +27,7 @@
           "1": "Cash2Cash",
           "2": "Переводы в 30+ стран",
           "3": "Расчёты для ВЭД ",
-          "4": "Управление финансами через TG-бота"
+          "4": "Управление финансами через TG-бот"
         },
         "consultation-button": "Получить консультацию"
       }
@@ -43,12 +43,12 @@
     },
     "Services": {
       "title": "Услуги",
-      "subtitle": "Обменивайте криптовалюту, <br class=\"hidden md:block lg:hidden\" />оплачивайте <br class=\"hidden 3xl:block\" />счета и получайте наличные по <br class=\"md:hidden\" />всему миру с помощью <br class=\"md:hidden\" />Skynet",
+      "subtitle": "Обменивайте криптовалюту, <br class=\"hidden md:block lg:hidden\" />оплачивайте <br class=\"hidden 3xl:block\" />счета и получайте наличные по <br class=\"md:hidden\" />всему миру с помощью <br class=\"md:hidden\" />Skynet<span class=\"text-primary-red\">.</span>",
       "description": "Мы создаем удобные маршруты для перевода ваших финансов, обмена криптовалюты на наличные и расчетов с зарубежными поставщиками",
       "services": {
         "0": {
           "title": "Обмен USDT ⇄ FIAT",
-          "description": "Обмениваем криптовалюту на наличные <br class=\"lg:hidden xl:block 3xl:hidden\" />или безналичные средства и наоборот. <br class=\"md:hidden\" />Обновляем <br class=\"hidden 3xl:block\" />курсы <br class=\"hidden 3xl:hidden\" />валют и актуальную <br class=\"md:hidden\" />комиссию <br class=\"hidden 3xl:block\" />в Telegram-боте",
+          "description": "Обмениваем криптовалюту на наличные <br class=\"lg:hidden xl:block 3xl:hidden\" /> и обратно. Обновляем информацию <br class=\"hidden 3xl:hidden\" />о курсах валют и комиссиях <br class=\"hidden 3xl:block\" />в нашем Telegram-бот",
           "link": "Подробнее о USDT – FIAT"
         },
         "1": {
@@ -58,15 +58,15 @@
         },
         "2": {
           "title": "Платежи для ВЭД",
-          "description": "Оплачиваем счета зарбежных поставщиков <br class=\"md:hidden 3xl:block\" />через  сеть юридических лиц в 30+ странах. <br class=\"md:hidden 3xl:block\" />Документально оформляем все сделки и <br class=\"hidden 3xl:block\" />обходим <br class=\"md:hidden\" />банковские ограничения",
+          "description": "Оплачиваем счета зарубежных поставщиков <br class=\"md:hidden 3xl:block\" />через  сеть юридических лиц в 30+ странах. <br class=\"md:hidden 3xl:block\" />Осуществляем сделки в соответствии с нормами<br class=\"hidden 3xl:block\" /> ЦБ, минуя санкционные ограничения",
           "link": "Подробнее о ВЭД"
         }
       }
     },
     "HowToUse": {
       "title": "Как это работает",
-      "subtitle": "<span>Управляйте финансовыми операциями в одном Telegram-боте</span> <hidden-text>Наш бот — это удобный инструмент для управления финансами, в котором можно заказывать обмены криптовалюты, переводы, оплату счета, обмен валюты и консультации менеджера</hidden-text>",
-      "mobile-subtitle": "Наш бот — это удобный инструмент для управления финансами, в котором можно заказывать обмены криптовалюты, переводы, оплату счета, обмен валюты и консультации менеджера",
+      "subtitle": "<span>Управляйте финансовыми операциями в одном Telegram-бот</span> <hidden-text>Наш бот — это удобный инструмент для управления финансами, в котором можно заказать обмен криптовалюты, осуществить перевод, оплатить счет, обменять валюту и получить консультацию менеджера.</hidden-text>",
+      "mobile-subtitle": "Наш бот — это удобный инструмент для управления финансами, в котором можно заказать обмен криптовалюты, осуществить перевод, оплатить счет, обменять валюту и получить консультацию менеджера.",
       "steps": {
         "0": {
           "title": "Выберите услугу <br />в TG-боте",
@@ -100,11 +100,11 @@
         },
         "2": {
           "title": "Фиксированный курс",
-          "description": "Закрепляем курс валюты на время от заявки <br class=\"lg:hidden\" />до сделки, чтобы защитить <br class=\"hidden 3xl:block\" />ваши средства <br class=\"lg:hidden\" />от колебаний рынка"
+          "description": "Закрепляем курс валюты с момента подачи заявки до завершения сделки, чтобы защитить ваши средства от колебаний рынка"
         }
       },
       "red-card": {
-        "description": "Обсудите условия верификации <br class=\"hidden lg:block xl:hidden\" />с менеджером, чтобы получить <br class=\"hidden lg:block xl:hidden\" />доступ к премиальным функциям",
+        "description": "Обсудите условия верификации  <br class=\"hidden lg:block xl:hidden\" />с менеджером для получения <br class=\"hidden lg:block xl:hidden\" />доступа к премиальным функциям",
         "get-consultation": "получить консультацию"
       }
     },
@@ -293,15 +293,15 @@
     },
     "HowToUse": {
       "title": "как это работает",
-      "subtitle": "Воспользуйтесь Telegram-ботом для перестановки средств <br class=\"hidden md:block 3xl:hidden\" />за 4 простых шага",
+      "subtitle": "Воспользуйтесь Telegram-ботом для перестановки средств <br class=\"hidden md:block 3xl:hidden\" />в 4 простых шага",
       "steps": {
         "0": {
           "title": "Укажите детали <br class=\"hidden md:block lg:hidden 3xl:block\" />перестановки в TG-боте",
-          "description": "<br />Выберите валюту отправки и <br class=\"hidden lg:block 3xl:hidden\" />получения и локации, в которых <br class=\"hidden lg:block 3xl:hidden\" />удобно отдать и получить средства"
+          "description": "<br />Выберите валюту для отправки <br class=\"hidden lg:block 3xl:hidden\" />и получения, а также удобные локации <br class=\"hidden lg:block 3xl:hidden\" />для передачи и получения средств"
         },
         "1": {
           "title": "Обсудите детали <br class=\"hidden md:block lg:hidden\" />с менеджером",
-          "description": "<br />Мы свяжемся для уточнения <br class=\"hidden md:block lg:hidden 3xl:block\" />условий операции и сроков"
+          "description": "<br />Мы свяжемся с вами для уточнения <br class=\"hidden md:block lg:hidden 3xl:block\" />сроков и условий операции"
         },
         "2": {
           "title": "Оплатите любым <br class=\"hidden lg:block\" />удобным способом",
@@ -309,7 +309,7 @@
         },
         "3": {
           "title": "Получите средства <br class=\"hidden md:block lg:hidden\" />в выбранной локации",
-          "description": "<br />Заберите деньги в нашем <br class=\"hidden md:block lg:hidden\" />офисе <br class=\"hidden lg:block\" />или офисе партнёров <br class=\"hidden md:block lg:hidden\" />или примите <br class=\"hidden xl:block 3xl:hidden\" />курьера"
+          "description": "<br />Получите деньги в нашем <br class=\"hidden md:block lg:hidden\" />офисе, <br class=\"hidden lg:block\" />в офисе партнёров <br class=\"hidden md:block lg:hidden\" />или примите <br class=\"hidden xl:block 3xl:hidden\" />курьера"
         }
       }
     }
@@ -332,18 +332,18 @@
     },
     "Services": {
       "title": "Услуги",
-      "subtitle": "Оплата счетов, репатриация <br class=\"hidden md:block 3xl:hidden\" />валютной <br class=\"hidden 3xl:block\" />выручки для ВЭД легально <br class=\"hidden md:block 3xl:hidden\" />и без ограничений",
-      "description": "Мы проводим международные финансовые операции, подбирая быстрые и надежные маршруты для любых <br class=\"hidden md:block 3xl:hidden\" />задач вашего бизнеса",
+      "subtitle": "Оплата счетов и содействие <br class=\"hidden md:block 3xl:hidden\" />в репатриации <br class=\"hidden 3xl:block\" />выручки для ВЭД легально <br class=\"hidden md:block 3xl:hidden\" />и без ограничений",
+      "description": "Мы осуществляем международные финансовые операции, выбирая быстрые и надежные маршруты для любых <br class=\"hidden md:block 3xl:hidden\" />задач вашего бизнеса",
       "cards": {
         "0": {
           "for-whom": "импортёрам",
           "title": "Оплата счетов зарубежных поставщиков",
-          "description": "Используем надёжные финансовые каналы, чтобы средства <br class=\"hidden xl:block 3xl:hidden\" />доходили до получателя быстро и без задержек"
+          "description": "Используем надёжные финансовые каналы, чтобы средства <br class=\"hidden xl:block 3xl:hidden\" />быстро и без задержек поступали к получателю"
         },
         "1": {
           "for-whom": "Экспортёрам",
-          "title": "Получение оплаты от клиентов <br class=\"hidden lg:block xl:hidden\" />и репатриация",
-          "description": "Помогаем получать средства от зарубежных заказчиков через сеть зарубежных компаний и возвращаем валютную выручку в РФ"
+          "title": "Прием платежей от клиентов <br class=\"hidden lg:block xl:hidden\" />и содействие в репатриации",
+          "description": "Осуществляем прием платежей от зарубежных заказчиков через собственную сеть иностранных компаний и возвращаем валютную выручку в РФ"
         }
       }
     },
@@ -358,14 +358,14 @@
             "from": "Ваша компания в РФ",
             "to": "Счёт нерезидента в РФ",
             "within": "Агентский договор",
-            "description": "Оплатите сумму для оплаты поставщику <br class=\" md:hidden\" />и комиссию в рублях <br class=\"hidden md:block xl:hidden 3xl:block\" />на счёт компании-нерезидента по агентсткому договору"
+            "description": "Переведите средства на счет <br class=\" md:hidden\" />компании-нерезидента по <br class=\"hidden md:block xl:hidden 3xl:block\" />агентскому договору"
           },
           "1": {
             "step": "Оплата поставщику",
             "from": "Иностранная компания",
             "to": "Ваш поставщик",
             "within": "Контракт",
-            "description": "Мы заключим договор с поставщиком <br class=\" md:hidden\" />от иностранной <br class=\"hidden 3xl:block\" />компании, <br class=\"hidden xl:block 3xl:hidden\" />не связанной <br class=\" md:hidden\" />с РФ, и оплатим счёт в нужной валюте"
+            "description": "Мы заключим договор с поставщиком <br class=\" md:hidden\" />от иностранном <br class=\"hidden 3xl:block\" />компании, <br class=\"hidden xl:block 3xl:hidden\" />не связанной <br class=\" md:hidden\" />с РФ, и оплатим счёт в нужной валюте"
           }
         }
       }
@@ -380,7 +380,7 @@
         },
         "1": {
           "title": "Обсудите детали <br class=\"hidden md:block lg:hidden\" />с менеджером",
-          "description": "<br />Мы свяжемся для уточнения <br class=\"hidden md:block lg:hidden 3xl:block\" />условий операции и сроков"
+          "description": "<br />Мы свяжемся с вами для уточнения сроков <br class=\"hidden md:block lg:hidden 3xl:block\" />и условий операции"
         },
         "2": {
           "title": "Подтвердите сделку",
@@ -406,7 +406,7 @@
         },
         "2": {
           "title": "Оплатить образование?",
-          "description": "Закроем счёт за обучение в <br class=\"br-lg\" />зарубежном <br-xl></br-xl>университете. <br class=\"br-lg\" />Гарантируем своевременный <br class=\"br-lg\" />перевод средств в нужной валюте"
+          "description": "Закроем счёт за обучение в <br class=\"br-lg\" />иностранном <br-xl></br-xl>университете. <br class=\"br-lg\" />Гарантируем своевременный <br class=\"br-lg\" />перевод средств в нужной валюте"
         }
       },
       "red-card": {
@@ -433,28 +433,28 @@
     "HowToUse": {
       "title": "Как это <br class=\"hidden md:block lg:hidden\" />работает",
       "subtitle": "Как происходит обмен USDT ⇄  FIAT? ",
-      "description": "Наши специалисты помогут вам <br class=\"md:hidden\" />произвести <br class=\"hidden lg:block xl:hidden\" />обмен быстро, и безопасно",
+      "description": "Наши специалисты помогут вам <br class=\"md:hidden\" />произвести <br class=\"hidden lg:block xl:hidden\" />обмен быстро и безопасно",
       "step": "Шаг",
       "cards": {
         "0": {
-          "title": "Оставьте заявку в Telegram-боте",
-          "description": "В нашем Telegram-боте выберите функцию продажи <br class=\"hidden md:block xl:hidden\" />или покупки USDT и укажите нужную сумму"
+          "title": "Оставьте заявку в Telegram-бот",
+          "description": "В нашем Telegram-бот выберите функцию продажи <br class=\"hidden md:block xl:hidden\" />или покупки USDT и укажите нужную сумму"
         },
         "1": {
           "title": "Наш менеджер свяжется с вами",
-          "description": "Менеджер актуализирует вашу заявку и уточнит оставшиеся моменты"
+          "description": "Менеджер актуализирует вашу заявку и уточнит всю необходимую информацию"
         },
         "2": {
           "title": "Фиксируем курс обмена",
-          "description": "Если вы верифицированный пользователь, мы зафиксируем <br class=\"hidden md:block lg:hidden\" />курс на момент подачи <br class=\"hidden lg:block xl:hidden\" />вашей заявки. В другом случае, курс <br class=\"hidden md:block lg:hidden\" />фиксируется <br class=\"md:hidden\" />после приезда в офис."
+          "description": "Если вы - верифицированный пользователь, мы зафиксируем <br class=\"hidden md:block lg:hidden\" />курс на момент подачи <br class=\"hidden lg:block xl:hidden\" />вашей заявки. В другом случае, курс <br class=\"hidden md:block lg:hidden\" />фиксируется <br class=\"md:hidden\" />во время визита в офис."
         },
         "3": {
           "title": "Закажите пропуск в офис",
-          "description": "В Телеграм-боте закажите пропуск в офис по ID вашей сделке"
+          "description": "В Телеграм-боте закажите пропуск в офис по ID вашей сделки"
         },
         "4": {
           "title": "Приезжайте в офис для завершения сделки",
-          "description": "В офисе м произведём обмен USDT <br class=\"hidden md:block lg:hidden\" />на наличные <br class=\"hidden lg:block xl:hidden\" />согласно вашей заявке"
+          "description": "В офисе мы произведём обмен USDT <br class=\"hidden md:block lg:hidden\" />на наличные <br class=\"hidden lg:block xl:hidden\" />согласно вашей заявке"
         }
       }
     }
@@ -485,11 +485,11 @@
   "Footer": {
     "tg-block": {
       "titles": {
-        "main": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-боте ",
+        "main": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-бот ",
         "cash2cash": "Закажите перестановку средств <br style=\"hidden md:block 3xl:hidden\" />уже сегодня через наш<br /> Telegram-бот",
         "ved": "Запланируйте международный <br class=\"hidden md:block lg:hidden\" />перевод уже сегодня через <br class=\"hidden md:block lg:hidden\" />наш Telegram-бот",
         "usdt-fiat": "Начните обмен уже сегодня <br class=\"xl:hidden\" />через наш Telegram-бот",
-        "quotes": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-боте"
+        "quotes": "Закажите оплату, перевод, обмен или консультацию уже сегодня в нашем Telegram-бот"
       },
       "go-to-tg": "Перейти в telegram"
     },
@@ -500,7 +500,8 @@
           "0": "Главная",
           "1": "USDT – FIAT",
           "2": "Сash2Cash",
-          "3": "Оплата инвойсов"
+          "3": "Оплата инвойсов",
+          "4": "Котировки"
         }
       },
       "contacts": {

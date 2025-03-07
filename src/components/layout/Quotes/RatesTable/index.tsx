@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import Image from "next/image";
-import styles from "./RatesTable.module.css";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import styles from './RatesTable.module.css';
+import { useTranslations } from 'next-intl';
 
 interface RateData {
   source: string;
   quote: string;
   value: number;
   previous_value: number;
-  type: "" | "buy" | "sell";
+  type: '' | 'buy' | 'sell';
 }
 
 export default function RatesTable() {
   const [ratesData, setRatesData] = useState<RateData[]>([]);
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState('');
 
-  const t = useTranslations("Quotes");
+  const t = useTranslations('Quotes');
 
   useEffect(() => {
     const fetchInvestingData = async () => {
       try {
         const response = await fetch(
-          "https://dev.admin.skynetgroup.ru/api/quotes"
+          'https://dev.admin.skynetgroup.ru/api/quotes'
         );
         if (!response.ok) {
           setErr(
-            "Не удалось получить данные о котировках: Investing и Profinance"
+            'Не удалось получить данные о котировках: Investing и Profinance'
           );
           return;
         }
-        const data = await response.json();
+        const { data } = await response.json();
         setRatesData((prev) => [...prev, ...data]);
       } catch (err) {
         console.error(err);
@@ -40,27 +40,27 @@ export default function RatesTable() {
     const fetchGarantexData = async () => {
       try {
         const response = await fetch(
-          "https://garantex.org/api/v2/depth?market=usdtrub"
+          'https://garantex.org/api/v2/depth?market=usdtrub'
         );
         const data = await response.json();
         if (data.bids.length >= 2 && data.asks.length >= 2) {
           const garantexBuyRate: RateData = {
-            source: "GARANTEX",
-            quote: "USDT/RUB",
+            source: 'GARANTEX',
+            quote: 'USDT/RUB',
             value: parseFloat(data.bids[0].price),
             previous_value: parseFloat(data.bids[1].price),
-            type: "buy",
+            type: 'buy',
           };
           const garantexSellRate: RateData = {
-            source: "GARANTEX",
-            quote: "USDT/RUB",
+            source: 'GARANTEX',
+            quote: 'USDT/RUB',
             value: parseFloat(data.asks[0].price),
             previous_value: parseFloat(data.asks[1].price),
-            type: "sell",
+            type: 'sell',
           };
           setRatesData((prev) => [...prev, garantexBuyRate, garantexSellRate]);
         } else {
-          console.error("Insufficient data from Garantex API.");
+          console.error('Insufficient data from Garantex API.');
         }
       } catch (err) {
         console.error(err);
@@ -70,35 +70,35 @@ export default function RatesTable() {
     const fetchCBRData = async () => {
       try {
         const response = await fetch(
-          "https://www.cbr-xml-daily.ru/daily_json.js"
+          'https://www.cbr-xml-daily.ru/daily_json.js'
         );
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok');
         }
         const data = await response.json();
 
         // Извлечение курса USD
         const usdRate = data.Valute.USD;
         const buyRate: RateData = {
-          source: "ЦБ РФ",
-          quote: "USD/RUB",
+          source: 'ЦБ РФ',
+          quote: 'USD/RUB',
           value: usdRate.Value,
           previous_value: usdRate.Previous,
-          type: "buy",
+          type: 'buy',
         };
 
         // Добавляем курс продажи
         const sellRate: RateData = {
-          source: "ЦБ РФ",
-          quote: "USD/RUB",
+          source: 'ЦБ РФ',
+          quote: 'USD/RUB',
           value: usdRate.Previous,
           previous_value: usdRate.Previous, // Можно использовать предыдущий курс как предыдущий
-          type: "sell",
+          type: 'sell',
         };
 
         setRatesData((prev) => [...prev, buyRate, sellRate]);
       } catch (error) {
-        console.error("Ошибка при получении данных:", error);
+        console.error('Ошибка при получении данных:', error);
       }
     };
 
@@ -119,9 +119,9 @@ export default function RatesTable() {
     <div className={styles.tableWrapper}>
       <div className={styles.ratesTable}>
         <div className={styles.tableHeader}>
-          <p className={styles.colTitle}>{t("source")}</p>
-          <p className={styles.colTitle}>{t("currency")}</p>
-          <p className={styles.colTitle}>{t("rates")}</p>
+          <p className={styles.colTitle}>{t('source')}</p>
+          <p className={styles.colTitle}>{t('currency')}</p>
+          <p className={styles.colTitle}>{t('rates')}</p>
         </div>
         <div className={styles.tableBody}>
           {ratesData.map((rate, index) => {
@@ -131,11 +131,11 @@ export default function RatesTable() {
                     ((rate.value - rate.previous_value) / rate.previous_value) *
                     100
                   ).toFixed(2)
-                : "0.00";
+                : '0.00';
             return (
               <div key={index} className={styles.tableRow}>
                 <p className={styles.source}>
-                  {rate.source}{" "}
+                  {rate.source}{' '}
                   {rate.type && (
                     <span className={styles.type}>{t(`${rate.type}`)}</span>
                   )}
@@ -147,18 +147,18 @@ export default function RatesTable() {
                     <div className={styles.arrowContainer}>
                       <Image
                         src={`/images/quotes/${
-                          Number(difference) < 0 ? "fall-price" : "up-price"
+                          Number(difference) < 0 ? 'fall-price' : 'up-price'
                         }.png`}
                         fill
-                        alt="price change"
+                        alt='price change'
                       />
                     </div>
                   </span>
                   <span
                     className={`${styles.difference} ${
                       Number(difference) < 0
-                        ? "text-primary-red"
-                        : "text-[#23A26D]"
+                        ? 'text-primary-red'
+                        : 'text-[#23A26D]'
                     }`}
                   >
                     {difference}% (
