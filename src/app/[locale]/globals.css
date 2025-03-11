@@ -21,6 +21,10 @@ body {
   @apply xl:max-w-[84.38vw];
 }
 
+.br-md {
+  @apply hidden md:block lg:hidden;
+}
+
 .br-md-lg {
   @apply hidden md:block xl:hidden;
 }
