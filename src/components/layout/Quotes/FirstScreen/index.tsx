@@ -38,6 +38,7 @@ export default function FirstScreen() {
         </div>
 
         <div className={`${styles.tableWrapper}`}>
+          <p className={`text-primary-red`}>*{t('rates-info')}</p>
           <RatesTable />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
+import { getAbcexData } from '@/features/actions/abcex.action';
 import styles from './RatesTable.module.css';
 import { useTranslations } from 'next-intl';
 
@@ -104,9 +105,36 @@ export default function RatesTable() {
       }
     };
 
+    const fetchAbcexData = async () => {
+      const data = await getAbcexData();
+
+      console.log(data);
+
+      if (data) {
+        const abcexBuyRate: RateData = {
+          source: 'ABCEX',
+          quote: 'USDT/RUB',
+          value: data[0].current,
+          previous_value: data[0].previous,
+          type: 'buy',
+        };
+
+        const abcexSellRate: RateData = {
+          source: 'ABCEX',
+          quote: 'USDT/RUB',
+          value: data[1].current,
+          previous_value: data[1].previous,
+          type: 'sell',
+        };
+
+        setRatesData((prev) => [...prev, abcexBuyRate, abcexSellRate]);
+      }
+    };
+
     fetchInvestingData();
     fetchGarantexData();
     fetchCBRData();
+    fetchAbcexData();
 
     // const interval = setInterval(() => {
     //   fetchInvestingData();
@@ -163,7 +191,7 @@ export default function RatesTable() {
                 <p className={styles.currency}>{rate.quote}</p>
                 <div className={styles.price}>
                   <span>
-                    <span>{rate.value}</span>
+                    <span>{rate.value.toFixed(2)}</span>
                     <div className={styles.arrowContainer}>
                       <Image
                         src={`/images/quotes/${

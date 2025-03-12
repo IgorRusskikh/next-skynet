@@ -1,6 +1,6 @@
 .tableWrapper {
-  @apply w-full;
-  @apply md:rounded-[20px] md:px-[40px] md:py-6 md:bg-white;
+  @apply w-full mt-[2.5vw];
+  @apply md:rounded-[20px] md:px-[40px] md:py-6 md:bg-white mt-2;
   @apply lg:rounded-[20px] lg:px-[40px] lg:py-6;
   @apply xl:rounded-[20px] xl:px-12 xl:py-8;
   @apply 3xl:rounded-[1.04vw] 3xl:px-[3.13vw] 3xl:py-[2.08vw];
