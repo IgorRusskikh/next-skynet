@@ -48,12 +48,12 @@
       "services": {
         "0": {
           "title": "Exchange USDT ⇄ FIAT",
-          "description": "Cash out cryptocurrencies <br class=\"lg:hidden xl:block 3xl:hidden\" /> and convert cash into crypto. <br class=\"md:hidden\" />Updated information on exchange <br class=\"md:hidden\" />rates and fees<br class=\"hidden 3xl:block\" />in our Telegram bot",
+          "description": "Cash out cryptocurrencies <br class=\"lg:hidden xl:block 3xl:hidden\" /> and convert cash into crypto. <br class=\"md:hidden\" />Updated information on exchange <br class=\"md:hidden\" />rates and fees <br class=\"hidden 3xl:block\" />in our Telegram bot",
           "link": "More about USDT – FIAT"
         },
         "1": {
           "title": "Cash2Cash",
-          "description": "We accept USDT/FIAT and provide cash <br class=\"hidden lg:block xl:hidden\" />funds worldwide, both in our offices and in<br class=\"hidden 3xl:block\" />partner <br class=\"hidden bg-lg br-xl\" />locations across 30+s countries",
+          "description": "We accept USDT/FIAT and provide cash <br class=\"hidden lg:block xl:hidden\" />funds worldwide, both in our offices and in <br class=\"hidden 3xl:block\" />partner <br class=\"hidden bg-lg br-xl\" />locations across 30+s countries",
           "link": "More about Cash2Cash"
         },
         "2": {
