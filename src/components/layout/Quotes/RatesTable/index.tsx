@@ -11,7 +11,7 @@ interface RateData {
   quote: string;
   value: number;
   previous_value: number;
-  type: '' | 'buy' | 'sell';
+  type: '' | 'buy' | 'sell' | string;
 }
 
 export default function RatesTable() {
