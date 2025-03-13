@@ -87,19 +87,10 @@ export default function RatesTable() {
           quote: 'USD/RUB',
           value: usdRate.Value,
           previous_value: usdRate.Previous,
-          type: 'buy',
+          type: '',
         };
 
-        // Добавляем курс продажи
-        const sellRate: RateData = {
-          source: 'ЦБ РФ',
-          quote: 'USD/RUB',
-          value: usdRate.Previous,
-          previous_value: usdRate.Previous, // Можно использовать предыдущий курс как предыдущий
-          type: 'sell',
-        };
-
-        setRatesData((prev) => [...prev, buyRate, sellRate]);
+        setRatesData((prev) => [...prev, buyRate]);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
       }

@@ -48,7 +48,7 @@
       "services": {
         "0": {
           "title": "Exchange USDT ⇄ FIAT",
-          "description": "Exchange crypto for cash <br class=\"lg:hidden xl:block 3xl:hidden\" /> or non-cash funds and vice versa. <br class=\"md:hidden\" />Update <br class=\"hidden 3xl:block\" />exchange rates and current <br class=\"md:hidden\" />commission <br class=\"hidden 3xl:block\" />in the Telegram bot",
+          "description": "Cash out cryptocurrencies <br class=\"lg:hidden xl:block 3xl:hidden\" /> and convert cash into crypto. <br class=\"md:hidden\" />Updated information on exchange <br class=\"md:hidden\" />rates and fees<br class=\"hidden 3xl:block\" />in our Telegram bot",
           "link": "More about USDT – FIAT"
         },
         "1": {
@@ -58,7 +58,7 @@
         },
         "2": {
           "title": "Payments for Foreign Trade",
-          "description": "Pay foreign suppliers' invoices <br class=\"md:hidden 3xl:block\" />through a network of legal entities in 30+ countries. <br class=\"md:hidden 3xl:block\" />Execute transactions in compliance with Central Bank<br class=\"hidden 3xl:block\" /> regulations, bypassing sanctions restrictions",
+          "description": "Pay foreign suppliers' invoices through a network <br class=\"md:hidden 3xl:block\" />of legal entities in 30+ countries. Execute transactions <br class=\"hidden 3xl:block\" />in compliance with Central Bank regulations, <br class=\"hidden 3xl:block\" />bypassing sanctions restrictions",
           "link": "More about Foreign Trade"
         }
       }
@@ -462,7 +462,7 @@
   "Quotes": {
     "updated": "Updated",
     "currency-rates": "Currency Rates",
-    "rates-info": "Information about currency exchange rates is for reference purposes only and is not a public offer.",
+    "rates-info": "Information about cryptocurrency exchange rates is for reference purposes only and is not a public offer.",
     "months": {
       "0": "January",
       "1": "February",
@@ -501,7 +501,7 @@
           "0": "Home",
           "1": "USDT – FIAT",
           "2": "Cash2Cash",
-          "3": "Invoice Payments",
+          "3": "Payments for Foreign Economic Activity",
           "4": "Quotes"
         }
       },
