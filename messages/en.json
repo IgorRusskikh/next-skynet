@@ -462,7 +462,7 @@
   "Quotes": {
     "updated": "Updated",
     "currency-rates": "Currency Rates",
-    "rates-info": "Information about cryptocurrency exchange rates is for reference purposes only and is not a public offer.",
+    "rates-info": "*Information about cryptocurrency exchange rates is for reference purposes only and is not a public offer.<br />Contact a manager to clarify current cryptocurrency exchange rates.",
     "months": {
       "0": "January",
       "1": "February",
