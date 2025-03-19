@@ -20,10 +20,10 @@
         },
         "bottom-line": "CRYPTO EXCHANGE. <br class=\"br-xl\" />worldwide."
       },
-      "description": "Exchange crypto for cash in your preferred currency with minimal fees and transparent support",
+      "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling payments.",
       "banner": {
         "advantages": {
-          "0": "Cryptocurrency exchange",
+          "0": "CRYPTO EXCHANGE",
           "1": "Cash2Cash",
           "2": "Transfers to 30+ countries",
           "3": "Foreign Trade payments",
@@ -44,7 +44,7 @@
     "Services": {
       "title": "Services",
       "subtitle": "Exchange crypto, <br class=\"hidden md:block lg:hidden \" />pay <br class=\"hidden 3xl:block \" />invoices and receive cash globally using <br class=\"md:hidden \" />Skynet<span class=\"text-primary-red\">.</span>",
-      "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling payments..",
+      "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling payments.",
       "services": {
         "0": {
           "title": "Exchange USDT ⇄ FIAT",
@@ -82,13 +82,13 @@
         },
         "3": {
           "title": "Receive funds or<br /> payment confirmation",
-          "description": "Depending on the selected <br class\"hidden 3xl:block\" />either receive cash or <br class\"hidden 3xl:block\" >obtain documentary<br class\"hidden 3xl:block\" /> confirmation of your transfer"
+          "description": "Depending on the selected service <br class\"hidden 3xl:block\" />either receive cash or <br class\"hidden 3xl:block\" >obtain documentary<br class\"hidden 3xl:block\" /> confirmation of your transfer"
         }
       }
     },
     "Verification": {
       "title": "Verification",
-      "subtitle": "Take advantage of enhanced financial management <br class=\"br-xl\" />with premium features for verified clients",
+      "subtitle": "Take advantage of enhanced financial management with premium features for verified clients",
       "cards": {
         "0": {
           "title": "Courier Delivery",
@@ -332,7 +332,7 @@
     },
     "Services": {
       "title": "Services",
-      "subtitle": "FT Payments and, repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
+      "subtitle": "Invoice payments and repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
       "description": "We conduct international financial operations, selecting fast and reliable routes for any <br class=\"hidden br-xl 3xl:hidden\" />tasks of your business",
       "cards": {
         "0": {
@@ -372,7 +372,7 @@
     },
     "HowToUse": {
       "title": "how it works",
-      "subtitle": "Use the Telegram bot <br class=\"md:hidden\" />for settlements <br class=\"md:hidden\" />with counterparties <br class=\"md:hidden\" />in 4 simple steps",
+      "subtitle": "Use our Telegram bot <br class=\"md:hidden\" />for settlements <br class=\"md:hidden\" />with counterparties <br class=\"md:hidden\" />in 4 simple steps",
       "steps": {
         "0": {
           "title": "Choose a service <br class=\" lg:hidden xl:block\" />in the <br class=\"br-lg \" />TG bot",
@@ -426,7 +426,7 @@
         "1": "Minimal commission."
       },
       "tg": {
-        "description": "Exchange cryptocurrency for cash with <br />minimal commissions in your preferred currency and transparent support",
+        "description": "Exchange crypto for cash in your preferred <br />currency with minimal fees and transparent support",
         "button": "Exchange in TG-BOt"
       }
     },
