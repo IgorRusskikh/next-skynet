@@ -671,7 +671,11 @@ export default function HowToUse() {
                 ))}
               </p>
 
-              <div className={`${styles.bannerStep}`}>
+              <div
+                className={`${styles.bannerStep} ${
+                  locale === 'en' ? styles.bannerStepEn : ''
+                }`}
+              >
                 <p className={`${styles.bannerStepNumber}`}>
                   {Array.from({ length: 4 }).map((_, index) => (
                     <span
@@ -691,7 +695,7 @@ export default function HowToUse() {
                   }`}
                 >
                   <span
-                    className='!relative invisible opacity-0'
+                    className={`!relative invisible opacity-0`}
                     dangerouslySetInnerHTML={{
                       __html:
                         t.raw('steps.0.description') +

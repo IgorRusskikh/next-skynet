@@ -38,8 +38,12 @@ export default function FirstScreen() {
         </div>
 
         <div className={`${styles.tableWrapper}`}>
-          <p className={`text-primary-red`}>*{t('rates-info')}</p>
           <RatesTable />
+
+          <p
+            className={`text-[#898C98] mt-2 ml-auto`}
+            dangerouslySetInnerHTML={{ __html: t('rates-info') }}
+          />
         </div>
       </div>
     </section>

@@ -77,6 +77,13 @@
   @apply 3xl:translate-y-[-4.44vw];
 }
 
+.bannerStepEn {
+  @apply -translate-y-[8.67vw];
+  @apply lg:translate-y-[-50px];
+  @apply xl:translate-y-[-40px];
+  @apply 3xl:translate-y-[-5vw];
+}
+
 .bannerStepNumber {
   @apply font-[450] text-white opacity-30 relative w-fit h-fit text-[50vw] leading-[50vw] translate-x-[-35vw];
   @apply md:text-[203px] md:leading-[203px] md:-translate-x-[60px];
@@ -107,6 +114,14 @@
   @apply lg:pl-14;
   @apply xl:pl-[86px];
   @apply 3xl:pl-[6vw];
+}
+
+.bannerStepDescriptionEn span {
+  @apply pl-[7.5vw];
+  @apply md:pl-[190px];
+  @apply lg:pl-[60px];
+  @apply xl:pl-[200px];
+  @apply 3xl:pl-[15vw];
 }
 
 .bottomPhoneImageWrapper {

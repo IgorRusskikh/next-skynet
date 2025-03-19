@@ -21,35 +21,35 @@ export default function RatesTable() {
   const t = useTranslations('Quotes');
 
   useEffect(() => {
-    const fetchGarantexData = async () => {
-      try {
-        const response = await fetch(
-          'https://garantex.org/api/v2/depth?market=usdtrub'
-        );
-        const data = await response.json();
-        if (data.bids.length >= 2 && data.asks.length >= 2) {
-          const garantexBuyRate: RateData = {
-            source: 'GARANTEX',
-            quote: 'USDT/RUB',
-            value: parseFloat(data.bids[0].price),
-            previous_value: parseFloat(data.bids[1].price),
-            type: 'buy',
-          };
-          const garantexSellRate: RateData = {
-            source: 'GARANTEX',
-            quote: 'USDT/RUB',
-            value: parseFloat(data.asks[0].price),
-            previous_value: parseFloat(data.asks[1].price),
-            type: 'sell',
-          };
-          setRatesData((prev) => [...prev, garantexBuyRate, garantexSellRate]);
-        } else {
-          console.error('Insufficient data from Garantex API.');
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
+    // const fetchGarantexData = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       'https://garantex.org/api/v2/depth?market=usdtrub'
+    //     );
+    //     const data = await response.json();
+    //     if (data.bids.length >= 2 && data.asks.length >= 2) {
+    //       const garantexBuyRate: RateData = {
+    //         source: 'GARANTEX',
+    //         quote: 'USDT/RUB',
+    //         value: parseFloat(data.bids[0].price),
+    //         previous_value: parseFloat(data.bids[1].price),
+    //         type: 'buy',
+    //       };
+    //       const garantexSellRate: RateData = {
+    //         source: 'GARANTEX',
+    //         quote: 'USDT/RUB',
+    //         value: parseFloat(data.asks[0].price),
+    //         previous_value: parseFloat(data.asks[1].price),
+    //         type: 'sell',
+    //       };
+    //       setRatesData((prev) => [...prev, garantexBuyRate, garantexSellRate]);
+    //     } else {
+    //       console.error('Insufficient data from Garantex API.');
+    //     }
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
+    // };
 
     const fetchCBRData = async () => {
       try {
@@ -126,17 +126,18 @@ export default function RatesTable() {
     const fetchInvestingData = async () => {
       try {
         const data = await getInvestingRates();
-        console.log('Investing data:', data);
 
         if (data && Array.isArray(data)) {
           // Преобразуем данные в формат RateData
           const investingData = data.map((item: any) => ({
-            source: 'ProFinance', // Устанавливаем фиксированное название источника
+            source: item.source, // Устанавливаем фиксированное название источника
             quote: item.quote || 'USD/RUB',
             value: Number(item.value) || 0,
             previous_value: Number(item.previous_value || item.value) || 0,
             type: item.type || '',
           }));
+
+          console.log('Investing data:', investingData);
 
           setRatesData((prev) => [...prev, ...investingData]);
         }
@@ -148,7 +149,7 @@ export default function RatesTable() {
     fetchAbcexData();
     fetchInvestingData();
     fetchCBRData();
-    fetchGarantexData();
+    // fetchGarantexData();
 
     // const interval = setInterval(() => {
     //   fetchInvestingData();
@@ -169,11 +170,6 @@ export default function RatesTable() {
         </div>
         <div className={styles.tableBody}>
           {(() => {
-            // Выводим в консоль уникальные источники для отладки
-            console.log('Уникальные источники:', [
-              ...new Set(ratesData.map((rate) => rate.source)),
-            ]);
-
             // Создаем новый массив с данными в нужном порядке
             const abcexData = ratesData.filter(
               (rate) => rate.source === 'ABCEX'
@@ -182,20 +178,12 @@ export default function RatesTable() {
             // Используем более гибкий фильтр для ProFinance, так как название может отличаться
             const profinanceData = ratesData.filter(
               (rate) =>
-                rate.source.includes('ProFinance') ||
-                rate.source.includes('Investing')
-            );
-            const garantexData = ratesData.filter(
-              (rate) => rate.source === 'GARANTEX'
+                rate.source.includes('profinance') ||
+                rate.source.includes('investing')
             );
 
             // Объединяем массивы в нужном порядке
-            const sortedData = [
-              ...abcexData,
-              ...profinanceData,
-              ...cbData,
-              ...garantexData,
-            ];
+            const sortedData = [...abcexData, ...profinanceData, ...cbData];
 
             return sortedData.map((rate, index) => {
               const difference =
@@ -247,7 +235,7 @@ export default function RatesTable() {
               );
             });
           })()}
-          <div className={styles.tableRow}>
+          {/* <div className={styles.tableRow}>
             <p className={styles.source}>
               GARANTEX <span className={styles.type}>{t('buy')}</span>
             </p>
@@ -264,7 +252,7 @@ export default function RatesTable() {
             <div className={styles.price}>
               <span className={styles.emptyRate}>—</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

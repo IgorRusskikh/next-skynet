@@ -18,9 +18,9 @@
           "usdt": "USDT",
           "fiat": "FIAT."
         },
-        "bottom-line": "payments. exchange. <br class=\"br-xl\" />worldwide."
+        "bottom-line": "CRYPTO EXCHANGE. <br class=\"br-xl\" />worldwide."
       },
-      "description": "Exchange cryptocurrencies and conduct large international payments for businesses and individuals",
+      "description": "Exchange crypto for cash in your preferred currency with minimal fees and transparent support",
       "banner": {
         "advantages": {
           "0": "Cryptocurrency exchange",
@@ -29,7 +29,7 @@
           "3": "Foreign Trade payments",
           "4": "Financial management via TG Bot"
         },
-        "consultation-button": "Get a consultation"
+        "consultation-button": "GET STARTED"
       }
     },
     "AboutUs": {
@@ -38,13 +38,13 @@
       "advantages": {
         "0": "billion rubles annually",
         "1": "clients",
-        "2": "countries of operation"
+        "2": "countries"
       }
     },
     "Services": {
       "title": "Services",
       "subtitle": "Exchange crypto, <br class=\"hidden md:block lg:hidden \" />pay <br class=\"hidden 3xl:block \" />invoices and receive cash globally using <br class=\"md:hidden \" />Skynet<span class=\"text-primary-red\">.</span>",
-      "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling with foreign suppliers",
+      "description": "We create convenient routes for transferring large sums, exchanging crypto for cash, and settling payments..",
       "services": {
         "0": {
           "title": "Exchange USDT ⇄ FIAT",
@@ -65,16 +65,16 @@
     },
     "HowToUse": {
       "title": "How it works",
-      "subtitle": "<span>Manage financial operations in one Telegram bot</span> <hidden-text>Our bot is a convenient financial management tool where you can order cryptocurrency exchange, make transfers, pay bills, exchange currency and get manager consultation.</hidden-text>",
-      "mobile-subtitle": "Our bot is a convenient financial management tool where you can order cryptocurrency exchange, make transfers, pay bills, exchange currency and get manager consultation.",
+      "subtitle": "<span>Manage all your financial operations in one Telegram bot.</span> <hidden-text>Our bot is a convenient financial management tool where you can exchange crypto, transfer funds, pay bills, convert currencies, and receive personalized consultations from our manager.</hidden-text>",
+      "mobile-subtitle": "Our bot is a convenient financial management tool where you can exchange crypto, transfer funds, pay bills, convert currencies, and receive personalized consultations from our manager.",
       "steps": {
         "0": {
-          "title": "Choose a service <br />in the TG bot",
-          "description": "Specify your task, the required <br />amount and currency or order <br />a manager consultation"
+          "title": "Select a service <br />in the TG bot",
+          "description": "Indicate your task, enter <br />required amount and currency, <br />or request a consultation with a manager"
         },
         "1": {
           "title": "Discuss details <br />with the manager",
-          "description": "We will contact you to clarify <br />operation terms and deadlines"
+          "description": "We will contact you to clarify the terms of the operation <br />and deadlines"
         },
         "2": {
           "title": "Confirm the deal",
@@ -82,25 +82,25 @@
         },
         "3": {
           "title": "Receive funds or<br /> payment confirmation",
-          "description": "Depending on the selected <br class\"hidden 3xl:block\" />service, receive cash or <br class\"hidden 3xl:block\" >get a documentary<br class\"hidden 3xl:block\" /> confirmation of your transfer"
+          "description": "Depending on the selected <br class\"hidden 3xl:block\" />either receive cash or <br class\"hidden 3xl:block\" >obtain documentary<br class\"hidden 3xl:block\" /> confirmation of your transfer"
         }
       }
     },
     "Verification": {
       "title": "Verification",
-      "subtitle": "Manage finances even more conveniently <br class=\"br-xl\" />with premium options for verified clients",
+      "subtitle": "Take advantage of enhanced financial management <br class=\"br-xl\" />with premium features for verified clients",
       "cards": {
         "0": {
           "title": "Courier Delivery",
-          "description": "Delivery of funds to a convenient <br class=\"block lg:hidden\" /><br class=\"hidden 3xl:block\" />location worldwide"
+          "description": "Receive funds at a location of your<br class=\"block lg:hidden\" /><br class=\"hidden 3xl:block\" />choice worldwide"
         },
         "1": {
           "title": "Personal Manager",
-          "description": "Individual support from a crypto and international transfer expert"
+          "description": "Individual support from an expert in crypto and global transfers"
         },
         "2": {
           "title": "Fixed exchange rate",
-          "description": "Fix the exchange rate from the moment of request submission to the completion of the deal to protect your funds from market fluctuations"
+          "description": "Fix the exchange rate as soon as you submit your request to protect your funds from market volatility"
         }
       },
       "red-card": {
@@ -110,8 +110,8 @@
     },
     "Offices": {
       "title": "Offices",
-      "subtitle": "We operate globally, but we are always glad to see you in our offices",
-      "description": "Visit us to meet in person, discuss tasks, <br class=\"hidden 3xl:block\" /><br class=\"hidden md:block lg:hidden\" />and conduct deals",
+      "subtitle": "We operate remotely worldwide, but we are always happy to see you at our offices",
+      "description": "Visit us to meet in person, discuss your tasks, <br class=\"hidden 3xl:block\" /><br class=\"hidden md:block lg:hidden\" />and conduct deals",
       "offices-list": {
         "0": {
           "flag": "ru",
@@ -143,13 +143,13 @@
         "0": "Any currency.",
         "1": "Worldwide."
       },
-      "description": "We transfer cash and provide it in any convenient currency at our offices, through <br class=\"block md:hidden lg:block xl:hidden 3xl:block\">our network of partners or via courier delivery",
+      "description": "We offer cash transfers in your preferred currency at our offices, through <br class=\"block md:hidden lg:block xl:hidden 3xl:block\">network of partners, or via courier delivery",
       "tg-bot": "Order transfer in TG bot"
     },
     "Locations": {
       "title": "Geography",
-      "subtitle": "Receive cash in any currency where <br class=\"hidden br-lg 3xl:block\" />it's convenient for you",
-      "description": "We accept cryptocurrency and FIAT, work with leading players, and provide convenient ways to receive funds worldwide",
+      "subtitle": "Receive cash in any currency, at a location <br class=\"hidden br-lg 3xl:block\" />of your choice",
+      "description": "We accept crypto and FIAT, partner with leading industry players, and offer convenient ways to receive funds worldwide",
       "locations": {
         "0": {
           "country": "USA and Canada",
@@ -293,11 +293,11 @@
     },
     "HowToUse": {
       "title": "how it works",
-      "subtitle": "Use the Telegram bot to transfer funds <br class=\"hidden br-md-lg\" />in 4 simple steps",
+      "subtitle": "Use our Telegram bot to transfer funds <br class=\"hidden br-lg\" />in 4 simple steps",
       "steps": {
         "0": {
           "title": "Specify transfer details <br class=\"hidden md:block lg:hidden 3xl:block \" />in TG Bot",
-          "description": "<br />Select currency for sending <br class=\"hidden lg:block 3xl:hidden\" />and receiving, as well as convenient locations <br class=\"hidden lg:block 3xl:hidden\" />for transfer and receipt of funds"
+          "description": "<br />Select currency for sending <br class=\"hidden lg:block 3xl:hidden\" />and receiving, as well as convenient locations <br class=\"hidden br-lg 3xl:hidden\" />for transfer and receipt of funds"
         },
         "1": {
           "title": "Discuss details with <br class=\"hidden md:block lg:hidden\" />the manager",
@@ -309,7 +309,7 @@
         },
         "3": {
           "title": "Receive funds <br class=\"hidden md:block lg:hidden\" />at the selected location",
-          "description": "<br class=\"hidden md:block\" />Pick up the money at our <br class=\"hidden md:block lg:hidden\" />office <br class=\"hidden lg:block\" />or a partner office <br class=\"hidden md:block lg:hidden\" />or receive a <br class=\"hidden xl:block 3xl:hidden\" />courier"
+          "description": "<br class=\"hidden md:block\" />Collect money at our <br class=\"hidden md:block lg:hidden\" />office, <br class=\"hidden lg:block\" />a partner location <br class=\"hidden md:block lg:hidden\" />or receive <br class=\"hidden xl:block 3xl:hidden\" />a courier."
         }
       }
     }
@@ -332,7 +332,7 @@
     },
     "Services": {
       "title": "Services",
-      "subtitle": "Invoice payments, repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
+      "subtitle": "FT Payments and, repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
       "description": "We conduct international financial operations, selecting fast and reliable routes for any <br class=\"hidden br-xl 3xl:hidden\" />tasks of your business",
       "cards": {
         "0": {
@@ -433,7 +433,7 @@
     "HowToUse": {
       "title": "How it works",
       "subtitle": "How does the USDT ⇄ FIAT <br class=\"hidden md:block lg:hidden xl:block 3xl:hidden\" />exchange happen?",
-      "description": "Our specialists will help you <br class=\"md:hidden\" />exchange <br class=\"hidden lg:block xl:hidden\" />quickly and safely",
+      "description": "Trust our team to assist you <br class=\"md:hidden\" />with a <br class=\"hidden lg:block \" />fast and secure exchange",
       "step": "Step",
       "cards": {
         "0": {
@@ -442,18 +442,18 @@
         },
         "1": {
           "title": "Our manager will contact you",
-          "description": "The manager will update your request and clarify all necessary information"
+          "description": "The manager will update your request and verify all the necessary information with you"
         },
         "2": {
           "title": "Fix the exchange rate",
-          "description": "If you are a verified user, we will fix <br class=\"hidden md:block lg:hidden\" />the rate at the time of submission <br class=\"hidden lg:block xl:hidden\" />of your request. Otherwise, the rate <br class=\"hidden md:block lg:hidden\" />is fixed <br class=\"md:hidden\" />during the office visit."
+          "description": "If you're a verified user, we’ll lock in the rate when <br class=\"hidden md:block lg:hidden\" />you submit your <br class=\"hidden lg:block xl:hidden\" />request. Otherwise, the rate will be <br class=\"hidden md:block lg:hidden\" />fixed during your office visit."
         },
         "3": {
           "title": "Order a pass to the office",
           "description": "Order an office pass in the Telegram bot using your deal ID"
         },
         "4": {
-          "title": "Come to the office to complete the deal",
+          "title": "Visit our office to finalize the deal",
           "description": "At the office, we will exchange USDT <br class=\"hidden md:block lg:hidden\" />for <br class=\"hidden lg:block xl:hidden\" />cash according to your request"
         }
       }
@@ -487,9 +487,9 @@
     "tg-block": {
       "titles": {
         "main": "Order payment, transfer, exchange or consultation today in our Telegram bot ",
-        "cash2cash": "Order a fund transfer <br style=\"hidden md:block 3xl:hidden\" />today through our<br /> Telegram bot",
+        "cash2cash": "Transfer funds <br class=\"br-xs\" />today with our<br /> Telegram bot",
         "ved": "Schedule an international <br class=\"hidden md:block lg:hidden\" />transfer today through <br class=\"hidden md:block lg:hidden\" />our Telegram bot",
-        "usdt-fiat": "Start exchanging today <br class=\"xl:hidden\" />through our Telegram bot",
+        "usdt-fiat": "Exchange today with <br class=\"xl:hidden\" />our Telegram bot",
         "quotes": "Order payment, transfer, exchange or consultation today in our Telegram bot"
       },
       "go-to-tg": "Go to Telegram"
@@ -502,7 +502,7 @@
           "1": "USDT – FIAT",
           "2": "Cash2Cash",
           "3": "Payments for Foreign Economic Activity",
-          "4": "Quotes"
+          "4": "Exchange rates"
         }
       },
       "contacts": {
