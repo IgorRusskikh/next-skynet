@@ -41,7 +41,7 @@ export default function FirstScreen() {
           <RatesTable />
 
           <p
-            className={`text-[#898C98] mt-2 ml-auto`}
+            className={`text-[#898C98] mt-2 ml-auto text-xs`}
             dangerouslySetInnerHTML={{ __html: t('rates-info') }}
           />
         </div>
