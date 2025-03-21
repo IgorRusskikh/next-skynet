@@ -34,7 +34,7 @@
     },
     "AboutUs": {
       "title": "Where large finances meet absolute reliability",
-      "description": "Every day we perform <br class=\"md:hidden\" />cryptocurrency operations for <br class=\"md:hidden 3xl:hidden\" />individuals and large companies, <br class=\"md:hidden\" />who trust us with their finances",
+      "description": "SKYNET in numbers",
       "advantages": {
         "0": "billion rubles annually",
         "1": "clients",
@@ -121,7 +121,7 @@
         "1": {
           "flag": "uae",
           "country": "Dubai",
-          "address": ""
+          "address": "150 Sheikh Zayed Road, 48 Burj Gate Tower, Dubai, United Arab Emirates"
         },
         "2": {
           "flag": "ru",
@@ -133,7 +133,8 @@
           "country": "Miami",
           "address": ""
         }
-      }
+      },
+      "address-copied": "Address copied"
     }
   },
   "CashToCash": {
@@ -332,7 +333,7 @@
     },
     "Services": {
       "title": "Services",
-      "subtitle": "Invoice payments and repatriation of foreign <br class=\"hidden 3xl:block\" />revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
+      "subtitle": "Invoice payments and repatriation of foreign <br class=\"hidden 3xl:block\" />trade revenue for foreign trade legally <br class=\"hidden 3xl:block\" />and without restrictions",
       "description": "We conduct international financial operations, selecting fast and reliable routes for any <br class=\"hidden br-xl 3xl:hidden\" />tasks of your business",
       "cards": {
         "0": {
@@ -342,7 +343,7 @@
         },
         "1": {
           "for-whom": "for exporters",
-          "title": "Receiving payments from clients <br class=\"hidden lg:block xl:hidden\" />and assistance in foreign currency revenue repatriation",
+          "title": "Assistance with payment receipt <br class=\"hidden lg:block xl:hidden\" />and foreign revenue repatriation",
           "description": "We help receive funds from foreign customers through a network of foreign companies and return currency revenue to Russia"
         }
       }
@@ -358,7 +359,7 @@
             "from": "Your company in Russia",
             "to": "Non-resident account in Russia",
             "within": "Agency agreement",
-            "description": "Pay the amount for paying the supplier and the commission in rubles on the account of a non-resident company under an agency agreement"
+            "description": "Transfer funds to the account of a non-resident company under the agency agreement"
           },
           "1": {
             "step": "Payment to Supplier",
@@ -462,7 +463,7 @@
   "Quotes": {
     "updated": "Updated",
     "currency-rates": "Currency Rates",
-    "rates-info": "*Information about cryptocurrency exchange rates is for reference purposes only and is not a public offer. Contact a manager to clarify current cryptocurrency exchange rates.",
+    "rates-info": "*Information on exchange rates is for reference only and does not constitute a public offer. To get most up-to-date exchange rates, please contact our manager.",
     "months": {
       "0": "January",
       "1": "February",
@@ -501,7 +502,7 @@
           "0": "Home",
           "1": "USDT – FIAT",
           "2": "Cash2Cash",
-          "3": "Payments for Foreign Economic Activity",
+          "3": "Foreign Trade Payments",
           "4": "Exchange rates"
         }
       },

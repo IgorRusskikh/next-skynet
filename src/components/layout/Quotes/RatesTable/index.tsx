@@ -89,7 +89,11 @@ export default function RatesTable() {
           })}`,
         };
 
-        setRatesData((prev) => [...prev, todayRate, yesterdayRate]);
+        setRatesData((prev) => {
+          // Удаляем предыдущие данные ЦБ РФ
+          const filteredData = prev.filter((rate) => rate.source !== 'ЦБ РФ');
+          return [...filteredData, todayRate, yesterdayRate];
+        });
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
       }
@@ -116,7 +120,11 @@ export default function RatesTable() {
             type: 'sell',
           };
 
-          setRatesData((prev) => [...prev, abcexBuyRate, abcexSellRate]);
+          setRatesData((prev) => {
+            // Удаляем предыдущие данные ABCEX
+            const filteredData = prev.filter((rate) => rate.source !== 'ABCEX');
+            return [...filteredData, abcexBuyRate, abcexSellRate];
+          });
         }
       } catch (error) {
         console.error('Ошибка при получении данных ABCEX:', error);
@@ -139,25 +147,36 @@ export default function RatesTable() {
 
           console.log('Investing data:', investingData);
 
-          setRatesData((prev) => [...prev, ...investingData]);
+          setRatesData((prev) => {
+            // Удаляем предыдущие данные Investing
+            const filteredData = prev.filter(
+              (rate) =>
+                !rate.source.includes('profinance') &&
+                !rate.source.includes('investing')
+            );
+            return [...filteredData, ...investingData];
+          });
         }
       } catch (error) {
         console.error('Ошибка при получении данных Investing:', error);
       }
     };
 
-    fetchAbcexData();
-    fetchInvestingData();
-    fetchCBRData();
-    // fetchGarantexData();
+    // Функция для получения всех данных
+    const fetchAllData = () => {
+      fetchAbcexData();
+      fetchInvestingData();
+      fetchCBRData();
+    };
 
-    // const interval = setInterval(() => {
-    //   fetchInvestingData();
-    //   fetchGarantexData();
-    //   fetchCBRData(); // Обновляем данные ЦБ РФ
-    // }, 60 * 1000);
+    // Первоначальная загрузка данных
+    fetchAllData();
 
-    // return () => clearInterval(interval);
+    // Создаем интервал для обновления данных каждые 5 секунд
+    const interval = setInterval(fetchAllData, 5000);
+
+    // Очищаем интервал при размонтировании компонента
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -210,26 +229,38 @@ export default function RatesTable() {
                   <div className={styles.price}>
                     <span>
                       <span>{rate.value.toFixed(2)}</span>
-                      <div className={styles.arrowContainer}>
-                        <Image
-                          src={`/images/quotes/${
-                            Number(difference) < 0 ? 'fall-price' : 'up-price'
-                          }.png`}
-                          fill
-                          alt='price change'
-                        />
-                      </div>
+                      {/* Показываем стрелку изменения только если это не ЦБ РФ за предыдущий день */}
+                      {!(
+                        rate.source === 'ЦБ РФ' &&
+                        rate.value === rate.previous_value
+                      ) && (
+                        <div className={styles.arrowContainer}>
+                          <Image
+                            src={`/images/quotes/${
+                              Number(difference) < 0 ? 'fall-price' : 'up-price'
+                            }.png`}
+                            fill
+                            alt='price change'
+                          />
+                        </div>
+                      )}
                     </span>
-                    <span
-                      className={`${styles.difference} ${
-                        Number(difference) < 0
-                          ? 'text-primary-red'
-                          : 'text-[#23A26D]'
-                      }`}
-                    >
-                      {difference}% (
-                      {(rate.value - rate.previous_value).toFixed(2)})
-                    </span>
+                    {/* Показываем процент изменения только если это не ЦБ РФ за предыдущий день */}
+                    {!(
+                      rate.source === 'ЦБ РФ' &&
+                      rate.value === rate.previous_value
+                    ) && (
+                      <span
+                        className={`${styles.difference} ${
+                          Number(difference) < 0
+                            ? 'text-primary-red'
+                            : 'text-[#23A26D]'
+                        }`}
+                      >
+                        {difference}% (
+                        {(rate.value - rate.previous_value).toFixed(2)})
+                      </span>
+                    )}
                   </div>
                 </div>
               );

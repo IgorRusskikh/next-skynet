@@ -31,11 +31,11 @@
 }
 
 .advantagesText {
-  @apply font-light max-w-[68.06vw] text-[3.33vw] leading-[3.33vw] tracking-[-0.1vw];
-  @apply md:max-w-[315px] md:text-xs md:leading-3 md:mt-[40px] md:tracking-[-0.5px];
-  @apply lg:max-w-[259px] lg:text-xs lg:leading-3 lg:mb-[10px] lg:mt-0;
-  @apply xl:max-w-[259px] xl:text-xs xl:leading-3 xl:mb-[10px];
-  @apply 3xl:max-w-[18.6vw] 3xl:text-[0.83vw] 3xl:leading-[0.83vw] 3xl:tracking-normal;
+  @apply font-light max-w-[68.06vw] text-[5.33vw] leading-[4.33vw] tracking-[-0.1vw];
+  @apply md:max-w-[315px] md:text-xl md:leading-5 md:mt-5 md:tracking-[-0.5px];
+  @apply lg:max-w-[259px] lg:text-2xl lg:leading-4 lg:mb-[10px] lg:mt-0;
+  @apply xl:max-w-[259px] xl:text-[26px] xl:leading-5 xl:mb-[10px];
+  @apply 3xl:max-w-[18.6vw] 3xl:text-[1.83vw] 3xl:leading-[1.83vw] 3xl:tracking-normal;
 }
 
 .advantageItem {
@@ -49,7 +49,7 @@
 .advantageItem p {
   @apply mr-[2vw];
   @apply md:mr-0;
-  @apply 3xl:mr-[1vw]
+  @apply 3xl:mr-[1vw];
 }
 
 .advantageNumberWrapper {
@@ -58,7 +58,7 @@
 }
 
 .advantageItem::before {
-  @apply content-[''] absolute left-0 bottom-[-155px] w-full border-t border-[#E0E2E9] bg-[#F3F3F3] z-10 hidden;
+  @apply content-[''] absolute left-0 bottom-[-155px] w-full lg:w-[80%] border-t border-primary-red bg-[#F3F3F3] z-10 hidden;
   @apply md:block md:h-[160px] md:bottom-[-155px];
   @apply lg:h-[160px] lg:bottom-[-150px];
   @apply xl:h-[160px] xl:bottom-[-155px];
@@ -99,7 +99,7 @@
   @apply md:-top-0 md:w-auto md:text-left md:translate-y-0;
   @apply lg:-top-4;
   @apply xl:-top-3;
-  @apply 3xl:-top-[0.83vw]
+  @apply 3xl:-top-[0.83vw];
 }
 
 /* USELESS */
