@@ -104,30 +104,32 @@ export default function RatesTable() {
         const data = await getAbcexData();
         console.log(data);
         if (data) {
-          const abcexBuyRate: RateData = {
-            source: 'ABCEX',
-            quote: 'USDT/RUB',
-            value: data[0].current,
-            previous_value: data[0].previous,
-            type: 'buy',
-          };
-
           const abcexSellRate: RateData = {
-            source: 'ABCEX',
+            source: 'SKYNET',
             quote: 'USDT/RUB',
             value: data[1].current,
             previous_value: data[1].previous,
+            type: 'buy',
+          };
+
+          const abcexBuyRate: RateData = {
+            source: 'SKYNET',
+            quote: 'USDT/RUB',
+            value: data[0].current,
+            previous_value: data[0].previous,
             type: 'sell',
           };
 
           setRatesData((prev) => {
             // Удаляем предыдущие данные ABCEX
-            const filteredData = prev.filter((rate) => rate.source !== 'ABCEX');
+            const filteredData = prev.filter(
+              (rate) => rate.source !== 'SKYNET'
+            );
             return [...filteredData, abcexBuyRate, abcexSellRate];
           });
         }
       } catch (error) {
-        console.error('Ошибка при получении данных ABCEX:', error);
+        console.error('Ошибка при получении данных SKYNET:', error);
       }
     };
 
@@ -191,7 +193,7 @@ export default function RatesTable() {
           {(() => {
             // Создаем новый массив с данными в нужном порядке
             const abcexData = ratesData.filter(
-              (rate) => rate.source === 'ABCEX'
+              (rate) => rate.source === 'SKYNET'
             );
             const cbData = ratesData.filter((rate) => rate.source === 'ЦБ РФ');
             // Используем более гибкий фильтр для ProFinance, так как название может отличаться

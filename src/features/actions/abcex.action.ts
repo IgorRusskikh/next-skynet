@@ -22,8 +22,8 @@ export const getAbcexData = async () => {
       previous: data.ask[1].price + 0.1,
     },
     {
-      current: data.bid[0].price + 0.1,
-      previous: data.bid[1].price + 0.1,
+      current: data.bid[0].price - 0.1,
+      previous: data.bid[1].price - 0.1,
     },
   ];
 
