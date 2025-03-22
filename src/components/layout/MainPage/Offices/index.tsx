@@ -1,11 +1,14 @@
 'use client';
 
 import { HTMLAttributes, useEffect, useMemo, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { BREAKPOINTS } from '@/constants';
+import { FaArrowRightLong } from 'react-icons/fa6';
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper as SwiperType } from 'swiper';
 import gsap from 'gsap';
 import styles from './Offices.module.css';
 
@@ -19,6 +22,7 @@ type office = {
 export default function Offices({ className }: Props): JSX.Element {
   const officesBlockRef = useRef<HTMLDivElement>(null);
   const [copiedMessage, setCopiedMessage] = useState<string | null>(null);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const t = useTranslations('Index.Offices');
   const locale = useLocale();
@@ -84,6 +88,42 @@ export default function Offices({ className }: Props): JSX.Element {
       });
   };
 
+  const swiperOptions = {
+    breakpoints: {
+      320: {
+        slidesPerView: 1.6,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2.3,
+        spaceBetween: 15,
+      },
+      1024: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+      },
+      1535: {
+        slidesPerView: 2.7,
+        spaceBetween: '1vw',
+      },
+      1800: {
+        slidesPerView: 3.3,
+        spaceBetween: '1vw',
+      },
+      1920: {
+        slidesPerView: 3.3,
+        spaceBetween: '1vw',
+      },
+    },
+    onSwiper: (swiper: SwiperType) => {
+      setSwiper(swiper);
+    },
+  };
+
   return (
     <section id='offices' className={`${styles.offices} ${className}`}>
       <div className={`${styles.officesInner}`}>
@@ -109,25 +149,34 @@ export default function Offices({ className }: Props): JSX.Element {
 
         <div className={`${styles.officesContent}`}>
           <div className={`${styles.officesList}`}>
-            <div
-              className={`${styles.officesListWrapper}`}
-              ref={officesBlockRef}
-            >
+            <Swiper {...swiperOptions}>
               {countries.map(({ country, address }, inx) => (
-                <OfficeCard
-                  key={inx}
-                  image={images[inx]}
-                  location={country}
-                  address={address}
-                  index={inx}
-                  flag={
-                    // @ts-expect-error: need a type
-                    t(`offices-list.${inx}.flag`)
-                  }
-                  onCopy={() => handleCopyAddress(address, country)}
-                />
+                <SwiperSlide key={inx}>
+                  <OfficeCard
+                    image={images[inx]}
+                    location={country}
+                    address={address}
+                    index={inx}
+                    flag={
+                      // @ts-expect-error: need a type
+                      t(`offices-list.${inx}.flag`)
+                    }
+                    onCopy={() => handleCopyAddress(address, country)}
+                  />
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
+          </div>
+
+          <div className={`${styles.sliderControls}`}>
+            <SliderControl
+              direction='prev'
+              onClick={() => swiper?.slidePrev()}
+            />
+            <SliderControl
+              direction='next'
+              onClick={() => swiper?.slideNext()}
+            />
           </div>
         </div>
       </div>
@@ -139,7 +188,15 @@ export default function Offices({ className }: Props): JSX.Element {
   );
 }
 
-const images = ['moscow.png', 'dubai.png', 'ufa.png', 'usa.png'];
+const images = [
+  'moscow-1.jpg',
+  'moscow-2.jpg',
+  'moscow-3.jpg',
+  'dubai.png',
+  'ufa-1.png',
+  'ufa-2.jpg',
+  'ufa-3.png',
+];
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
   image: string;
@@ -183,6 +240,30 @@ function OfficeCard({
       >
         <p>{address}</p>
       </div>
+    </div>
+  );
+}
+
+interface ISliderControl extends HTMLAttributes<HTMLDivElement> {
+  direction: 'prev' | 'next';
+  onClick: () => void;
+}
+
+function SliderControl({
+  direction,
+  onClick,
+  className,
+  ...props
+}: ISliderControl) {
+  return (
+    <div className={`${styles.sliderControl} ${className}`} {...props}>
+      <button className={`${styles.sliderControlButton}`} onClick={onClick}>
+        <FaArrowRightLong
+          className={`${styles.sliderControlIcon} ${
+            direction === 'prev' ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
     </div>
   );
 }

@@ -3,7 +3,7 @@
   @apply md:pt-[120px];
   @apply lg:pt-[140px];
   @apply xl:pt-[160px] font-tt-norms;
-  @apply 3xl:pt-[10.42vw];
+  @apply 3xl:pt-[10.42vw] overflow-clip;
 }
 
 .officesTitleWrapper {
@@ -55,7 +55,7 @@
 }
 
 .officesList {
-  @apply relative overflow-clip min-h-[55.56vw];
+  @apply relative min-h-[55.56vw] overflow-visible;
   @apply md:min-h-[36.458vw];
   @apply lg:min-h-[31.25vw];
   @apply xl:min-h-[31.719vw];
@@ -71,15 +71,17 @@
 }
 
 .officesListItem {
-  @apply rounded-[20px] bg-no-repeat bg-contain flex flex-col justify-between w-full h-full text-white px-[2.78vw] py-[2.78vw];
+  @apply rounded-[20px] bg-no-repeat flex flex-col justify-between w-full h-full text-white px-[2.78vw] py-[2.78vw] bg-center bg-cover overflow-clip;
   @apply md:px-[10px] md:pt-[10px] md:pb-6 md:size-[36.458vw] size-[55.56vw];
   @apply lg:px-[10px] lg:pt-[10px] lg:pb-6 lg:size-[31.25vw];
   @apply xl:px-[10px] xl:pt-[10px] xl:pb-6 xl:size-[31.719vw];
   @apply 3xl:px-[1.04vw] 3xl:pt-[1.04vw] 3xl:pb-[20px] 3xl:size-[26.04vw];
+
+  background-clip: padding-box !important;
 }
 
 .location {
-  @apply flex items-center bg-[#2B2B2B99] backdrop-opacity-70 backdrop-blur-[20px] w-fit rounded-[100px] uppercase gap-[1.67vw] px-[5vw] py-[2.5vw] text-[2.78vw] leading-[2.78vw];
+  @apply flex items-center bg-[#2B2B2B99] backdrop-opacity-70 backdrop-blur-[20px] w-fit rounded-[100px] uppercase gap-[1.67vw] px-[5vw] py-[2.5vw] text-[2.78vw] leading-[2.78vw] bg-center bg-cover;
   @apply md:gap-[6px] md:px-[18px] md:py-[11px] md:text-[10px] md:leading-[10px];
   @apply lg:gap-[6px] lg:px-[22px] lg:py-3 lg:text-[10px] lg:leading-[10px];
   @apply xl:gap-2 xl:px-6 xl:py-[14px] xl:text-xs xl:leading-3;
@@ -140,4 +142,45 @@
     opacity: 0;
     transform: translateY(20px);
   }
+}
+
+.sliderControls {
+  @apply flex gap-2 z-10 justify-end mt-5 container;
+  @apply md:mt-6;
+  @apply lg:mt-8;
+  @apply xl:gap-3 xl:mt-8;
+  @apply 3xl:gap-[0.52vw] 3xl:mt-[1.04vw];
+}
+
+.sliderControl {
+  @apply flex items-center justify-center hidden;
+  @apply xl:block;
+}
+
+.sliderControlButton {
+  @apply size-8 flex items-center justify-center rounded-full 
+    bg-white border border-gray-300 text-gray-700 
+    transition-all hover:bg-gray-100;
+  @apply md:size-10;
+  @apply lg:size-10;
+  @apply xl:size-11;
+  @apply 3xl:size-[2.08vw];
+}
+
+.sliderControlIcon {
+  @apply size-3;
+  @apply md:size-4;
+  @apply lg:size-4;
+  @apply xl:size-4;
+  @apply 3xl:size-[0.83vw];
+}
+
+/* Стили для Swiper слайдера */
+.officesList :global(.swiper) {
+  @apply overflow-visible;
+  @apply px-[4.44vw];
+  @apply md:px-[60px];
+  @apply lg:px-[80px];
+  @apply xl:px-[100px];
+  @apply 3xl:px-[5.2vw];
 }
