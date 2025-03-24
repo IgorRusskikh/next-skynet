@@ -225,7 +225,7 @@ function OfficeCard({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => {
-        const currentIndex = images.indexOf(prev);
+        const currentIndex = images.indexOf(prev as string);
         return currentIndex === images.length - 1
           ? images[0]
           : images[currentIndex + 1];
