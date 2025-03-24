@@ -224,11 +224,12 @@ function OfficeCard({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) =>
-        prev === images[images.length - 1]
+      setCurrentImage((prev) => {
+        const currentIndex = images.indexOf(prev);
+        return currentIndex === images.length - 1
           ? images[0]
-          : images[images.length - 1]
-      );
+          : images[currentIndex + 1];
+      });
     }, 5000);
 
     return () => clearInterval(interval);
