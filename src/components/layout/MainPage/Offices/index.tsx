@@ -150,18 +150,23 @@ export default function Offices({ className }: Props): JSX.Element {
         <div className={`${styles.officesContent}`}>
           <div className={`${styles.officesList}`}>
             <Swiper {...swiperOptions}>
-              {countries.map(({ country, address }, inx) => (
+              {images.map((imagesArray, inx) => (
                 <SwiperSlide key={inx}>
                   <OfficeCard
-                    image={images[inx]}
-                    location={country}
-                    address={address}
+                    images={imagesArray}
+                    location={countries[inx]?.country || ''}
+                    address={countries[inx]?.address || ''}
                     index={inx}
                     flag={
                       // @ts-expect-error: need a type
                       t(`offices-list.${inx}.flag`)
                     }
-                    onCopy={() => handleCopyAddress(address, country)}
+                    onCopy={() =>
+                      handleCopyAddress(
+                        countries[inx]?.address || '',
+                        countries[inx]?.country || ''
+                      )
+                    }
                   />
                 </SwiperSlide>
               ))}
@@ -189,17 +194,13 @@ export default function Offices({ className }: Props): JSX.Element {
 }
 
 const images = [
-  'moscow-1.jpg',
-  'moscow-2.jpg',
-  'moscow-3.jpg',
-  'dubai.png',
-  'ufa-1.png',
-  'ufa-2.jpg',
-  'ufa-3.png',
+  ['moscow-1.jpg', 'moscow-2.jpg', 'moscow-3.jpg'],
+  ['dubai.png'],
+  ['ufa-1.png', 'ufa-2.jpg', 'ufa-3.png'],
 ];
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
-  image: string;
+  images: string[];
   location: string;
   address: string;
   index: number;
@@ -208,7 +209,7 @@ interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
 }
 
 function OfficeCard({
-  image,
+  images,
   location,
   address,
   className,
@@ -217,13 +218,42 @@ function OfficeCard({
   onCopy,
   ...props
 }: IOfficeCard) {
+  const [currentImage, setCurrentImage] = useState<string | null>(
+    images[0] || null
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) =>
+        prev === images[images.length - 1]
+          ? images[0]
+          : images[images.length - 1]
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
-      className={`${styles.officesListItem} ${className} group cursor-pointer`}
-      style={{ backgroundImage: `url('/images/offices/${image}')` }}
+      className={`${styles.officesListItem} ${className} group cursor-pointer overflow-clip relative`}
       onClick={onCopy}
       {...props}
     >
+      <div className={`${styles.officesImages} absolute inset-0`}>
+        {images.map((image, inx) => (
+          <Image
+            key={inx}
+            src={`/images/offices/${image}`}
+            alt=''
+            fill
+            className={`object-cover transition-opacity duration-700 ease-in-out ${
+              currentImage === image ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+      </div>
+
       <div className={`${styles.location}`}>
         <div className='3xl:size-[0.83vw] xl:size-4 lg:size-4 md:size-4 size-[4.44vw] relative inline-block'>
           <Image
@@ -236,7 +266,7 @@ function OfficeCard({
       </div>
 
       <div
-        className={`${styles.address} group-hover:opacity-100 group-hover:visible`}
+        className={`${styles.address} group-hover:opacity-100 group-hover:visible relative z-10`}
       >
         <p>{address}</p>
       </div>

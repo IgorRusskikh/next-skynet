@@ -119,31 +119,11 @@
           "address": "Moscow City, Federation Tower"
         },
         "1": {
-          "flag": "ru",
-          "country": "Moscow",
-          "address": "Moscow City, Federation Tower"
-        },
-        "2": {
-          "flag": "ru",
-          "country": "Moscow",
-          "address": "Moscow City, Federation Tower"
-        },
-        "3": {
           "flag": "uae",
           "country": "Dubai",
           "address": "150 Sheikh Zayed Road, 48 Burj Gate Tower, Dubai, United Arab Emirates"
         },
-        "4": {
-          "flag": "ru",
-          "country": "Ufa",
-          "address": "Ufa, Mendleeva 170, Business Center \"Park-City\""
-        },
-        "5": {
-          "flag": "ru",
-          "country": "Ufa",
-          "address": "Ufa, Mendleeva 170, Business Center \"Park-City\""
-        },
-        "6": {
+        "2": {
           "flag": "ru",
           "country": "Ufa",
           "address": "Ufa, Mendleeva 170, Business Center \"Park-City\""

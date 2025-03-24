@@ -119,31 +119,11 @@
           "address": "Москва-Сити, Башня Федерация"
         },
         "1": {
-          "flag": "ru",
-          "country": "Москва",
-          "address": "Москва-Сити, Башня Федерация"
-        },
-        "2": {
-          "flag": "ru",
-          "country": "Москва",
-          "address": "Москва-Сити, Башня Федерация"
-        },
-        "3": {
           "flag": "uae",
           "country": "Дубай",
           "address": "150 Sheikh Zayed Road, 48 Burj Gate Tower, Dubai, United Arab Emirates"
         },
-        "4": {
-          "flag": "ru",
-          "country": "Уфа",
-          "address": "Уфа, Мендлеева 170, БЦ \"Парк-Сити\""
-        },
-        "5": {
-          "flag": "ru",
-          "country": "Уфа",
-          "address": "Уфа, Мендлеева 170, БЦ \"Парк-Сити\""
-        },
-        "6": {
+        "2": {
           "flag": "ru",
           "country": "Уфа",
           "address": "Уфа, Мендлеева 170, БЦ \"Парк-Сити\""
