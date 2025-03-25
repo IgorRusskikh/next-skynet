@@ -195,7 +195,7 @@ export default function Offices({ className }: Props): JSX.Element {
 
 const images = [
   ['moscow-1.jpg', 'moscow-2.jpg', 'moscow-3.jpg'],
-  ['dubai.png'],
+  ['dubai-1.png', 'dubai-2.png', 'dubai-3.png'],
   ['ufa-1.png', 'ufa-2.jpg', 'ufa-3.png'],
 ];
 
