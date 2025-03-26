@@ -116,17 +116,22 @@
         "0": {
           "flag": "ru",
           "country": "Москва",
-          "address": "Москва-Сити, Башня Федерация"
+          "address": "Москва Сити, Федерация Тауэр"
         },
         "1": {
           "flag": "uae",
-          "country": "Дубай",
+          "country": "Dubai",
           "address": "150 Sheikh Zayed Road, 48 Burj Gate Tower, Dubai, United Arab Emirates"
         },
         "2": {
           "flag": "ru",
           "country": "Уфа",
-          "address": "Уфа, Мендлеева 170, БЦ \"Парк-Сити\""
+          "address": "Уфа, Менделеева 170, Бизнес-центр \"Парк-Сити\""
+        },
+        "3": {
+          "flag": "usa",
+          "country": "США",
+          "address": "Майами"
         }
       },
       "address-copied": "Адрес скопирован"
