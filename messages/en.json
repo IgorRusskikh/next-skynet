@@ -111,7 +111,7 @@
     "Offices": {
       "title": "Offices",
       "subtitle": "We operate remotely worldwide, but we are always happy to see you at our offices",
-      "description": "Visit us to meet in person, discuss your tasks, <br class=\"hidden 3xl:block\" /><br class=\"hidden md:block lg:hidden\" />and conduct deals",
+      "description": "Visit us to meet in person, discuss your tasks, <br class=\"hidden md:block lg:hidden\" />and conduct deals",
       "offices-list": {
         "0": {
           "flag": "ru",
@@ -127,6 +127,11 @@
           "flag": "ru",
           "country": "Ufa",
           "address": "Ufa, Mendleeva 170, Business Center \"Park-City\""
+        },
+        "3": {
+          "flag": "usa",
+          "country": "USA",
+          "address": "Miami"
         }
       },
       "address-copied": "Address copied"
@@ -482,7 +487,7 @@
   "Footer": {
     "tg-block": {
       "titles": {
-        "main": "Order payment, transfer, exchange or consultation today in our Telegram bot ",
+        "main": "Order payment, transfer, exchange <br class=\"hidden br-lg 3xl:block\" />or consultation today <br class=\"hidden br-lg 3xl:block\" />in our Telegram bot ",
         "cash2cash": "Transfer funds <br class=\"br-xs\" />today with our<br /> Telegram bot",
         "ved": "Schedule an international <br class=\"hidden md:block lg:hidden\" />transfer today through <br class=\"hidden md:block lg:hidden\" />our Telegram bot",
         "usdt-fiat": "Exchange today with <br class=\"xl:hidden\" />our Telegram bot",

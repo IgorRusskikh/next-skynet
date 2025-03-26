@@ -1,5 +1,7 @@
 'use client';
 
+import 'swiper/css';
+
 import { HTMLAttributes, useEffect, useMemo, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -196,7 +198,8 @@ export default function Offices({ className }: Props): JSX.Element {
 const images = [
   ['moscow-1.jpg', 'moscow-2.jpg', 'moscow-3.jpg'],
   ['dubai-1.png', 'dubai-2.png', 'dubai-3.png'],
-  ['ufa-1.png', 'ufa-2.jpg', 'ufa-3.png'],
+  ['ufa-1.jpg', 'ufa-2.jpg', 'ufa-3.png'],
+  ['miami-1.jpg', 'miami-2.jpg', 'miami-3.jpg'],
 ];
 
 interface IOfficeCard extends HTMLAttributes<HTMLDivElement> {
