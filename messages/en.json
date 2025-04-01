@@ -129,8 +129,8 @@
           "address": "Ufa, Mendleeva 170, Business Center \"Park-City\""
         },
         "3": {
-          "flag": "Miami",
-          "country": "USA",
+          "flag": "usa",
+          "country": "Miami",
           "address": "Miami"
         }
       },
