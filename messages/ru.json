@@ -116,7 +116,7 @@
         "0": {
           "flag": "ru",
           "country": "Москва",
-          "address": "Москва Сити, Федерация Тауэр"
+          "address": "Москва Сити, Башня ‘Федерация’"
         },
         "1": {
           "flag": "uae",
@@ -131,7 +131,7 @@
         "3": {
           "flag": "usa",
           "country": "Майами",
-          "address": "Майами"
+          "address": "601 N Federal Hwy, Suite 301-22, Hallandale Beach, FL 33009"
         }
       },
       "address-copied": "Адрес скопирован"

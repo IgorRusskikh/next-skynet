@@ -269,9 +269,7 @@ function OfficeCard({
         {location}
       </div>
 
-      <div
-        className={`${styles.address} group-hover:xl:opacity-100 group-hover:xl:visible relative z-10`}
-      >
+      <div className={`${styles.address} relative z-10`}>
         <p>{address}</p>
       </div>
     </div>

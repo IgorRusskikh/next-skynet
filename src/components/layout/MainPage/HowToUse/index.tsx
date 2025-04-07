@@ -723,7 +723,11 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={'/images/main-page-how-to-use/phone.png'}
+                    src={
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/phone.png'
+                        : '/images/main-page-how-to-use/phone-en.png'
+                    }
                     fill
                     alt='phone'
                     className='hidden lg:block'
@@ -752,7 +756,11 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomPhoneImage}`}>
                   <Image
-                    src={'/images/main-page-how-to-use/phone-success.png'}
+                    src={
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/phone-success.png'
+                        : '/images/main-page-how-to-use/phone-success-en.png'
+                    }
                     fill
                     alt='phone'
                     className='hidden lg:block'
@@ -781,7 +789,11 @@ export default function HowToUse() {
               >
                 <div className={`${styles.bottomTransactionImage}`}>
                   <Image
-                    src={'/images/main-page-how-to-use/transaction-success.png'}
+                    src={
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/transaction-success.png'
+                        : '/images/main-page-how-to-use/transaction-success-en.png'
+                    }
                     fill
                     alt='transaction'
                     className='hidden lg:block'

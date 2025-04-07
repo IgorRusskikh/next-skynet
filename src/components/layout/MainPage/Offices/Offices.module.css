@@ -97,7 +97,7 @@
 }
 
 .address {
-  @apply text-[2.78vw] leading-[2.78vw] transition-all duration-500 ease-in-out xl:opacity-0;
+  @apply text-[2.78vw] leading-[2.78vw] transition-all duration-500 ease-in-out;
   @apply md:text-[10px] md:leading-[10px] md:ml-[22px];
   @apply lg:text-xs lg:leading-3 lg:ml-[22px];
   @apply xl:text-xs xl:leading-3 xl:ml-6;
