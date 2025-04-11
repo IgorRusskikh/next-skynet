@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { NamespaceKeys, useLocale, useTranslations } from "use-intl";
-import { RefObject, useEffect, useMemo, useRef, useState } from "react";
+import { NamespaceKeys, useLocale, useTranslations } from 'use-intl';
+import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { BREAKPOINTS } from "@/constants";
-import HowToUseSlider from "@/components/HowToUseSlider";
-import Image from "next/image";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-import styles from "./HowToUse.module.css";
+import { BREAKPOINTS } from '@/constants';
+import HowToUseSlider from '@/components/HowToUseSlider';
+import Image from 'next/image';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import styles from './HowToUse.module.css';
 
 interface Props {
   tNamespace?: string;
@@ -28,7 +28,7 @@ export default function HowToUse({ tNamespace }: Props) {
   const rightPhoneRef = useRef<HTMLDivElement>(null);
 
   const t = useTranslations(
-    `${tNamespace}.HowToUse` as NamespaceKeys<IntlMessages, "CashToCash">
+    `${tNamespace}.HowToUse` as NamespaceKeys<IntlMessages, 'CashToCash'>
   );
   const locale = useLocale();
 
@@ -69,7 +69,7 @@ export default function HowToUse({ tNamespace }: Props) {
         const animation = gsap.to(startAnimationRef.current, {
           scrollTrigger: {
             trigger: parentRef.current,
-            start: `top ${isTablet ? "top" : "+=174px"}`,
+            start: `top ${isTablet ? 'top' : '+=174px'}`,
             end: `bottom bottom`,
             pin: true,
             scrub: true,
@@ -105,7 +105,7 @@ export default function HowToUse({ tNamespace }: Props) {
           y: isLaptop ? -300 : isTablet ? -140 : -300,
           scrollTrigger: {
             trigger: startAnimationRef.current,
-            start: `top ${isTablet ? "top" : "+=174px"}`,
+            start: `top ${isTablet ? 'top' : '+=174px'}`,
             end: `bottom+=${isTablet ? 70 : 100}%`,
             scrub: true,
           },
@@ -115,7 +115,7 @@ export default function HowToUse({ tNamespace }: Props) {
           y: isLaptop ? 300 : isTablet ? 190 : 320,
           scrollTrigger: {
             trigger: startAnimationRef.current,
-            start: `top ${isTablet ? "top" : "+=174px"}`,
+            start: `top ${isTablet ? 'top' : '+=174px'}`,
             end: `bottom+=${isTablet ? 70 : 100}%`,
             scrub: true,
           },
@@ -137,15 +137,15 @@ export default function HowToUse({ tNamespace }: Props) {
       `(min-width: 0px) and (max-width: ${BREAKPOINTS.verticalTablet}px)`,
       () => {
         const leftPhoneAnim = gsap.to(leftPhoneRef.current, {
-          y: (inx * -6) / 3 + "%",
+          y: (inx * -6) / 3 + '%',
           duration: 0.5,
-          ease: "power.inOut",
+          ease: 'power.inOut',
         });
 
         const rightPhoneAnim = gsap.to(rightPhoneRef.current, {
-          y: (inx * 28) / 3 + "%",
+          y: (inx * 28) / 3 + '%',
           duration: 0.5,
-          ease: "power.inOut",
+          ease: 'power.inOut',
         });
 
         return () => {
@@ -192,35 +192,35 @@ export default function HowToUse({ tNamespace }: Props) {
 
   const stepsTitles = useMemo(
     // @ts-expect-error: need a type
-    () => Object.values(t.raw("steps")).map(({ title }) => title),
+    () => Object.values(t.raw('steps')).map(({ title }) => title),
     []
   );
 
   const stepsDescriptions = useMemo(
     // @ts-expect-error: need a type
-    () => Object.values(t.raw("steps")).map(({ description }) => description),
+    () => Object.values(t.raw('steps')).map(({ description }) => description),
     []
   );
 
   return (
-    <section id="how-to-use" className={`${styles.howToUse}`}>
+    <section id='how-to-use' className={`${styles.howToUse}`}>
       <div className={styles.howToUseContainer}>
         <div className={styles.howToUseTitleWrapper}>
           <h2 className={`section-title`}>
             {
               // @ts-expect-error: need a type
-              t("title")
+              t('title')
             }
           </h2>
 
           <div className={styles.howToUseContentText}>
             <h3
               className={`${styles.howToUseContentTitle} section-subtitle ${
-                locale === "en" ? styles.howToUseContentTitleEn : ""
+                locale === 'en' ? styles.howToUseContentTitleEn : ''
               }`}
               dangerouslySetInnerHTML={{
                 // @ts-expect-error: need a type
-                __html: t.raw("subtitle"),
+                __html: t.raw('subtitle'),
               }}
             />
           </div>
@@ -248,7 +248,7 @@ export default function HowToUse({ tNamespace }: Props) {
                           }
                         }}
                         className={`${styles.stepCount} ${
-                          inx === 0 ? "" : "opacity-0"
+                          inx === 0 ? '' : 'opacity-0'
                         }`}
                       >
                         0{inx + 1}
@@ -260,13 +260,13 @@ export default function HowToUse({ tNamespace }: Props) {
                   >
                     —
                   </span>
-                  <span className="text-[#898C98]">04</span>
+                  <span className='text-[#898C98]'>04</span>
                 </div>
 
                 <div className={`${styles.descriptionContainer}`}>
                   <p className={`${styles.stepTitlCntainer}`}>
                     <span
-                      className="!opacity-0"
+                      className='!opacity-0'
                       dangerouslySetInnerHTML={{
                         // @ts-expect-error: need a type
                         __html: t(`steps.${currentSlide}.title`),
@@ -282,7 +282,7 @@ export default function HowToUse({ tNamespace }: Props) {
                           }
                         }}
                         className={`${styles.stepTitle} ${
-                          inx === 0 ? "" : "opacity-0"
+                          inx === 0 ? '' : 'opacity-0'
                         }`}
                         dangerouslySetInnerHTML={{ __html: title as string }}
                       />
@@ -291,7 +291,7 @@ export default function HowToUse({ tNamespace }: Props) {
 
                   <p className={`${styles.stepDescriptionContainer}`}>
                     <span
-                      className="!opacity-0"
+                      className='!opacity-0'
                       dangerouslySetInnerHTML={{
                         __html: stepsDescriptions[0] as string,
                       }}
@@ -306,7 +306,7 @@ export default function HowToUse({ tNamespace }: Props) {
                           }
                         }}
                         className={`${styles.stepDescriptionText} ${
-                          inx === 0 ? "" : "opacity-0"
+                          inx === 0 ? '' : 'opacity-0'
                         }`}
                         dangerouslySetInnerHTML={{ __html: desc as string }}
                       />
@@ -325,13 +325,13 @@ export default function HowToUse({ tNamespace }: Props) {
                     <div className={`${styles.leftIphone}`}>
                       <Image
                         src={`/images/${
-                          locale === "en"
-                            ? "cash-to-cash/left-phone-en.png"
-                            : "cash-to-cash/left-phone.png"
+                          locale === 'en'
+                            ? 'cash-to-cash/left-phone-en.png'
+                            : 'cash-to-cash/left-phone.png'
                         }`}
                         fill
-                        alt="left-phone"
-                        quality={50}
+                        alt='left-phone'
+                        unoptimized
                       />
                     </div>
                   </div>
@@ -344,14 +344,14 @@ export default function HowToUse({ tNamespace }: Props) {
                     <div className={`${styles.rightIphone}`}>
                       <Image
                         src={`/images/${
-                          tNamespace === "VED"
-                            ? "fta/how-to-use"
-                            : "cash-to-cash"
+                          tNamespace === 'VED'
+                            ? 'fta/how-to-use'
+                            : 'cash-to-cash'
                         }/${
-                          locale === "en" ? "right-phone-en" : "right-phone"
+                          locale === 'en' ? 'right-phone-en' : 'right-phone'
                         }.png`}
                         fill
-                        alt="right-phone"
+                        alt='right-phone'
                         quality={50}
                       />
                     </div>

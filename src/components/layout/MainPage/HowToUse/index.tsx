@@ -734,13 +734,21 @@ export default function HowToUse() {
                     unoptimized
                   />
                   <Image
-                    src={'/images/main-page-how-to-use/phone-md.png'}
+                    src={
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/phone-md.png'
+                        : '/images/main-page-how-to-use/phone-md-en.png'
+                    }
                     fill
                     alt='phone'
                     className='hidden md:block lg:hidden'
                   />
                   <Image
-                    src={'/images/main-page-how-to-use/phone-xs.png'}
+                    src={
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/phone-xs.png'
+                        : '/images/main-page-how-to-use/phone-xs-en.png'
+                    }
                     fill
                     alt='phone'
                     className='block md:hidden'
@@ -801,7 +809,9 @@ export default function HowToUse() {
                   />
                   <Image
                     src={
-                      '/images/main-page-how-to-use/transaction-success-md.png'
+                      locale === 'ru'
+                        ? '/images/main-page-how-to-use/transaction-success-md.png'
+                        : '/images/main-page-how-to-use/transaction-success-md-en.png'
                     }
                     fill
                     alt='transaction'

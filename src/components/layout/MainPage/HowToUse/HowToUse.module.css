@@ -178,8 +178,8 @@
 
 .bannerStepDescriptionEn {
   @apply translate-x-[-10px];
-  @apply md:translate-x-0;
-  @apply xl:pl-[20px];
+  @apply md:translate-x-0 md:max-w-[36%];
+  @apply xl:pl-[20px] xl:max-w-none;
 }
 
 .sectionHeaderEn {
